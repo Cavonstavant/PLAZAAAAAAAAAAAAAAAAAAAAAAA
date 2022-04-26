@@ -7,11 +7,14 @@
 
 #pragma once
 
+#include <string>
+
 class Parser {
     public:
         Parser();
         ~Parser();
-
-    protected:
+        void setCommand(const std::string &);
+        const std::string &getCommand() const;
     private:
+        std::string _command;
 };
