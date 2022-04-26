@@ -9,6 +9,7 @@
 
 Parser::Parser()
 {
+    _command = "";
 }
 
 void Parser::setCommand(const std::string &command)
@@ -23,4 +24,5 @@ const std::string &Parser::getCommand() const
 
 Parser::~Parser()
 {
+    _command.erase();
 }
