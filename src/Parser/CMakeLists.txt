@@ -9,7 +9,7 @@ set (SRC
     ${SRC_ROOT}/Parser.cpp
 )
 
-add_library(${PORJECT_NAME}_parser ${SRC})
+add_library(${PROJECT_NAME}_parser ${SRC})
 target_link_directories(${PROJECT_NAME}_parser
     PUBLIC ${INCLUDE_ROOT}
     PRIVATE ${SRC_ROOT}

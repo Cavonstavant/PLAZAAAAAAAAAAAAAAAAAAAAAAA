@@ -11,7 +11,6 @@
 
 class AParser : public IParser {
     public:
-        AParser() = default;
         ~AParser() = default;
         void setCommand(const std::string &);
         const std::string &getCommand() const;
