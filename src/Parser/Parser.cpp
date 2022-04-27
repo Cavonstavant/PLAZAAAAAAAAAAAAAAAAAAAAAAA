@@ -9,10 +9,8 @@
 
 Parser::Parser()
 {
-    _command = "";
 }
 
 Parser::~Parser()
 {
-    _command.erase();
 }
