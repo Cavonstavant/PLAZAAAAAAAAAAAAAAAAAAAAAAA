@@ -9,6 +9,8 @@
 
 AParser::AParser()
 {
+    _command = "";
+    _argumentNumber = 0;
 }
 
 void AParser::setCommand(const std::string &command)
@@ -19,6 +21,11 @@ void AParser::setCommand(const std::string &command)
 const std::string &AParser::getCommand() const
 {
     return (_command);
+}
+
+const std::size_t &AParser::getArgumentNumber() const
+{
+    return (_argumentNumber);
 }
 
 AParser::~AParser()

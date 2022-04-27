@@ -15,7 +15,9 @@ class AParser : public IParser {
         ~AParser();
         void setCommand(const std::string &);
         const std::string &getCommand() const;
+        const std::size_t &getArgumentNumber() const = 0;
 
     protected:
         std::string _command;
+        std::size_t _argumentNumber;
 };
