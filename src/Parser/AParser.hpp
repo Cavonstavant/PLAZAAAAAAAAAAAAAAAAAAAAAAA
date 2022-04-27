@@ -16,6 +16,6 @@ class AParser : public IParser {
         void setCommand(const std::string &);
         const std::string &getCommand() const;
 
-    private:
+    protected:
         std::string _command;
 };

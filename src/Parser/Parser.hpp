@@ -9,7 +9,7 @@
 
 #include "AParser.hpp"
 
-class Parser {
+class Parser : public AParser {
     public:
         Parser();
         ~Parser();
