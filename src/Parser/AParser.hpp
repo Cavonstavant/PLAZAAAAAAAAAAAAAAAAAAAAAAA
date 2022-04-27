@@ -5,10 +5,10 @@
 ** AParser
 */
 
-#pragma once
+#ifndef APARSER_HPP_
+#define APARSER_HPP_
 
 #include "IParser.hpp"
-#include <vector>
 
 class AParser : public IParser {
     public:
@@ -26,3 +26,5 @@ class AParser : public IParser {
         char _separator;
         std::vector<std::string> _arguments;
 };
+
+#endif

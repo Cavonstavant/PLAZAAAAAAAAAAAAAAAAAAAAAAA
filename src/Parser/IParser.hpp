@@ -5,9 +5,11 @@
 ** IParser
 */
 
-#pragma once
+#ifndef IPARSER_HPP_
+#define IPARSER_HPP_
 
 #include <string>
+#include <vector>
 
 class IParser {
     public:
@@ -19,3 +21,5 @@ class IParser {
         virtual void setCommandSeparator(char) = 0;
         virtual const std::vector<std::string> &getArguments() const = 0;
 };
+
+#endif
