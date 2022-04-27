@@ -14,9 +14,7 @@ class InputParser : public AParser {
     public:
         InputParser();
         ~InputParser();
-
-    protected:
-    private:
+        void prossessArguments();
 };
 
 #endif

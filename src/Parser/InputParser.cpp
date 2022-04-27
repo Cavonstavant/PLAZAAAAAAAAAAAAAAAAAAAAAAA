@@ -15,6 +15,10 @@ InputParser::InputParser()
     _arguments.clear();
 }
 
+void InputParser::prossessArguments()
+{
+}
+
 InputParser::~InputParser()
 {
 }

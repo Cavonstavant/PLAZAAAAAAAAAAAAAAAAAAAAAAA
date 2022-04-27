@@ -13,8 +13,16 @@ void AParser::setCommand(const std::string &command)
 
     _command = command;
     while (!tmpCommand.empty()) {
+        while (tmpCommand.find(_separator) == 0)
+            tmpCommand = tmpCommand.substr(1);
+        if (tmpCommand.empty())
+            break;
         _arguments.push_back(tmpCommand.substr(0, tmpCommand.find(_separator)));
-        tmpCommand = tmpCommand.substr(tmpCommand.find(_separator) + 1);
+        if (tmpCommand.find(_separator) < tmpCommand.size())
+            tmpCommand = tmpCommand.substr(tmpCommand.find(_separator));
+        else
+            tmpCommand.clear();
+        _argumentNumber++;
     }
 }
 
