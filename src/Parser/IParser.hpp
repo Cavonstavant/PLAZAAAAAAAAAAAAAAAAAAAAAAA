@@ -15,4 +15,5 @@ class IParser {
         virtual void setCommand(const std::string &) = 0;
         virtual const std::string &getCommand() const = 0;
         virtual const std::size_t &getArgumentNumber() const = 0;
+        virtual void prossessArguments() = 0;
 };

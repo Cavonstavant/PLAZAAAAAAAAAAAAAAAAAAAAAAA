@@ -11,11 +11,12 @@
 
 class AParser : public IParser {
     public:
-        AParser();
-        ~AParser();
+        AParser() = default;
+        ~AParser() = default;
         void setCommand(const std::string &);
         const std::string &getCommand() const;
-        const std::size_t &getArgumentNumber() const = 0;
+        const std::size_t &getArgumentNumber() const;
+        virtual void prossessArguments() = 0;
 
     protected:
         std::string _command;
