@@ -8,9 +8,12 @@ set (SRC
 add_executable(${PROJECT_NAME} ${SRC})
 
 target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}_logger)
+target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}_parser)
 
 target_include_directories(${PROJECT_NAME}
     PRIVATE ${INCLUDE_ROOT}
+    PRIVATE $<TARGET_PROPERTY:${PROJECT_NAME}_logger,PUBLIC_INCLUDE_DIRECTORIES>
+    PRIVATE $<TARGET_PROPERTY:${PROJECT_NAME}_parser,PUBLIC_INCLUDE_DIRECTORIES>
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
@@ -18,3 +21,4 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 )
 
 add_subdirectory(logger)
+add_subdirectory(Parser)
