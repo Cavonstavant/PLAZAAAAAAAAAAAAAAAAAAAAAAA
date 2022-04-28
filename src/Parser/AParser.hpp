@@ -10,7 +10,7 @@
 
 #include "IParser.hpp"
 
-/// \brief The AParser inherit of IParser class.
+/// \brief Aparser class define global fonctions for all parser class in the project
 class AParser : public IParser {
     public:
         /// \brief Destroy the AParser object as default.

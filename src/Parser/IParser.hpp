@@ -11,7 +11,7 @@
 #include <string>
 #include <vector>
 
-/// \brief IParser class. It is a virtual class.
+/// \brief Base parser class for all parser class in the project
 class IParser {
     public:
         /// \brief Destroy the IParser object as default
