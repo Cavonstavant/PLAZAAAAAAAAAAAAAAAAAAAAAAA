@@ -13,7 +13,7 @@
 class InputParser : public AParser {
     public:
         InputParser();
-        ~InputParser();
+        ~InputParser() = default;
         void prossessArguments();
 };
 

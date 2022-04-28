@@ -18,7 +18,3 @@ InputParser::InputParser()
 void InputParser::prossessArguments()
 {
 }
-
-InputParser::~InputParser()
-{
-}
