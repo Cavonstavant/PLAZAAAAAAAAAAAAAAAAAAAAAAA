@@ -11,7 +11,6 @@ target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}_logger)
 
 target_include_directories(${PROJECT_NAME}
     PRIVATE ${INCLUDE_ROOT}
-    PRIVATE $<TARGET_PROPERTY:${PROJECT_NAME}_logger,PUBLIC_INCLUDE_DIRECTORIES>
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
