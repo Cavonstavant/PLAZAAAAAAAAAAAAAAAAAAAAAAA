@@ -39,6 +39,10 @@ class AParser : public IParser {
          * @return const std::size_t&, the number of arguments.
          */
         const std::size_t &getArgumentNumber() const;
+        /**
+         * @brief This function will be set differently by the children
+         *
+         */
         virtual void prossessArguments() = 0;
         /**
          * @brief Set a char that will be the separator on each command.
