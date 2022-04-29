@@ -17,10 +17,19 @@ class InputParser : public AParser {
         InputParser();
         /// \brief Destroy the InputParser instance and destroy all variables
         ~InputParser() = default;
+        /// \brief Set the command that will be parsed.
+        /// \param const std::string & is the command string
+        void setCommand(const std::string &);
+        /// \brief Get the command previously set.
+        /// \return const std::string& of the command.
+        /// It return an empty std::string in case of undefined command.
+        const std::string &getCommand() const;
         /// \brief Prossess the argument to set them in a form usefull for the program
         void prossessArguments() override;
 
     private:
+        /// \brief Store the command that will be prossess.
+        std::string _command;
         void _checkArgumentsValidity() const;
 };
 
