@@ -119,7 +119,7 @@ bool InputParser::_isValidePizzaSeparator(const std::string &pizzaSeparator) con
     return (findValidePizzaSeparator);
 }
 
-void InputParser::_checkArgumentsValidity() const
+void InputParser::_checkArgumentsValidity()
 {
     std::size_t index = 0;
     bool argIsValide = true;

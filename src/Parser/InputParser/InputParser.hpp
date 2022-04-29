@@ -32,7 +32,7 @@ class InputParser : public AParser {
         std::string _command;
         /// \brief Check the validity of all arguments of the command.
         /// It will print a message if an error occured.
-        void _checkArgumentsValidity() const;
+        void _checkArgumentsValidity();
         /// \brief Check if the pizza name passed as parameter is valide.
         /// It will print a message if an error occured.
         /// \param const std::string & is the pizza name.
