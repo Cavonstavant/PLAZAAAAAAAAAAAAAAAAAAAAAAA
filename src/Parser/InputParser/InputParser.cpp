@@ -46,10 +46,10 @@ void InputParser::prossessArguments()
     std::vector<std::string> args;
 
     setCommandSeparator(' ');
-    for (auto it : tmp) {
+    for (auto it: tmp) {
         _arguments.clear();
         setCommand(it);
-        for (auto arg : _arguments) {
+        for (auto arg: _arguments) {
             args.push_back(arg);
         }
         args.push_back(";");
@@ -61,11 +61,10 @@ void InputParser::prossessArguments()
 bool InputParser::_isValidePizzaName(const std::string &pizza) const
 {
     const std::string availablePizza[4] = {
-        "Regina",
-        "Margarita",
-        "Americana",
-        "Fantasia"
-    };
+            "Regina",
+            "Margarita",
+            "Americana",
+            "Fantasia"};
     bool findValidePizza = false;
 
     for (std::size_t index = 0; index < 4; index++) {
@@ -80,12 +79,11 @@ bool InputParser::_isValidePizzaName(const std::string &pizza) const
 bool InputParser::_isValidePizzaSize(const std::string &pizzaSize) const
 {
     const std::string availablePizzaSize[5] = {
-        "S",
-        "M",
-        "L",
-        "XL",
-        "XXL"
-    };
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"};
     bool findValidePizzaSize = false;
 
     for (std::size_t index = 0; index < 5; index++) {
@@ -125,7 +123,7 @@ void InputParser::_checkArgumentsValidity()
     bool argIsValide = true;
     std::vector<std::string> valideArgs;
 
-    for (std::string it : _arguments) {
+    for (std::string it: _arguments) {
         if (!argIsValide) {
             if (it == ";") {
                 argIsValide = true;
