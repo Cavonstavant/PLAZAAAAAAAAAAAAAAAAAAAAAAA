@@ -15,13 +15,6 @@ class AParser : public IParser {
     public:
         /// \brief Destroy the AParser object as default.
         ~AParser() = default;
-        /// \brief Set the command that will be parsed.
-        /// \param const std::string & is the command string
-        void setCommand(const std::string &);
-        /// \brief Get the command previously set.
-        /// \return const std::string& of the command.
-        /// It return an empty std::string in case of undefined command.
-        const std::string &getCommand() const;
         /// \brief Get the number of arguments in the command.
         /// \return const std::size_t&, the number of arguments.
         const std::size_t &getArgumentNumber() const;
@@ -35,8 +28,6 @@ class AParser : public IParser {
         const std::vector<std::string> &getArguments() const;
 
     protected:
-        /// \brief Store the command that will be prossess.
-        std::string _command;
         /// \brief Store the number of arguments in the command.
         std::size_t _argumentNumber;
         /// \brief Store the separator of each argument.
