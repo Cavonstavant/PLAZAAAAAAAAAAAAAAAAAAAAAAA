@@ -32,9 +32,17 @@ class InputParser : public AParser {
         std::string _command;
         /// \brief Check the validity of all arguments of the command.
         void _checkArgumentsValidity() const;
+        /// \brief Check if the pizza name passed as parameter is valide.
+        /// \param const std::string & is the pizza name.
         bool _isValidePizzaName(const std::string &) const;
+        /// \brief Check if the pizza size passed as parameter is valide.
+        /// \param const std::string & is the pizza size.
         bool _isValidePizzaSize(const std::string &) const;
+        /// \brief Check if the pizza number passed as parameter is valide.
+        /// \param const std::string & is the pizza number.
         bool _isValidePizzaNumber(const std::string &) const;
+        /// \brief Check if the pizza separator passed as parameter is valide.
+        /// \param const std::string & is the pizza separator.
         bool _isValidePizzaSeparator(const std::string &) const;
 };
 
