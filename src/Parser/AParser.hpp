@@ -28,8 +28,6 @@ class AParser : public IParser {
         const std::vector<std::string> &getArguments() const;
 
     protected:
-        /// \brief Store the command that will be prossess.
-        std::string _command;
         /// \brief Store the number of arguments in the command.
         std::size_t _argumentNumber;
         /// \brief Store the separator of each argument.
