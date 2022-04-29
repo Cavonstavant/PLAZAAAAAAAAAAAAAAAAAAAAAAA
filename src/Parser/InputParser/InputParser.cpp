@@ -30,6 +30,102 @@ void InputParser::prossessArguments()
         }
         args.push_back(";");
     }
-    for (auto it : args)
-        std::cout << it << std::endl;
+    _arguments = args;
+    _checkArgumentsValidity();
+}
+
+bool isValidePizza(const std::string &pizza)
+{
+    const std::string availablePizza[4] = {
+        "Regina",
+        "Margarita",
+        "Americana",
+        "Fantasia"
+    };
+    bool findValidePizza = false;
+
+    for (std::size_t index = 0; index < 4; index++) {
+        if (availablePizza[index] == pizza)
+            findValidePizza = true;
+    }
+    if (!findValidePizza)
+        std::cout << "Invalide pizza name: " << pizza << std::endl;
+    return (findValidePizza);
+}
+
+bool isValidePizzaSize(const std::string &pizzaSize)
+{
+    const std::string availablePizzaSize[5] = {
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+    };
+    bool findValidePizzaSize = false;
+
+    for (std::size_t index = 0; index < 5; index++) {
+        if (availablePizzaSize[index] == pizzaSize)
+            findValidePizzaSize = true;
+    }
+    if (!findValidePizzaSize)
+        std::cout << "Invalide pizza size: " << pizzaSize << std::endl;
+    return (findValidePizzaSize);
+}
+
+bool isValidePizzaNumber(const std::string &pizzaNumber)
+{
+    bool findValidePizzaNumber = false;
+
+    if (pizzaNumber == "x1")
+        findValidePizzaNumber = true;
+    if (!findValidePizzaNumber)
+        std::cout << "Invalide pizza number: " << pizzaNumber << std::endl;
+    return (findValidePizzaNumber);
+}
+
+bool isValidePizzaSeparator(const std::string &pizzaSeparator)
+{
+    bool findValidePizzaSeparator = true;
+
+    if (pizzaSeparator != ";") {
+        std::cout << "Invalide pizza separator: " << pizzaSeparator << std::endl;
+        findValidePizzaSeparator = false;
+    }
+    return (findValidePizzaSeparator);
+}
+
+void InputParser::_checkArgumentsValidity() const
+{
+    std::size_t index = 0;
+    bool argIsValide = true;
+
+    for (std::string it : _arguments) {
+        if (!argIsValide) {
+            if (it == ";") {
+                argIsValide = true;
+                index = 0;
+            }
+            continue;
+        }
+        switch (index % 4) {
+            case 0:
+                argIsValide = isValidePizza(it);
+                break;
+            case 1:
+                argIsValide = isValidePizzaSize(it);
+                break;
+            case 2:
+                argIsValide = isValidePizzaNumber(it);
+                break;
+            case 3:
+                argIsValide = isValidePizzaSeparator(it);
+                break;
+        }
+        index++;
+        if (it == ";") {
+            argIsValide = true;
+            index = 0;
+        }
+    }
 }

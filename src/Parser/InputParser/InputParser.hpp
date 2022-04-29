@@ -19,6 +19,9 @@ class InputParser : public AParser {
         ~InputParser() = default;
         /// \brief Prossess the argument to set them in a form usefull for the program
         void prossessArguments() override;
+
+    private:
+        void _checkArgumentsValidity() const;
 };
 
 #endif
