@@ -8,14 +8,15 @@
 #ifndef ARGUMENTSPARSER_HPP_
 #define ARGUMENTSPARSER_HPP_
 
-#include "AParser.hpp"
+#include "../AParser.hpp"
 
 #include <vector>
 #include <string>
+#include <exception>
 
-class ArgumentsParser : public AParser{
+class ArgumentsParser : public AParser {
     public:
-        ArgumentsParser(const char **&);
+        ArgumentsParser(char **);
 
         /// \brief Destroy the AParser object as default.
         ~ArgumentsParser() = default;
@@ -36,7 +37,6 @@ class ArgumentsParser : public AParser{
         size_t _cookNumber;
         size_t _cookingTime;
         size_t _refillTimeMs;
-
 };
 
 #endif /* !ARGUMENTSPARSER_HPP_ */

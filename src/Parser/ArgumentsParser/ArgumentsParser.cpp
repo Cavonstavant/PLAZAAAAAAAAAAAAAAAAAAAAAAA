@@ -6,8 +6,9 @@
 */
 
 #include "ArgumentsParser.hpp"
+#include <iostream>
 
-ArgumentsParser::ArgumentsParser(const char **& args)
+ArgumentsParser::ArgumentsParser(char ** args)
 {
     for (size_t x = 0; args[x]; ++x) {
         _arguments.push_back(std::string(args[x]));
@@ -17,27 +18,31 @@ ArgumentsParser::ArgumentsParser(const char **& args)
 
 void ArgumentsParser::prossessArguments()
 {
-    if (_argumentNumber != 3)
-        return; //Throw an Exception
+    if (_argumentNumber != 3) {
+        std::cout << "Invalid Number of Args" << std::endl;
+        return;
+    }
     for (size_t x = _arguments.size() - 1; x > 0; --x) {
         try {
             size_t value = std::stoi(_arguments[x]);
 
             switch (x) {
-            case 3:
+            case 2:
                 setRefillTime(value);
                 break;
-            case 2:
+            case 1:
                 setCookNumber(value);
                 break;
-            case 1:
+            case 0:
                 setCookingTime(value);
                 break;
             default:
+                std::cout << "Problem" << std::endl;
                 break; // raise
             }
         } catch (...) {
-            return; //raise
+            std::cout << "Arg isn't a int" << std::endl;
+            return;
         }
     }
 }
