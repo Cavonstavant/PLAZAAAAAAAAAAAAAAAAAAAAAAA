@@ -14,7 +14,3 @@ InputParser::InputParser()
     _separator = ' ';
     _arguments.clear();
 }
-
-InputParser::~InputParser()
-{
-}

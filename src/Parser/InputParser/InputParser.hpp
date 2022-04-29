@@ -16,7 +16,7 @@ class InputParser : public AParser {
         /// \brief Create the InputParser instance and define all variables
         InputParser();
         /// \brief Destroy the InputParser instance and destroy all variables
-        ~InputParser();
+        ~InputParser() = default;
         /// \brief Prossess the argument to set them in a form usefull for the program
         void prossessArguments() override;
 };
