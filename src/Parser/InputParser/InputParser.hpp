@@ -8,7 +8,7 @@
 #ifndef INPUTPARSER_HPP_
 #define INPUTPARSER_HPP_
 
-#include "AParser.hpp"
+#include "../AParser.hpp"
 
 /// \brief InputParser is a class use to parse command of pizza while the program is running
 class InputParser : public AParser {

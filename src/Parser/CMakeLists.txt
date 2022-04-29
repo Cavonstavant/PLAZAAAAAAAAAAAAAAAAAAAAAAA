@@ -5,6 +5,8 @@ set (SRC
     ${SRC_ROOT}/IParser.hpp
     ${SRC_ROOT}/AParser.hpp
     ${SRC_ROOT}/AParser.cpp
+    ${SRC_ROOT}/InputParser/InputParser.hpp
+    ${SRC_ROOT}/InputParser/InputParser.cpp
 )
 
 add_library(${PROJECT_NAME}_parser ${SRC})
