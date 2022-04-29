@@ -134,18 +134,18 @@ void InputParser::_checkArgumentsValidity()
             continue;
         }
         switch (index % 4) {
-            case 0:
-                argIsValide = _isValidePizzaName(it);
-                break;
-            case 1:
-                argIsValide = _isValidePizzaSize(it);
-                break;
-            case 2:
-                argIsValide = _isValidePizzaNumber(it);
-                break;
-            case 3:
-                argIsValide = _isValidePizzaSeparator(it);
-                break;
+        case 0:
+            argIsValide = _isValidePizzaName(it);
+            break;
+        case 1:
+            argIsValide = _isValidePizzaSize(it);
+            break;
+        case 2:
+            argIsValide = _isValidePizzaNumber(it);
+            break;
+        case 3:
+            argIsValide = _isValidePizzaSeparator(it);
+            break;
         }
         index++;
         if (argIsValide)
