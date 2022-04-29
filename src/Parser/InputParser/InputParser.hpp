@@ -30,7 +30,12 @@ class InputParser : public AParser {
     private:
         /// \brief Store the command that will be prossess.
         std::string _command;
+        /// \brief Check the validity of all arguments of the command.
         void _checkArgumentsValidity() const;
+        bool _isValidePizzaName(const std::string &) const;
+        bool _isValidePizzaSize(const std::string &) const;
+        bool _isValidePizzaNumber(const std::string &) const;
+        bool _isValidePizzaSeparator(const std::string &) const;
 };
 
 #endif

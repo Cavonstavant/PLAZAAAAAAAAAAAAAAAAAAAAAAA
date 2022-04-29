@@ -58,7 +58,7 @@ void InputParser::prossessArguments()
     _checkArgumentsValidity();
 }
 
-bool isValidePizza(const std::string &pizza)
+bool InputParser::_isValidePizzaName(const std::string &pizza) const
 {
     const std::string availablePizza[4] = {
         "Regina",
@@ -77,7 +77,7 @@ bool isValidePizza(const std::string &pizza)
     return (findValidePizza);
 }
 
-bool isValidePizzaSize(const std::string &pizzaSize)
+bool InputParser::_isValidePizzaSize(const std::string &pizzaSize) const
 {
     const std::string availablePizzaSize[5] = {
         "S",
@@ -97,7 +97,7 @@ bool isValidePizzaSize(const std::string &pizzaSize)
     return (findValidePizzaSize);
 }
 
-bool isValidePizzaNumber(const std::string &pizzaNumber)
+bool InputParser::_isValidePizzaNumber(const std::string &pizzaNumber) const
 {
     bool findValidePizzaNumber = false;
 
@@ -108,7 +108,7 @@ bool isValidePizzaNumber(const std::string &pizzaNumber)
     return (findValidePizzaNumber);
 }
 
-bool isValidePizzaSeparator(const std::string &pizzaSeparator)
+bool InputParser::_isValidePizzaSeparator(const std::string &pizzaSeparator) const
 {
     bool findValidePizzaSeparator = true;
 
@@ -134,16 +134,16 @@ void InputParser::_checkArgumentsValidity() const
         }
         switch (index % 4) {
             case 0:
-                argIsValide = isValidePizza(it);
+                argIsValide = _isValidePizzaName(it);
                 break;
             case 1:
-                argIsValide = isValidePizzaSize(it);
+                argIsValide = _isValidePizzaSize(it);
                 break;
             case 2:
-                argIsValide = isValidePizzaNumber(it);
+                argIsValide = _isValidePizzaNumber(it);
                 break;
             case 3:
-                argIsValide = isValidePizzaSeparator(it);
+                argIsValide = _isValidePizzaSeparator(it);
                 break;
         }
         index++;
