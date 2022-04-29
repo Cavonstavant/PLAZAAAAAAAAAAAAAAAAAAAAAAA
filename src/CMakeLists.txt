@@ -1,7 +1,10 @@
 set (INCLUDE_ROOT ${PROJECT_SOURCE_DIR}/src)
 set (SRC_ROOT ${PROJECT_SOURCE_DIR}/src)
 
+add_subdirectory(MessageQueue)
+
 set (SRC
+    ${MESSAGE_QUEUE_SRC}
     ${SRC_ROOT}/main.cpp
 )
 

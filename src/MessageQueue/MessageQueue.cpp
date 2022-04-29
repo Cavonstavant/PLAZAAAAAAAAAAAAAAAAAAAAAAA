@@ -6,11 +6,3 @@
 */
 
 #include "MessageQueue.hpp"
-
-MessageQueue::MessageQueue()
-{
-}
-
-MessageQueue::~MessageQueue()
-{
-}
