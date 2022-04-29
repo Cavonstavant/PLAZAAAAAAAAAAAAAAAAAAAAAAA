@@ -123,6 +123,7 @@ void InputParser::_checkArgumentsValidity() const
 {
     std::size_t index = 0;
     bool argIsValide = true;
+    std::vector<std::string> valideArgs;
 
     for (std::string it : _arguments) {
         if (!argIsValide) {
@@ -147,9 +148,16 @@ void InputParser::_checkArgumentsValidity() const
                 break;
         }
         index++;
+        if (argIsValide)
+            valideArgs.push_back(it);
+        else {
+            while (valideArgs.size() > 0 && valideArgs.back() != ";")
+                valideArgs.pop_back();
+        }
         if (it == ";") {
             argIsValide = true;
             index = 0;
         }
     }
+    _arguments = valideArgs;
 }
