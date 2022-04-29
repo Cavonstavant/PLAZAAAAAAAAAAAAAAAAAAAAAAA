@@ -16,13 +16,6 @@ class IParser {
     public:
         /// \brief Destroy the IParser object as default
         ~IParser() = default;
-        /// \brief Set the command that will be parsed.
-        /// \param const std::string & is the command string
-        virtual void setCommand(const std::string &) = 0;
-        /// \brief Get the command previously set.
-        /// \return const std::string& of the command.
-        /// It return an empty std::string in case of undefined command.
-        virtual const std::string &getCommand() const = 0;
         /// \brief Get the number of arguments in the command.
         /// \return const std::size_t&, the number of arguments.
         virtual const std::size_t &getArgumentNumber() const = 0;
