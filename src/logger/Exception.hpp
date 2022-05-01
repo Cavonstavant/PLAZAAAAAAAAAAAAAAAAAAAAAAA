@@ -23,20 +23,9 @@
 /// \These defines makes possible to specify the function, the file and the line where the exception is thrown
 /// \You MUST NOT throw the classical *Exceptions (ex: PlazzaException) but use the macros below
 #define PlazzaEX(what, severity) ExceptionTernary(PlazzaException, what, severity)
-#define FactoryEX(what, severity) ExceptionTernary(FactoryException, what, severity)
 #define InvalidFileEX(what, severity) ExceptionTernary(InvalidFileException, what, severity)
 #define FileNotFoundEX(what, severity) ExceptionTernary(FileNotFoundException, what, severity)
-#define FileCorruptedEX(what, severity) ExceptionTernary(FileCorruptedException, what, severity)
-#define FileUnreadableEX(what, severity) ExceptionTernary(FileUnreadableException, what, severity)
-#define LibraryEX(what, severity) ExceptionTernary(LibraryException, what, severity)
-#define GameEX(what, severity) ExceptionTernary(GameException, what, severity)
-#define GraphEX(what, severity) ExceptionTernary(GraphException, what, severity)
-#define EntityEX(what, severity) ExceptionTernary(EntityException, what, severity)
-#define EventEX(what, severity) ExceptionTernary(EventException, what, severity)
 #define VeryStupidUserEX(what, severity) ExceptionTernary(VeryStupidUserException, what, severity)
-#define ButtonCloseGameEX(what, severity) ExceptionTernary(ButtonCloseGameException, what, severity)
-#define NotImplementedEX(what, severity) ExceptionTernary(NotImplementedException, what, severity)
-#define SwitchLibEX(what, severity) ExceptionTernary(SwitchLibException, what, severity)
 
 /// \Defines the color codes to print the exceptions in color
 #define LOGGER_COLOR_RESET "\x1B[0m"
@@ -137,38 +126,6 @@ class LibraryException : public PlazzaException {
             _name = "LibraryException";
         };
 };
-/// \brief Exception class for the "Game" libraries
-class GameException : public LibraryException {
-    public:
-        GameException(std::string const &what, std::string const &func, int const &line, std::string const &file) : LibraryException(what, func, line, file)
-        {
-            _name = "GameException";
-        };
-};
-/// \brief Exception class for the "Graph" libraries
-class GraphException : public LibraryException {
-    public:
-        GraphException(std::string const &what, std::string const &func, int const &line, std::string const &file) : LibraryException(what, func, line, file)
-        {
-            _name = "GraphException";
-        };
-};
-/// \brief Exception class for the entities
-class EntityException : public PlazzaException {
-    public:
-        EntityException(std::string const &what, std::string const &func, int const &line, std::string const &file) : PlazzaException(what, func, line, file)
-        {
-            _name = "EntityException";
-        };
-};
-/// \brief Exception class for the events
-class EventException : public PlazzaException {
-    public:
-        EventException(std::string const &what, std::string const &func, int const &line, std::string const &file) : PlazzaException(what, func, line, file)
-        {
-            _name = "EventException";
-        };
-};
 /// \brief Exception class to throw when something is not implemented
 class NotImplementedException : public PlazzaException {
     public:
@@ -180,30 +137,13 @@ class NotImplementedException : public PlazzaException {
 /// \brief Exception class when a user is very stupid and we can't do what anything for them
 class VeryStupidUserException : public PlazzaException {
     public:
-        VeryStupidUserException(std::string const &what = "", std::string const &func = "", int const &line = 0, std::string const &file = "") : PlazzaException("Please stop", "You probably need to restart your project from scratch", 0, "User IQ")
+        explicit VeryStupidUserException(std::string const &what = "", std::string const &func = "", int const &line = 0, std::string const &file = "") : PlazzaException("Please stop", "You probably need to restart your project from scratch", 0, "User IQ")
         {
             _name = "VeryStupidUserException";
             (void) what;
             (void) func;
             (void) line;
             (void) file;
-        };
-};
-
-/// \brief Exception throw when the "close game" button is pressed on the main menu
-class ButtonCloseGameException : public EventException {
-    public:
-        ButtonCloseGameException(std::string const &what, std::string const &func, int const &line, std::string const &file) : EventException(what, func, line, file)
-        {
-            _name = "ButtonCloseGameException";
-        };
-};
-/// \brief Exception when the core must switch a lib
-class SwitchLibException : public EventException {
-    public:
-        SwitchLibException(std::string const &what, std::string const &func, int const &line, std::string const &file) : EventException(what, func, line, file)
-        {
-            _name = "SwitchLibException";
         };
 };
 

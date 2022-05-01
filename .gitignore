@@ -31,5 +31,13 @@
 *.out
 *.app
 
+# Project specific files
 plazza
 build
+
+# Editor files
+*.swp
+*.swo
+.vscode/
+.idea/
+graph/
