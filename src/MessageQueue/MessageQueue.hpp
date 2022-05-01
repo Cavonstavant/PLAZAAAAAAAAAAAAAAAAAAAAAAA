@@ -16,8 +16,10 @@ extern "C" {
 }
 #include <string>
 
+#define MAX_MESSAGE_SIZE 256
+
 /// \brief Wrapper class around the XSI message queues.
-/// \note This class aim to provide a custom interface to manipulate XSI message queues by simply enqueue and dequeue messages with send_message and receive_message.
+/// \note This class aims to provide a custom interface to manipulate XSI message queues by simply enqueue and dequeue messages with send_message and receive_message.
 class MessageQueue {
     public:
         /// \brief Default Constructor, no queue is created when called.
@@ -84,11 +86,11 @@ class MessageQueue {
             /// \brief The message type.
             long type;
             /// \brief The message text.
-            char text[256];
+            char text[MAX_MESSAGE_SIZE];
         };
 
         /// \brief message instance to be used with msgsnd() and msgrcv().
-        struct message _msg{};
+        struct message *_msg = nullptr;
 
         /// \brief The text representation of the last message received.
         std::string _text;
