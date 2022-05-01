@@ -11,8 +11,8 @@
 #define MESSAGEQUEUE_HPP
 
 extern "C" {
-    #include <sys/ipc.h>
-    #include <sys/msg.h>
+#include <sys/ipc.h>
+#include <sys/msg.h>
 }
 #include <string>
 
@@ -36,57 +36,75 @@ class MessageQueue {
 
         /// \brief Retrieve the current text representation of the last message received.
         /// \warning Calling this method without setting up the queue, receiving a message or sending first will result in a <b>Undefined Behavior</b>.
-        [[nodiscard]] inline std::string getMessage() const { return _text; };
+        [[nodiscard]] inline std::string getMessage() const
+        {
+            return _text;
+        };
 
         /// \brief Get the current message queue key.
-        [[nodiscard]] inline key_t getKey() const { return _key; };
+        [[nodiscard]] inline key_t getKey() const
+        {
+            return _key;
+        };
 
         /// \brief Set the message queue key.
         /// \note In order to create a new key, please use the MessageQueue::generateKey static method.
-        inline void setKey(key_t key) { _key = key; };
+        inline void setKey(key_t key)
+        {
+            _key = key;
+        };
 
         /// \brief C++ wrapper around C ftok().
         /// \note This methods sets internally the key to be used.
         /// \note proj_id is defaulted to 69.
-        void generateKey(const std::string& pathname, int proj_id = 69);
+        void generateKey(const std::string &pathname, int proj_id = 69);
 
         /// \brief Get the current message queue pathfile.
         /// \warning Using thing method prior to the creation of a key results in a <b>Undefined Behavior</b>.
-        [[nodiscard]] inline std::string getPath() const { return _pathname; };
+        [[nodiscard]] inline std::string getPath() const
+        {
+            return _pathname;
+        };
 
         /// \brief Get the current message queue id.
         /// \warning Using thing method prior to the creation of a key results in a <b>Undefined Behavior</b>.
         /// \return The id returned by msgget().
-        [[nodiscard]] inline int getId() const { return _id; };
+        [[nodiscard]] inline int getId() const
+        {
+            return _id;
+        };
 
         /// \brief Get the current message queue id.
         /// \warning Using thing method prior to the creation of a key results in a <b>Undefined Behavior</b>.
-        inline void setId(int id) { _id = id; };
+        inline void setId(int id)
+        {
+            _id = id;
+        };
 
         /// \brief Sends a message to the queue.
         /// \note This method is a C++ wrapper around msgsnd().
         /// \warning Using thing method prior to the creation of a key results in a <b>Undefined Behavior</b>.
         /// \param message The message to be sent.
         /// \param message_type the type of the message.
-        void sendMessage(const std::string& message_text, long message_type);
+        void sendMessage(const std::string &message_text, long message_type);
 
         /// \brief Receives a message from the queue.
         /// \note This method is a C++ wrapper around msgrcv().
         /// \warning Using thing method prior to the creation of a key results in a <b>Undefined Behavior</b>.
         /// \param message_type the type of the message.
-         [[nodiscard]] std::string receiveMessage(long message_type);
+        [[nodiscard]] std::string receiveMessage(long message_type);
 
         /// \brief Clear the queue.
         /// \warning Using thing method prior to the creation of a key results in a <b>Undefined Behavior</b>.
         void clear();
-    private:
 
+    private:
         /// \brief Inner representation of a message used by msgsnd() and msgrcv().
         struct message {
-            /// \brief The message type.
-            long type;
-            /// \brief The message text.
-            char text[MAX_MESSAGE_SIZE];
+                /// \brief The message type.
+                long type;
+                /// \brief The message text.
+                char text[MAX_MESSAGE_SIZE];
         };
 
         /// \brief message instance to be used with msgsnd() and msgrcv().

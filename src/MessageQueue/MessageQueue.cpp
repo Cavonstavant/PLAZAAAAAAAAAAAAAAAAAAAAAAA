@@ -5,13 +5,13 @@
 ** MessageQueue
 */
 
+#include "MessageQueue.hpp"
 #include "Exception.hpp"
 #include "Logger.hpp"
-#include "MessageQueue.hpp"
-#include <string>
 #include <cstring>
+#include <string>
 
-void MessageQueue::generateKey(const std::string& pathname, int proj_id)
+void MessageQueue::generateKey(const std::string &pathname, int proj_id)
 {
     key_t key = ftok(pathname.c_str(), proj_id);
 
@@ -20,7 +20,7 @@ void MessageQueue::generateKey(const std::string& pathname, int proj_id)
     }
     this->_key = key;
 }
-void MessageQueue::sendMessage(const std::string& message_text, long message_type)
+void MessageQueue::sendMessage(const std::string &message_text, long message_type)
 {
     int message_id;
 
@@ -30,9 +30,9 @@ void MessageQueue::sendMessage(const std::string& message_text, long message_typ
     if (message_id == -1) {
         exit(84);
     }
-    _msg = new MessageQueue::message {.type = message_type};
+    _msg = new MessageQueue::message{.type = message_type};
     std::strcpy(_msg->text, message_text.c_str());
-    if (msgsnd(message_id, (void*) &_msg, sizeof(_msg->text), 0) == -1) {
+    if (msgsnd(message_id, (void *) &_msg, sizeof(_msg->text), 0) == -1) {
         exit(84);
     }
     delete _msg;
@@ -46,7 +46,7 @@ std::string MessageQueue::receiveMessage(long message_type)
     if (message_id == -1) {
         exit(84);
     }
-    msgrcv(message_id, (void*) &msg, sizeof(msg->text), message_type, 0);
+    msgrcv(message_id, (void *) &msg, sizeof(msg->text), message_type, 0);
     return msg->text;
 }
 
