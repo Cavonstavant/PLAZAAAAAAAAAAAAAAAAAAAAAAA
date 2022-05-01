@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED true)
 enable_testing()
 
 add_compile_options(
-    "-Wall" "-Wextra" "-Wshadow" "-pedantic" "-Wpointer-arith"
+    "-Wall" "-Wextra" "-Wshadow" "-pedantic" "-Wpointer-arith" "-fpic"
 )
 
 if (CMAKE_BUILD_TYPE STREQUAL Testing)
@@ -15,3 +15,4 @@ if (CMAKE_BUILD_TYPE STREQUAL Testing)
 endif()
 
 add_subdirectory(src)
+#add_subdirectory(tests)
