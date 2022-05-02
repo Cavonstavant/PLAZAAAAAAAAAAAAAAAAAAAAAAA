@@ -34,18 +34,18 @@ void ArgumentsParser::prossessArguments()
             return;// raise
         }
         switch (x) {
-            case 2:
-                _setRefillTime(value);
-                break;
-            case 1:
-                _setCookNumber(value);
-                break;
-            case 0:
-                _setCookingTime(value);
-                break;
-            default:
-                std::cout << "Internal Problem on for loop" << std::endl;
-                break; // raise
+        case 2:
+            _setRefillTime(value);
+            break;
+        case 1:
+            _setCookNumber(value);
+            break;
+        case 0:
+            _setCookingTime(value);
+            break;
+        default:
+            std::cout << "Internal Problem on for loop" << std::endl;
+            break; // raise
         }
 
     }
