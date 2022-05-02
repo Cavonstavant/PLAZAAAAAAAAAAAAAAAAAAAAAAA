@@ -11,11 +11,9 @@ set (SRC
 )
 
 add_library(${PROJECT_NAME}_parser ${SRC})
-target_link_directories(${PROJECT_NAME}_parser
-    PUBLIC ${INCLUDE_ROOT}
-    PRIVATE ${SRC_ROOT}
-)
 
 target_include_directories(${PROJECT_NAME}_parser
+    PRIVATE ${SRC_ROOT}
     PUBLIC ${SRC_ROOT}
+    PUBLIC ${ARG_ROOT}
 )
