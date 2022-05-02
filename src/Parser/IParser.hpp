@@ -5,6 +5,8 @@
 ** IParser
 */
 
+/// \file src/Parser/IParser.hpp
+
 #ifndef IPARSER_HPP_
 #define IPARSER_HPP_
 

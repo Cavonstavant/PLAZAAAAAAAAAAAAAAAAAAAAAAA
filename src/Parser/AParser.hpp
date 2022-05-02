@@ -5,6 +5,8 @@
 ** AParser
 */
 
+/// \file src/Parser/AParser.hpp
+
 #ifndef APARSER_HPP_
 #define APARSER_HPP_
 
