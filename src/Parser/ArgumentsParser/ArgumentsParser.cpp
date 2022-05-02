@@ -45,8 +45,7 @@ void ArgumentsParser::prossessArguments()
                 break;
             default:
                 std::cout << "Internal Problem on for loop" << std::endl;
-                break; // raise
+                break;// raise
         }
-
     }
 }
