@@ -6,6 +6,6 @@ set (SRC
 
 create_test(
     TEST_NAME Parser_tests
-    SRC ${SRC}
-    DEPS ${PROJECT_NAME}_parser
+    TEST_SRC ${SRC}
+    TEST_DEPS ${PROJECT_NAME}_parser
 )

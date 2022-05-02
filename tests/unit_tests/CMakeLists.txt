@@ -3,8 +3,9 @@ set (SRC_ROOT ${PROJECT_SOURCE_DIR}/tests/unit_tests)
 
 function (create_test)
     set (test_name TEST_NAME)
-    set (test_src TEST_SRC DEPS)
-    cmake_parse_arguments(create_test "" ${test_name} ${test_src} ${ARGN})
+    set (test_src TEST_SRC)
+    set (test_deps TEST_DEPS)
+    cmake_parse_arguments(create_test "" ${test_name} ${test_src} ${test_deps})
 
     if (NOT DEFINED create_test_TEST_NAME)
         message (FATAL_ERROR "create_test: TEST_NAME not defined")
@@ -21,3 +22,4 @@ function (create_test)
 endfunction()
 
 add_subdirectory(Parser)
+add_subdirectory(MessageQueue)
