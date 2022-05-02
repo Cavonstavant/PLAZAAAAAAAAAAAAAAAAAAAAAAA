@@ -37,6 +37,7 @@
 #define ButtonCloseGameEX(what, severity) ExceptionTernary(ButtonCloseGameException, what, severity)
 #define NotImplementedEX(what, severity) ExceptionTernary(NotImplementedException, what, severity)
 #define SwitchLibEX(what, severity) ExceptionTernary(SwitchLibException, what, severity)
+#define InputParserEX(what, severity) ExceptionTernary(InputParser, what, severity)
 
 /// \Defines the color codes to print the exceptions in color
 #define LOGGER_COLOR_RESET "\x1B[0m"
@@ -204,6 +205,14 @@ class SwitchLibException : public EventException {
         SwitchLibException(std::string const &what, std::string const &func, int const &line, std::string const &file) : EventException(what, func, line, file)
         {
             _name = "SwitchLibException";
+        };
+};
+
+class InputParserException : public EventException {
+    public:
+        InputParserException(std::string const &what, std::string const &func, int const &line, std::string const &file) : EventException(what, func, line, file)
+        {
+            _name = "InputParserException";
         };
 };
 
