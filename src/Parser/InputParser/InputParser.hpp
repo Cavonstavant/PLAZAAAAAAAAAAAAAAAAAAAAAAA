@@ -5,6 +5,8 @@
 ** InputParser
 */
 
+/// \file src/Parser/InputParser/InputParser.hpp
+
 #ifndef INPUTPARSER_HPP_
 #define INPUTPARSER_HPP_
 
@@ -36,18 +38,22 @@ class InputParser : public AParser {
         /// \brief Check if the pizza name passed as parameter is valide.
         /// It will print a message if an error occured.
         /// \param const std::string & is the pizza name.
+        /// \return true if it's std::string is a valide pizza name, false otherwise.
         bool _isValidePizzaName(const std::string &) const;
         /// \brief Check if the pizza size passed as parameter is valide.
         /// It will print a message if an error occured.
         /// \param const std::string & is the pizza size.
+        /// \return true if it's std::string is a valide pizza size, false otherwise.
         bool _isValidePizzaSize(const std::string &) const;
         /// \brief Check if the pizza number passed as parameter is valide.
         /// It will print a message if an error occured.
         /// \param const std::string & is the pizza number.
+        /// \return true if it's std::string is a valide pizza number, false otherwise.
         bool _isValidePizzaNumber(const std::string &) const;
         /// \brief Check if the pizza separator passed as parameter is valide.
         /// It will print a message if an error occured.
         /// \param const std::string & is the pizza separator.
+        /// \return true if it's std::string is a valide pizza separator, false otherwise.
         bool _isValidePizzaSeparator(const std::string &) const;
 };
 
