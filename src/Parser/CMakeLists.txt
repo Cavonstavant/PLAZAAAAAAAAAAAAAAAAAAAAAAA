@@ -15,3 +15,7 @@ target_link_directories(${PROJECT_NAME}_parser
     PUBLIC ${INCLUDE_ROOT}
     PRIVATE ${SRC_ROOT}
 )
+
+target_include_directories(${PROJECT_NAME}_parser
+    PUBLIC ${SRC_ROOT}
+)
