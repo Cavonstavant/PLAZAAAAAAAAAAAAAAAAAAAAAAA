@@ -10,9 +10,9 @@
 
 #include "../AParser.hpp"
 
-#include <vector>
-#include <string>
 #include <exception>
+#include <string>
+#include <vector>
 
 /// \brief ArgumentsParser class define functions for parsing received arguments
 class ArgumentsParser : public AParser {
