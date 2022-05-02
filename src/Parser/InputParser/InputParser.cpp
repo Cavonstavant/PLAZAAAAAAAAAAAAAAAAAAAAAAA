@@ -98,9 +98,13 @@ bool InputParser::_isValidePizzaSize(const std::string &pizzaSize) const
 bool InputParser::_isValidePizzaNumber(const std::string &pizzaNumber) const
 {
     bool findValidePizzaNumber = false;
+    std::string tmp = pizzaNumber;
 
-    if (pizzaNumber == "x1")
-        findValidePizzaNumber = true;
+    if (tmp.find("x") == 0) {
+        tmp.substr(1);
+        if (std::atoi(tmp.c_str()) != 0)
+            findValidePizzaNumber = true;
+    }
     if (!findValidePizzaNumber)
         std::cout << "Invalide pizza number: " << pizzaNumber << std::endl;
     return (findValidePizzaNumber);
