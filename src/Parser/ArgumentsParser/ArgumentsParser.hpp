@@ -16,7 +16,7 @@
 class ArgumentsParser : public AParser {
     public:
         /// \brief Construct the ArgumentsParser with the received arguments without the binary name (argv + 1)
-        ArgumentsParser(char **);
+        ArgumentsParser(char ** = nullptr);
         /// \brief Destroy the ArgumentsParser object as default.
         ~ArgumentsParser() = default;
         /// \brief Get the cooking Time for the Plazza
