@@ -8,6 +8,8 @@
 #include "ArgumentsParser.hpp"
 #include <iostream>
 
+/// \file src/Parser/ArgumentsParser/ArgumentsParser.cpp
+
 ArgumentsParser::ArgumentsParser(char ** args)
 {
     for (size_t x = 0; args[x]; ++x) {

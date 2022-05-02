@@ -10,6 +10,8 @@
 
 #include "AParser.hpp"
 
+/// \file src/Parser/ArgumentsParser/ArgumentsParser.hpp
+
 /// \brief ArgumentsParser class define functions for parsing received arguments
 class ArgumentsParser : public AParser {
     public:
