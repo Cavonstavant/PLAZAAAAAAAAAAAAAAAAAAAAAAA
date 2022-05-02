@@ -22,14 +22,14 @@ class ArgumentsParser : public AParser {
         /// \brief Destroy the ArgumentsParser object as default.
         ~ArgumentsParser() = default;
         /// \brief Get the cooking Time for the Plazza
-        /// \return size_t, the cooking time
-        size_t getCookingTime(void) const;
+        /// \return const size_t &, the cooking time
+        const size_t &getCookingTime(void) const;
         /// \brief Get the cooking Time for the Plazza
-        /// \return size_t, the number of cooks
-        size_t getCookNumber(void) const;
+        /// \return const size_t &, the number of cooks
+        const size_t &getCookNumber(void) const;
         /// \brief Get the time to refill the fridge for the Plazza
-        /// \return size_t, the refill time
-        size_t getRefillTime(void) const;
+        /// \return const size_t &, the refill time
+        const size_t &getRefillTime(void) const;
         /// \brief Process the arguments given in the char ** (transfers to the inherited member _arguments) by the constructor
         void prossessArguments();
 

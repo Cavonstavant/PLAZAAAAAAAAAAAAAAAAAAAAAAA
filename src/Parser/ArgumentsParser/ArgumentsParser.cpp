@@ -47,17 +47,17 @@ void ArgumentsParser::prossessArguments()
     }
 }
 
-size_t ArgumentsParser::getCookingTime(void) const
+const size_t &ArgumentsParser::getCookingTime(void) const
 {
     return _cookingTime;
 }
 
-size_t ArgumentsParser::getRefillTime(void) const
+const size_t &ArgumentsParser::getRefillTime(void) const
 {
     return _refillTimeMs;
 }
 
-size_t ArgumentsParser::getCookNumber(void) const
+const size_t &ArgumentsParser::getCookNumber(void) const
 {
     return _cookNumber;
 }
