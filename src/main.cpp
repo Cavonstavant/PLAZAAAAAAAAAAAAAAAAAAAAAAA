@@ -5,12 +5,12 @@
 ** main
 */
 
-#include <string>
 #include "Parser/ArgumentsParser/ArgumentsParser.hpp"
+#include <string>
 
 int main(int ac, char **av)
 {
-    ArgumentsParser args (av + 1);
+    ArgumentsParser args(av + 1);
 
     args.prossessArguments();
     return 0;

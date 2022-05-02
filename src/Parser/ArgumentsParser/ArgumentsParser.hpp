@@ -5,12 +5,12 @@
 ** ArgumentsParser
 */
 
+/// \file src/Parser/ArgumentsParser/ArgumentsParser.hpp
+
 #ifndef ARGUMENTSPARSER_HPP_
 #define ARGUMENTSPARSER_HPP_
 
 #include "AParser.hpp"
-
-/// \file src/Parser/ArgumentsParser/ArgumentsParser.hpp
 
 /// \brief ArgumentsParser class define functions for parsing received arguments
 class ArgumentsParser : public AParser {

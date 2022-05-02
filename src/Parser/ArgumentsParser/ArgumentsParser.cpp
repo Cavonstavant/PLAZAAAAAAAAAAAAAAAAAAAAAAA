@@ -5,12 +5,12 @@
 ** ArgumentsParser
 */
 
+/// \file src/Parser/ArgumentsParser/ArgumentsParser.cpp
+
 #include "ArgumentsParser.hpp"
 #include <iostream>
 
-/// \file src/Parser/ArgumentsParser/ArgumentsParser.cpp
-
-ArgumentsParser::ArgumentsParser(char ** args)
+ArgumentsParser::ArgumentsParser(char **args)
 {
     for (size_t x = 0; args[x]; ++x) {
         _arguments.push_back(std::string(args[x]));
@@ -22,7 +22,7 @@ void ArgumentsParser::prossessArguments()
 {
     if (_argumentNumber != 3) {
         std::cout << "Invalid Number of Args" << std::endl;
-        return; // raise
+        return;// raise
     }
     for (size_t x = _arguments.size() - 1; x > 0; --x) {
 
@@ -31,21 +31,21 @@ void ArgumentsParser::prossessArguments()
             value = std::stoi(_arguments[x]);
         } catch (...) {
             std::cout << "Arg isn't a int" << std::endl;
-            return; // raise
+            return;// raise
         }
         switch (x) {
-        case 2:
-            _setRefillTime(value);
-            break;
-        case 1:
-            _setCookNumber(value);
-            break;
-        case 0:
-            _setCookingTime(value);
-            break;
-        default:
-            std::cout << "Internal Problem on for loop" << std::endl;
-            break; // raise
+            case 2:
+                _setRefillTime(value);
+                break;
+            case 1:
+                _setCookNumber(value);
+                break;
+            case 0:
+                _setCookingTime(value);
+                break;
+            default:
+                std::cout << "Internal Problem on for loop" << std::endl;
+                break; // raise
         }
 
     }
