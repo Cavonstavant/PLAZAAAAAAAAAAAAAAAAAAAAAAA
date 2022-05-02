@@ -20,7 +20,7 @@ void ArgumentsParser::prossessArguments()
 {
     if (_argumentNumber != 3) {
         std::cout << "Invalid Number of Args" << std::endl;
-        return;
+        return; // raise
     }
     for (size_t x = _arguments.size() - 1; x > 0; --x) {
         try {
@@ -42,7 +42,7 @@ void ArgumentsParser::prossessArguments()
             }
         } catch (...) {
             std::cout << "Arg isn't a int" << std::endl;
-            return;
+            return; // raise
         }
     }
 }
@@ -62,17 +62,17 @@ size_t ArgumentsParser::getCookNumber(void) const
     return _cookNumber;
 }
 
-void ArgumentsParser::setCookingTime(size_t cookingTime)
+void ArgumentsParser::setCookingTime(size_t newCookingTime)
 {
-    _cookingTime = cookingTime;
+    _cookingTime = newCookingTime;
 }
 
-void ArgumentsParser::setRefillTime(size_t refillTime)
+void ArgumentsParser::setRefillTime(size_t newRefillTime)
 {
-    _refillTimeMs = refillTime;
+    _refillTimeMs = newRefillTime;
 }
 
-void ArgumentsParser::setCookNumber(size_t cookNumber)
+void ArgumentsParser::setCookNumber(size_t newCookNumber)
 {
-    _cookNumber = cookNumber;
+    _cookNumber = newCookNumber;
 }
