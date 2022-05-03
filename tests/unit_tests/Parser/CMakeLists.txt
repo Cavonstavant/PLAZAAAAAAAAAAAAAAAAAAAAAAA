@@ -1,7 +1,8 @@
-set (INCLUDE_ROOT ${PROJECT_NAME}/tests/unit_tests/Parser)
-set (SRC_ROOT ${PROJECT_NAME}/tests/unit_tests/Parser)
+set (INCLUDE_ROOT ${PROJECT_SOURCE_DIR}/tests/unit_tests/Parser)
+set (SRC_ROOT ${PROJECT_SOURCE_DIR}/tests/unit_tests/Parser)
 
 set (SRC
+    ${SRC_ROOT}/Parser_test.cpp
 )
 
 create_test(

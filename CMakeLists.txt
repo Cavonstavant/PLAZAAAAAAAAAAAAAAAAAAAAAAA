@@ -15,4 +15,4 @@ if (CMAKE_BUILD_TYPE STREQUAL Testing)
 endif()
 
 add_subdirectory(src)
-#add_subdirectory(tests)
+add_subdirectory(tests)
