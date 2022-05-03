@@ -10,7 +10,7 @@
 
 int main(int ac, char **av)
 {
-    ArgumentsParser args(av + 1);
+    ArgumentsParser args(ac - 1, av + 1);
 
     try {
         args.prossessArguments();
