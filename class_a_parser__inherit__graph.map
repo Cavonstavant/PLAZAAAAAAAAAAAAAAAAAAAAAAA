@@ -1,0 +1,5 @@
+<map id="AParser" name="AParser">
+<area shape="rect" id="node1" title="Aparser class define global fonctions for all parser class in the project." alt="" coords="37,80,107,107"/>
+<area shape="rect" id="node3" href="$class_arguments_parser.html" title="ArgumentsParser class define functions for parsing received arguments." alt="" coords="5,155,139,181"/>
+<area shape="rect" id="node2" href="$class_i_parser.html" title="Base parser class for all parser class in the project." alt="" coords="39,5,105,32"/>
+</map>

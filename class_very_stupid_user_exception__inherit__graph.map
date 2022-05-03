@@ -1,0 +1,5 @@
+<map id="VeryStupidUserException" name="VeryStupidUserException">
+<area shape="rect" id="node1" title="Exception class when a user is very stupid and we can&#39;t do what anything for them." alt="" coords="5,155,192,181"/>
+<area shape="rect" id="node2" href="$class_plazza_exception.html" title="Base exception class for all exceptions in the project." alt="" coords="35,80,163,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="41,5,156,32"/>
+</map>
