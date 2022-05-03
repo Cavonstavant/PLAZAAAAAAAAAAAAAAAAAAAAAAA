@@ -6,12 +6,18 @@
 */
 
 #include "Parser/ArgumentsParser/ArgumentsParser.hpp"
-#include <string>
+#include "Core/Plazza.hpp"
 
 int main(int ac, char **av)
 {
     ArgumentsParser args(av + 1);
 
-    args.prossessArguments();
+    try {
+        args.prossessArguments();
+    } catch (...) {
+        return 84;
+    }
+    Plazza::Core (args.getCookingTime(), args.getCookNumber(), args.getRefillTime());
+
     return 0;
 }
