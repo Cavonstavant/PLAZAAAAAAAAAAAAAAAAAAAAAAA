@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2022
-** aurele.nicolas@epitech.eu
+** constant.vigneron@epitech.eu
 ** File description:
 ** Exception
 */
@@ -23,9 +23,8 @@
 /// \These defines makes possible to specify the function, the file and the line where the exception is thrown
 /// \You MUST NOT throw the classical *Exceptions (ex: PlazzaException) but use the macros below
 #define PlazzaEX(what, severity) ExceptionTernary(PlazzaException, what, severity)
-#define InvalidFileEX(what, severity) ExceptionTernary(InvalidFileException, what, severity)
-#define FileNotFoundEX(what, severity) ExceptionTernary(FileNotFoundException, what, severity)
 #define VeryStupidUserEX(what, severity) ExceptionTernary(VeryStupidUserException, what, severity)
+#define MessageTooLongEX(what, severity) ExceptionTernary(MessageTooLongException, what, severity)
 
 /// \Defines the color codes to print the exceptions in color
 #define LOGGER_COLOR_RESET "\x1B[0m"
@@ -42,7 +41,7 @@
 /// \brief Base exception class for all exceptions in the project
 class PlazzaException : public std::exception {
     public:
-        /// \brief DO NOT USE THIS CONSTRUCTOR, PLEASE USE THE MACROS DEFINED ABOVE IN EXCEPTION.HPP (PlazzaEX, FactoryEX, ...)
+        /// \brief DO NOT USE THIS CONSTRUCTOR, PLEASE USE THE MACROS DEFINED ABOVE IN EXCEPTION.HPP (PlazzaEX, ...)
         /// \param what The description of the exception
         /// \param func The function where the exception is thrown
         /// \param file The file where the exception is thrown
@@ -78,54 +77,6 @@ class PlazzaException : public std::exception {
     private:
 };
 
-/// \brief Exception class for the factory
-class FactoryException : public PlazzaException {
-    public:
-        FactoryException(std::string const &what, std::string const &func, int const &line, std::string const &file) : PlazzaException(what, func, line, file)
-        {
-            _name = "FactoryException";
-        };
-};
-/// \brief Exception class for the factory if a file is invalid
-class InvalidFileException : public FactoryException {
-    public:
-        InvalidFileException(std::string const &what, std::string const &func, int const &line, std::string const &file) : FactoryException(what, func, line, file)
-        {
-            _name = "InvalidFileException";
-        };
-};
-/// \brief Exception class for the factory if a file is not found
-class FileNotFoundException : public InvalidFileException {
-    public:
-        FileNotFoundException(std::string const &what, std::string const &func, int const &line, std::string const &file) : InvalidFileException(what, func, line, file)
-        {
-            _name = "FileNotFoundException";
-        };
-};
-/// \brief Exception class for the factory if a file is corrupted
-class FileCorruptedException : public InvalidFileException {
-    public:
-        FileCorruptedException(std::string const &what, std::string const &func, int const &line, std::string const &file) : InvalidFileException(what, func, line, file)
-        {
-            _name = "FileCorruptedException";
-        };
-};
-/// \brief Exception class for the factory if a file is unreadable
-class FileUnreadableException : public InvalidFileException {
-    public:
-        FileUnreadableException(std::string const &what, std::string const &func, int const &line, std::string const &file) : InvalidFileException(what, func, line, file)
-        {
-            _name = "FileUnreadableException";
-        };
-};
-/// \brief Exception class for the libraries
-class LibraryException : public PlazzaException {
-    public:
-        LibraryException(std::string const &what, std::string const &func, int const &line, std::string const &file) : PlazzaException(what, func, line, file)
-        {
-            _name = "LibraryException";
-        };
-};
 /// \brief Exception class to throw when something is not implemented
 class NotImplementedException : public PlazzaException {
     public:
@@ -134,6 +85,24 @@ class NotImplementedException : public PlazzaException {
             _name = "NotImplementedException";
         };
 };
+
+/// \brief Base Exception class for any exception related to Message Queues
+class MessageQueueException : public PlazzaException {
+    public:
+        MessageQueueException(std::string const &what, std::string const &func, int const &line, std::string const &file) : PlazzaException(what, func, line, file)
+        {
+            _name = "MessageQueueException";
+        };
+};
+
+class MessageTooLongException : public MessageQueueException {
+    public:
+        MessageTooLongException(std::string const &what, std::string const &func, int const &line, std::string const &file) : MessageQueueException(what, func, line, file)
+        {
+            _name = "MessageTooLongException";
+        };
+};
+
 /// \brief Exception class when a user is very stupid and we can't do what anything for them
 class VeryStupidUserException : public PlazzaException {
     public:
@@ -147,4 +116,4 @@ class VeryStupidUserException : public PlazzaException {
         };
 };
 
-#endif /* !PLAzZA_EXCEPTION_HPP */
+#endif /* !PLAZZA_EXCEPTION_HPP */
