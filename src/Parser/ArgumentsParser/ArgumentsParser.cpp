@@ -10,12 +10,12 @@
 #include "ArgumentsParser.hpp"
 #include <iostream>
 
-ArgumentsParser::ArgumentsParser(char **args)
+ArgumentsParser::ArgumentsParser(int ac, char **args)
 {
     for (size_t x = 0; args[x]; ++x) {
         _arguments.push_back(std::string(args[x]));
     }
-    _argumentNumber = _arguments.size();
+    _argumentNumber = ac;
 }
 
 void ArgumentsParser::prossessArguments()
