@@ -15,11 +15,6 @@ namespace Plazza
         _cookNumber = cookNumber;
         _refillTime = refillTime;
     }
-
-    Core::~Core()
-    {
-
-    }
 } // namespace Plazza
 
 

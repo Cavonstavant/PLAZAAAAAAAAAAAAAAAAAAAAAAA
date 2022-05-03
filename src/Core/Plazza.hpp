@@ -14,9 +14,11 @@ namespace Plazza
 {
     class Core {
         public:
-            Core(size_t cookingTime = 0, size_t cookNumber = 0, size_t refillTime = 0);
+            Core() = default;
 
-            ~Core();
+            Core(size_t cookingTime, size_t cookNumber, size_t refillTime);
+
+            ~Core() = default;
         private:
             size_t _cookingTime;
             size_t _cookNumber;
