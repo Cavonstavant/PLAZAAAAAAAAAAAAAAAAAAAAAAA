@@ -33,6 +33,7 @@ class InputParser : public AParser {
     private:
         /// \brief Store the command that will be prossess.
         std::string _command;
+        /// \brief Store the separator that will use for prossessArgument.
         char _separator;
         /// \brief Check the validity of all arguments of the command.
         /// It will print a message if an error occured.
