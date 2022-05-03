@@ -17,7 +17,7 @@ int main(int ac, char **av)
     } catch (...) {
         return 84;
     }
-    Plazza::Core (args.getCookingTime(), args.getCookNumber(), args.getRefillTime());
+    Plazza::Core core (args.getCookingTime(), args.getCookNumber(), args.getRefillTime());
 
     return 0;
 }
