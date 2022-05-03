@@ -5,6 +5,8 @@
 ** Plazza
 */
 
+/// \file src/Core/Plazza.cpp
+
 #include "Plazza.hpp"
 
 namespace Plazza
@@ -14,6 +16,11 @@ namespace Plazza
         _cookingTime = cookingTime;
         _cookNumber = cookNumber;
         _refillTime = refillTime;
+    }
+
+    void Core::run()
+    {
+
     }
 } // namespace Plazza
 

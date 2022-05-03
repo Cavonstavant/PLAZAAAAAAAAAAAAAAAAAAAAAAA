@@ -5,6 +5,8 @@
 ** Plazza
 */
 
+/// \file src/Core/Plazza.hpp
+
 #ifndef PLAZZA_HPP_
 #define PLAZZA_HPP_
 
@@ -19,6 +21,8 @@ namespace Plazza
             Core(size_t cookingTime, size_t cookNumber, size_t refillTime);
 
             ~Core() = default;
+
+            void run();
         private:
             size_t _cookingTime;
             size_t _cookNumber;
