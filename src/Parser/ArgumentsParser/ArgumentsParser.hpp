@@ -16,7 +16,7 @@
 class ArgumentsParser : public AParser {
     public:
         /// \brief Default Constructor of the ArgumentsParser DO NOT USE
-        ArgumentsParser();
+        ArgumentsParser() = default;
         /// \brief Construct the ArgumentsParser with the received arguments
         /// \param ac number of arguments without the binary name (ac - 1)
         /// \param av arguments tab without the binary name (av + 1)
