@@ -9,7 +9,8 @@ set (SRC
 )
 
 add_library(${PROJECT_NAME}_logger ${SRC})
-target_link_directories(${PROJECT_NAME}_logger
+
+target_include_directories(${PROJECT_NAME}_logger
     PUBLIC ${INCLUDE_ROOT}
     PRIVATE ${SRC_ROOT}
 )

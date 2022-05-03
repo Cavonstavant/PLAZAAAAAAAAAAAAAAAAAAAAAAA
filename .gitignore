@@ -31,5 +31,18 @@
 *.out
 *.app
 
+# Project specific files
 plazza
 build
+<<<<<<< Updated upstream
+
+# Editor files
+*.swp
+*.swo
+.vscode/
+.idea/
+graph/
+
+=======
+.vscode
+>>>>>>> Stashed changes

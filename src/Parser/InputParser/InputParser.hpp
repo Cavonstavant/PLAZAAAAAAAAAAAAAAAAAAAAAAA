@@ -28,10 +28,12 @@ class InputParser : public AParser {
         const std::string &getCommand() const;
         /// \brief Prossess the argument to set them in a form usefull for the program
         void prossessArguments() override;
+        void setCommandSeparator(const char);
 
     private:
         /// \brief Store the command that will be prossess.
         std::string _command;
+        char _separator;
         /// \brief Check the validity of all arguments of the command.
         /// It will print a message if an error occured.
         void _checkArgumentsValidity();

@@ -6,6 +6,7 @@
 */
 
 #include "InputParser.hpp"
+#include "Exception.hpp"
 #include <iostream>
 
 InputParser::InputParser()
