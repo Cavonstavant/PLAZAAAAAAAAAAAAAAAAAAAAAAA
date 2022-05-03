@@ -15,8 +15,10 @@
 /// \brief ArgumentsParser class define functions for parsing received arguments
 class ArgumentsParser : public AParser {
     public:
-        /// \brief Construct the ArgumentsParser with the received arguments without the binary name (argv + 1)
-        ArgumentsParser(char ** = nullptr);
+        /// \brief Construct the ArgumentsParser with the received arguments
+        /// \param ac number of arguments without the binary name (ac - 1)
+        /// \param av arguments tab without the binary name (av + 1)
+        ArgumentsParser(int = 0, char ** = nullptr);
         /// \brief Destroy the ArgumentsParser object as default.
         ~ArgumentsParser() = default;
         /// \brief Get the cooking Time for the Plazza
