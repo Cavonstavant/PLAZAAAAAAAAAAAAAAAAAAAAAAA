@@ -26,8 +26,8 @@ class InputParser : public AParser {
         /// \return const std::string& of the command.
         /// It return an empty std::string in case of undefined command.
         const std::string &getCommand() const;
-        /// \brief Prossess the argument to set them in a form usefull for the program
-        void prossessArguments() override;
+        /// \brief Process the argument to set them in a form usefull for the program
+        void processArguments() override;
         /// \brief Set the separator for the command
         /// \param const char Separator char
         void setCommandSeparator(const char);

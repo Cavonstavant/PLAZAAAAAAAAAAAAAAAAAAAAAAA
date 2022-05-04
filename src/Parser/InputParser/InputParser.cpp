@@ -41,7 +41,7 @@ const std::string &InputParser::getCommand() const
     return (_command);
 }
 
-void InputParser::prossessArguments()
+void InputParser::processArguments()
 {
     std::vector<std::string> tmp = _arguments;
     std::vector<std::string> args;
