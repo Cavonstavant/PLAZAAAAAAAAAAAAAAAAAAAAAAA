@@ -28,6 +28,8 @@ class InputParser : public AParser {
         const std::string &getCommand() const;
         /// \brief Prossess the argument to set them in a form usefull for the program
         void prossessArguments() override;
+        /// \brief Set the separator for the command
+        /// \param const char Separator char
         void setCommandSeparator(const char);
 
     private:
