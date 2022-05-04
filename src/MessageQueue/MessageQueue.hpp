@@ -11,9 +11,9 @@
 #define MESSAGEQUEUE_HPP
 
 #include <fcntl.h>
-#include <sys/stat.h>
 #include <mqueue.h>
 #include <string>
+#include <sys/stat.h>
 
 #define MAX_MESSAGE_SIZE 256
 
