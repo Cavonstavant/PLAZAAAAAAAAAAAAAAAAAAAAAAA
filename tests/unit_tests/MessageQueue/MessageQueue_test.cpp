@@ -6,8 +6,14 @@
 */
 
 #include <criterion/criterion.h>
-// #include "MessageQueue.hpp"
+#include <iostream>
+#include "MessageQueue/MessageQueue.hpp"
 
-Test(MessageQueue, test_messageQueue_get_size)
+Test(MessageQueue, test_messageQueue)
 {
+    MessageQueue mq;
+    std::string received;
+    mq.openQueue("/PlazzaTestMq");
+    mq.sendMessage("Hello World");
+    cr_assert_str_eq(received.c_str(), "Hello World");
 }

@@ -41,7 +41,7 @@ void MessageQueue::sendMessage(const std::string &message_text)
 std::string MessageQueue::receiveMessage()
 {
     ssize_t mq_receive_return = 0;
-    char message_buffer[MAX_MESSAGE_SIZE];
+    char message_buffer[MAX_MESSAGE_SIZE] = {0};
     struct mq_attr attr;
 
     mq_getattr(this->_queue_fd, &attr);
