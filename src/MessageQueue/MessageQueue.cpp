@@ -52,6 +52,6 @@ std::string MessageQueue::receiveMessage()
 
 void MessageQueue::clear()
 {
-    if (mq_unlink(this->_pathname.c_str()) == - 1)
+    if (mq_unlink(this->_pathname.c_str()) == -1)
         throw MessageQueueEx(std::string("Failed to clear queue: ") + std::strerror(errno), Logger::CRITICAL);
 }

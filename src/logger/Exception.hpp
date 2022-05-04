@@ -41,80 +41,80 @@
 
 /// \brief Base exception class for all exceptions in the project
 class PlazzaException : public std::exception {
-public:
-    /// \brief DO NOT USE THIS CONSTRUCTOR, PLEASE USE THE MACROS DEFINED ABOVE IN EXCEPTION.HPP (PlazzaEX, ...)
-    /// \param what The description of the exception
-    /// \param func The function where the exception is thrown
-    /// \param file The file where the exception is thrown
-    /// \param line The line where the exception is thrown
-    explicit PlazzaException(std::string const &what, std::string const &func, int const &line, std::string const &file);
-    /// \brief returns the description of the exception
-    /// \return the description of the exception
-    [[nodiscard]] const char *what() const noexcept override;
-    /// \brief returns where the exception is thrown
-    /// \return the where the exception has been thrown
-    [[nodiscard]] const std::string &where() const noexcept;
-    /// \brief returns the function where the exception is thrown
-    /// \return the function where the exception is thrown
-    [[nodiscard]] const std::string &getFunc() const noexcept;
-    /// \brief returns the file where the exception is thrown
-    /// \return the file where the exception is thrown
-    [[nodiscard]] const std::string &getFile() const noexcept;
-    /// \brief returns the line where the exception is thrown
-    /// \return the line where the exception is thrown
-    [[nodiscard]] const int &getLine() const noexcept;
-    /// \brief returns the name of the exception
-    /// \return the name of the exception
-    [[nodiscard]] const std::string &getName() const noexcept;
+    public:
+        /// \brief DO NOT USE THIS CONSTRUCTOR, PLEASE USE THE MACROS DEFINED ABOVE IN EXCEPTION.HPP (PlazzaEX, ...)
+        /// \param what The description of the exception
+        /// \param func The function where the exception is thrown
+        /// \param file The file where the exception is thrown
+        /// \param line The line where the exception is thrown
+        explicit PlazzaException(std::string const &what, std::string const &func, int const &line, std::string const &file);
+        /// \brief returns the description of the exception
+        /// \return the description of the exception
+        [[nodiscard]] const char *what() const noexcept override;
+        /// \brief returns where the exception is thrown
+        /// \return the where the exception has been thrown
+        [[nodiscard]] const std::string &where() const noexcept;
+        /// \brief returns the function where the exception is thrown
+        /// \return the function where the exception is thrown
+        [[nodiscard]] const std::string &getFunc() const noexcept;
+        /// \brief returns the file where the exception is thrown
+        /// \return the file where the exception is thrown
+        [[nodiscard]] const std::string &getFile() const noexcept;
+        /// \brief returns the line where the exception is thrown
+        /// \return the line where the exception is thrown
+        [[nodiscard]] const int &getLine() const noexcept;
+        /// \brief returns the name of the exception
+        /// \return the name of the exception
+        [[nodiscard]] const std::string &getName() const noexcept;
 
-protected:
-    std::string _name;
-    std::string _what;
-    std::string _where;
-    std::string _func;
-    std::string _file;
-    int _line;
+    protected:
+        std::string _name;
+        std::string _what;
+        std::string _where;
+        std::string _func;
+        std::string _file;
+        int _line;
 
-private:
+    private:
 };
 
 /// \brief Exception class to throw when something is not implemented
 class NotImplementedException : public PlazzaException {
-public:
-    NotImplementedException(std::string const &what, std::string const &func, int const &line, std::string const &file) : PlazzaException(what, func, line, file)
-    {
-        _name = "NotImplementedException";
-    };
+    public:
+        NotImplementedException(std::string const &what, std::string const &func, int const &line, std::string const &file) : PlazzaException(what, func, line, file)
+        {
+            _name = "NotImplementedException";
+        };
 };
 
 /// \brief Base Exception class for any exception related to Message Queues
 class MessageQueueException : public PlazzaException {
-public:
-    MessageQueueException(std::string const &what, std::string const &func, int const &line, std::string const &file) : PlazzaException(what, func, line, file)
-    {
-        _name = "MessageQueueException";
-    };
+    public:
+        MessageQueueException(std::string const &what, std::string const &func, int const &line, std::string const &file) : PlazzaException(what, func, line, file)
+        {
+            _name = "MessageQueueException";
+        };
 };
 
 class MessageTooLongException : public MessageQueueException {
-public:
-    MessageTooLongException(std::string const &what, std::string const &func, int const &line, std::string const &file) : MessageQueueException(what, func, line, file)
-    {
-        _name = "MessageTooLongException";
-    };
+    public:
+        MessageTooLongException(std::string const &what, std::string const &func, int const &line, std::string const &file) : MessageQueueException(what, func, line, file)
+        {
+            _name = "MessageTooLongException";
+        };
 };
 
 /// \brief Exception class when a user is very stupid and we can't do what anything for them
 class VeryStupidUserException : public PlazzaException {
-public:
-    explicit VeryStupidUserException(std::string const &what = "", std::string const &func = "", int const &line = 0, std::string const &file = "") : PlazzaException("Please stop", "You probably need to restart your project from scratch", 0, "User IQ")
-    {
-        _name = "VeryStupidUserException";
-        (void) what;
-        (void) func;
-        (void) line;
-        (void) file;
-    };
+    public:
+        explicit VeryStupidUserException(std::string const &what = "", std::string const &func = "", int const &line = 0, std::string const &file = "") : PlazzaException("Please stop", "You probably need to restart your project from scratch", 0, "User IQ")
+        {
+            _name = "VeryStupidUserException";
+            (void) what;
+            (void) func;
+            (void) line;
+            (void) file;
+        };
 };
 
 #endif /* !PLAZZA_EXCEPTION_HPP */
