@@ -11,46 +11,47 @@
 #include <cstring>
 #include <string>
 
-void MessageQueue::generateKey(const std::string &pathname, int proj_id)
+MessageQueue::~MessageQueue()
 {
-    key_t key = ftok(pathname.c_str(), proj_id);
-
-    if (key == -1) {
-        exit(84);
-    }
-    this->_key = key;
-}
-void MessageQueue::sendMessage(const std::string &message_text, long message_type)
-{
-    int message_id;
-
-    if (message_text.length() >= MAX_MESSAGE_SIZE)
-        throw PlazzaEX("Message is too long", Logger::MEDIUM);
-    message_id = msgget(this->_key, 0666 | IPC_CREAT);
-    if (message_id == -1) {
-        exit(84);
-    }
-    _msg = new MessageQueue::message{.type = message_type};
-    std::strcpy(_msg->text, message_text.c_str());
-    if (msgsnd(message_id, (void *) &_msg, sizeof(_msg->text), 0) == -1) {
-        exit(84);
-    }
-    delete _msg;
+    this->clear();
+    mq_close(this->_queue_fd);
 }
 
-std::string MessageQueue::receiveMessage(long message_type)
+void MessageQueue::openQueue(const std::string &pathname)
 {
-    int message_id = msgget(this->_key, 0666 | IPC_CREAT);
-    MessageQueue::message *msg = nullptr;
+    struct mq_attr attr;
 
-    if (message_id == -1) {
-        exit(84);
-    }
-    msgrcv(message_id, (void *) &msg, sizeof(msg->text), message_type, 0);
-    return msg->text;
+    this->_queue_fd = mq_open(pathname.c_str(), O_RDWR | O_CREAT, 0666, NULL);
+    mq_getattr(this->_queue_fd, &attr);
+    attr.mq_msgsize = MAX_MESSAGE_SIZE + 1;
+    mq_setattr(this->_queue_fd, &attr, NULL);
+    if (this->_queue_fd == -1)
+        throw MessageQueueEx(std::string("Failed to open queue: ") + std::strerror(errno), Logger::CRITICAL);
+    this->_pathname = pathname;
+}
+void MessageQueue::sendMessage(const std::string &message_text)
+{
+    int mq_send_return = mq_send(this->_queue_fd, message_text.c_str(), message_text.length(), 0);
+
+    if (mq_send_return == -1)
+        throw MessageQueueEx(std::string("Failed to send message: ") + std::strerror(errno), Logger::CRITICAL);
+}
+
+std::string MessageQueue::receiveMessage()
+{
+    ssize_t mq_receive_return = 0;
+    char message_buffer[MAX_MESSAGE_SIZE];
+    struct mq_attr attr;
+
+    mq_getattr(this->_queue_fd, &attr);
+    mq_receive_return = mq_receive(this->_queue_fd, message_buffer, attr.mq_msgsize, 0);
+    if (mq_receive_return == -1)
+        throw MessageQueueEx(std::string("Failed to receive message: ") + std::strerror(errno), Logger::CRITICAL);
+    return std::string(message_buffer);
 }
 
 void MessageQueue::clear()
 {
-    msgctl(this->_key, IPC_RMID, nullptr);
+    if (mq_unlink(this->_pathname.c_str()) == - 1)
+        throw MessageQueueEx(std::string("Failed to clear queue: ") + std::strerror(errno), Logger::CRITICAL);
 }
