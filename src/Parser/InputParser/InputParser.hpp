@@ -12,7 +12,7 @@
 
 #include "AParser.hpp"
 
-/// \brief InputParser is a class use to parse command of pizza while the program is running
+/// \brief InputParser is a class used to parse command of pizza while the program is running
 class InputParser : public AParser {
     public:
         /// \brief Create the InputParser instance and define all variables
