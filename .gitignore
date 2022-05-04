@@ -34,7 +34,6 @@
 # Project specific files
 plazza
 build
-<<<<<<< Updated upstream
 
 # Editor files
 *.swp
@@ -43,6 +42,3 @@ build
 .idea/
 graph/
 
-=======
-.vscode
->>>>>>> Stashed changes
