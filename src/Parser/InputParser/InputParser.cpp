@@ -11,7 +11,6 @@
 
 InputParser::InputParser()
 {
-    ParserEX("Initialisation of the InputParser class", Logger::INFO);
     _command = "";
     _argumentNumber = 0;
     _separator = ';';
@@ -22,7 +21,6 @@ void InputParser::setCommand(const std::string &command)
 {
     std::string tmpCommand = command;
 
-    ParserEX("Set the command for the InputParser class", Logger::INFO);
     _command = command;
     while (!tmpCommand.empty()) {
         while (tmpCommand.find(_separator) == 0)
@@ -40,7 +38,6 @@ void InputParser::setCommand(const std::string &command)
 
 const std::string &InputParser::getCommand() const
 {
-    ParserEX("Get the command for the InputParser class", Logger::INFO);
     return (_command);
 }
 
@@ -49,7 +46,6 @@ void InputParser::prossessArguments()
     std::vector<std::string> tmp = _arguments;
     std::vector<std::string> args;
 
-    ParserEX("Prossess the arguments for the InputParser class", Logger::INFO);
     setCommandSeparator(' ');
     for (auto it: tmp) {
         _arguments.clear();
@@ -63,7 +59,7 @@ void InputParser::prossessArguments()
     _checkArgumentsValidity();
 }
 
-bool InputParser::_isValidePizzaName(const std::string &pizza) const
+bool InputParser::_isValidPizzaName(const std::string &pizza) const
 {
     const std::string availablePizza[4] = {
             "Regina",
@@ -77,11 +73,11 @@ bool InputParser::_isValidePizzaName(const std::string &pizza) const
             findValidePizza = true;
     }
     if (!findValidePizza)
-        ParserEX("Invalide pizza name in the command", Logger::LOW);
+        ParserEX("Invalid pizza name in the command: " + pizza, Logger::LOW);
     return (findValidePizza);
 }
 
-bool InputParser::_isValidePizzaSize(const std::string &pizzaSize) const
+bool InputParser::_isValidPizzaSize(const std::string &pizzaSize) const
 {
     const std::string availablePizzaSize[5] = {
             "S",
@@ -96,11 +92,11 @@ bool InputParser::_isValidePizzaSize(const std::string &pizzaSize) const
             findValidePizzaSize = true;
     }
     if (!findValidePizzaSize)
-        ParserEX("Invalide pizza size in the command", Logger::LOW);
+        ParserEX("Invalid pizza size in the command: " + pizzaSize, Logger::LOW);
     return (findValidePizzaSize);
 }
 
-bool InputParser::_isValidePizzaNumber(const std::string &pizzaNumber) const
+bool InputParser::_isValidPizzaNumber(const std::string &pizzaNumber) const
 {
     bool findValidePizzaNumber = false;
     std::string tmp = pizzaNumber;
@@ -111,16 +107,16 @@ bool InputParser::_isValidePizzaNumber(const std::string &pizzaNumber) const
             findValidePizzaNumber = true;
     }
     if (!findValidePizzaNumber)
-        ParserEX("Invalide pizza number in the command", Logger::LOW);
+        ParserEX("Invalid pizza number in the command: " + pizzaNumber, Logger::LOW);
     return (findValidePizzaNumber);
 }
 
-bool InputParser::_isValidePizzaSeparator(const std::string &pizzaSeparator) const
+bool InputParser::_isValidPizzaSeparator(const std::string &pizzaSeparator) const
 {
     bool findValidePizzaSeparator = true;
 
     if (pizzaSeparator != ";") {
-        ParserEX("Invalide pizza separator in the command", Logger::LOW);
+        ParserEX("Invalid pizza separator in the command: " + pizzaSeparator, Logger::LOW);
         findValidePizzaSeparator = false;
     }
     return (findValidePizzaSeparator);
@@ -142,16 +138,16 @@ void InputParser::_checkArgumentsValidity()
         }
         switch (index % 4) {
             case 0:
-                argIsValide = _isValidePizzaName(it);
+                argIsValide = _isValidPizzaName(it);
                 break;
             case 1:
-                argIsValide = _isValidePizzaSize(it);
+                argIsValide = _isValidPizzaSize(it);
                 break;
             case 2:
-                argIsValide = _isValidePizzaNumber(it);
+                argIsValide = _isValidPizzaNumber(it);
                 break;
             case 3:
-                argIsValide = _isValidePizzaSeparator(it);
+                argIsValide = _isValidPizzaSeparator(it);
                 break;
         }
         index++;
