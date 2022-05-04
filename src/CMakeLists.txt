@@ -4,18 +4,19 @@ set (SRC_ROOT ${PROJECT_SOURCE_DIR}/src)
 add_subdirectory(MessageQueue)
 
 set (TARGET_ARCHIVE_SRC
-     ${MESSAGE_QUEUE_SRC}
+    ${MESSAGE_QUEUE_SRC}
 )
 
 add_library(${PROJECT_NAME}_core SHARED ${TARGET_ARCHIVE_SRC})
 
 target_link_libraries(${PROJECT_NAME}_core
-    ${PROJECT_NAME}_logger
-    ${PROJECT_NAME}_parser
+    PUBLIC ${PROJECT_NAME}_logger
+    PUBLIC ${PROJECT_NAME}_parser
+    PRIVATE rt
 )
 
 target_include_directories(${PROJECT_NAME}_core
-   PRIVATE ${INCLUDE_ROOT}
+   PUBLIC ${INCLUDE_ROOT}
 )
 
 set (TARGET_SRC

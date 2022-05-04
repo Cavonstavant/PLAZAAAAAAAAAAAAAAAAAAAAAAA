@@ -25,6 +25,7 @@
 #define PlazzaEX(what, severity) ExceptionTernary(PlazzaException, what, severity)
 #define MessageQueueEX(what, severity) ExceptionTernary(MessageQueueException, what, severity)
 #define VeryStupidUserEX(what, severity) ExceptionTernary(VeryStupidUserException, what, severity)
+#define MessageQueueEx(what, severity) ExceptionTernary(MessageQueueException, what, severity)
 #define MessageTooLongEX(what, severity) ExceptionTernary(MessageTooLongException, what, severity)
 
 /// \Defines the color codes to print the exceptions in color
