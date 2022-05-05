@@ -1,5 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_i_parser.html" title="Base parser class for all parser class in the project." alt="" coords="5,5,72,32"/>
-<area shape="rect" id="node2" href="$class_a_parser.html" title="Aparser class define global fonctions for all parser class in the project." alt="" coords="120,5,191,32"/>
+<area shape="rect" id="node1" href="$class_i_parser.html" title="Base parser class for all parser class in the project." alt="" coords="5,31,72,57"/>
+<area shape="rect" id="node2" href="$class_a_parser.html" title="Aparser class define global fonctions for all parser class in the project." alt="" coords="120,31,191,57"/>
 <area shape="rect" id="node3" href="$class_arguments_parser.html" title="ArgumentsParser class define functions for parsing received arguments." alt="" coords="239,5,372,32"/>
+<area shape="rect" id="node4" href="$class_input_parser.html" title="InputParser is a class used to parse command of pizza while the program is running." alt="" coords="258,56,353,83"/>
 </map>

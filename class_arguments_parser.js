@@ -9,7 +9,7 @@ var class_arguments_parser =
     [ "getCookingTime", "class_arguments_parser.html#a735d9a4d31cf227b276a3eb86ebd368c", null ],
     [ "getCookNumber", "class_arguments_parser.html#a41e7018c87bb832610bbece4009f00a2", null ],
     [ "getRefillTime", "class_arguments_parser.html#adeb923d0791dba3fa209d29b2940feca", null ],
-    [ "prossessArguments", "class_arguments_parser.html#a8bdfcda222b70e059d8a862ce544cb9f", null ],
+    [ "processArguments", "class_arguments_parser.html#ab4f7c6395927475327259187040f270d", null ],
     [ "_cookingTime", "class_arguments_parser.html#a9cd88fa5bf26751205858db0d0c1d144", null ],
     [ "_cookNumber", "class_arguments_parser.html#af26595ceb349146ebb1de6349a0a40f5", null ],
     [ "_refillTimeMs", "class_arguments_parser.html#a066d3a6a523cfce7126490136743eb50", null ]

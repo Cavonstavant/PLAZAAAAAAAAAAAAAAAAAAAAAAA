@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['plazzaexception_117',['PlazzaException',['../class_plazza_exception.html',1,'']]]
+  ['parserexception_134',['ParserException',['../class_parser_exception.html',1,'']]],
+  ['plazzaexception_135',['PlazzaException',['../class_plazza_exception.html',1,'']]]
 ];

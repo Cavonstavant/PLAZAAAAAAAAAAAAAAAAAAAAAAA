@@ -1,0 +1,5 @@
+<map id="InputParser" name="InputParser">
+<area shape="rect" id="node1" title="InputParser is a class used to parse command of pizza while the program is running." alt="" coords="5,155,100,181"/>
+<area shape="rect" id="node2" href="$class_a_parser.html" title="Aparser class define global fonctions for all parser class in the project." alt="" coords="17,80,88,107"/>
+<area shape="rect" id="node3" href="$class_i_parser.html" title="Base parser class for all parser class in the project." alt="" coords="19,5,86,32"/>
+</map>

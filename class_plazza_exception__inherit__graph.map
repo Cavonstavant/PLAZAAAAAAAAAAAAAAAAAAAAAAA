@@ -1,8 +1,9 @@
 <map id="PlazzaException" name="PlazzaException">
-<area shape="rect" id="node1" title="Base exception class for all exceptions in the project." alt="" coords="256,80,384,107"/>
-<area shape="rect" id="node3" href="$class_message_queue_exception.html" title="Base Exception class for any exception related to Message Queues." alt="" coords="11,155,197,181"/>
-<area shape="rect" id="node5" href="$class_not_implemented_exception.html" title="Exception class to throw when something is not implemented." alt="" coords="222,155,418,181"/>
-<area shape="rect" id="node6" href="$class_very_stupid_user_exception.html" title="Exception class when a user is very stupid and we can&#39;t do what anything for them." alt="" coords="443,155,629,181"/>
-<area shape="rect" id="node2" title=" " alt="" coords="263,5,377,32"/>
-<area shape="rect" id="node4" href="$class_message_too_long_exception.html" title=" " alt="" coords="5,229,203,256"/>
+<area shape="rect" id="node1" title="Base exception class for all exceptions in the project." alt="" coords="168,81,296,108"/>
+<area shape="rect" id="node3" href="$class_message_queue_exception.html" title="Base Exception class for any exception related to Message Queues." alt="" coords="349,5,535,32"/>
+<area shape="rect" id="node5" href="$class_not_implemented_exception.html" title="Exception class to throw when something is not implemented." alt="" coords="344,56,540,83"/>
+<area shape="rect" id="node6" href="$class_parser_exception.html" title=" " alt="" coords="379,107,505,133"/>
+<area shape="rect" id="node7" href="$class_very_stupid_user_exception.html" title="Exception class when a user is very stupid and we can&#39;t do what anything for them." alt="" coords="349,157,535,184"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,81,120,108"/>
+<area shape="rect" id="node4" href="$class_message_too_long_exception.html" title=" " alt="" coords="588,5,785,32"/>
 </map>

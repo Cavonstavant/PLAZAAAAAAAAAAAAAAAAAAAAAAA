@@ -5,6 +5,7 @@ var _exception_8hpp =
     [ "MessageQueueException", "class_message_queue_exception.html", "class_message_queue_exception" ],
     [ "MessageTooLongException", "class_message_too_long_exception.html", "class_message_too_long_exception" ],
     [ "VeryStupidUserException", "class_very_stupid_user_exception.html", "class_very_stupid_user_exception" ],
+    [ "ParserException", "class_parser_exception.html", "class_parser_exception" ],
     [ "EX_PARAMS", "_exception_8hpp.html#af38aa357f9209e6ac8ac9a64b2c71bbe", null ],
     [ "ExceptionTernary", "_exception_8hpp.html#a0191574963a1216d901dceaf960f43a2", null ],
     [ "LOGGER_COLOR_BLACK", "_exception_8hpp.html#a966845eadcec615575e9b9b498d15980", null ],
@@ -18,6 +19,7 @@ var _exception_8hpp =
     [ "LOGGER_COLOR_WHITE", "_exception_8hpp.html#a9a1d0bfc50d3760c6ec27e30aa74eff9", null ],
     [ "LOGGER_COLOR_YELLOW", "_exception_8hpp.html#a98277d3446d2917e7cb647b4d9fa15e7", null ],
     [ "MessageTooLongEX", "_exception_8hpp.html#a108d8ebad34fa0f73d1653ef6e6a0301", null ],
+    [ "ParserEX", "_exception_8hpp.html#a1c92790f33d41d0230cc5a141c425c21", null ],
     [ "PlazzaEX", "_exception_8hpp.html#a8ef0a847cd4c54afe916ea3129b03b52", null ],
     [ "VeryStupidUserEX", "_exception_8hpp.html#a0ae399b5939ece8c60638d855d9db3c0", null ]
 ];

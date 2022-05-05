@@ -92,6 +92,12 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>_arguments
 : <a class="el" href="class_a_parser.html#a1340ee83494ac1fe116e7cfd69057c7e">AParser</a>
 </li>
+<li>_checkArgumentsValidity()
+: <a class="el" href="class_input_parser.html#a9694be8f01d555f89a54558343d09cda">InputParser</a>
+</li>
+<li>_command
+: <a class="el" href="class_input_parser.html#a87106e216dd922c1af269b9d126cdcfa">InputParser</a>
+</li>
 <li>_cookingTime
 : <a class="el" href="class_arguments_parser.html#a9cd88fa5bf26751205858db0d0c1d144">ArgumentsParser</a>
 </li>
@@ -106,6 +112,18 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>_id
 : <a class="el" href="class_message_queue.html#a595607faf9b970f0c15babf542e2fe93">MessageQueue</a>
+</li>
+<li>_isValidPizzaName()
+: <a class="el" href="class_input_parser.html#a9c8b564d8c7e7dd734aaa370014ec674">InputParser</a>
+</li>
+<li>_isValidPizzaNumber()
+: <a class="el" href="class_input_parser.html#a66707cf056bfe55c40055173c9a0858a">InputParser</a>
+</li>
+<li>_isValidPizzaSeparator()
+: <a class="el" href="class_input_parser.html#a0d672fc92c861f6c4c252870c8598fae">InputParser</a>
+</li>
+<li>_isValidPizzaSize()
+: <a class="el" href="class_input_parser.html#a02461cb5be366fd0fb4b3539aa38461b">InputParser</a>
 </li>
 <li>_key
 : <a class="el" href="class_message_queue.html#a458809cbdab4587f5a7681a67b690259">MessageQueue</a>
@@ -124,6 +142,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>_refillTimeMs
 : <a class="el" href="class_arguments_parser.html#a066d3a6a523cfce7126490136743eb50">ArgumentsParser</a>
+</li>
+<li>_separator
+: <a class="el" href="class_input_parser.html#aee7118dfe281211335d000b0709b02bf">InputParser</a>
 </li>
 <li>_setCookingTime()
 : <a class="el" href="class_arguments_parser.html#a08d8c18cc964f327a579bf8603ed46ce">ArgumentsParser</a>
@@ -178,6 +199,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="class_a_parser.html#a2ebaa016b31902e66dcfb014a969e456">AParser</a>
 , <a class="el" href="class_i_parser.html#a18d801eb8d19864d61d1dcf2a9832927">IParser</a>
 </li>
+<li>getCommand()
+: <a class="el" href="class_input_parser.html#a465baa28e8b2b2bc59abe9de345a6c45">InputParser</a>
+</li>
 <li>getCookingTime()
 : <a class="el" href="class_arguments_parser.html#a735d9a4d31cf227b276a3eb86ebd368c">ArgumentsParser</a>
 </li>
@@ -224,6 +248,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <h3><a id="index_i"></a>- i -</h3><ul>
 <li>INFO()
 : <a class="el" href="class_logger.html#a0444040bdc1a82659a84ad918b42a61d">Logger</a>
+</li>
+<li>InputParser()
+: <a class="el" href="class_input_parser.html#a9e2e24cbf89184dd4fa72a74fb89773a">InputParser</a>
 </li>
 </ul>
 
@@ -275,13 +302,17 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_p"></a>- p -</h3><ul>
+<li>ParserException()
+: <a class="el" href="class_parser_exception.html#a16e5d9b890cadf1e71f54a983cd412d7">ParserException</a>
+</li>
 <li>PlazzaException()
 : <a class="el" href="class_plazza_exception.html#a3704944e6c066d009390f3199aa7df25">PlazzaException</a>
 </li>
-<li>prossessArguments()
-: <a class="el" href="class_a_parser.html#a6509d2546240d38e28f63b6255e9f0dd">AParser</a>
-, <a class="el" href="class_arguments_parser.html#a8bdfcda222b70e059d8a862ce544cb9f">ArgumentsParser</a>
-, <a class="el" href="class_i_parser.html#a88862b6ae6741e7d1bb76e96d8d00f33">IParser</a>
+<li>processArguments()
+: <a class="el" href="class_a_parser.html#a98e44eeac7b83c21312c8edbe76842d4">AParser</a>
+, <a class="el" href="class_arguments_parser.html#ab4f7c6395927475327259187040f270d">ArgumentsParser</a>
+, <a class="el" href="class_input_parser.html#a65748f951e8b895aceca27ed2ba0c75d">InputParser</a>
+, <a class="el" href="class_i_parser.html#a218e1b6f930835810f98977ef7852d87">IParser</a>
 </li>
 </ul>
 
@@ -296,6 +327,12 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <h3><a id="index_s"></a>- s -</h3><ul>
 <li>sendMessage()
 : <a class="el" href="class_message_queue.html#a0adeaedd164a375648b6e9a4d0259a2d">MessageQueue</a>
+</li>
+<li>setCommand()
+: <a class="el" href="class_input_parser.html#adb2033b9aa55e45d24387cbca82fd38f">InputParser</a>
+</li>
+<li>setCommandSeparator()
+: <a class="el" href="class_input_parser.html#a9a089f2f7dccb953956a2aa7e82f4df3">InputParser</a>
 </li>
 <li>setId()
 : <a class="el" href="class_message_queue.html#a2bbd9c4a23fd8a2f61bfcfd6b3963132">MessageQueue</a>
@@ -363,6 +400,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>~ArgumentsParser()
 : <a class="el" href="class_arguments_parser.html#ad5fb217534c28b4cc435c4db87465962">ArgumentsParser</a>
+</li>
+<li>~InputParser()
+: <a class="el" href="class_input_parser.html#a738da1ec8e812f4f949f6e95b845f6e9">InputParser</a>
 </li>
 <li>~IParser()
 : <a class="el" href="class_i_parser.html#a582ea40ddd49f17d25f8c4e94c28ba07">IParser</a>

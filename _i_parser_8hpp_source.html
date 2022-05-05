@@ -94,28 +94,29 @@ $(document).ready(function(){initNavTree('_i_parser_8hpp_source.html',''); initR
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** IParser</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef IPARSER_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define IPARSER_HPP_</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_i_parser.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_i_parser.html">IParser</a> {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="class_i_parser.html#a582ea40ddd49f17d25f8c4e94c28ba07">~IParser</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">virtual</span> <span class="keyword">const</span> std::size_t &amp;<a class="code" href="class_i_parser.html#a38503ce34693da0cef2bd34fdf4482c9">getArgumentNumber</a>() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_parser.html#a88862b6ae6741e7d1bb76e96d8d00f33">prossessArguments</a>() = 0;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">virtual</span> <span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;<a class="code" href="class_i_parser.html#a18d801eb8d19864d61d1dcf2a9832927">getArguments</a>() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef IPARSER_HPP_</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define IPARSER_HPP_</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_i_parser.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_i_parser.html">IParser</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="class_i_parser.html#a582ea40ddd49f17d25f8c4e94c28ba07">~IParser</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">virtual</span> <span class="keyword">const</span> std::size_t &amp;<a class="code" href="class_i_parser.html#a38503ce34693da0cef2bd34fdf4482c9">getArgumentNumber</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_parser.html#a218e1b6f930835810f98977ef7852d87">processArguments</a>() = 0;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">virtual</span> <span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;<a class="code" href="class_i_parser.html#a18d801eb8d19864d61d1dcf2a9832927">getArguments</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_i_parser_html_a88862b6ae6741e7d1bb76e96d8d00f33"><div class="ttname"><a href="class_i_parser.html#a88862b6ae6741e7d1bb76e96d8d00f33">IParser::prossessArguments</a></div><div class="ttdeci">virtual void prossessArguments()=0</div><div class="ttdoc">This function will be set differently by the children.</div></div>
 <div class="ttc" id="aclass_i_parser_html_a582ea40ddd49f17d25f8c4e94c28ba07"><div class="ttname"><a href="class_i_parser.html#a582ea40ddd49f17d25f8c4e94c28ba07">IParser::~IParser</a></div><div class="ttdeci">~IParser()=default</div><div class="ttdoc">Destroy the IParser object as default.</div></div>
 <div class="ttc" id="aclass_i_parser_html_a18d801eb8d19864d61d1dcf2a9832927"><div class="ttname"><a href="class_i_parser.html#a18d801eb8d19864d61d1dcf2a9832927">IParser::getArguments</a></div><div class="ttdeci">virtual const std::vector&lt; std::string &gt; &amp; getArguments() const =0</div><div class="ttdoc">Get the a list of all arguments in the command.</div></div>
+<div class="ttc" id="aclass_i_parser_html_a218e1b6f930835810f98977ef7852d87"><div class="ttname"><a href="class_i_parser.html#a218e1b6f930835810f98977ef7852d87">IParser::processArguments</a></div><div class="ttdeci">virtual void processArguments()=0</div><div class="ttdoc">This function will be set differently by the children.</div></div>
 <div class="ttc" id="aclass_i_parser_html_a38503ce34693da0cef2bd34fdf4482c9"><div class="ttname"><a href="class_i_parser.html#a38503ce34693da0cef2bd34fdf4482c9">IParser::getArgumentNumber</a></div><div class="ttdeci">virtual const std::size_t &amp; getArgumentNumber() const =0</div><div class="ttdoc">Get the number of arguments in the command.</div></div>
-<div class="ttc" id="aclass_i_parser_html"><div class="ttname"><a href="class_i_parser.html">IParser</a></div><div class="ttdoc">Base parser class for all parser class in the project.</div><div class="ttdef"><b>Definition:</b> <a href="_i_parser_8hpp_source.html#l00015">IParser.hpp:15</a></div></div>
+<div class="ttc" id="aclass_i_parser_html"><div class="ttname"><a href="class_i_parser.html">IParser</a></div><div class="ttdoc">Base parser class for all parser class in the project.</div><div class="ttdef"><b>Definition:</b> <a href="_i_parser_8hpp_source.html#l00017">IParser.hpp:17</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
