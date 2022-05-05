@@ -20,7 +20,7 @@ ArgumentsParser::ArgumentsParser(int ac, char **args)
     _argumentNumber = ac;
 }
 
-void ArgumentsParser::prossessArguments()
+void ArgumentsParser::processArguments()
 {
     if (_argumentNumber != 3) {
         throw InvalidNbrArgumentsEX("You need 3 arguments.\n", Logger::CRITICAL);
