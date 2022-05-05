@@ -14,6 +14,6 @@ int main(int ac, char **av)
 {
     ArgumentsParser args(ac - 1, av + 1);
 
-    args.prossessArguments();
+    args.processArguments();
     return 0;
 }

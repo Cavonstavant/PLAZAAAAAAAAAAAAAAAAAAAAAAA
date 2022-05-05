@@ -117,4 +117,12 @@ class VeryStupidUserException : public PlazzaException {
         };
 };
 
+class ParserException : public PlazzaException {
+    public:
+        ParserException(std::string const &what, std::string const &func, int const &line, std::string const &file) : PlazzaException(what, func, line, file)
+        {
+            _name = "ParserException";
+        };
+};
+
 #endif /* !PLAZZA_EXCEPTION_HPP */
