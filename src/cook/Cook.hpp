@@ -7,10 +7,20 @@
 
 #pragma once
 
+#include <string>
+#include <vector>
+
 namespace plazza {
     class Cook {
         public:
-            Cook() = default;
+            Cook();
+            Cook(const std::string);
             ~Cook() = default;
+            void cookTakeThisCommand(const std::string);
+            void removeIngredientsFromFridge(const std::vector<std::string>);
+        private:
+            void _setIngredientsListFromCommand(void);
+            std::string _IHaveToMakeThisPizza;
+            bool _IHaveACommand;
     };
 }
