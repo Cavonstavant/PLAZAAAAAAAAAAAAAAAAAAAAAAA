@@ -66,13 +66,13 @@ class MessageQueue {
         std::string _pathname{};
 };
 
-std::string& operator<<(std::string& i, const MessageQueue &queue)
+std::string &operator<<(std::string &i, const MessageQueue &queue)
 {
     i = queue.receiveMessage();
     return i;
 }
 
-MessageQueue& operator>>(MessageQueue &queue, std::string& i)
+MessageQueue &operator>>(MessageQueue &queue, std::string &i)
 {
     queue.sendMessage(i);
     return queue;

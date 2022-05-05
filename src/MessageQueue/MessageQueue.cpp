@@ -8,8 +8,8 @@
 #include "MessageQueue.hpp"
 #include "Exception.hpp"
 #include "Logger.hpp"
-#include <cstring>
 #include <cerrno>
+#include <cstring>
 #include <string>
 
 MessageQueue::~MessageQueue()
@@ -56,4 +56,3 @@ void MessageQueue::clear()
     if (mq_unlink(this->_pathname.c_str()) == -1)
         throw MessageQueueEx(std::string("Failed to clear queue: ") + std::strerror(errno), Logger::CRITICAL);
 }
-
