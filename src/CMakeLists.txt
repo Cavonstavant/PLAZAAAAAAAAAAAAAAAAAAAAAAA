@@ -12,6 +12,7 @@ add_library(${PROJECT_NAME}_core SHARED ${TARGET_ARCHIVE_SRC})
 target_link_libraries(${PROJECT_NAME}_core
     ${PROJECT_NAME}_logger
     ${PROJECT_NAME}_parser
+    ${PROJECT_NAME}_cook
 )
 
 target_include_directories(${PROJECT_NAME}_core
@@ -32,3 +33,4 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 
 add_subdirectory(logger)
 add_subdirectory(Parser)
+add_subdirectory(cook)
