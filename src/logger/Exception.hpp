@@ -24,6 +24,7 @@
 /// \You MUST NOT throw the classical *Exceptions (ex: PlazzaException) but use the macros below
 #define PlazzaEX(what, severity) ExceptionTernary(PlazzaException, what, severity)
 #define VeryStupidUserEX(what, severity) ExceptionTernary(VeryStupidUserException, what, severity)
+#define ParserEX(what, severity) ExceptionTernary(ParserException, what, severity)
 #define MessageTooLongEX(what, severity) ExceptionTernary(MessageTooLongException, what, severity)
 
 /// \Defines the color codes to print the exceptions in color
@@ -113,6 +114,14 @@ class VeryStupidUserException : public PlazzaException {
             (void) func;
             (void) line;
             (void) file;
+        };
+};
+
+class ParserException : public PlazzaException {
+    public:
+        ParserException(std::string const &what, std::string const &func, int const &line, std::string const &file) : PlazzaException(what, func, line, file)
+        {
+            _name = "ParserException";
         };
 };
 
