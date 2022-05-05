@@ -5,11 +5,11 @@
 ** messageQueue_test
 */
 
-#include <criterion/criterion.h>
-#include <iostream>
-#include <fcntl.h>
-#include <sys/stat.h>
 #include "MessageQueue/MessageQueue.hpp"
+#include <criterion/criterion.h>
+#include <fcntl.h>
+#include <iostream>
+#include <sys/stat.h>
 
 Test(MessageQueue, test_messageQueue_basic)
 {
