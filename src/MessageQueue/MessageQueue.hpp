@@ -10,10 +10,8 @@
 #ifndef MESSAGEQUEUE_HPP
 #define MESSAGEQUEUE_HPP
 
-#include <fcntl.h>
 #include <mqueue.h>
 #include <string>
-#include <sys/stat.h>
 
 #define MAX_MESSAGE_SIZE 256
 
@@ -33,11 +31,11 @@ class MessageQueue {
         /// \brief Creating a new queue from a already existing queue shall not be possible.
         MessageQueue(const MessageQueue &) = delete;
 
-        /// \brief C++ wrapper around C ftok().
+        /// \brief C++ wrapper around C mq_open().
         void openQueue(const std::string &pathname);
 
         /// \brief Get the current message queue pathfile.
-        /// \warning Using thing method prior to the creation of a key results in a <b>Undefined Behavior</b>.
+        /// \warning Using this method prior to the creation of a key results in a <b>Undefined Behavior</b>.
         [[nodiscard]] inline std::string getPath() const
         {
             return _pathname;
@@ -45,19 +43,19 @@ class MessageQueue {
 
         /// \brief Sends a message to the queue.
         /// \note This method is a C++ wrapper around mq_send().
-        /// \warning Using thing method prior to opening a queue results in a <b>Undefined Behavior</b>.
-        /// \param message The message to be sent.
+        /// \warning Using this method prior to opening a queue results in a <b>Undefined Behavior</b>.
+        /// \param message The message to be send.
         /// \param message_type the type of the message.
-        void sendMessage(const std::string &message_text);
+        void sendMessage(const std::string &message_text) const;
 
         /// \brief Receives a message from the queue.
         /// \note This method is a C++ wrapper around mq_receive().
-        /// \warning Using thing method prior to opening a queue results in a <b>Undefined Behavior</b>.
+        /// \warning Using this method prior to opening a queue results in a <b>Undefined Behavior</b>.
         /// \param message_type the type of the message.
-        [[nodiscard]] std::string receiveMessage();
+        [[nodiscard]] std::string receiveMessage() const;
 
         /// \brief Clear the queue.
-        /// \warning Using thing method prior to opening a queue results in a <b>Undefined Behavior</b>.
+        /// \warning Using this method prior to opening a queue results in a <b>Undefined Behavior</b>.
         void clear();
 
     private:
@@ -67,5 +65,17 @@ class MessageQueue {
         /// \brief The pathfile of the queue.
         std::string _pathname{};
 };
+
+std::string& operator<<(std::string& i, const MessageQueue &queue)
+{
+    i = queue.receiveMessage();
+    return i;
+}
+
+MessageQueue& operator>>(MessageQueue &queue, std::string& i)
+{
+    queue.sendMessage(i);
+    return queue;
+}
 
 #endif /* MESSAGEQUEUE_HPP */

@@ -14,7 +14,7 @@
 
 MessageQueue::~MessageQueue()
 {
-    this->clear();
+    clear();
     mq_close(this->_queue_fd);
 }
 
@@ -30,7 +30,7 @@ void MessageQueue::openQueue(const std::string &pathname)
         throw MessageQueueEx(std::string("Failed to open queue: ") + std::strerror(errno), Logger::CRITICAL);
     this->_pathname = pathname;
 }
-void MessageQueue::sendMessage(const std::string &message_text)
+void MessageQueue::sendMessage(const std::string &message_text) const
 {
     int mq_send_return = mq_send(this->_queue_fd, message_text.c_str(), message_text.length(), 0);
 
@@ -38,7 +38,7 @@ void MessageQueue::sendMessage(const std::string &message_text)
         throw MessageQueueEx(std::string("Failed to send message: ") + std::strerror(errno), Logger::CRITICAL);
 }
 
-std::string MessageQueue::receiveMessage()
+std::string MessageQueue::receiveMessage() const
 {
     ssize_t mq_receive_return = 0;
     char message_buffer[MAX_MESSAGE_SIZE] = {0};
@@ -56,3 +56,4 @@ void MessageQueue::clear()
     if (mq_unlink(this->_pathname.c_str()) == -1)
         throw MessageQueueEx(std::string("Failed to clear queue: ") + std::strerror(errno), Logger::CRITICAL);
 }
+
