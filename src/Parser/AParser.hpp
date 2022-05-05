@@ -5,6 +5,8 @@
 ** AParser
 */
 
+/// \file src/Parser/AParser.hpp
+
 #ifndef APARSER_HPP_
 #define APARSER_HPP_
 
@@ -19,7 +21,7 @@ class AParser : public IParser {
         /// \return const std::size_t&, the number of arguments.
         const std::size_t &getArgumentNumber() const;
         /// \brief This function will be set differently by the children
-        virtual void prossessArguments() = 0;
+        virtual void processArguments() = 0;
         /// \brief Get the a list of all arguments in the command.
         /// \return const std::vector<std::string>& that contain each argument.
         const std::vector<std::string> &getArguments() const;
