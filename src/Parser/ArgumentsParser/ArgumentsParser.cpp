@@ -18,7 +18,7 @@ ArgumentsParser::ArgumentsParser(int ac, char **args)
     _argumentNumber = ac;
 }
 
-void ArgumentsParser::prossessArguments()
+void ArgumentsParser::processArguments()
 {
     if (_argumentNumber != 3) {
         std::cout << "Invalid Number of Args" << std::endl;
