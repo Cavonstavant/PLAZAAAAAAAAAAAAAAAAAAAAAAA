@@ -8,7 +8,9 @@
 /// \file src/Parser/ArgumentsParser/ArgumentsParser.cpp
 
 #include "ArgumentsParser.hpp"
+#include "Exception.hpp"
 #include <iostream>
+#include <string>
 
 ArgumentsParser::ArgumentsParser(int ac, char **args)
 {
@@ -21,8 +23,7 @@ ArgumentsParser::ArgumentsParser(int ac, char **args)
 void ArgumentsParser::prossessArguments()
 {
     if (_argumentNumber != 3) {
-        std::cout << "Invalid Number of Args" << std::endl;
-        return;// raise
+        throw InvalidNbrArgumentsEX("You need 3 arguments.\n", Logger::CRITICAL);
     }
     for (size_t x = _arguments.size() - 1; x > 0; --x) {
 
@@ -30,8 +31,7 @@ void ArgumentsParser::prossessArguments()
         try {
             value = std::stoi(_arguments[x]);
         } catch (...) {
-            std::cout << "Arg isn't a int" << std::endl;
-            return;// raise
+            throw InvalidIntCastEX("One of the arguments isn't a int", Logger::CRITICAL);
         }
         switch (x) {
             case 2:
@@ -44,8 +44,7 @@ void ArgumentsParser::prossessArguments()
                 _setCookingTime(value);
                 break;
             default:
-                std::cout << "Internal Problem on for loop" << std::endl;
-                break;// raise
+                throw VeryStupidUserEX("That's not possible, or you've broke my program...", Logger::CRITICAL);
         }
     }
 }
