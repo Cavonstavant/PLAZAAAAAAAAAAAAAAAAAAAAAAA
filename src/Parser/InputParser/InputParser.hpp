@@ -33,32 +33,32 @@ class InputParser : public AParser {
         void setCommandSeparator(const char);
 
     private:
-        /// \brief Store the command that will be prossess.
+        /// \brief Store the command that will be process.
         std::string _command;
-        /// \brief Store the separator that will use for prossessArgument.
+        /// \brief Store the separator that will use for processArgument.
         char _separator;
         /// \brief Check the validity of all arguments of the command.
         /// It will print a message if an error occured.
         void _checkArgumentsValidity();
-        /// \brief Check if the pizza name passed as parameter is valide.
+        /// \brief Check if the pizza name passed as parameter is valid.
         /// It will print a message if an error occured.
         /// \param const std::string & is the pizza name.
-        /// \return true if it's std::string is a valide pizza name, false otherwise.
+        /// \return true if it's std::string is a valid pizza name, false otherwise.
         bool _isValidPizzaName(const std::string &) const;
-        /// \brief Check if the pizza size passed as parameter is valide.
+        /// \brief Check if the pizza size passed as parameter is valid.
         /// It will print a message if an error occured.
         /// \param const std::string & is the pizza size.
-        /// \return true if it's std::string is a valide pizza size, false otherwise.
+        /// \return true if it's std::string is a valid pizza size, false otherwise.
         bool _isValidPizzaSize(const std::string &) const;
-        /// \brief Check if the pizza number passed as parameter is valide.
+        /// \brief Check if the pizza number passed as parameter is valid.
         /// It will print a message if an error occured.
         /// \param const std::string & is the pizza number.
-        /// \return true if it's std::string is a valide pizza number, false otherwise.
+        /// \return true if it's std::string is a valid pizza number, false otherwise.
         bool _isValidPizzaNumber(const std::string &) const;
-        /// \brief Check if the pizza separator passed as parameter is valide.
+        /// \brief Check if the pizza separator passed as parameter is valid.
         /// It will print a message if an error occured.
         /// \param const std::string & is the pizza separator.
-        /// \return true if it's std::string is a valide pizza separator, false otherwise.
+        /// \return true if it's std::string is a valid pizza separator, false otherwise.
         bool _isValidPizzaSeparator(const std::string &) const;
 };
 

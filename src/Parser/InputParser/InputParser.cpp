@@ -66,15 +66,15 @@ bool InputParser::_isValidPizzaName(const std::string &pizza) const
             "Margarita",
             "Americana",
             "Fantasia"};
-    bool findValidePizza = false;
+    bool findValidPizza = false;
 
     for (std::size_t index = 0; index < 4; index++) {
         if (availablePizza[index] == pizza)
-            findValidePizza = true;
+            findValidPizza = true;
     }
-    if (!findValidePizza)
+    if (!findValidPizza)
         ParserEX("Invalid pizza name in the command: " + pizza, Logger::LOW);
-    return (findValidePizza);
+    return (findValidPizza);
 }
 
 bool InputParser::_isValidPizzaSize(const std::string &pizzaSize) const
@@ -85,82 +85,82 @@ bool InputParser::_isValidPizzaSize(const std::string &pizzaSize) const
             "L",
             "XL",
             "XXL"};
-    bool findValidePizzaSize = false;
+    bool findValidPizzaSize = false;
 
     for (std::size_t index = 0; index < 5; index++) {
         if (availablePizzaSize[index] == pizzaSize)
-            findValidePizzaSize = true;
+            findValidPizzaSize = true;
     }
-    if (!findValidePizzaSize)
+    if (!findValidPizzaSize)
         ParserEX("Invalid pizza size in the command: " + pizzaSize, Logger::LOW);
-    return (findValidePizzaSize);
+    return (findValidPizzaSize);
 }
 
 bool InputParser::_isValidPizzaNumber(const std::string &pizzaNumber) const
 {
-    bool findValidePizzaNumber = false;
+    bool findValidPizzaNumber = false;
     std::string tmp = pizzaNumber;
 
     if (tmp.find("x") == 0) {
         tmp.substr(1);
         if (std::atoi(tmp.c_str()) != 0)
-            findValidePizzaNumber = true;
+            findValidPizzaNumber = true;
     }
-    if (!findValidePizzaNumber)
+    if (!findValidPizzaNumber)
         ParserEX("Invalid pizza number in the command: " + pizzaNumber, Logger::LOW);
-    return (findValidePizzaNumber);
+    return (findValidPizzaNumber);
 }
 
 bool InputParser::_isValidPizzaSeparator(const std::string &pizzaSeparator) const
 {
-    bool findValidePizzaSeparator = true;
+    bool findValidPizzaSeparator = true;
 
     if (pizzaSeparator != ";") {
         ParserEX("Invalid pizza separator in the command: " + pizzaSeparator, Logger::LOW);
-        findValidePizzaSeparator = false;
+        findValidPizzaSeparator = false;
     }
-    return (findValidePizzaSeparator);
+    return (findValidPizzaSeparator);
 }
 
 void InputParser::_checkArgumentsValidity()
 {
     std::size_t index = 0;
-    bool argIsValide = true;
-    std::vector<std::string> valideArgs;
+    bool argIsValid = true;
+    std::vector<std::string> validArgs;
 
     for (std::string it: _arguments) {
-        if (!argIsValide) {
+        if (!argIsValid) {
             if (it == ";") {
-                argIsValide = true;
+                argIsValid = true;
                 index = 0;
             }
             continue;
         }
         switch (index % 4) {
             case 0:
-                argIsValide = _isValidPizzaName(it);
+                argIsValid = _isValidPizzaName(it);
                 break;
             case 1:
-                argIsValide = _isValidPizzaSize(it);
+                argIsValid = _isValidPizzaSize(it);
                 break;
             case 2:
-                argIsValide = _isValidPizzaNumber(it);
+                argIsValid = _isValidPizzaNumber(it);
                 break;
             case 3:
-                argIsValide = _isValidPizzaSeparator(it);
+                argIsValid = _isValidPizzaSeparator(it);
                 break;
         }
         index++;
-        if (argIsValide)
-            valideArgs.push_back(it);
+        if (argIsValid)
+            validArgs.push_back(it);
         else {
-            while (valideArgs.size() > 0 && valideArgs.back() != ";")
-                valideArgs.pop_back();
+            while (validArgs.size() > 0 && validArgs.back() != ";")
+                validArgs.pop_back();
         }
         if (it == ";") {
-            argIsValide = true;
+            argIsValid = true;
             index = 0;
         }
     }
-    _arguments = valideArgs;
+    _arguments = validArgs;
 }
