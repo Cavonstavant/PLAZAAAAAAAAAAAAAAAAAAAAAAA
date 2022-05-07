@@ -5,7 +5,9 @@
 ** main
 */
 
-#include "Parser/ArgumentsParser/ArgumentsParser.hpp"
+#include "ArgumentsParser.hpp"
+#include "MessageQueue/MessageQueue.hpp"
+#include <iostream>
 #include <string>
 
 int main(int ac, char **av)

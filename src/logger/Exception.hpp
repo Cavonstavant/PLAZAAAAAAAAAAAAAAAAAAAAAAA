@@ -23,8 +23,9 @@
 /// \These defines makes possible to specify the function, the file and the line where the exception is thrown
 /// \You MUST NOT throw the classical *Exceptions (ex: PlazzaException) but use the macros below
 #define PlazzaEX(what, severity) ExceptionTernary(PlazzaException, what, severity)
-#define VeryStupidUserEX(what, severity) ExceptionTernary(VeryStupidUserException, what, severity)
 #define ParserEX(what, severity) ExceptionTernary(ParserException, what, severity)
+#define VeryStupidUserEX(what, severity) ExceptionTernary(VeryStupidUserException, what, severity)
+#define MessageQueueEx(what, severity) ExceptionTernary(MessageQueueException, what, severity)
 #define MessageTooLongEX(what, severity) ExceptionTernary(MessageTooLongException, what, severity)
 
 /// \Defines the color codes to print the exceptions in color
