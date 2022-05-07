@@ -84,7 +84,6 @@ $(document).ready(function(){initNavTree('class_message_queue.html',''); initRes
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_message_queue-members.html">List of all members</a>  </div>
@@ -93,97 +92,55 @@ $(document).ready(function(){initNavTree('class_message_queue.html',''); initRes
 </div><!--header-->
 <div class="contents">
 
-<p>Wrapper class around the XSI message queues.  
+<p>Wrapper class around the POSIX message queues.  
  <a href="class_message_queue.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_message_queue_8hpp_source.html">MessageQueue.hpp</a>&gt;</code></p>
-<div class="dynheader">
-Collaboration diagram for MessageQueue:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_message_queue__coll__graph.png" border="0" usemap="#_message_queue_coll__map" alt="Collaboration graph"/></div>
-<map name="_message_queue_coll__map" id="_message_queue_coll__map">
-<area shape="rect" title="Wrapper class around the XSI message queues." alt="" coords="39,95,161,121"/>
-<area shape="rect" href="struct_message_queue_1_1message.html" title="Inner representation of a message used by msgsnd() and msgrcv()." alt="" coords="5,5,195,32"/>
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_message_queue_1_1message.html">message</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inner representation of a message used by msgsnd() and msgrcv().  <a href="struct_message_queue_1_1message.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8662eead8fd2732f4cb68d23b89431c3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#a8662eead8fd2732f4cb68d23b89431c3">MessageQueue</a> ()=default</td></tr>
 <tr class="memdesc:a8662eead8fd2732f4cb68d23b89431c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor, no queue is created when called.  <a href="class_message_queue.html#a8662eead8fd2732f4cb68d23b89431c3">More...</a><br /></td></tr>
 <tr class="separator:a8662eead8fd2732f4cb68d23b89431c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e23c09d1a0dea054f6d223f053fd01b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#a7e23c09d1a0dea054f6d223f053fd01b">~MessageQueue</a> ()=default</td></tr>
-<tr class="memdesc:a7e23c09d1a0dea054f6d223f053fd01b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor, the queue is destroyed / emptied when called.  <a href="class_message_queue.html#a7e23c09d1a0dea054f6d223f053fd01b">More...</a><br /></td></tr>
-<tr class="separator:a7e23c09d1a0dea054f6d223f053fd01b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3640a8a6140801f1e127a41e60c014dd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#a3640a8a6140801f1e127a41e60c014dd">~MessageQueue</a> ()</td></tr>
+<tr class="memdesc:a3640a8a6140801f1e127a41e60c014dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor, the queue is destroyed / emptied when called.  <a href="class_message_queue.html#a3640a8a6140801f1e127a41e60c014dd">More...</a><br /></td></tr>
+<tr class="separator:a3640a8a6140801f1e127a41e60c014dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1830f847ddb62bba6cb45361532415e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_message_queue.html">MessageQueue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#a1830f847ddb62bba6cb45361532415e8">operator=</a> (const <a class="el" href="class_message_queue.html">MessageQueue</a> &amp;)=delete</td></tr>
 <tr class="memdesc:a1830f847ddb62bba6cb45361532415e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creating a new queue from a already existing queue shall not be possible.  <a href="class_message_queue.html#a1830f847ddb62bba6cb45361532415e8">More...</a><br /></td></tr>
 <tr class="separator:a1830f847ddb62bba6cb45361532415e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb5f2277eac053fefd72c19987214f5d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#afb5f2277eac053fefd72c19987214f5d">MessageQueue</a> (const <a class="el" href="class_message_queue.html">MessageQueue</a> &amp;)=delete</td></tr>
 <tr class="memdesc:afb5f2277eac053fefd72c19987214f5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creating a new queue from a already existing queue shall not be possible.  <a href="class_message_queue.html#afb5f2277eac053fefd72c19987214f5d">More...</a><br /></td></tr>
 <tr class="separator:afb5f2277eac053fefd72c19987214f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a604c2c6d8bd220e28d290cce74e78a51"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#a604c2c6d8bd220e28d290cce74e78a51">getMessage</a> () const</td></tr>
-<tr class="memdesc:a604c2c6d8bd220e28d290cce74e78a51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the current text representation of the last message received.  <a href="class_message_queue.html#a604c2c6d8bd220e28d290cce74e78a51">More...</a><br /></td></tr>
-<tr class="separator:a604c2c6d8bd220e28d290cce74e78a51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf6775982c327f96e3173e590c2fc28f"><td class="memItemLeft" align="right" valign="top">key_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#aaf6775982c327f96e3173e590c2fc28f">getKey</a> () const</td></tr>
-<tr class="memdesc:aaf6775982c327f96e3173e590c2fc28f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current message queue key.  <a href="class_message_queue.html#aaf6775982c327f96e3173e590c2fc28f">More...</a><br /></td></tr>
-<tr class="separator:aaf6775982c327f96e3173e590c2fc28f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fb8cc321ea821aea4e5ecfa8288c98c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#a8fb8cc321ea821aea4e5ecfa8288c98c">setKey</a> (key_t key)</td></tr>
-<tr class="memdesc:a8fb8cc321ea821aea4e5ecfa8288c98c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the message queue key.  <a href="class_message_queue.html#a8fb8cc321ea821aea4e5ecfa8288c98c">More...</a><br /></td></tr>
-<tr class="separator:a8fb8cc321ea821aea4e5ecfa8288c98c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab29878bcca86cd3d23e4d07b584723e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#ab29878bcca86cd3d23e4d07b584723e8">generateKey</a> (const std::string &amp;pathname, int proj_id=69)</td></tr>
-<tr class="memdesc:ab29878bcca86cd3d23e4d07b584723e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">C++ wrapper around C ftok().  <a href="class_message_queue.html#ab29878bcca86cd3d23e4d07b584723e8">More...</a><br /></td></tr>
-<tr class="separator:ab29878bcca86cd3d23e4d07b584723e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88457184ce99ccafa8814ccd267c3a9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#a88457184ce99ccafa8814ccd267c3a9c">openQueue</a> (const std::string &amp;pathname)</td></tr>
+<tr class="memdesc:a88457184ce99ccafa8814ccd267c3a9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">C++ wrapper around C mq_open().  <a href="class_message_queue.html#a88457184ce99ccafa8814ccd267c3a9c">More...</a><br /></td></tr>
+<tr class="separator:a88457184ce99ccafa8814ccd267c3a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11b17729dd95f0c60b4e430f002a3a19"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#a11b17729dd95f0c60b4e430f002a3a19">getPath</a> () const</td></tr>
 <tr class="memdesc:a11b17729dd95f0c60b4e430f002a3a19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current message queue pathfile.  <a href="class_message_queue.html#a11b17729dd95f0c60b4e430f002a3a19">More...</a><br /></td></tr>
 <tr class="separator:a11b17729dd95f0c60b4e430f002a3a19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8225017f00f5b295998591dbef6a922"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#aa8225017f00f5b295998591dbef6a922">getId</a> () const</td></tr>
-<tr class="memdesc:aa8225017f00f5b295998591dbef6a922"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current message queue id.  <a href="class_message_queue.html#aa8225017f00f5b295998591dbef6a922">More...</a><br /></td></tr>
-<tr class="separator:aa8225017f00f5b295998591dbef6a922"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bbd9c4a23fd8a2f61bfcfd6b3963132"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#a2bbd9c4a23fd8a2f61bfcfd6b3963132">setId</a> (int id)</td></tr>
-<tr class="memdesc:a2bbd9c4a23fd8a2f61bfcfd6b3963132"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current message queue id.  <a href="class_message_queue.html#a2bbd9c4a23fd8a2f61bfcfd6b3963132">More...</a><br /></td></tr>
-<tr class="separator:a2bbd9c4a23fd8a2f61bfcfd6b3963132"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0adeaedd164a375648b6e9a4d0259a2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#a0adeaedd164a375648b6e9a4d0259a2d">sendMessage</a> (const std::string &amp;message_text, long message_type)</td></tr>
-<tr class="memdesc:a0adeaedd164a375648b6e9a4d0259a2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message to the queue.  <a href="class_message_queue.html#a0adeaedd164a375648b6e9a4d0259a2d">More...</a><br /></td></tr>
-<tr class="separator:a0adeaedd164a375648b6e9a4d0259a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d87cce634405627e48c7402f149055f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#a8d87cce634405627e48c7402f149055f">receiveMessage</a> (long message_type)</td></tr>
-<tr class="memdesc:a8d87cce634405627e48c7402f149055f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a message from the queue.  <a href="class_message_queue.html#a8d87cce634405627e48c7402f149055f">More...</a><br /></td></tr>
-<tr class="separator:a8d87cce634405627e48c7402f149055f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc775c0651d539d6268cde073a41451d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#adc775c0651d539d6268cde073a41451d">sendMessage</a> (const std::string &amp;message_text) const</td></tr>
+<tr class="memdesc:adc775c0651d539d6268cde073a41451d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message to the queue.  <a href="class_message_queue.html#adc775c0651d539d6268cde073a41451d">More...</a><br /></td></tr>
+<tr class="separator:adc775c0651d539d6268cde073a41451d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94087136a3aed67e2f1069e2bdd0571f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#a94087136a3aed67e2f1069e2bdd0571f">receiveMessage</a> () const</td></tr>
+<tr class="memdesc:a94087136a3aed67e2f1069e2bdd0571f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a message from the queue.  <a href="class_message_queue.html#a94087136a3aed67e2f1069e2bdd0571f">More...</a><br /></td></tr>
+<tr class="separator:a94087136a3aed67e2f1069e2bdd0571f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6b4070382056e86fdc2042ae99de401"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#ab6b4070382056e86fdc2042ae99de401">clear</a> ()</td></tr>
 <tr class="memdesc:ab6b4070382056e86fdc2042ae99de401"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the queue.  <a href="class_message_queue.html#ab6b4070382056e86fdc2042ae99de401">More...</a><br /></td></tr>
 <tr class="separator:ab6b4070382056e86fdc2042ae99de401"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a21e0c530f1cc9c926d1dd794648aa730"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_message_queue_1_1message.html">message</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#a21e0c530f1cc9c926d1dd794648aa730">_msg</a> = nullptr</td></tr>
-<tr class="memdesc:a21e0c530f1cc9c926d1dd794648aa730"><td class="mdescLeft">&#160;</td><td class="mdescRight">message instance to be used with msgsnd() and msgrcv().  <a href="class_message_queue.html#a21e0c530f1cc9c926d1dd794648aa730">More...</a><br /></td></tr>
-<tr class="separator:a21e0c530f1cc9c926d1dd794648aa730"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9e65265aab3076a7978f8b2b0249377"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#aa9e65265aab3076a7978f8b2b0249377">_text</a></td></tr>
-<tr class="memdesc:aa9e65265aab3076a7978f8b2b0249377"><td class="mdescLeft">&#160;</td><td class="mdescRight">The text representation of the last message received.  <a href="class_message_queue.html#aa9e65265aab3076a7978f8b2b0249377">More...</a><br /></td></tr>
-<tr class="separator:aa9e65265aab3076a7978f8b2b0249377"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38dc83eabb7a1aa39240e975c09db476"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#a38dc83eabb7a1aa39240e975c09db476">_type</a> {}</td></tr>
-<tr class="memdesc:a38dc83eabb7a1aa39240e975c09db476"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type associated with the last message received.  <a href="class_message_queue.html#a38dc83eabb7a1aa39240e975c09db476">More...</a><br /></td></tr>
-<tr class="separator:a38dc83eabb7a1aa39240e975c09db476"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a595607faf9b970f0c15babf542e2fe93"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#a595607faf9b970f0c15babf542e2fe93">_id</a> {}</td></tr>
-<tr class="memdesc:a595607faf9b970f0c15babf542e2fe93"><td class="mdescLeft">&#160;</td><td class="mdescRight">The queue id returned by msgget().  <a href="class_message_queue.html#a595607faf9b970f0c15babf542e2fe93">More...</a><br /></td></tr>
-<tr class="separator:a595607faf9b970f0c15babf542e2fe93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a458809cbdab4587f5a7681a67b690259"><td class="memItemLeft" align="right" valign="top">key_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#a458809cbdab4587f5a7681a67b690259">_key</a> {}</td></tr>
-<tr class="memdesc:a458809cbdab4587f5a7681a67b690259"><td class="mdescLeft">&#160;</td><td class="mdescRight">XSI key used to represent the queue.  <a href="class_message_queue.html#a458809cbdab4587f5a7681a67b690259">More...</a><br /></td></tr>
-<tr class="separator:a458809cbdab4587f5a7681a67b690259"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a634970029be5760122a4cc9de35ac9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#a3a634970029be5760122a4cc9de35ac9">_pathname</a></td></tr>
+<tr class="memitem:a6beea1668b922f4fd5e09029ccf33459"><td class="memItemLeft" align="right" valign="top">mqd_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#a6beea1668b922f4fd5e09029ccf33459">_queue_fd</a> {}</td></tr>
+<tr class="memdesc:a6beea1668b922f4fd5e09029ccf33459"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message queue fd.  <a href="class_message_queue.html#a6beea1668b922f4fd5e09029ccf33459">More...</a><br /></td></tr>
+<tr class="separator:a6beea1668b922f4fd5e09029ccf33459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a634970029be5760122a4cc9de35ac9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html#a3a634970029be5760122a4cc9de35ac9">_pathname</a> {}</td></tr>
 <tr class="memdesc:a3a634970029be5760122a4cc9de35ac9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pathfile of the queue.  <a href="class_message_queue.html#a3a634970029be5760122a4cc9de35ac9">More...</a><br /></td></tr>
 <tr class="separator:a3a634970029be5760122a4cc9de35ac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Wrapper class around the XSI message queues. </p>
-<dl class="section note"><dt>Note</dt><dd>This class aims to provide a custom interface to manipulate XSI message queues by simply enqueue and dequeue messages with send_message and receive_message. </dd></dl>
+<div class="textblock"><p>Wrapper class around the POSIX message queues. </p>
+<dl class="section note"><dt>Note</dt><dd>This class aims to provide a custom interface to manipulate POSIX message queues by simply enqueue and dequeue messages with send_message and receive_message. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_message_queue_8hpp_source.html#l00023">23</a> of file <a class="el" href="_message_queue_8hpp_source.html">MessageQueue.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_message_queue_8hpp_source.html#l00020">20</a> of file <a class="el" href="_message_queue_8hpp_source.html">MessageQueue.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8662eead8fd2732f4cb68d23b89431c3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8662eead8fd2732f4cb68d23b89431c3">&#9670;&nbsp;</a></span>MessageQueue() <span class="overload">[1/2]</span></h2>
@@ -212,14 +169,11 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a7e23c09d1a0dea054f6d223f053fd01b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e23c09d1a0dea054f6d223f053fd01b">&#9670;&nbsp;</a></span>~MessageQueue()</h2>
+<a id="a3640a8a6140801f1e127a41e60c014dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3640a8a6140801f1e127a41e60c014dd">&#9670;&nbsp;</a></span>~MessageQueue()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">MessageQueue::~MessageQueue </td>
@@ -228,15 +182,16 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Destructor, the queue is destroyed / emptied when called. </p>
 
+<p class="definition">Definition at line <a class="el" href="_message_queue_8cpp_source.html#l00015">15</a> of file <a class="el" href="_message_queue_8cpp_source.html">MessageQueue.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="class_message_queue.html#ab6b4070382056e86fdc2042ae99de401">clear</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    mq_close(this-&gt;<a class="code" href="class_message_queue.html#a6beea1668b922f4fd5e09029ccf33459">_queue_fd</a>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="afb5f2277eac053fefd72c19987214f5d"></a>
@@ -284,154 +239,13 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clear the queue. </p>
-<dl class="section warning"><dt>Warning</dt><dd>Using thing method prior to the creation of a key results in a <b>Undefined Behavior</b>. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Using this method prior to opening a queue results in a <b>Undefined Behavior</b>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_message_queue_8cpp_source.html#l00053">53</a> of file <a class="el" href="_message_queue_8cpp_source.html">MessageQueue.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    msgctl(this-&gt;<a class="code" href="class_message_queue.html#a458809cbdab4587f5a7681a67b690259">_key</a>, IPC_RMID, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ab29878bcca86cd3d23e4d07b584723e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab29878bcca86cd3d23e4d07b584723e8">&#9670;&nbsp;</a></span>generateKey()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MessageQueue::generateKey </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>pathname</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>proj_id</em> = <code>69</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>C++ wrapper around C ftok(). </p>
-<dl class="section note"><dt>Note</dt><dd>This methods sets internally the key to be used. </dd>
-<dd>
-proj_id is defaulted to 69. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_message_queue_8cpp_source.html#l00014">14</a> of file <a class="el" href="_message_queue_8cpp_source.html">MessageQueue.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    key_t key = ftok(pathname.c_str(), proj_id);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">if</span> (key == -1) {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        exit(84);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    this-&gt;<a class="code" href="class_message_queue.html#a458809cbdab4587f5a7681a67b690259">_key</a> = key;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="aa8225017f00f5b295998591dbef6a922"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8225017f00f5b295998591dbef6a922">&#9670;&nbsp;</a></span>getId()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int MessageQueue::getId </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the current message queue id. </p>
-<dl class="section warning"><dt>Warning</dt><dd>Using thing method prior to the creation of a key results in a <b>Undefined Behavior</b>. </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>The id returned by msgget(). </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_message_queue_8hpp_source.html#l00072">72</a> of file <a class="el" href="_message_queue_8hpp_source.html">MessageQueue.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_message_queue.html#a595607faf9b970f0c15babf542e2fe93">_id</a>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        };</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="aaf6775982c327f96e3173e590c2fc28f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf6775982c327f96e3173e590c2fc28f">&#9670;&nbsp;</a></span>getKey()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">key_t MessageQueue::getKey </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the current message queue key. </p>
-
-<p class="definition">Definition at line <a class="el" href="_message_queue_8hpp_source.html#l00045">45</a> of file <a class="el" href="_message_queue_8hpp_source.html">MessageQueue.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_message_queue.html#a458809cbdab4587f5a7681a67b690259">_key</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        };</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a604c2c6d8bd220e28d290cce74e78a51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a604c2c6d8bd220e28d290cce74e78a51">&#9670;&nbsp;</a></span>getMessage()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string MessageQueue::getMessage </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Retrieve the current text representation of the last message received. </p>
-<dl class="section warning"><dt>Warning</dt><dd>Calling this method without setting up the queue, receiving a message or sending first will result in a <b>Undefined Behavior</b>. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_message_queue_8hpp_source.html#l00039">39</a> of file <a class="el" href="_message_queue_8hpp_source.html">MessageQueue.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_message_queue.html#aa9e65265aab3076a7978f8b2b0249377">_text</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        };</div>
+<p class="definition">Definition at line <a class="el" href="_message_queue_8cpp_source.html#l00054">54</a> of file <a class="el" href="_message_queue_8cpp_source.html">MessageQueue.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (mq_unlink(this-&gt;<a class="code" href="class_message_queue.html#a3a634970029be5760122a4cc9de35ac9">_pathname</a>.c_str()) == -1)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="_exception_8hpp.html#ad538f9c3d6a39de5fe29dd89f7c1ef3a">MessageQueueEx</a>(std::string(<span class="stringliteral">&quot;Failed to clear queue: &quot;</span>) + std::strerror(errno), <a class="code" href="class_logger.html#acc36409db358f1c0dc363ee4469a212f">Logger::CRITICAL</a>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -459,12 +273,45 @@ proj_id is defaulted to 69. </dd></dl>
 </div><div class="memdoc">
 
 <p>Get the current message queue pathfile. </p>
-<dl class="section warning"><dt>Warning</dt><dd>Using thing method prior to the creation of a key results in a <b>Undefined Behavior</b>. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Using this method prior to the creation of a key results in a <b>Undefined Behavior</b>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_message_queue_8hpp_source.html#l00064">64</a> of file <a class="el" href="_message_queue_8hpp_source.html">MessageQueue.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_message_queue.html#a3a634970029be5760122a4cc9de35ac9">_pathname</a>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        };</div>
+<p class="definition">Definition at line <a class="el" href="_message_queue_8hpp_source.html#l00039">39</a> of file <a class="el" href="_message_queue_8hpp_source.html">MessageQueue.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_message_queue.html#a3a634970029be5760122a4cc9de35ac9">_pathname</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        };</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a88457184ce99ccafa8814ccd267c3a9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88457184ce99ccafa8814ccd267c3a9c">&#9670;&nbsp;</a></span>openQueue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MessageQueue::openQueue </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>pathname</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>C++ wrapper around C mq_open(). </p>
+
+<p class="definition">Definition at line <a class="el" href="_message_queue_8cpp_source.html#l00021">21</a> of file <a class="el" href="_message_queue_8cpp_source.html">MessageQueue.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">struct </span>mq_attr attr;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    this-&gt;<a class="code" href="class_message_queue.html#a6beea1668b922f4fd5e09029ccf33459">_queue_fd</a> = mq_open(pathname.c_str(), O_RDWR | O_CREAT, 0666, NULL);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    mq_getattr(this-&gt;_queue_fd, &amp;attr);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    attr.mq_msgsize = <a class="code" href="_message_queue_8hpp.html#acb84a306ee37479f97cf0b476560f027">MAX_MESSAGE_SIZE</a> + 1;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    mq_setattr(this-&gt;_queue_fd, &amp;attr, NULL);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span> (this-&gt;_queue_fd == -1)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="_exception_8hpp.html#ad538f9c3d6a39de5fe29dd89f7c1ef3a">MessageQueueEx</a>(std::string(<span class="stringliteral">&quot;Failed to open queue: &quot;</span>) + std::strerror(errno), <a class="code" href="class_logger.html#acc36409db358f1c0dc363ee4469a212f">Logger::CRITICAL</a>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    this-&gt;<a class="code" href="class_message_queue.html#a3a634970029be5760122a4cc9de35ac9">_pathname</a> = pathname;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -496,8 +343,8 @@ proj_id is defaulted to 69. </dd></dl>
 
 </div>
 </div>
-<a id="a8d87cce634405627e48c7402f149055f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d87cce634405627e48c7402f149055f">&#9670;&nbsp;</a></span>receiveMessage()</h2>
+<a id="a94087136a3aed67e2f1069e2bdd0571f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94087136a3aed67e2f1069e2bdd0571f">&#9670;&nbsp;</a></span>receiveMessage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -505,16 +352,15 @@ proj_id is defaulted to 69. </dd></dl>
         <tr>
           <td class="memname">std::string MessageQueue::receiveMessage </td>
           <td>(</td>
-          <td class="paramtype">long&#160;</td>
-          <td class="paramname"><em>message_type</em></td><td>)</td>
-          <td></td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Receives a message from the queue. </p>
-<dl class="section note"><dt>Note</dt><dd>This method is a C++ wrapper around msgrcv(). </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Using thing method prior to the creation of a key results in a <b>Undefined Behavior</b>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This method is a C++ wrapper around mq_receive(). </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Using this method prior to opening a queue results in a <b>Undefined Behavior</b>. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">message_type</td><td>the type of the message. </td></tr>
@@ -524,20 +370,21 @@ proj_id is defaulted to 69. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_message_queue_8cpp_source.html#l00041">41</a> of file <a class="el" href="_message_queue_8cpp_source.html">MessageQueue.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">int</span> message_id = msgget(this-&gt;<a class="code" href="class_message_queue.html#a458809cbdab4587f5a7681a67b690259">_key</a>, 0666 | IPC_CREAT);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="struct_message_queue_1_1message.html">MessageQueue::message</a> *msg = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span> (message_id == -1) {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        exit(84);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    msgrcv(message_id, (<span class="keywordtype">void</span> *) &amp;msg, <span class="keyword">sizeof</span>(msg-&gt;text), message_type, 0);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> msg-&gt;text;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    ssize_t mq_receive_return = 0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">char</span> message_buffer[<a class="code" href="_message_queue_8hpp.html#acb84a306ee37479f97cf0b476560f027">MAX_MESSAGE_SIZE</a>] = {0};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">struct </span>mq_attr attr;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    mq_getattr(this-&gt;<a class="code" href="class_message_queue.html#a6beea1668b922f4fd5e09029ccf33459">_queue_fd</a>, &amp;attr);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    mq_receive_return = mq_receive(this-&gt;<a class="code" href="class_message_queue.html#a6beea1668b922f4fd5e09029ccf33459">_queue_fd</a>, message_buffer, attr.mq_msgsize, 0);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span> (mq_receive_return == -1)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="_exception_8hpp.html#ad538f9c3d6a39de5fe29dd89f7c1ef3a">MessageQueueEx</a>(std::string(<span class="stringliteral">&quot;Failed to receive message: &quot;</span>) + std::strerror(errno), <a class="code" href="class_logger.html#acc36409db358f1c0dc363ee4469a212f">Logger::CRITICAL</a>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> std::string(message_buffer);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a0adeaedd164a375648b6e9a4d0259a2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0adeaedd164a375648b6e9a4d0259a2d">&#9670;&nbsp;</a></span>sendMessage()</h2>
+<a id="adc775c0651d539d6268cde073a41451d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc775c0651d539d6268cde073a41451d">&#9670;&nbsp;</a></span>sendMessage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -546,200 +393,34 @@ proj_id is defaulted to 69. </dd></dl>
           <td class="memname">void MessageQueue::sendMessage </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>message_text</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">long&#160;</td>
-          <td class="paramname"><em>message_type</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramname"><em>message_text</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Sends a message to the queue. </p>
-<dl class="section note"><dt>Note</dt><dd>This method is a C++ wrapper around msgsnd(). </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Using thing method prior to the creation of a key results in a <b>Undefined Behavior</b>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This method is a C++ wrapper around mq_send(). </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Using this method prior to opening a queue results in a <b>Undefined Behavior</b>. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">message</td><td>The message to be sent. </td></tr>
+    <tr><td class="paramname">message</td><td>The message to be send. </td></tr>
     <tr><td class="paramname">message_type</td><td>the type of the message. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_message_queue_8cpp_source.html#l00023">23</a> of file <a class="el" href="_message_queue_8cpp_source.html">MessageQueue.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">int</span> message_id;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">if</span> (message_text.length() &gt;= <a class="code" href="_message_queue_8hpp.html#acb84a306ee37479f97cf0b476560f027">MAX_MESSAGE_SIZE</a>)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="_exception_8hpp.html#a8ef0a847cd4c54afe916ea3129b03b52">PlazzaEX</a>(<span class="stringliteral">&quot;Message is too long&quot;</span>, <a class="code" href="class_logger.html#a8db5fb65e82f81fb04eb4e21a931a1d6">Logger::MEDIUM</a>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    message_id = msgget(this-&gt;<a class="code" href="class_message_queue.html#a458809cbdab4587f5a7681a67b690259">_key</a>, 0666 | IPC_CREAT);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">if</span> (message_id == -1) {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        exit(84);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="class_message_queue.html#a21e0c530f1cc9c926d1dd794648aa730">_msg</a> = <span class="keyword">new</span> <a class="code" href="struct_message_queue_1_1message.html">MessageQueue::message</a>{.<a class="code" href="struct_message_queue_1_1message.html#a38351a00d77b4786ce48099f9bbcd349">type</a> = message_type};</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    std::strcpy(<a class="code" href="class_message_queue.html#a21e0c530f1cc9c926d1dd794648aa730">_msg</a>-&gt;<a class="code" href="struct_message_queue_1_1message.html#a649220920d062eb1778d5de209e3ad95">text</a>, message_text.c_str());</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span> (msgsnd(message_id, (<span class="keywordtype">void</span> *) &amp;<a class="code" href="class_message_queue.html#a21e0c530f1cc9c926d1dd794648aa730">_msg</a>, <span class="keyword">sizeof</span>(<a class="code" href="class_message_queue.html#a21e0c530f1cc9c926d1dd794648aa730">_msg</a>-&gt;<a class="code" href="struct_message_queue_1_1message.html#a649220920d062eb1778d5de209e3ad95">text</a>), 0) == -1) {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        exit(84);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">delete</span> <a class="code" href="class_message_queue.html#a21e0c530f1cc9c926d1dd794648aa730">_msg</a>;</div>
+<p class="definition">Definition at line <a class="el" href="_message_queue_8cpp_source.html#l00033">33</a> of file <a class="el" href="_message_queue_8cpp_source.html">MessageQueue.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">int</span> mq_send_return = mq_send(this-&gt;<a class="code" href="class_message_queue.html#a6beea1668b922f4fd5e09029ccf33459">_queue_fd</a>, message_text.c_str(), message_text.length(), 0);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span> (mq_send_return == -1)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="_exception_8hpp.html#ad538f9c3d6a39de5fe29dd89f7c1ef3a">MessageQueueEx</a>(std::string(<span class="stringliteral">&quot;Failed to send message: &quot;</span>) + std::strerror(errno), <a class="code" href="class_logger.html#acc36409db358f1c0dc363ee4469a212f">Logger::CRITICAL</a>);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a2bbd9c4a23fd8a2f61bfcfd6b3963132"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2bbd9c4a23fd8a2f61bfcfd6b3963132">&#9670;&nbsp;</a></span>setId()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MessageQueue::setId </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the current message queue id. </p>
-<dl class="section warning"><dt>Warning</dt><dd>Using thing method prior to the creation of a key results in a <b>Undefined Behavior</b>. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_message_queue_8hpp_source.html#l00079">79</a> of file <a class="el" href="_message_queue_8hpp_source.html">MessageQueue.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <a class="code" href="class_message_queue.html#a595607faf9b970f0c15babf542e2fe93">_id</a> = id;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        };</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a8fb8cc321ea821aea4e5ecfa8288c98c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8fb8cc321ea821aea4e5ecfa8288c98c">&#9670;&nbsp;</a></span>setKey()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MessageQueue::setKey </td>
-          <td>(</td>
-          <td class="paramtype">key_t&#160;</td>
-          <td class="paramname"><em>key</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Set the message queue key. </p>
-<dl class="section note"><dt>Note</dt><dd>In order to create a new key, please use the <a class="el" href="class_message_queue.html#ab29878bcca86cd3d23e4d07b584723e8" title="C++ wrapper around C ftok().">MessageQueue::generateKey</a> static method. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_message_queue_8hpp_source.html#l00052">52</a> of file <a class="el" href="_message_queue_8hpp_source.html">MessageQueue.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="class_message_queue.html#a458809cbdab4587f5a7681a67b690259">_key</a> = key;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        };</div>
-</div><!-- fragment -->
-</div>
-</div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a595607faf9b970f0c15babf542e2fe93"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a595607faf9b970f0c15babf542e2fe93">&#9670;&nbsp;</a></span>_id</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int MessageQueue::_id {}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The queue id returned by msgget(). </p>
-
-<p class="definition">Definition at line <a class="el" href="_message_queue_8hpp_source.html#l00120">120</a> of file <a class="el" href="_message_queue_8hpp_source.html">MessageQueue.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a458809cbdab4587f5a7681a67b690259"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a458809cbdab4587f5a7681a67b690259">&#9670;&nbsp;</a></span>_key</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">key_t MessageQueue::_key {}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>XSI key used to represent the queue. </p>
-
-<p class="definition">Definition at line <a class="el" href="_message_queue_8hpp_source.html#l00123">123</a> of file <a class="el" href="_message_queue_8hpp_source.html">MessageQueue.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a21e0c530f1cc9c926d1dd794648aa730"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21e0c530f1cc9c926d1dd794648aa730">&#9670;&nbsp;</a></span>_msg</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="struct_message_queue_1_1message.html">message</a>* MessageQueue::_msg = nullptr</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>message instance to be used with msgsnd() and msgrcv(). </p>
-
-<p class="definition">Definition at line <a class="el" href="_message_queue_8hpp_source.html#l00111">111</a> of file <a class="el" href="_message_queue_8hpp_source.html">MessageQueue.hpp</a>.</p>
-
-</div>
-</div>
 <a id="a3a634970029be5760122a4cc9de35ac9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3a634970029be5760122a4cc9de35ac9">&#9670;&nbsp;</a></span>_pathname</h2>
 
@@ -750,7 +431,7 @@ proj_id is defaulted to 69. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string MessageQueue::_pathname</td>
+          <td class="memname">std::string MessageQueue::_pathname {}</td>
         </tr>
       </table>
   </td>
@@ -762,12 +443,12 @@ proj_id is defaulted to 69. </dd></dl>
 
 <p>The pathfile of the queue. </p>
 
-<p class="definition">Definition at line <a class="el" href="_message_queue_8hpp_source.html#l00126">126</a> of file <a class="el" href="_message_queue_8hpp_source.html">MessageQueue.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_message_queue_8hpp_source.html#l00066">66</a> of file <a class="el" href="_message_queue_8hpp_source.html">MessageQueue.hpp</a>.</p>
 
 </div>
 </div>
-<a id="aa9e65265aab3076a7978f8b2b0249377"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9e65265aab3076a7978f8b2b0249377">&#9670;&nbsp;</a></span>_text</h2>
+<a id="a6beea1668b922f4fd5e09029ccf33459"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6beea1668b922f4fd5e09029ccf33459">&#9670;&nbsp;</a></span>_queue_fd</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -776,7 +457,7 @@ proj_id is defaulted to 69. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string MessageQueue::_text</td>
+          <td class="memname">mqd_t MessageQueue::_queue_fd {}</td>
         </tr>
       </table>
   </td>
@@ -786,35 +467,9 @@ proj_id is defaulted to 69. </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>The text representation of the last message received. </p>
+<p>Message queue fd. </p>
 
-<p class="definition">Definition at line <a class="el" href="_message_queue_8hpp_source.html#l00114">114</a> of file <a class="el" href="_message_queue_8hpp_source.html">MessageQueue.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a38dc83eabb7a1aa39240e975c09db476"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38dc83eabb7a1aa39240e975c09db476">&#9670;&nbsp;</a></span>_type</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">long MessageQueue::_type {}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The type associated with the last message received. </p>
-
-<p class="definition">Definition at line <a class="el" href="_message_queue_8hpp_source.html#l00117">117</a> of file <a class="el" href="_message_queue_8hpp_source.html">MessageQueue.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_message_queue_8hpp_source.html#l00063">63</a> of file <a class="el" href="_message_queue_8hpp_source.html">MessageQueue.hpp</a>.</p>
 
 </div>
 </div>
@@ -824,17 +479,12 @@ proj_id is defaulted to 69. </dd></dl>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_message_queue_html_a458809cbdab4587f5a7681a67b690259"><div class="ttname"><a href="class_message_queue.html#a458809cbdab4587f5a7681a67b690259">MessageQueue::_key</a></div><div class="ttdeci">key_t _key</div><div class="ttdoc">XSI key used to represent the queue.</div><div class="ttdef"><b>Definition:</b> <a href="_message_queue_8hpp_source.html#l00123">MessageQueue.hpp:123</a></div></div>
-<div class="ttc" id="aclass_logger_html_a8db5fb65e82f81fb04eb4e21a931a1d6"><div class="ttname"><a href="class_logger.html#a8db5fb65e82f81fb04eb4e21a931a1d6">Logger::MEDIUM</a></div><div class="ttdeci">static Severity MEDIUM()</div><div class="ttdoc">pass this function to the macros and they will log the exception with a medium severity</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00088">Logger.cpp:88</a></div></div>
-<div class="ttc" id="astruct_message_queue_1_1message_html"><div class="ttname"><a href="struct_message_queue_1_1message.html">MessageQueue::message</a></div><div class="ttdoc">Inner representation of a message used by msgsnd() and msgrcv().</div><div class="ttdef"><b>Definition:</b> <a href="_message_queue_8hpp_source.html#l00103">MessageQueue.hpp:103</a></div></div>
-<div class="ttc" id="a_exception_8hpp_html_a8ef0a847cd4c54afe916ea3129b03b52"><div class="ttname"><a href="_exception_8hpp.html#a8ef0a847cd4c54afe916ea3129b03b52">PlazzaEX</a></div><div class="ttdeci">#define PlazzaEX(what, severity)</div><div class="ttdef"><b>Definition:</b> <a href="_exception_8hpp_source.html#l00025">Exception.hpp:25</a></div></div>
-<div class="ttc" id="astruct_message_queue_1_1message_html_a649220920d062eb1778d5de209e3ad95"><div class="ttname"><a href="struct_message_queue_1_1message.html#a649220920d062eb1778d5de209e3ad95">MessageQueue::message::text</a></div><div class="ttdeci">char text[MAX_MESSAGE_SIZE]</div><div class="ttdoc">The message text.</div><div class="ttdef"><b>Definition:</b> <a href="_message_queue_8hpp_source.html#l00107">MessageQueue.hpp:107</a></div></div>
-<div class="ttc" id="aclass_message_queue_html_a595607faf9b970f0c15babf542e2fe93"><div class="ttname"><a href="class_message_queue.html#a595607faf9b970f0c15babf542e2fe93">MessageQueue::_id</a></div><div class="ttdeci">int _id</div><div class="ttdoc">The queue id returned by msgget().</div><div class="ttdef"><b>Definition:</b> <a href="_message_queue_8hpp_source.html#l00120">MessageQueue.hpp:120</a></div></div>
-<div class="ttc" id="astruct_message_queue_1_1message_html_a38351a00d77b4786ce48099f9bbcd349"><div class="ttname"><a href="struct_message_queue_1_1message.html#a38351a00d77b4786ce48099f9bbcd349">MessageQueue::message::type</a></div><div class="ttdeci">long type</div><div class="ttdoc">The message type.</div><div class="ttdef"><b>Definition:</b> <a href="_message_queue_8hpp_source.html#l00105">MessageQueue.hpp:105</a></div></div>
-<div class="ttc" id="aclass_message_queue_html_a21e0c530f1cc9c926d1dd794648aa730"><div class="ttname"><a href="class_message_queue.html#a21e0c530f1cc9c926d1dd794648aa730">MessageQueue::_msg</a></div><div class="ttdeci">struct message * _msg</div><div class="ttdoc">message instance to be used with msgsnd() and msgrcv().</div><div class="ttdef"><b>Definition:</b> <a href="_message_queue_8hpp_source.html#l00111">MessageQueue.hpp:111</a></div></div>
-<div class="ttc" id="aclass_message_queue_html_aa9e65265aab3076a7978f8b2b0249377"><div class="ttname"><a href="class_message_queue.html#aa9e65265aab3076a7978f8b2b0249377">MessageQueue::_text</a></div><div class="ttdeci">std::string _text</div><div class="ttdoc">The text representation of the last message received.</div><div class="ttdef"><b>Definition:</b> <a href="_message_queue_8hpp_source.html#l00114">MessageQueue.hpp:114</a></div></div>
-<div class="ttc" id="aclass_message_queue_html_a3a634970029be5760122a4cc9de35ac9"><div class="ttname"><a href="class_message_queue.html#a3a634970029be5760122a4cc9de35ac9">MessageQueue::_pathname</a></div><div class="ttdeci">std::string _pathname</div><div class="ttdoc">The pathfile of the queue.</div><div class="ttdef"><b>Definition:</b> <a href="_message_queue_8hpp_source.html#l00126">MessageQueue.hpp:126</a></div></div>
-<div class="ttc" id="a_message_queue_8hpp_html_acb84a306ee37479f97cf0b476560f027"><div class="ttname"><a href="_message_queue_8hpp.html#acb84a306ee37479f97cf0b476560f027">MAX_MESSAGE_SIZE</a></div><div class="ttdeci">#define MAX_MESSAGE_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="_message_queue_8hpp_source.html#l00019">MessageQueue.hpp:19</a></div></div>
+<div class="ttc" id="aclass_logger_html_acc36409db358f1c0dc363ee4469a212f"><div class="ttname"><a href="class_logger.html#acc36409db358f1c0dc363ee4469a212f">Logger::CRITICAL</a></div><div class="ttdeci">static Severity CRITICAL()</div><div class="ttdoc">pass this function to the macros and they will log the exception with a critical severity</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00098">Logger.cpp:98</a></div></div>
+<div class="ttc" id="aclass_message_queue_html_a3a634970029be5760122a4cc9de35ac9"><div class="ttname"><a href="class_message_queue.html#a3a634970029be5760122a4cc9de35ac9">MessageQueue::_pathname</a></div><div class="ttdeci">std::string _pathname</div><div class="ttdoc">The pathfile of the queue.</div><div class="ttdef"><b>Definition:</b> <a href="_message_queue_8hpp_source.html#l00066">MessageQueue.hpp:66</a></div></div>
+<div class="ttc" id="aclass_message_queue_html_a6beea1668b922f4fd5e09029ccf33459"><div class="ttname"><a href="class_message_queue.html#a6beea1668b922f4fd5e09029ccf33459">MessageQueue::_queue_fd</a></div><div class="ttdeci">mqd_t _queue_fd</div><div class="ttdoc">Message queue fd.</div><div class="ttdef"><b>Definition:</b> <a href="_message_queue_8hpp_source.html#l00063">MessageQueue.hpp:63</a></div></div>
+<div class="ttc" id="a_exception_8hpp_html_ad538f9c3d6a39de5fe29dd89f7c1ef3a"><div class="ttname"><a href="_exception_8hpp.html#ad538f9c3d6a39de5fe29dd89f7c1ef3a">MessageQueueEx</a></div><div class="ttdeci">#define MessageQueueEx(what, severity)</div><div class="ttdef"><b>Definition:</b> <a href="_exception_8hpp_source.html#l00028">Exception.hpp:28</a></div></div>
+<div class="ttc" id="aclass_message_queue_html_ab6b4070382056e86fdc2042ae99de401"><div class="ttname"><a href="class_message_queue.html#ab6b4070382056e86fdc2042ae99de401">MessageQueue::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clear the queue.</div><div class="ttdef"><b>Definition:</b> <a href="_message_queue_8cpp_source.html#l00054">MessageQueue.cpp:54</a></div></div>
+<div class="ttc" id="a_message_queue_8hpp_html_acb84a306ee37479f97cf0b476560f027"><div class="ttname"><a href="_message_queue_8hpp.html#acb84a306ee37479f97cf0b476560f027">MAX_MESSAGE_SIZE</a></div><div class="ttdeci">#define MAX_MESSAGE_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="_message_queue_8hpp_source.html#l00016">MessageQueue.hpp:16</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

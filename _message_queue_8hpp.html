@@ -85,23 +85,22 @@ $(document).ready(function(){initNavTree('_message_queue_8hpp.html',''); initRes
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">MessageQueue.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;sys/ipc.h&gt;</code><br />
-<code>#include &lt;sys/msg.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;mqueue.h&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for MessageQueue.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="_message_queue_8hpp__incl.png" border="0" usemap="#src_2_message_queue_2_message_queue_8hpp" alt=""/></div>
 <map name="src_2_message_queue_2_message_queue_8hpp" id="src_2_message_queue_2_message_queue_8hpp">
-<area shape="rect" title=" " alt="" coords="49,5,256,47"/>
-<area shape="rect" title=" " alt="" coords="5,95,84,121"/>
-<area shape="rect" title=" " alt="" coords="109,95,197,121"/>
-<area shape="rect" title=" " alt="" coords="221,95,279,121"/>
+<area shape="rect" title=" " alt="" coords="5,5,212,47"/>
+<area shape="rect" title=" " alt="" coords="17,95,104,121"/>
+<area shape="rect" title=" " alt="" coords="129,95,187,121"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -109,8 +108,9 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="_message_queue_8hpp__dep__incl.png" border="0" usemap="#src_2_message_queue_2_message_queue_8hppdep" alt=""/></div>
 <map name="src_2_message_queue_2_message_queue_8hppdep" id="src_2_message_queue_2_message_queue_8hppdep">
-<area shape="rect" title=" " alt="" coords="5,5,212,47"/>
-<area shape="rect" href="_message_queue_8cpp.html" title=" " alt="" coords="5,95,212,136"/>
+<area shape="rect" title=" " alt="" coords="44,5,251,47"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="5,102,111,129"/>
+<area shape="rect" href="_message_queue_8cpp.html" title=" " alt="" coords="135,95,341,136"/>
 </map>
 </div>
 </div>
@@ -119,16 +119,20 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_queue.html">MessageQueue</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper class around the XSI message queues.  <a href="class_message_queue.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_message_queue_1_1message.html">MessageQueue::message</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inner representation of a message used by msgsnd() and msgrcv().  <a href="struct_message_queue_1_1message.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper class around the POSIX message queues.  <a href="class_message_queue.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:acb84a306ee37479f97cf0b476560f027"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_message_queue_8hpp.html#acb84a306ee37479f97cf0b476560f027">MAX_MESSAGE_SIZE</a>&#160;&#160;&#160;256</td></tr>
 <tr class="separator:acb84a306ee37479f97cf0b476560f027"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ada30eb8f40a008bf42f8f1adfda90443"><td class="memItemLeft" align="right" valign="top">std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_message_queue_8hpp.html#ada30eb8f40a008bf42f8f1adfda90443">operator&lt;&lt;</a> (std::string &amp;i, const <a class="el" href="class_message_queue.html">MessageQueue</a> &amp;queue)</td></tr>
+<tr class="separator:ada30eb8f40a008bf42f8f1adfda90443"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae611b8ca2ab21ed48b407cd4e3e56288"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_message_queue.html">MessageQueue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_message_queue_8hpp.html#ae611b8ca2ab21ed48b407cd4e3e56288">operator&gt;&gt;</a> (<a class="el" href="class_message_queue.html">MessageQueue</a> &amp;queue, std::string &amp;i)</td></tr>
+<tr class="separator:ae611b8ca2ab21ed48b407cd4e3e56288"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="acb84a306ee37479f97cf0b476560f027"></a>
@@ -143,12 +147,83 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_message_queue_8hpp_source.html#l00019">19</a> of file <a class="el" href="_message_queue_8hpp_source.html">MessageQueue.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_message_queue_8hpp_source.html#l00016">16</a> of file <a class="el" href="_message_queue_8hpp_source.html">MessageQueue.hpp</a>.</p>
 
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ada30eb8f40a008bf42f8f1adfda90443"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada30eb8f40a008bf42f8f1adfda90443">&#9670;&nbsp;</a></span>operator&lt;&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_message_queue.html">MessageQueue</a> &amp;&#160;</td>
+          <td class="paramname"><em>queue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_message_queue_8hpp_source.html#l00069">69</a> of file <a class="el" href="_message_queue_8hpp_source.html">MessageQueue.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    i = queue.<a class="code" href="class_message_queue.html#a94087136a3aed67e2f1069e2bdd0571f">receiveMessage</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> i;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae611b8ca2ab21ed48b407cd4e3e56288"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae611b8ca2ab21ed48b407cd4e3e56288">&#9670;&nbsp;</a></span>operator&gt;&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_message_queue.html">MessageQueue</a>&amp; operator&gt;&gt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_message_queue.html">MessageQueue</a> &amp;&#160;</td>
+          <td class="paramname"><em>queue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_message_queue_8hpp_source.html#l00075">75</a> of file <a class="el" href="_message_queue_8hpp_source.html">MessageQueue.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    queue.<a class="code" href="class_message_queue.html#adc775c0651d539d6268cde073a41451d">sendMessage</a>(i);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> queue;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclass_message_queue_html_adc775c0651d539d6268cde073a41451d"><div class="ttname"><a href="class_message_queue.html#adc775c0651d539d6268cde073a41451d">MessageQueue::sendMessage</a></div><div class="ttdeci">void sendMessage(const std::string &amp;message_text) const</div><div class="ttdoc">Sends a message to the queue.</div><div class="ttdef"><b>Definition:</b> <a href="_message_queue_8cpp_source.html#l00033">MessageQueue.cpp:33</a></div></div>
+<div class="ttc" id="aclass_message_queue_html_a94087136a3aed67e2f1069e2bdd0571f"><div class="ttname"><a href="class_message_queue.html#a94087136a3aed67e2f1069e2bdd0571f">MessageQueue::receiveMessage</a></div><div class="ttdeci">std::string receiveMessage() const</div><div class="ttdoc">Receives a message from the queue.</div><div class="ttdef"><b>Definition:</b> <a href="_message_queue_8cpp_source.html#l00041">MessageQueue.cpp:41</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

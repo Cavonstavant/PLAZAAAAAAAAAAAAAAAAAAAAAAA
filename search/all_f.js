@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['verystupiduserex_115',['VeryStupidUserEX',['../_exception_8hpp.html#a0ae399b5939ece8c60638d855d9db3c0',1,'Exception.hpp']]],
-  ['verystupiduserexception_116',['VeryStupidUserException',['../class_very_stupid_user_exception.html',1,'VeryStupidUserException'],['../class_very_stupid_user_exception.html#a66c0e36fcdd1e591ce4cc0012372e6a3',1,'VeryStupidUserException::VeryStupidUserException()']]]
+  ['what_108',['what',['../class_plazza_exception.html#af42078485825da6b030af687e5990044',1,'PlazzaException']]],
+  ['where_109',['where',['../class_plazza_exception.html#a1a80b426b2c62ec9e54e727b6d9f63cf',1,'PlazzaException']]]
 ];

@@ -89,19 +89,24 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 <div class="title">main.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_arguments_parser_8hpp_source.html">Parser/ArgumentsParser/ArgumentsParser.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="_arguments_parser_8hpp_source.html">ArgumentsParser.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_message_queue_8hpp_source.html">MessageQueue/MessageQueue.hpp</a>&quot;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#src_2main_8cpp" alt=""/></div>
 <map name="src_2main_8cpp" id="src_2main_8cpp">
-<area shape="rect" title=" " alt="" coords="104,5,209,32"/>
-<area shape="rect" href="_arguments_parser_8hpp.html" title=" " alt="" coords="5,80,183,121"/>
-<area shape="rect" title=" " alt="" coords="186,319,245,345"/>
-<area shape="rect" href="_a_parser_8hpp.html" title=" " alt="" coords="65,169,163,196"/>
-<area shape="rect" href="_i_parser_8hpp.html" title=" " alt="" coords="73,244,166,271"/>
-<area shape="rect" title=" " alt="" coords="88,319,151,345"/>
+<area shape="rect" title=" " alt="" coords="233,5,338,32"/>
+<area shape="rect" href="_arguments_parser_8hpp.html" title=" " alt="" coords="5,80,165,107"/>
+<area shape="rect" title=" " alt="" coords="173,304,232,331"/>
+<area shape="rect" href="_message_queue_8hpp.html" title=" " alt="" coords="241,80,495,107"/>
+<area shape="rect" title=" " alt="" coords="520,80,600,107"/>
+<area shape="rect" href="_a_parser_8hpp.html" title=" " alt="" coords="52,155,151,181"/>
+<area shape="rect" href="_i_parser_8hpp.html" title=" " alt="" coords="63,229,156,256"/>
+<area shape="rect" title=" " alt="" coords="78,304,141,331"/>
+<area shape="rect" title=" " alt="" coords="325,155,411,181"/>
 </map>
 </div>
 </div>
@@ -139,13 +144,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00011">11</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="class_arguments_parser.html">ArgumentsParser</a> args(ac - 1, av + 1);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    args.processArguments();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00013">13</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="class_arguments_parser.html">ArgumentsParser</a> args(ac - 1, av + 1);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    args.processArguments();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

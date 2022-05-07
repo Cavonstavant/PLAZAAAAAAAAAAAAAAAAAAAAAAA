@@ -1,11 +1,11 @@
 <map id="src/MessageQueue/MessageQueue.cpp" name="src/MessageQueue/MessageQueue.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="253,5,460,47"/>
-<area shape="rect" id="node2" href="$_message_queue_8hpp.html" title=" " alt="" coords="73,95,224,121"/>
-<area shape="rect" id="node5" title=" " alt="" coords="227,169,286,196"/>
-<area shape="rect" id="node6" href="$_exception_8hpp.html" title=" " alt="" coords="299,95,414,121"/>
-<area shape="rect" id="node7" href="$_logger_8hpp.html" title=" " alt="" coords="422,169,515,196"/>
-<area shape="rect" id="node9" title=" " alt="" coords="489,95,555,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,169,84,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="109,169,197,196"/>
-<area shape="rect" id="node8" title=" " alt="" coords="311,169,397,196"/>
+<area shape="rect" id="node1" title=" " alt="" coords="232,5,439,47"/>
+<area shape="rect" id="node2" href="$_message_queue_8hpp.html" title=" " alt="" coords="5,95,156,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="155,169,214,196"/>
+<area shape="rect" id="node5" href="$_exception_8hpp.html" title=" " alt="" coords="231,95,346,121"/>
+<area shape="rect" id="node6" href="$_logger_8hpp.html" title=" " alt="" coords="350,169,443,196"/>
+<area shape="rect" id="node8" title=" " alt="" coords="421,95,484,121"/>
+<area shape="rect" id="node9" title=" " alt="" coords="509,95,575,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="37,169,124,196"/>
+<area shape="rect" id="node7" title=" " alt="" coords="239,169,325,196"/>
 </map>

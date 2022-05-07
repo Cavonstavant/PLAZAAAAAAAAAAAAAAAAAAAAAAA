@@ -17,6 +17,5 @@ var hierarchy =
       ] ]
     ] ],
     [ "Logger", "class_logger.html", null ],
-    [ "MessageQueue::message", "struct_message_queue_1_1message.html", null ],
     [ "MessageQueue", "class_message_queue.html", null ]
 ];

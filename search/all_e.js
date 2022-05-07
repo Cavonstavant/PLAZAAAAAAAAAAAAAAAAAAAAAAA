@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['text_113',['text',['../struct_message_queue_1_1message.html#a649220920d062eb1778d5de209e3ad95',1,'MessageQueue::message']]],
-  ['type_114',['type',['../struct_message_queue_1_1message.html#a38351a00d77b4786ce48099f9bbcd349',1,'MessageQueue::message']]]
+  ['verystupiduserex_106',['VeryStupidUserEX',['../_exception_8hpp.html#a0ae399b5939ece8c60638d855d9db3c0',1,'Exception.hpp']]],
+  ['verystupiduserexception_107',['VeryStupidUserException',['../class_very_stupid_user_exception.html',1,'VeryStupidUserException'],['../class_very_stupid_user_exception.html#a66c0e36fcdd1e591ce4cc0012372e6a3',1,'VeryStupidUserException::VeryStupidUserException()']]]
 ];

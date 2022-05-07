@@ -18,6 +18,7 @@ var _exception_8hpp =
     [ "LOGGER_COLOR_RESET", "_exception_8hpp.html#a011fa8043c2689f76dad72c2c6eb31b6", null ],
     [ "LOGGER_COLOR_WHITE", "_exception_8hpp.html#a9a1d0bfc50d3760c6ec27e30aa74eff9", null ],
     [ "LOGGER_COLOR_YELLOW", "_exception_8hpp.html#a98277d3446d2917e7cb647b4d9fa15e7", null ],
+    [ "MessageQueueEx", "_exception_8hpp.html#ad538f9c3d6a39de5fe29dd89f7c1ef3a", null ],
     [ "MessageTooLongEX", "_exception_8hpp.html#a108d8ebad34fa0f73d1653ef6e6a0301", null ],
     [ "ParserEX", "_exception_8hpp.html#a1c92790f33d41d0230cc5a141c425c21", null ],
     [ "PlazzaEX", "_exception_8hpp.html#a8ef0a847cd4c54afe916ea3129b03b52", null ],
