@@ -2,9 +2,11 @@ set (INCLUDE_ROOT ${PROJECT_SOURCE_DIR}/src)
 set (SRC_ROOT ${PROJECT_SOURCE_DIR}/src)
 
 add_subdirectory(MessageQueue)
+add_subdirectory(Kitchen)
 
 set (TARGET_ARCHIVE_SRC
-    ${MESSAGE_QUEUE_SRC}
+     ${MESSAGE_QUEUE_SRC}
+     ${KITCHEN_SRC}
 )
 
 add_library(${PROJECT_NAME}_core SHARED ${TARGET_ARCHIVE_SRC})
@@ -31,5 +33,5 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}
 )
 
-add_subdirectory(logger)
+add_subdirectory(Logger)
 add_subdirectory(Parser)
