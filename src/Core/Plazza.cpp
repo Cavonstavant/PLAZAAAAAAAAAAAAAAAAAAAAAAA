@@ -23,6 +23,3 @@ void Core::run()
     ///Main Function
     ///Use it as the reception for the Plazza subject
 }
-
-
-

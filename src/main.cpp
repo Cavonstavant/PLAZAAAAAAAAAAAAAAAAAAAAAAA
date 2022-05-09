@@ -5,9 +5,9 @@
 ** main
 */
 
-#include "Plazza.hpp"
 #include "ArgumentsParser.hpp"
 #include "MessageQueue/MessageQueue.hpp"
+#include "Plazza.hpp"
 #include <iostream>
 #include <string>
 
@@ -17,7 +17,7 @@ int main(int ac, char **av)
 
     args.processArguments();
 
-    plazza::Core core (args.getCookingTime(), args.getCookNumber(), args.getRefillTime());
+    plazza::Core core(args.getCookingTime(), args.getCookNumber(), args.getRefillTime());
 
     core.run();
 
