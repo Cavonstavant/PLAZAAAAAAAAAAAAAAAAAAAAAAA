@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2022
-** aurele.nicolas@epitech.eu
+** constant.vigneron@epitech.eu
 ** File description:
 ** Exception
 */

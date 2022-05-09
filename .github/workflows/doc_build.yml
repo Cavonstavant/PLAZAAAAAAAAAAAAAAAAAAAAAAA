@@ -1,0 +1,33 @@
+name: GH Pages deployment
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        sudo apt update
+        sudo apt install graphviz -y
+        sudo apt install doxygen -y
+
+    - name: Build documentation
+      run: doxygen
+
+    - name: Add .nojekyll
+      run: |
+        touch ${{github.workspace}}/docs/build/html/.nojekyll
+
+    - name: Deploy documentation
+      uses: JamesIves/github-pages-deploy-action@v4.2.5
+      with:
+        github_token: ${{ inputs.github_token }}
+        folder: docs/build/html
+        message: "Update generated documentation"
+        branch: gh-pages

@@ -42,7 +42,7 @@ class ArgumentsParser : public AParser {
             return _refillTimeMs;
         };
         /// \brief Process the arguments given in the char ** (transfers to the inherited member _arguments) by the constructor
-        void prossessArguments();
+        void processArguments();
 
     private:
         /// \brief Set a new cooking Time with the given parameter
