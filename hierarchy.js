@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "plazza::Core", "classplazza_1_1_core.html", null ],
     [ "exception", null, [
       [ "PlazzaException", "class_plazza_exception.html", [
         [ "InvalidIntCastException", "class_invalid_int_cast_exception.html", null ],

@@ -91,6 +91,7 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="_arguments_parser_8hpp_source.html">ArgumentsParser.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_message_queue_8hpp_source.html">MessageQueue/MessageQueue.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_plazza_8hpp_source.html">Plazza.hpp</a>&quot;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -98,15 +99,17 @@ Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#src_2main_8cpp" alt=""/></div>
 <map name="src_2main_8cpp" id="src_2main_8cpp">
-<area shape="rect" title=" " alt="" coords="233,5,338,32"/>
+<area shape="rect" title=" " alt="" coords="315,5,421,32"/>
 <area shape="rect" href="_arguments_parser_8hpp.html" title=" " alt="" coords="5,80,165,107"/>
 <area shape="rect" title=" " alt="" coords="173,304,232,331"/>
 <area shape="rect" href="_message_queue_8hpp.html" title=" " alt="" coords="241,80,495,107"/>
-<area shape="rect" title=" " alt="" coords="520,80,600,107"/>
+<area shape="rect" href="_plazza_8hpp.html" title=" " alt="" coords="519,80,611,107"/>
+<area shape="rect" title=" " alt="" coords="636,80,716,107"/>
 <area shape="rect" href="_a_parser_8hpp.html" title=" " alt="" coords="52,155,151,181"/>
 <area shape="rect" href="_i_parser_8hpp.html" title=" " alt="" coords="63,229,156,256"/>
 <area shape="rect" title=" " alt="" coords="78,304,141,331"/>
 <area shape="rect" title=" " alt="" coords="325,155,411,181"/>
+<area shape="rect" title=" " alt="" coords="530,155,601,181"/>
 </map>
 </div>
 </div>
@@ -144,19 +147,25 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00013">13</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="class_arguments_parser.html">ArgumentsParser</a> args(ac - 1, av + 1);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    args.processArguments();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00014">14</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="class_arguments_parser.html">ArgumentsParser</a> args(ac - 1, av + 1);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    args.processArguments();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classplazza_1_1_core.html">plazza::Core</a> core(args.getCookingTime(), args.getCookNumber(), args.getRefillTime());</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    core.run();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_arguments_parser_html"><div class="ttname"><a href="class_arguments_parser.html">ArgumentsParser</a></div><div class="ttdoc">ArgumentsParser class define functions for parsing received arguments.</div><div class="ttdef"><b>Definition:</b> <a href="_arguments_parser_8hpp_source.html#l00016">ArgumentsParser.hpp:16</a></div></div>
+<div class="ttc" id="aclassplazza_1_1_core_html"><div class="ttname"><a href="classplazza_1_1_core.html">plazza::Core</a></div><div class="ttdoc">Core Class containing the main loop of the program.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8hpp_source.html#l00017">Plazza.hpp:17</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

@@ -1,5 +1,6 @@
 var annotated_dup =
 [
+    [ "plazza", "namespaceplazza.html", "namespaceplazza" ],
     [ "AParser", "class_a_parser.html", "class_a_parser" ],
     [ "ArgumentsParser", "class_arguments_parser.html", "class_arguments_parser" ],
     [ "InputParser", "class_input_parser.html", "class_input_parser" ],
