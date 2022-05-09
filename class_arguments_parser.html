@@ -257,13 +257,13 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_arguments_parser_8cpp_source.html#l00013">13</a> of file <a class="el" href="_arguments_parser_8cpp_source.html">ArgumentsParser.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> x = 0; args[x]; ++x) {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="class_a_parser.html#a1340ee83494ac1fe116e7cfd69057c7e">_arguments</a>.push_back(std::string(args[x]));</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    }</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="class_a_parser.html#a2c1c8d60c99c8da3a18e05c5c0185569">_argumentNumber</a> = ac;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_arguments_parser_8cpp_source.html#l00015">15</a> of file <a class="el" href="_arguments_parser_8cpp_source.html">ArgumentsParser.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> x = 0; args[x]; ++x) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="class_a_parser.html#a1340ee83494ac1fe116e7cfd69057c7e">_arguments</a>.push_back(std::string(args[x]));</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_a_parser.html#a2c1c8d60c99c8da3a18e05c5c0185569">_argumentNumber</a> = ac;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -541,20 +541,18 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_a_parser.html#a98e44eeac7b83c21312c8edbe76842d4">AParser</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_arguments_parser_8cpp_source.html#l00021">21</a> of file <a class="el" href="_arguments_parser_8cpp_source.html">ArgumentsParser.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="class_a_parser.html#a2c1c8d60c99c8da3a18e05c5c0185569">_argumentNumber</a> != 3) {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Invalid Number of Args&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">return</span>;<span class="comment">// raise</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> x = <a class="code" href="class_a_parser.html#a1340ee83494ac1fe116e7cfd69057c7e">_arguments</a>.size() - 1; x &gt; 0; --x) {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">size_t</span> value = 0;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            value = std::stoi(<a class="code" href="class_a_parser.html#a1340ee83494ac1fe116e7cfd69057c7e">_arguments</a>[x]);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Arg isn&#39;t a int&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">return</span>;<span class="comment">// raise</span></div>
+<p class="definition">Definition at line <a class="el" href="_arguments_parser_8cpp_source.html#l00023">23</a> of file <a class="el" href="_arguments_parser_8cpp_source.html">ArgumentsParser.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="class_a_parser.html#a2c1c8d60c99c8da3a18e05c5c0185569">_argumentNumber</a> != 3) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="_exception_8hpp.html#a388d160213cb5a33148645320fd4b396">InvalidNbrArgumentsEX</a>(<span class="stringliteral">&quot;You need 3 arguments.\n&quot;</span>, <a class="code" href="class_logger.html#acc36409db358f1c0dc363ee4469a212f">Logger::CRITICAL</a>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> x = <a class="code" href="class_a_parser.html#a1340ee83494ac1fe116e7cfd69057c7e">_arguments</a>.size() - 1; x &gt; 0; --x) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">size_t</span> value = 0;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            value = std::stoi(<a class="code" href="class_a_parser.html#a1340ee83494ac1fe116e7cfd69057c7e">_arguments</a>[x]);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        } <span class="keywordflow">catch</span> (...) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="_exception_8hpp.html#afcafac22b4897dcf68ee5f6eec714195">InvalidIntCastEX</a>(<span class="stringliteral">&quot;One of the arguments isn&#39;t a int&quot;</span>, <a class="code" href="class_logger.html#acc36409db358f1c0dc363ee4469a212f">Logger::CRITICAL</a>);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">switch</span> (x) {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">case</span> 2:</div>
@@ -567,11 +565,10 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <a class="code" href="class_arguments_parser.html#a08d8c18cc964f327a579bf8603ed46ce">_setCookingTime</a>(value);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot;Internal Problem on for loop&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">break</span>;<span class="comment">// raise</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="_exception_8hpp.html#a0ae399b5939ece8c60638d855d9db3c0">VeryStupidUserEX</a>(<span class="stringliteral">&quot;That&#39;s not possible, or you&#39;ve broke my program...&quot;</span>, <a class="code" href="class_logger.html#acc36409db358f1c0dc363ee4469a212f">Logger::CRITICAL</a>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -660,12 +657,16 @@ Additional Inherited Members</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="a_exception_8hpp_html_afcafac22b4897dcf68ee5f6eec714195"><div class="ttname"><a href="_exception_8hpp.html#afcafac22b4897dcf68ee5f6eec714195">InvalidIntCastEX</a></div><div class="ttdeci">#define InvalidIntCastEX(what, severity)</div><div class="ttdef"><b>Definition:</b> <a href="_exception_8hpp_source.html#l00031">Exception.hpp:31</a></div></div>
 <div class="ttc" id="aclass_arguments_parser_html_af26595ceb349146ebb1de6349a0a40f5"><div class="ttname"><a href="class_arguments_parser.html#af26595ceb349146ebb1de6349a0a40f5">ArgumentsParser::_cookNumber</a></div><div class="ttdeci">size_t _cookNumber</div><div class="ttdoc">Store the cook Number after processArguments() method is called.</div><div class="ttdef"><b>Definition:</b> <a href="_arguments_parser_8hpp_source.html#l00065">ArgumentsParser.hpp:65</a></div></div>
 <div class="ttc" id="aclass_arguments_parser_html_aa4d30f626f07beb87ed5b9f2f023b4b5"><div class="ttname"><a href="class_arguments_parser.html#aa4d30f626f07beb87ed5b9f2f023b4b5">ArgumentsParser::_setRefillTime</a></div><div class="ttdeci">void _setRefillTime(size_t newRefillTime)</div><div class="ttdoc">Set a new refill time with the given parameter.</div><div class="ttdef"><b>Definition:</b> <a href="_arguments_parser_8hpp_source.html#l00062">ArgumentsParser.hpp:62</a></div></div>
 <div class="ttc" id="aclass_arguments_parser_html_a08d8c18cc964f327a579bf8603ed46ce"><div class="ttname"><a href="class_arguments_parser.html#a08d8c18cc964f327a579bf8603ed46ce">ArgumentsParser::_setCookingTime</a></div><div class="ttdeci">void _setCookingTime(size_t newCookingTime)</div><div class="ttdoc">Set a new cooking Time with the given parameter.</div><div class="ttdef"><b>Definition:</b> <a href="_arguments_parser_8hpp_source.html#l00050">ArgumentsParser.hpp:50</a></div></div>
 <div class="ttc" id="aclass_a_parser_html_a1340ee83494ac1fe116e7cfd69057c7e"><div class="ttname"><a href="class_a_parser.html#a1340ee83494ac1fe116e7cfd69057c7e">AParser::_arguments</a></div><div class="ttdeci">std::vector&lt; std::string &gt; _arguments</div><div class="ttdoc">Store a vector of all argument.</div><div class="ttdef"><b>Definition:</b> <a href="_a_parser_8hpp_source.html#l00033">AParser.hpp:33</a></div></div>
+<div class="ttc" id="a_exception_8hpp_html_a0ae399b5939ece8c60638d855d9db3c0"><div class="ttname"><a href="_exception_8hpp.html#a0ae399b5939ece8c60638d855d9db3c0">VeryStupidUserEX</a></div><div class="ttdeci">#define VeryStupidUserEX(what, severity)</div><div class="ttdef"><b>Definition:</b> <a href="_exception_8hpp_source.html#l00027">Exception.hpp:27</a></div></div>
 <div class="ttc" id="aclass_a_parser_html_a2c1c8d60c99c8da3a18e05c5c0185569"><div class="ttname"><a href="class_a_parser.html#a2c1c8d60c99c8da3a18e05c5c0185569">AParser::_argumentNumber</a></div><div class="ttdeci">std::size_t _argumentNumber</div><div class="ttdoc">Store the number of arguments in the command.</div><div class="ttdef"><b>Definition:</b> <a href="_a_parser_8hpp_source.html#l00031">AParser.hpp:31</a></div></div>
 <div class="ttc" id="aclass_arguments_parser_html_a8c9d1a3c0450146877f3bf056eee941f"><div class="ttname"><a href="class_arguments_parser.html#a8c9d1a3c0450146877f3bf056eee941f">ArgumentsParser::_setCookNumber</a></div><div class="ttdeci">void _setCookNumber(size_t newCookNumber)</div><div class="ttdoc">Set a new Cook Number with the given parameter.</div><div class="ttdef"><b>Definition:</b> <a href="_arguments_parser_8hpp_source.html#l00056">ArgumentsParser.hpp:56</a></div></div>
+<div class="ttc" id="a_exception_8hpp_html_a388d160213cb5a33148645320fd4b396"><div class="ttname"><a href="_exception_8hpp.html#a388d160213cb5a33148645320fd4b396">InvalidNbrArgumentsEX</a></div><div class="ttdeci">#define InvalidNbrArgumentsEX(what, severity)</div><div class="ttdef"><b>Definition:</b> <a href="_exception_8hpp_source.html#l00030">Exception.hpp:30</a></div></div>
+<div class="ttc" id="aclass_logger_html_acc36409db358f1c0dc363ee4469a212f"><div class="ttname"><a href="class_logger.html#acc36409db358f1c0dc363ee4469a212f">Logger::CRITICAL</a></div><div class="ttdeci">static Severity CRITICAL()</div><div class="ttdoc">pass this function to the macros and they will log the exception with a critical severity</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00098">Logger.cpp:98</a></div></div>
 <div class="ttc" id="aclass_arguments_parser_html_a066d3a6a523cfce7126490136743eb50"><div class="ttname"><a href="class_arguments_parser.html#a066d3a6a523cfce7126490136743eb50">ArgumentsParser::_refillTimeMs</a></div><div class="ttdeci">size_t _refillTimeMs</div><div class="ttdoc">Store the refill Time after processArguments() method is called.</div><div class="ttdef"><b>Definition:</b> <a href="_arguments_parser_8hpp_source.html#l00072">ArgumentsParser.hpp:72</a></div></div>
 <div class="ttc" id="aclass_arguments_parser_html_a9cd88fa5bf26751205858db0d0c1d144"><div class="ttname"><a href="class_arguments_parser.html#a9cd88fa5bf26751205858db0d0c1d144">ArgumentsParser::_cookingTime</a></div><div class="ttdeci">size_t _cookingTime</div><div class="ttdoc">Store the cooking Time after processArguments() method is called.</div><div class="ttdef"><b>Definition:</b> <a href="_arguments_parser_8hpp_source.html#l00070">ArgumentsParser.hpp:70</a></div></div>
 <!-- start footer part -->

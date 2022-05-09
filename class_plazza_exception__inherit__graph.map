@@ -1,9 +1,11 @@
 <map id="PlazzaException" name="PlazzaException">
-<area shape="rect" id="node1" title="Base exception class for all exceptions in the project." alt="" coords="168,81,296,108"/>
-<area shape="rect" id="node3" href="$class_message_queue_exception.html" title="Base Exception class for any exception related to Message Queues." alt="" coords="349,5,535,32"/>
-<area shape="rect" id="node5" href="$class_not_implemented_exception.html" title="Exception class to throw when something is not implemented." alt="" coords="344,56,540,83"/>
-<area shape="rect" id="node6" href="$class_parser_exception.html" title=" " alt="" coords="379,107,505,133"/>
-<area shape="rect" id="node7" href="$class_very_stupid_user_exception.html" title="Exception class when a user is very stupid and we can&#39;t do what anything for them." alt="" coords="349,157,535,184"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,81,120,108"/>
-<area shape="rect" id="node4" href="$class_message_too_long_exception.html" title=" " alt="" coords="588,5,785,32"/>
+<area shape="rect" id="node1" title="Base exception class for all exceptions in the project." alt="" coords="168,132,296,159"/>
+<area shape="rect" id="node3" href="$class_invalid_int_cast_exception.html" title=" " alt="" coords="383,5,559,32"/>
+<area shape="rect" id="node4" href="$class_invalid_number_arguments_exception.html" title=" " alt="" coords="344,56,597,83"/>
+<area shape="rect" id="node5" href="$class_message_queue_exception.html" title="Base Exception class for any exception related to Message Queues." alt="" coords="377,107,564,133"/>
+<area shape="rect" id="node7" href="$class_not_implemented_exception.html" title="Exception class to throw when something is not implemented." alt="" coords="373,157,569,184"/>
+<area shape="rect" id="node8" href="$class_parser_exception.html" title=" " alt="" coords="407,208,534,235"/>
+<area shape="rect" id="node9" href="$class_very_stupid_user_exception.html" title="Exception class when a user is very stupid and we can&#39;t do what anything for them." alt="" coords="377,259,564,285"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,132,120,159"/>
+<area shape="rect" id="node6" href="$class_message_too_long_exception.html" title=" " alt="" coords="645,107,843,133"/>
 </map>

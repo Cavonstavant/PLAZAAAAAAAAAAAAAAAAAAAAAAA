@@ -2,6 +2,8 @@ var hierarchy =
 [
     [ "exception", null, [
       [ "PlazzaException", "class_plazza_exception.html", [
+        [ "InvalidIntCastException", "class_invalid_int_cast_exception.html", null ],
+        [ "InvalidNumberArgumentsException", "class_invalid_number_arguments_exception.html", null ],
         [ "MessageQueueException", "class_message_queue_exception.html", [
           [ "MessageTooLongException", "class_message_too_long_exception.html", null ]
         ] ],

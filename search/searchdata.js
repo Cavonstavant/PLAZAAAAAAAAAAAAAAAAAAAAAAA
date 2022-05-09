@@ -7,7 +7,7 @@ var indexSectionsWithContent =
   4: "_",
   5: "s",
   6: "s",
-  7: "elmpv",
+  7: "eilmpv",
   8: "p"
 };
 

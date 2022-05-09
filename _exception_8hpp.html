@@ -109,11 +109,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="_exception_8hpp__dep__incl.png" border="0" usemap="#src_2logger_2_exception_8hppdep" alt=""/></div>
 <map name="src_2logger_2_exception_8hppdep" id="src_2logger_2_exception_8hppdep">
-<area shape="rect" title=" " alt="" coords="303,5,486,32"/>
+<area shape="rect" title=" " alt="" coords="407,5,590,32"/>
 <area shape="rect" href="_exception_8cpp.html" title=" " alt="" coords="5,87,187,114"/>
 <area shape="rect" href="_logger_8cpp.html" title=" " alt="" coords="211,87,371,114"/>
 <area shape="rect" href="_message_queue_8cpp.html" title=" " alt="" coords="395,80,602,121"/>
-<area shape="rect" href="_input_parser_8cpp.html" title=" " alt="" coords="627,80,789,121"/>
+<area shape="rect" href="_arguments_parser_8cpp.html" title=" " alt="" coords="627,80,827,121"/>
+<area shape="rect" href="_input_parser_8cpp.html" title=" " alt="" coords="851,80,1013,121"/>
 </map>
 </div>
 </div>
@@ -131,6 +132,10 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base Exception class for any exception related to Message Queues.  <a href="class_message_queue_exception.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_message_too_long_exception.html">MessageTooLongException</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_invalid_number_arguments_exception.html">InvalidNumberArgumentsException</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_invalid_int_cast_exception.html">InvalidIntCastException</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_very_stupid_user_exception.html">VeryStupidUserException</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception class when a user is very stupid and we can't do what anything for them.  <a href="class_very_stupid_user_exception.html#details">More...</a><br /></td></tr>
@@ -156,6 +161,10 @@ Macros</h2></td></tr>
 <tr class="separator:ad538f9c3d6a39de5fe29dd89f7c1ef3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a108d8ebad34fa0f73d1653ef6e6a0301"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_exception_8hpp.html#a108d8ebad34fa0f73d1653ef6e6a0301">MessageTooLongEX</a>(what,  severity)&#160;&#160;&#160;<a class="el" href="_exception_8hpp.html#a0191574963a1216d901dceaf960f43a2">ExceptionTernary</a>(<a class="el" href="class_message_too_long_exception.html">MessageTooLongException</a>, what, severity)</td></tr>
 <tr class="separator:a108d8ebad34fa0f73d1653ef6e6a0301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a388d160213cb5a33148645320fd4b396"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_exception_8hpp.html#a388d160213cb5a33148645320fd4b396">InvalidNbrArgumentsEX</a>(what,  severity)&#160;&#160;&#160;<a class="el" href="_exception_8hpp.html#a0191574963a1216d901dceaf960f43a2">ExceptionTernary</a>(<a class="el" href="class_invalid_number_arguments_exception.html">InvalidNumberArgumentsException</a>, what, severity)</td></tr>
+<tr class="separator:a388d160213cb5a33148645320fd4b396"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcafac22b4897dcf68ee5f6eec714195"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_exception_8hpp.html#afcafac22b4897dcf68ee5f6eec714195">InvalidIntCastEX</a>(what,  severity)&#160;&#160;&#160;<a class="el" href="_exception_8hpp.html#a0191574963a1216d901dceaf960f43a2">ExceptionTernary</a>(<a class="el" href="class_invalid_int_cast_exception.html">InvalidIntCastException</a>, what, severity)</td></tr>
+<tr class="separator:afcafac22b4897dcf68ee5f6eec714195"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a011fa8043c2689f76dad72c2c6eb31b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_exception_8hpp.html#a011fa8043c2689f76dad72c2c6eb31b6">LOGGER_COLOR_RESET</a>&#160;&#160;&#160;&quot;\x1B[0m&quot;</td></tr>
 <tr class="memdesc:a011fa8043c2689f76dad72c2c6eb31b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">\Defines the color codes to print the exceptions in color  <a href="_exception_8hpp.html#a011fa8043c2689f76dad72c2c6eb31b6">More...</a><br /></td></tr>
 <tr class="separator:a011fa8043c2689f76dad72c2c6eb31b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -235,6 +244,66 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a id="afcafac22b4897dcf68ee5f6eec714195"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcafac22b4897dcf68ee5f6eec714195">&#9670;&nbsp;</a></span>InvalidIntCastEX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define InvalidIntCastEX</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">what, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">severity&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="_exception_8hpp.html#a0191574963a1216d901dceaf960f43a2">ExceptionTernary</a>(<a class="el" href="class_invalid_int_cast_exception.html">InvalidIntCastException</a>, what, severity)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_exception_8hpp_source.html#l00031">31</a> of file <a class="el" href="_exception_8hpp_source.html">Exception.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a388d160213cb5a33148645320fd4b396"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a388d160213cb5a33148645320fd4b396">&#9670;&nbsp;</a></span>InvalidNbrArgumentsEX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define InvalidNbrArgumentsEX</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">what, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">severity&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="_exception_8hpp.html#a0191574963a1216d901dceaf960f43a2">ExceptionTernary</a>(<a class="el" href="class_invalid_number_arguments_exception.html">InvalidNumberArgumentsException</a>, what, severity)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_exception_8hpp_source.html#l00030">30</a> of file <a class="el" href="_exception_8hpp_source.html">Exception.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a966845eadcec615575e9b9b498d15980"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a966845eadcec615575e9b9b498d15980">&#9670;&nbsp;</a></span>LOGGER_COLOR_BLACK</h2>
 
@@ -247,7 +316,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_exception_8hpp_source.html#l00033">33</a> of file <a class="el" href="_exception_8hpp_source.html">Exception.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_exception_8hpp_source.html#l00035">35</a> of file <a class="el" href="_exception_8hpp_source.html">Exception.hpp</a>.</p>
 
 </div>
 </div>
@@ -263,7 +332,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_exception_8hpp_source.html#l00037">37</a> of file <a class="el" href="_exception_8hpp_source.html">Exception.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_exception_8hpp_source.html#l00039">39</a> of file <a class="el" href="_exception_8hpp_source.html">Exception.hpp</a>.</p>
 
 </div>
 </div>
@@ -279,7 +348,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_exception_8hpp_source.html#l00041">41</a> of file <a class="el" href="_exception_8hpp_source.html">Exception.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_exception_8hpp_source.html#l00043">43</a> of file <a class="el" href="_exception_8hpp_source.html">Exception.hpp</a>.</p>
 
 </div>
 </div>
@@ -295,7 +364,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_exception_8hpp_source.html#l00039">39</a> of file <a class="el" href="_exception_8hpp_source.html">Exception.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_exception_8hpp_source.html#l00041">41</a> of file <a class="el" href="_exception_8hpp_source.html">Exception.hpp</a>.</p>
 
 </div>
 </div>
@@ -311,7 +380,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_exception_8hpp_source.html#l00035">35</a> of file <a class="el" href="_exception_8hpp_source.html">Exception.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_exception_8hpp_source.html#l00037">37</a> of file <a class="el" href="_exception_8hpp_source.html">Exception.hpp</a>.</p>
 
 </div>
 </div>
@@ -327,7 +396,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_exception_8hpp_source.html#l00038">38</a> of file <a class="el" href="_exception_8hpp_source.html">Exception.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_exception_8hpp_source.html#l00040">40</a> of file <a class="el" href="_exception_8hpp_source.html">Exception.hpp</a>.</p>
 
 </div>
 </div>
@@ -343,7 +412,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_exception_8hpp_source.html#l00034">34</a> of file <a class="el" href="_exception_8hpp_source.html">Exception.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_exception_8hpp_source.html#l00036">36</a> of file <a class="el" href="_exception_8hpp_source.html">Exception.hpp</a>.</p>
 
 </div>
 </div>
@@ -361,7 +430,7 @@ Macros</h2></td></tr>
 
 <p>\Defines the color codes to print the exceptions in color </p>
 
-<p class="definition">Definition at line <a class="el" href="_exception_8hpp_source.html#l00032">32</a> of file <a class="el" href="_exception_8hpp_source.html">Exception.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_exception_8hpp_source.html#l00034">34</a> of file <a class="el" href="_exception_8hpp_source.html">Exception.hpp</a>.</p>
 
 </div>
 </div>
@@ -377,7 +446,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_exception_8hpp_source.html#l00040">40</a> of file <a class="el" href="_exception_8hpp_source.html">Exception.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_exception_8hpp_source.html#l00042">42</a> of file <a class="el" href="_exception_8hpp_source.html">Exception.hpp</a>.</p>
 
 </div>
 </div>
@@ -393,7 +462,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_exception_8hpp_source.html#l00036">36</a> of file <a class="el" href="_exception_8hpp_source.html">Exception.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_exception_8hpp_source.html#l00038">38</a> of file <a class="el" href="_exception_8hpp_source.html">Exception.hpp</a>.</p>
 
 </div>
 </div>

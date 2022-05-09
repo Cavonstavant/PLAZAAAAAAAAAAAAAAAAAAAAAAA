@@ -1,8 +1,9 @@
 <map id="src/Parser" name="src/Parser">
 <area shape="rect" id="node2" href="dir_dcc91de57851bce53f16c3a4a65a45ff.html" title="ArgumentsParser" alt="" coords="157,63,291,111"/>
+<area shape="rect" id="node4" href="dir_ffde1fbcaa8d6b0d34e29c3bddf7a801.html" title="logger" alt="" coords="119,159,191,207"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000004_000001.html" title="1" alt="" coords="185,142,194,156"/>
 <area shape="rect" id="node3" href="dir_889795c093700a0da6ffc59eab49a66c.html" title="InputParser" alt="" coords="38,63,133,111"/>
-<area shape="rect" id="node4" href="dir_ffde1fbcaa8d6b0d34e29c3bddf7a801.html" title="logger" alt="" coords="49,159,121,207"/>
-<area shape="rect" id="edge1-headlabel" href="dir_000005_000001.html" title="1" alt="" coords="89,133,98,148"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000005_000001.html" title="1" alt="" coords="129,132,138,146"/>
 <area shape="rect" id="clust2" href="dir_be6b6bc8933d1b72ef64ada15681fca0.html" alt="" coords="27,52,397,121"/>
 <area shape="rect" id="clust1" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html" title="src" alt="" coords="16,16,408,132"/>
 </map>

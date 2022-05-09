@@ -3,6 +3,8 @@ var annotated_dup =
     [ "AParser", "class_a_parser.html", "class_a_parser" ],
     [ "ArgumentsParser", "class_arguments_parser.html", "class_arguments_parser" ],
     [ "InputParser", "class_input_parser.html", "class_input_parser" ],
+    [ "InvalidIntCastException", "class_invalid_int_cast_exception.html", "class_invalid_int_cast_exception" ],
+    [ "InvalidNumberArgumentsException", "class_invalid_number_arguments_exception.html", "class_invalid_number_arguments_exception" ],
     [ "IParser", "class_i_parser.html", "class_i_parser" ],
     [ "Logger", "class_logger.html", "class_logger" ],
     [ "MessageQueue", "class_message_queue.html", "class_message_queue" ],

@@ -1,13 +1,5 @@
 var searchData=
 [
-  ['logger_5fcolor_5fblack_223',['LOGGER_COLOR_BLACK',['../_exception_8hpp.html#a966845eadcec615575e9b9b498d15980',1,'Exception.hpp']]],
-  ['logger_5fcolor_5fblue_224',['LOGGER_COLOR_BLUE',['../_exception_8hpp.html#a8dd5be6eedc6989bdfe0c3d75715600f',1,'Exception.hpp']]],
-  ['logger_5fcolor_5fbold_225',['LOGGER_COLOR_BOLD',['../_exception_8hpp.html#afed90c757c8f3263de91c616966271af',1,'Exception.hpp']]],
-  ['logger_5fcolor_5fcyan_226',['LOGGER_COLOR_CYAN',['../_exception_8hpp.html#a090553be72c1bb74fffe5b6a1739504e',1,'Exception.hpp']]],
-  ['logger_5fcolor_5fgreen_227',['LOGGER_COLOR_GREEN',['../_exception_8hpp.html#a9326ad572338a7384550d4eb7e1dd289',1,'Exception.hpp']]],
-  ['logger_5fcolor_5fpurple_228',['LOGGER_COLOR_PURPLE',['../_exception_8hpp.html#a47fd9dd21d58bf7f2b7a1221dd846036',1,'Exception.hpp']]],
-  ['logger_5fcolor_5fred_229',['LOGGER_COLOR_RED',['../_exception_8hpp.html#a9c0a761d7fcefcef9849ce0e3900d962',1,'Exception.hpp']]],
-  ['logger_5fcolor_5freset_230',['LOGGER_COLOR_RESET',['../_exception_8hpp.html#a011fa8043c2689f76dad72c2c6eb31b6',1,'Exception.hpp']]],
-  ['logger_5fcolor_5fwhite_231',['LOGGER_COLOR_WHITE',['../_exception_8hpp.html#a9a1d0bfc50d3760c6ec27e30aa74eff9',1,'Exception.hpp']]],
-  ['logger_5fcolor_5fyellow_232',['LOGGER_COLOR_YELLOW',['../_exception_8hpp.html#a98277d3446d2917e7cb647b4d9fa15e7',1,'Exception.hpp']]]
+  ['invalidintcastex_231',['InvalidIntCastEX',['../_exception_8hpp.html#afcafac22b4897dcf68ee5f6eec714195',1,'Exception.hpp']]],
+  ['invalidnbrargumentsex_232',['InvalidNbrArgumentsEX',['../_exception_8hpp.html#a388d160213cb5a33148645320fd4b396',1,'Exception.hpp']]]
 ];
