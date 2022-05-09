@@ -12,8 +12,7 @@
 
 #include <cstddef>
 
-namespace plazza
-{
+namespace plazza {
     /// \brief Core Class containing the main loop of the program
     class Core {
         public:
@@ -28,6 +27,7 @@ namespace plazza
             ~Core() = default;
             /// \brief Main function of the program
             void run();
+
         private:
             /// \brief Store the cookingTime
             size_t _cookingTime;
@@ -36,6 +36,6 @@ namespace plazza
             /// \brief Store the refillTime
             size_t _refillTime;
     };
-}
+}// namespace plazza
 
 #endif /* !PLAZZA_HPP_ */
