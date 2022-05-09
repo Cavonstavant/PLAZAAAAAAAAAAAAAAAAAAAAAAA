@@ -9,21 +9,20 @@
 
 #include "Plazza.hpp"
 
-namespace plazza
-{
-    Core::Core(size_t cookingTime, size_t cookNumber, size_t refillTime)
-    {
-        _cookingTime = cookingTime;
-        _cookNumber = cookNumber;
-        _refillTime = refillTime;
-    }
+using namespace plazza;
 
-    void Core::run()
-    {
-        ///Main Function
-        ///Use it as the reception for the Plazza subject
-    }
-} // namespace Plazza
+Core::Core(size_t cookingTime, size_t cookNumber, size_t refillTime)
+{
+    _cookingTime = cookingTime;
+    _cookNumber = cookNumber;
+    _refillTime = refillTime;
+}
+
+void Core::run()
+{
+    ///Main Function
+    ///Use it as the reception for the Plazza subject
+}
 
 
 
