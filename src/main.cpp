@@ -5,7 +5,7 @@
 ** main
 */
 
-#include "Core/Plazza.hpp"
+#include "Plazza.hpp"
 #include "ArgumentsParser.hpp"
 #include "MessageQueue/MessageQueue.hpp"
 #include <iostream>
