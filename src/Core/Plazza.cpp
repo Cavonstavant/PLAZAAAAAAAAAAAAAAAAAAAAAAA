@@ -9,7 +9,7 @@
 
 #include "Plazza.hpp"
 
-namespace Plazza
+namespace plazza
 {
     Core::Core(size_t cookingTime, size_t cookNumber, size_t refillTime)
     {

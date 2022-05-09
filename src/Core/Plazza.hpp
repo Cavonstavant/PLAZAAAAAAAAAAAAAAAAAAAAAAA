@@ -12,7 +12,7 @@
 
 #include <cstddef>
 
-namespace Plazza
+namespace plazza
 {
     /// \brief Core Class containing the main loop of the program
     class Core {

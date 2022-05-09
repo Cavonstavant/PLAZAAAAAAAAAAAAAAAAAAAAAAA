@@ -17,7 +17,7 @@ int main(int ac, char **av)
 
     args.processArguments();
 
-    Plazza::Core core (args.getCookingTime(), args.getCookNumber(), args.getRefillTime());
+    plazza::Core core (args.getCookingTime(), args.getCookNumber(), args.getRefillTime());
 
     core.run();
 
