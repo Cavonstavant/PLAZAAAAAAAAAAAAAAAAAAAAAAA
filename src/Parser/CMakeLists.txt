@@ -22,7 +22,6 @@ target_link_libraries(${PROJECT_NAME}_parser
 
 target_include_directories(${PROJECT_NAME}_parser
     PRIVATE ${SRC_ROOT}
-    PRIVATE ${LOG_ROOT}
     PUBLIC ${SRC_ROOT}
     PUBLIC ${ARG_ROOT}
     PUBLIC ${INP_ROOT}
