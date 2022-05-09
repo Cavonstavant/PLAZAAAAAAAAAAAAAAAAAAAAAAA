@@ -27,6 +27,8 @@
 #define VeryStupidUserEX(what, severity) ExceptionTernary(VeryStupidUserException, what, severity)
 #define MessageQueueEx(what, severity) ExceptionTernary(MessageQueueException, what, severity)
 #define MessageTooLongEX(what, severity) ExceptionTernary(MessageTooLongException, what, severity)
+#define InvalidNbrArgumentsEX(what, severity) ExceptionTernary(InvalidNumberArgumentsException, what, severity)
+#define InvalidIntCastEX(what, severity) ExceptionTernary(InvalidIntCastException, what, severity)
 
 /// \Defines the color codes to print the exceptions in color
 #define LOGGER_COLOR_RESET "\x1B[0m"
@@ -103,6 +105,22 @@ class MessageTooLongException : public MessageQueueException {
         {
             _name = "MessageTooLongException";
         };
+};
+
+class InvalidNumberArgumentsException : public PlazzaException {
+    public:
+        InvalidNumberArgumentsException(std::string const &what, std::string const &func, int const &line, std::string const &file) : PlazzaException(what, func, line, file)
+        {
+            _name = "InvalidNumberArgumentsException";
+        };
+};
+
+class InvalidIntCastException : public PlazzaException {
+    public:
+        InvalidIntCastException(std::string const &what, std::string const &func, int const &line, std::string const &file) : PlazzaException(what, func, line, file)
+        {
+            _name = "InvalidIntCastException";
+        }
 };
 
 /// \brief Exception class when a user is very stupid and we can't do what anything for them
