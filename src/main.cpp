@@ -15,12 +15,11 @@ int main(int ac, char **av)
 {
     ArgumentsParser args(ac - 1, av + 1);
 
-    try {
-        args.processArguments();
-    } catch (...) {
-        return 84;
-    }
+    args.processArguments();
+
     Plazza::Core core (args.getCookingTime(), args.getCookNumber(), args.getRefillTime());
+
+    core.run();
 
     return 0;
 }
