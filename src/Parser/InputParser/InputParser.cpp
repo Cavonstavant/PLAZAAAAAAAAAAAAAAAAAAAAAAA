@@ -9,6 +9,8 @@
 #include "Exception.hpp"
 #include <iostream>
 
+using namespace plazza;
+
 InputParser::InputParser()
 {
     _command = "";
