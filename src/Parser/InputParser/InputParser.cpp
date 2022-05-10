@@ -59,6 +59,11 @@ void InputParser::processArguments()
     _checkArgumentsValidity();
 }
 
+void InputParser::setCommandSeparator(char sep)
+{
+    _separator = sep;
+}
+
 bool InputParser::_isValidPizzaName(const std::string &pizza) const
 {
     const std::string availablePizza[4] = {
