@@ -33,6 +33,6 @@ namespace plazza {
             /// \brief Store a vector of all argument.
             std::vector<std::string> _arguments;
     };
-}
+}// namespace plazza
 
 #endif

@@ -28,6 +28,6 @@ namespace plazza {
             /// \return const std::vector<std::string>& that contain each argument.
             virtual const std::vector<std::string> &getArguments() const = 0;
     };
-}
+}// namespace plazza
 
 #endif

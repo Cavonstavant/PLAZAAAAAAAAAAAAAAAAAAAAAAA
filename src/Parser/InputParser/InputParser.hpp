@@ -62,6 +62,6 @@ namespace plazza {
             /// \return true if it's std::string is a valid pizza separator, false otherwise.
             bool _isValidPizzaSeparator(const std::string &) const;
     };
-}
+}// namespace plazza
 
 #endif
