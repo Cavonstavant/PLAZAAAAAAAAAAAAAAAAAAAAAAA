@@ -10,21 +10,22 @@
 
     #include <string>
 
-typedef pizzaSize_e pizzaSize_t;
-typedef pizza_s pizza_t;
+namespace pizza {
+    typedef pizzaSize_e pizzaSize_t;
+    typedef pizza_s pizza_t;
 
-enum pizzaSize_e {
-    S = 1,
-    M = 2,
-    L = 4,
-    XL = 8,
-    XXL = 16,
-};
+    enum pizzaSize_e {
+        S = 1,
+        M = 2,
+        L = 4,
+        XL = 8,
+        XXL = 16,
+    };
 
-struct pizza_s {
-    std::string name;
-    enum pizzaSize_e size;
-    std::size_t number;
-};
-
+    struct pizza_s {
+        std::string name;
+        enum pizzaSize_e size;
+        std::size_t number;
+    };
+}
 #endif /* !PIZZA_H_ */
