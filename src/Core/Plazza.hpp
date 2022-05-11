@@ -30,8 +30,10 @@ namespace plazza {
             void run();
 
         private:
+            /// \brief Display all of the kitchens current status
             void _displayKitchensStatus(void);
-
+            /// \brief Handle the receive input
+            /// \return true if the input is valid, false otherwise
             bool _handleInput(const std::string &input);
             /// \brief Store the cookingTime
             size_t _cookingTime;
