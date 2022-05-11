@@ -9,6 +9,8 @@
 #include "Exception.hpp"
 #include <iostream>
 
+using namespace plazza;
+
 InputParser::InputParser()
 {
     _command = "";
@@ -57,6 +59,11 @@ void InputParser::processArguments()
     }
     _arguments = args;
     _checkArgumentsValidity();
+}
+
+void InputParser::setCommandSeparator(char sep)
+{
+    _separator = sep;
 }
 
 bool InputParser::_isValidPizzaName(const std::string &pizza) const
