@@ -11,6 +11,7 @@
 #define PLAZZA_HPP_
 
 #include <cstddef>
+#include <string>
 
 namespace plazza {
     /// \brief Reception Class containing the main loop of the program
@@ -29,6 +30,9 @@ namespace plazza {
             void run();
 
         private:
+            void _displayKitchensStatus(void);
+
+            bool _handleInput(const std::string &input);
             /// \brief Store the cookingTime
             size_t _cookingTime;
             /// \brief Store the cookNumber
