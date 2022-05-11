@@ -72,6 +72,6 @@ namespace plazza {
             /// \brief Store the refill Time after processArguments() method is called
             size_t _refillTimeMs;
     };
-}
+}// namespace plazza
 
 #endif /* !ARGUMENTSPARSER_HPP_ */
