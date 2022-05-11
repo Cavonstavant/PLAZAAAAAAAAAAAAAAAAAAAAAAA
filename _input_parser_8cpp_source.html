@@ -169,7 +169,7 @@ $(document).ready(function(){initNavTree('_input_parser_8cpp_source.html',''); i
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            findValidPizza = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> (!findValidPizza)</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="_exception_8hpp.html#a1c92790f33d41d0230cc5a141c425c21">ParserEX</a>(<span class="stringliteral">&quot;Invalid pizza name in the command: &quot;</span> + pizza, <a class="code" href="class_logger.html#af9a5cbfa2e29185315d0fb7b42ffcd79">Logger::LOW</a>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="_exception_8hpp.html#a1c92790f33d41d0230cc5a141c425c21">ParserEX</a>(<span class="stringliteral">&quot;Invalid pizza name in the command: &quot;</span> + pizza, <a class="code" href="class_logger.html#af9a5cbfa2e29185315d0fb7b42ffcd79">Logger::LOW</a>);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span> (findValidPizza);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
@@ -188,7 +188,7 @@ $(document).ready(function(){initNavTree('_input_parser_8cpp_source.html',''); i
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            findValidPizzaSize = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span> (!findValidPizzaSize)</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="_exception_8hpp.html#a1c92790f33d41d0230cc5a141c425c21">ParserEX</a>(<span class="stringliteral">&quot;Invalid pizza size in the command: &quot;</span> + pizzaSize, <a class="code" href="class_logger.html#af9a5cbfa2e29185315d0fb7b42ffcd79">Logger::LOW</a>);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="_exception_8hpp.html#a1c92790f33d41d0230cc5a141c425c21">ParserEX</a>(<span class="stringliteral">&quot;Invalid pizza size in the command: &quot;</span> + pizzaSize, <a class="code" href="class_logger.html#af9a5cbfa2e29185315d0fb7b42ffcd79">Logger::LOW</a>);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">return</span> (findValidPizzaSize);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
@@ -203,7 +203,7 @@ $(document).ready(function(){initNavTree('_input_parser_8cpp_source.html',''); i
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            findValidPizzaNumber = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">if</span> (!findValidPizzaNumber)</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <a class="code" href="_exception_8hpp.html#a1c92790f33d41d0230cc5a141c425c21">ParserEX</a>(<span class="stringliteral">&quot;Invalid pizza number in the command: &quot;</span> + pizzaNumber, <a class="code" href="class_logger.html#af9a5cbfa2e29185315d0fb7b42ffcd79">Logger::LOW</a>);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="_exception_8hpp.html#a1c92790f33d41d0230cc5a141c425c21">ParserEX</a>(<span class="stringliteral">&quot;Invalid pizza number in the command: &quot;</span> + pizzaNumber, <a class="code" href="class_logger.html#af9a5cbfa2e29185315d0fb7b42ffcd79">Logger::LOW</a>);</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">return</span> (findValidPizzaNumber);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
@@ -212,7 +212,7 @@ $(document).ready(function(){initNavTree('_input_parser_8cpp_source.html',''); i
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">bool</span> findValidPizzaSeparator = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">if</span> (pizzaSeparator != <span class="stringliteral">&quot;;&quot;</span>) {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <a class="code" href="_exception_8hpp.html#a1c92790f33d41d0230cc5a141c425c21">ParserEX</a>(<span class="stringliteral">&quot;Invalid pizza separator in the command: &quot;</span> + pizzaSeparator, <a class="code" href="class_logger.html#af9a5cbfa2e29185315d0fb7b42ffcd79">Logger::LOW</a>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="_exception_8hpp.html#a1c92790f33d41d0230cc5a141c425c21">ParserEX</a>(<span class="stringliteral">&quot;Invalid pizza separator in the command: &quot;</span> + pizzaSeparator, <a class="code" href="class_logger.html#af9a5cbfa2e29185315d0fb7b42ffcd79">Logger::LOW</a>);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        findValidPizzaSeparator = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> (findValidPizzaSeparator);</div>
