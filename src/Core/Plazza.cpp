@@ -9,6 +9,8 @@
 
 #include "Plazza.hpp"
 #include "InputParser.hpp"
+#include <iostream>
+#include <string>
 
 using namespace plazza;
 
@@ -21,6 +23,14 @@ Core::Core(size_t cookingTime, size_t cookNumber, size_t refillTime)
 
 void Core::run()
 {
-    ///Main Function
-    ///Use it as the reception for the Plazza subject
+    std::string input;
+    //InputParser server;
+
+    while (true) {
+        std::cin >> input;
+
+        std::cout << input << std::endl;
+        if (input == "exit")
+            break;
+    }
 }
