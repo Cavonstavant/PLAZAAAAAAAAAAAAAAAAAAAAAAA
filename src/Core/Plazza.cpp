@@ -9,6 +9,7 @@
 
 #include "Plazza.hpp"
 #include "InputParser.hpp"
+#include "Exception.hpp"
 #include <iostream>
 
 using namespace plazza;
@@ -27,17 +28,24 @@ void Reception::_displayKitchensStatus(void)
 
 bool Reception::_handleInput(const std::string &input)
 {
-    std::cout << "Handle of" << input << "not done yet" << std::endl;
+    InputParser server;
+
+    server.setCommand(input);
+    try {
+        server.processArguments();
+    } catch (const PlazzaException &e) {
+        std::cerr << e.what() << std::endl;
+        return false;
+    }
     return true;
 }
 
 void Reception::run()
 {
     std::string input;
-    InputParser server;
 
     while (true) {
-        std::cin >> input;
+        std::getline(std::cin, input);
 
         if (input == "exit") {
             break;
