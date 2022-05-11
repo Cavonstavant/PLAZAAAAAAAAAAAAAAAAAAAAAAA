@@ -12,6 +12,8 @@
 #include <iostream>
 #include <string>
 
+using namespace plazza;
+
 ArgumentsParser::ArgumentsParser(int ac, char **args)
 {
     for (size_t x = 0; args[x]; ++x) {
