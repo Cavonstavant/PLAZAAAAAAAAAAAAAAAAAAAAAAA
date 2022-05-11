@@ -55,7 +55,7 @@ void Reception::run()
             std::system("clear");
         } else {
             if (!_handleInput(input)) {
-                std::cout << "Raise an exception" << std::endl;
+                ParserEX(input + " has a invalid pizza command.", Logger::INFO);
             }
         }
     }
