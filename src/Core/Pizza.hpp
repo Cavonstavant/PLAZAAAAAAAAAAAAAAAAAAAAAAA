@@ -14,32 +14,32 @@
 
 namespace plazza {
 
-    /// \brief Enumeration for available pizza type.
-    enum PizzaType {
-        Regina = 1,
-        Margarita = 2,
-        Americana = 4,
-        Fantasia = 8,
-    };
+/// \brief Enumeration for available pizza type.
+enum PizzaType {
+    Regina = 1,
+    Margarita = 2,
+    Americana = 4,
+    Fantasia = 8,
+};
 
-    /// \brief Enumeration for available pizza size.
-    enum PizzaSize {
-        S = 1,
-        M = 2,
-        L = 4,
-        XL = 8,
-        XXL = 16,
-    };
+/// \brief Enumeration for available pizza size.
+enum PizzaSize {
+    S = 1,
+    M = 2,
+    L = 4,
+    XL = 8,
+    XXL = 16,
+};
 
-    /// \brief Structure for pizza.
-    struct Pizza {
-            /// \brief PizzaType Type of the pizza.
-            PizzaType type;
-            /// \brief PizzaSize Size of the pizza.
-            PizzaSize size;
-            /// \brief std::size_t Number of pizza.
-            std::size_t number;
-    };
+/// \brief Structure for pizza.
+struct Pizza {
+    /// \brief PizzaType Type of the pizza.
+    PizzaType type;
+    /// \brief PizzaSize Size of the pizza.
+    PizzaSize size;
+    /// \brief std::size_t Number of pizza.
+    std::size_t number;
+};
 } // namespace pizza
 
 #endif /* !PIZZA_H_ */
