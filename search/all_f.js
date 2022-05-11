@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['what_118',['what',['../class_plazza_exception.html#af42078485825da6b030af687e5990044',1,'PlazzaException']]],
-  ['where_119',['where',['../class_plazza_exception.html#a1a80b426b2c62ec9e54e727b6d9f63cf',1,'PlazzaException']]]
+  ['type_129',['type',['../structplazza_1_1_pizza.html#a7d8a39a6e1d49e1c7f1a53124dc13c13',1,'plazza::Pizza']]]
 ];

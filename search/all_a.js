@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['openqueue_89',['openQueue',['../class_message_queue.html#a88457184ce99ccafa8814ccd267c3a9c',1,'MessageQueue']]],
-  ['operator_3c_3c_90',['operator&lt;&lt;',['../_message_queue_8hpp.html#ada30eb8f40a008bf42f8f1adfda90443',1,'MessageQueue.hpp']]],
-  ['operator_3d_91',['operator=',['../class_message_queue.html#a1830f847ddb62bba6cb45361532415e8',1,'MessageQueue']]],
-  ['operator_3e_3e_92',['operator&gt;&gt;',['../_message_queue_8hpp.html#ae611b8ca2ab21ed48b407cd4e3e56288',1,'MessageQueue.hpp']]]
+  ['none_92',['NONE',['../class_logger.html#a1d61a808908f837373dcd89f52fa0c2a',1,'Logger']]],
+  ['notimplementedexception_93',['NotImplementedException',['../class_not_implemented_exception.html',1,'NotImplementedException'],['../class_not_implemented_exception.html#aa64759e5effb1f917f668b5f00754d78',1,'NotImplementedException::NotImplementedException()']]],
+  ['number_94',['number',['../structplazza_1_1_pizza.html#a57de3884a638bc2e0c30afa80de4629d',1,'plazza::Pizza']]]
 ];
