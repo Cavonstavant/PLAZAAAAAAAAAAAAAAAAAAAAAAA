@@ -40,6 +40,6 @@ namespace plazza {
             /// \brief std::size_t Number of pizza.
             std::size_t number;
     };
-} // namespace pizza
+}// namespace plazza
 
 #endif /* !PIZZA_H_ */
