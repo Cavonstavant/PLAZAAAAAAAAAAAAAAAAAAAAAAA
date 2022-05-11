@@ -109,7 +109,7 @@ bool InputParser::_isValidPizzaNumber(const std::string &pizzaNumber) const
     std::string tmp = pizzaNumber;
 
     if (tmp.find("x") == 0) {
-        tmp.substr(1);
+        tmp.erase(tmp.begin());
         if (std::atoi(tmp.c_str()) != 0)
             findValidPizzaNumber = true;
     }
