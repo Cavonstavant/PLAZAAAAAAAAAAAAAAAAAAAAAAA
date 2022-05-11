@@ -4,6 +4,7 @@ set (INC_ROOT ${PROJECT_SOURCE_DIR}/src/Core)
 set(SRC
     ${SRC_ROOT}/Plazza.cpp
     ${SRC_ROOT}/Plazza.hpp
+    ${SRC_ROOT}/Pizza.hpp
 )
 
 add_library(${PROJECT_NAME}_Core ${SRC})
