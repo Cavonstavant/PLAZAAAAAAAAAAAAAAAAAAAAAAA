@@ -69,10 +69,10 @@ void InputParser::setCommandSeparator(char sep)
 bool InputParser::_isValidPizzaName(const std::string &pizza) const
 {
     const std::string availablePizza[4] = {
-            "Regina",
-            "Margarita",
-            "Americana",
-            "Fantasia"};
+            "regina",
+            "margarita",
+            "americana",
+            "fantasia"};
     bool findValidPizza = false;
 
     for (std::size_t index = 0; index < 4; index++) {
@@ -80,7 +80,7 @@ bool InputParser::_isValidPizzaName(const std::string &pizza) const
             findValidPizza = true;
     }
     if (!findValidPizza)
-        ParserEX("Invalid pizza name in the command: " + pizza, Logger::LOW);
+        throw ParserEX("Invalid pizza name in the command: " + pizza, Logger::LOW);
     return (findValidPizza);
 }
 
@@ -99,7 +99,7 @@ bool InputParser::_isValidPizzaSize(const std::string &pizzaSize) const
             findValidPizzaSize = true;
     }
     if (!findValidPizzaSize)
-        ParserEX("Invalid pizza size in the command: " + pizzaSize, Logger::LOW);
+        throw ParserEX("Invalid pizza size in the command: " + pizzaSize, Logger::LOW);
     return (findValidPizzaSize);
 }
 
@@ -109,12 +109,12 @@ bool InputParser::_isValidPizzaNumber(const std::string &pizzaNumber) const
     std::string tmp = pizzaNumber;
 
     if (tmp.find("x") == 0) {
-        tmp.substr(1);
+        tmp.erase(tmp.begin());
         if (std::atoi(tmp.c_str()) != 0)
             findValidPizzaNumber = true;
     }
     if (!findValidPizzaNumber)
-        ParserEX("Invalid pizza number in the command: " + pizzaNumber, Logger::LOW);
+        throw ParserEX("Invalid pizza number in the command: " + pizzaNumber, Logger::LOW);
     return (findValidPizzaNumber);
 }
 
@@ -123,7 +123,7 @@ bool InputParser::_isValidPizzaSeparator(const std::string &pizzaSeparator) cons
     bool findValidPizzaSeparator = true;
 
     if (pizzaSeparator != ";") {
-        ParserEX("Invalid pizza separator in the command: " + pizzaSeparator, Logger::LOW);
+        throw ParserEX("Invalid pizza separator in the command: " + pizzaSeparator, Logger::LOW);
         findValidPizzaSeparator = false;
     }
     return (findValidPizzaSeparator);
