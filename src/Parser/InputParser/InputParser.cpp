@@ -69,10 +69,10 @@ void InputParser::setCommandSeparator(char sep)
 bool InputParser::_isValidPizzaName(const std::string &pizza) const
 {
     const std::string availablePizza[4] = {
-            "Regina",
-            "Margarita",
-            "Americana",
-            "Fantasia"};
+            "regina",
+            "margarita",
+            "americana",
+            "fantasia"};
     bool findValidPizza = false;
 
     for (std::size_t index = 0; index < 4; index++) {
