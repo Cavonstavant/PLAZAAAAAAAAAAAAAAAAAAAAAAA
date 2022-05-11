@@ -5,7 +5,7 @@
 ** Plazza
 */
 
-/// \file src/Reception/Plazza.hpp
+/// \file src/Core/Plazza.hpp
 
 #ifndef PLAZZA_HPP_
 #define PLAZZA_HPP_
