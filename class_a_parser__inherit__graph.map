@@ -1,6 +1,6 @@
 <map id="AParser" name="AParser">
-<area shape="rect" id="node1" title="Aparser class define global fonctions for all parser class in the project." alt="" coords="106,80,177,107"/>
-<area shape="rect" id="node3" href="$class_arguments_parser.html" title="ArgumentsParser class define functions for parsing received arguments." alt="" coords="5,155,139,181"/>
-<area shape="rect" id="node4" href="$class_input_parser.html" title="InputParser is a class used to parse command of pizza while the program is running." alt="" coords="163,155,258,181"/>
-<area shape="rect" id="node2" href="$class_i_parser.html" title="Base parser class for all parser class in the project." alt="" coords="108,5,175,32"/>
+<area shape="rect" id="node1" title="Aparser class define global fonctions for all parser class in the project." alt="" coords="99,80,169,107"/>
+<area shape="rect" id="node3" href="$class_input_parser.html" title="InputParser is a class used to parse command of pizza while the program is running." alt="" coords="5,155,100,181"/>
+<area shape="rect" id="node4" href="$classplazza_1_1_arguments_parser.html" title="ArgumentsParser class define functions for parsing received arguments." alt="" coords="124,155,307,181"/>
+<area shape="rect" id="node2" href="$class_i_parser.html" title="Base parser class for all parser class in the project." alt="" coords="101,5,167,32"/>
 </map>

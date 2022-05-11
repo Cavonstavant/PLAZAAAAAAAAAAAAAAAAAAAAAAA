@@ -15,8 +15,8 @@ var hierarchy =
     ] ],
     [ "IParser", "class_i_parser.html", [
       [ "AParser", "class_a_parser.html", [
-        [ "ArgumentsParser", "class_arguments_parser.html", null ],
-        [ "InputParser", "class_input_parser.html", null ]
+        [ "InputParser", "class_input_parser.html", null ],
+        [ "plazza::ArgumentsParser", "classplazza_1_1_arguments_parser.html", null ]
       ] ]
     ] ],
     [ "Logger", "class_logger.html", null ],
