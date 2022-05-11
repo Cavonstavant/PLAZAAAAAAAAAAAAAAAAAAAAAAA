@@ -36,17 +36,17 @@ void ArgumentsParser::processArguments()
             throw InvalidIntCastEX("One of the arguments isn't a int", Logger::CRITICAL);
         }
         switch (x) {
-            case 2:
-                _setRefillTime(value);
-                break;
-            case 1:
-                _setCookNumber(value);
-                break;
-            case 0:
-                _setCookingTime(value);
-                break;
-            default:
-                throw VeryStupidUserEX("That's not possible, or you've broke my program...", Logger::CRITICAL);
+        case 2:
+            _setRefillTime(value);
+            break;
+        case 1:
+            _setCookNumber(value);
+            break;
+        case 0:
+            _setCookingTime(value);
+            break;
+        default:
+            throw VeryStupidUserEX("That's not possible, or you've broke my program...", Logger::CRITICAL);
         }
     }
 }
