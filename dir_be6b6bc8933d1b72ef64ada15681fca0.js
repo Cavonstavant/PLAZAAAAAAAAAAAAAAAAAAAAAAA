@@ -4,9 +4,9 @@ var dir_be6b6bc8933d1b72ef64ada15681fca0 =
     [ "InputParser", "dir_889795c093700a0da6ffc59eab49a66c.html", "dir_889795c093700a0da6ffc59eab49a66c" ],
     [ "AParser.cpp", "_a_parser_8cpp.html", null ],
     [ "AParser.hpp", "_a_parser_8hpp.html", [
-      [ "AParser", "class_a_parser.html", "class_a_parser" ]
+      [ "AParser", "classplazza_1_1_a_parser.html", "classplazza_1_1_a_parser" ]
     ] ],
     [ "IParser.hpp", "_i_parser_8hpp.html", [
-      [ "IParser", "class_i_parser.html", "class_i_parser" ]
+      [ "IParser", "classplazza_1_1_i_parser.html", "classplazza_1_1_i_parser" ]
     ] ]
 ];

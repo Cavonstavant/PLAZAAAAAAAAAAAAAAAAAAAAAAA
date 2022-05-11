@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['_5fargumentnumber_220',['_argumentNumber',['../class_a_parser.html#a2c1c8d60c99c8da3a18e05c5c0185569',1,'AParser']]],
-  ['_5farguments_221',['_arguments',['../class_a_parser.html#a1340ee83494ac1fe116e7cfd69057c7e',1,'AParser']]],
-  ['_5fcommand_222',['_command',['../class_input_parser.html#a87106e216dd922c1af269b9d126cdcfa',1,'InputParser']]],
+  ['_5fargumentnumber_220',['_argumentNumber',['../classplazza_1_1_a_parser.html#a4dc6d1a11561a024386196f5afdf0af7',1,'plazza::AParser']]],
+  ['_5farguments_221',['_arguments',['../classplazza_1_1_a_parser.html#a767152a34670578ba3f396ca1c119d12',1,'plazza::AParser']]],
+  ['_5fcommand_222',['_command',['../classplazza_1_1_input_parser.html#a1d9eba00199c9b3c64960b32934e13b3',1,'plazza::InputParser']]],
   ['_5fcookingtime_223',['_cookingTime',['../classplazza_1_1_core.html#af23c4e7bb8b0c9c7c36b628b6b6a2e76',1,'plazza::Core::_cookingTime()'],['../classplazza_1_1_arguments_parser.html#abdde677c19ebd50558472287c5a0289d',1,'plazza::ArgumentsParser::_cookingTime()']]],
   ['_5fcooknumber_224',['_cookNumber',['../classplazza_1_1_core.html#a63c63e4ef4f46f392748888544479102',1,'plazza::Core::_cookNumber()'],['../classplazza_1_1_arguments_parser.html#ac6a0a89dc0733b658e1e296dd6adbfc7',1,'plazza::ArgumentsParser::_cookNumber()']]],
   ['_5ffile_225',['_file',['../class_plazza_exception.html#ab16a1175c56ad65feac8cb94286de6d9',1,'PlazzaException']]],
@@ -13,7 +13,7 @@ var searchData=
   ['_5fqueue_5ffd_230',['_queue_fd',['../class_message_queue.html#a6beea1668b922f4fd5e09029ccf33459',1,'MessageQueue']]],
   ['_5frefilltime_231',['_refillTime',['../classplazza_1_1_core.html#a0aadf82c873977af25c343bd413d88d4',1,'plazza::Core']]],
   ['_5frefilltimems_232',['_refillTimeMs',['../classplazza_1_1_arguments_parser.html#abee891748ba5aa4428a6d4834c4d67e9',1,'plazza::ArgumentsParser']]],
-  ['_5fseparator_233',['_separator',['../class_input_parser.html#aee7118dfe281211335d000b0709b02bf',1,'InputParser']]],
+  ['_5fseparator_233',['_separator',['../classplazza_1_1_input_parser.html#a06d25281be79f1a6f673641501232ecc',1,'plazza::InputParser']]],
   ['_5fwhat_234',['_what',['../class_plazza_exception.html#aa5b69447b17a98d666c03e690f9ee718',1,'PlazzaException']]],
   ['_5fwhere_235',['_where',['../class_plazza_exception.html#ad28e457edc10701f828467d85b2404a7',1,'PlazzaException']]]
 ];

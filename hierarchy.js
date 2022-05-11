@@ -13,10 +13,10 @@ var hierarchy =
         [ "VeryStupidUserException", "class_very_stupid_user_exception.html", null ]
       ] ]
     ] ],
-    [ "IParser", "class_i_parser.html", [
-      [ "AParser", "class_a_parser.html", [
-        [ "InputParser", "class_input_parser.html", null ],
-        [ "plazza::ArgumentsParser", "classplazza_1_1_arguments_parser.html", null ]
+    [ "plazza::IParser", "classplazza_1_1_i_parser.html", [
+      [ "plazza::AParser", "classplazza_1_1_a_parser.html", [
+        [ "plazza::ArgumentsParser", "classplazza_1_1_arguments_parser.html", null ],
+        [ "plazza::InputParser", "classplazza_1_1_input_parser.html", null ]
       ] ]
     ] ],
     [ "Logger", "class_logger.html", null ],
