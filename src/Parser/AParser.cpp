@@ -7,6 +7,8 @@
 
 #include "AParser.hpp"
 
+using namespace plazza;
+
 const std::size_t &AParser::getArgumentNumber() const
 {
     return (_argumentNumber);
