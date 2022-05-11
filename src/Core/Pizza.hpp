@@ -12,7 +12,7 @@
 
 #include <string>
 
-namespace pizza {
+namespace plazza {
     typedef pizzaSize_e pizzaSize_t;
     typedef pizza_s pizza_t;
 
