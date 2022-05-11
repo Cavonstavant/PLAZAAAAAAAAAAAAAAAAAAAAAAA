@@ -5,7 +5,7 @@
 ** Plazza
 */
 
-/// \file src/Core/Plazza.hpp
+/// \file src/Reception/Plazza.hpp
 
 #ifndef PLAZZA_HPP_
 #define PLAZZA_HPP_
@@ -13,18 +13,18 @@
 #include <cstddef>
 
 namespace plazza {
-    /// \brief Core Class containing the main loop of the program
-    class Core {
+    /// \brief Reception Class containing the main loop of the program
+    class Reception {
         public:
-            /// \brief Default Constructor of the Core class DO NOT USE or it will lead to undefined comportements
-            Core() = default;
-            /// \brief Construct the Core with the necessary parameters for the method run()
+            /// \brief Default Constructor of the Reception class DO NOT USE or it will lead to undefined comportements
+            Reception() = default;
+            /// \brief Construct the Reception with the necessary parameters for the method run()
             /// \param cookingTime needs to be get of an ArgumentsParser Object with getCookingTime() method
             /// \param cookNumber needs to be get of an ArgumentsParser Object with getCookNumber() method
             /// \param refillTime needs to be get of an ArgumentsParser Object with getRefillTime() method
-            Core(size_t cookingTime, size_t cookNumber, size_t refillTime);
-            /// \brief Default Constructor of the Core
-            ~Core() = default;
+            Reception(size_t cookingTime, size_t cookNumber, size_t refillTime);
+            /// \brief Default Constructor of the Reception
+            ~Reception() = default;
             /// \brief Main function of the program
             void run();
 

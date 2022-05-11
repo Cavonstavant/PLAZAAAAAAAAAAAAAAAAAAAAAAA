@@ -22,9 +22,9 @@ int main(int ac, char **av)
         std::cerr << exc.what() << std::endl;
         return 84;
     }
-    plazza::Core core(args.getCookingTime(), args.getCookNumber(), args.getRefillTime());
+    plazza::Reception reception(args.getCookingTime(), args.getCookNumber(), args.getRefillTime());
 
-    core.run();
+    reception.run();
 
     return 0;
 }
