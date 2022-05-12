@@ -52,28 +52,12 @@ namespace plazza {
         /// \brief It will decrement the ingredient number by the ingredient number passed as parameter.
         /// \param Ingredient & Reference to the ingredient.
         /// \return Ingredient after remove Ingredient number passed as parameter.
-        Ingredient &operator-(Ingredient &i) {
-            if (this->name == i.name) {
-                if (this->number < i.number) {
-                    throw PlazzaEX("There is not enought " + i.name + ".", Logger::LOW);
-                } else {
-                    this->number -= i.number;
-                }
-            } else {
-                throw PlazzaEX("The two ingredients are differents (" + this->name + ", " + i.name + ").", Logger::LOW);
-            }
-        }
+        Ingredient &operator-(Ingredient &);
         /// \brief Overload the operator- for the structure Ingredient.
         /// \brief It will decrement the ingredient number by the number passed as parameter.
         /// \param std::size_t & Reference to the number to remove.
         /// \return Ingredient after remove number passed as parameter.
-        Ingredient &operator-(std::size_t &number) {
-            if (this->number < number) {
-                throw PlazzaEX("There is not enought " + this->name + ".", Logger::LOW);
-            } else {
-                this->number -= number;
-            }
-        }
+        Ingredient &operator-(std::size_t &);
     };
 }// namespace plazza
 
