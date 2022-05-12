@@ -40,6 +40,11 @@ namespace plazza {
             /// \brief std::size_t Number of pizza.
             std::size_t number;
     };
+
+    struct Ingredient {
+        std::string name;
+        std::size_t number;
+    };
 }// namespace plazza
 
 #endif /* !PIZZA_H_ */
