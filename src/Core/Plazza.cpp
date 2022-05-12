@@ -8,8 +8,8 @@
 /// \file src/Core/Plazza.cpp
 
 #include "Plazza.hpp"
-#include "InputParser.hpp"
 #include "Exception.hpp"
+#include "InputParser.hpp"
 #include <iostream>
 
 using namespace plazza;
