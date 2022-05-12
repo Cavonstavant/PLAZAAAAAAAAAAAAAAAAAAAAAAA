@@ -11,6 +11,7 @@
 #define PIZZA_H_
 
 #include <string>
+#include <vector>
 #include "Exception.hpp"
 
 namespace plazza {
@@ -58,6 +59,12 @@ namespace plazza {
         /// \param std::size_t & Reference to the number to remove.
         /// \return Ingredient after remove number passed as parameter.
         Ingredient &operator-(std::size_t &);
+        Ingredient &operator-=(Ingredient &);
+        Ingredient &operator-=(std::size_t &);
+        std::vector<Ingredient> &operator-(std::vector<Ingredient> &);
+        std::vector<Ingredient> &operator-=(std::vector<Ingredient> &);
+        std::vector<Ingredient> &operator-(Pizza &);
+        std::vector<Ingredient> &operator-=(Pizza &);
     };
 }// namespace plazza
 
