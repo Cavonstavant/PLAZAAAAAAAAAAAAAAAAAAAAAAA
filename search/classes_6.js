@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['parserexception_154',['ParserException',['../class_parser_exception.html',1,'']]],
-  ['pizza_155',['Pizza',['../structplazza_1_1_pizza.html',1,'plazza']]],
-  ['plazzaexception_156',['PlazzaException',['../class_plazza_exception.html',1,'']]]
+  ['reception_158',['Reception',['../classplazza_1_1_reception.html',1,'plazza']]]
 ];
