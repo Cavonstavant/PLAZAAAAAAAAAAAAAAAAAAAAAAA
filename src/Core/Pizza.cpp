@@ -20,6 +20,7 @@ Ingredient &Ingredient::operator-(Ingredient &i)
     } else {
         throw PlazzaEX("The two ingredients are differents (" + this->name + ", " + i.name + ").", Logger::LOW);
     }
+    return (*this);
 }
 
 Ingredient &Ingredient::operator-(std::size_t &number)
@@ -29,6 +30,7 @@ Ingredient &Ingredient::operator-(std::size_t &number)
     } else {
         this->number -= number;
     }
+    return (*this);
 }
 
 Ingredient &Ingredient::operator-=(Ingredient &i)
@@ -42,4 +44,15 @@ Ingredient &Ingredient::operator-=(Ingredient &i)
     } else {
         throw PlazzaEX("The two ingredients are differents (" + this->name + ", " + i.name + ").", Logger::LOW);
     }
+    return (*this);
+}
+
+Ingredient &Ingredient::operator-=(std::size_t &number)
+{
+    if (this->number < number) {
+        throw PlazzaEX("There is not enought " + this->name + ".", Logger::LOW);
+    } else {
+        this->number -= number;
+    }
+    return (*this);
 }
