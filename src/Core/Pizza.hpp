@@ -41,6 +41,8 @@ namespace plazza {
             PizzaSize size;
             /// \brief std::size_t Number of pizza.
             std::size_t number;
+            /// \brief std::vector<Ingredient> Vector of ingredient in the pizza.
+            std::vector<Ingredient> ingredients;
     };
 
     /// \brief Structure for ingredient.
