@@ -5,7 +5,7 @@
 ** pizza
 */
 
-/// \file src/Core/pizza.h
+/// \file src/Core/Pizza.hpp
 
 #ifndef PIZZA_H_
 #define PIZZA_H_
