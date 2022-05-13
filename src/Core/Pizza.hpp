@@ -59,12 +59,16 @@ namespace plazza {
         /// \param std::size_t & Reference to the number to remove.
         /// \return Ingredient after remove number passed as parameter.
         Ingredient &operator-(std::size_t &);
+        /// \brief Overload the operator-= for the structure Ingredient.
+        /// \brief It will decrement the Ingredient number by the Ingredient number passed as parameter.
+        /// \param Ingredient & Reference to the Ingredient to remove.
+        /// \return Ingredient after remove Ingredient passed as parameter.
         Ingredient &operator-=(Ingredient &);
+        /// \brief Overload the operator-= for the structure Ingredient.
+        /// \brief It will decrement the Ingredient number by the number passed as parameter.
+        /// \param std::size_t & Reference to the number to remove.
+        /// \return Ingredient after remove number passed as parameter.
         Ingredient &operator-=(std::size_t &);
-        std::vector<Ingredient> &operator-(std::vector<Ingredient> &);
-        std::vector<Ingredient> &operator-=(std::vector<Ingredient> &);
-        std::vector<Ingredient> &operator-(Pizza &);
-        std::vector<Ingredient> &operator-=(Pizza &);
     };
 }// namespace plazza
 
