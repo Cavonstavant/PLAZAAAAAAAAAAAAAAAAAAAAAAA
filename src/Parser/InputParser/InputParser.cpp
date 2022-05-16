@@ -59,6 +59,57 @@ void InputParser::processArguments()
     }
     _arguments = args;
     _checkArgumentsValidity();
+    _argumentsToPizza();
+}
+
+PizzaType InputParser::_getPizzaType(const std::string &type) const
+{
+    if (type == "regina")
+        return (PizzaType::Regina);
+    if (type == "margarita")
+        return (PizzaType::Margarita);
+    if (type == "americana")
+        return (PizzaType::Americana);
+    if (type == "fantasia")
+        return (PizzaType::Fantasia);
+    return PizzaType::Regina;
+}
+
+PizzaSize InputParser::_getPizzaSize(const std::string &size) const
+{
+    if (size == "S")
+        return (PizzaSize::S);
+    if (size == "M")
+        return (PizzaSize::M);
+    if (size == "L")
+        return (PizzaSize::L);
+    if (size == "XL")
+        return (PizzaSize::XL);
+    if (size == "XXL")
+        return (PizzaSize::XXL);
+    return (PizzaSize::S);
+}
+
+void InputParser::_argumentsToPizza()
+{
+    Pizza pizza;
+
+    for (std::size_t i = 0; i < _arguments.size(); i++) {
+        switch (i % 4) {
+            case 0:
+                pizza.type = _getPizzaType(_arguments[i]);
+                break;
+            case 1:
+                pizza.size = _getPizzaSize(_arguments[i]);
+                break;
+            case 2:
+                pizza.number = std::atoi(_arguments[i].c_str());
+                break;
+            case 3:
+                _pizza.push_back(pizza);
+                break;
+        }
+    }
 }
 
 void InputParser::setCommandSeparator(char sep)
@@ -170,4 +221,9 @@ void InputParser::_checkArgumentsValidity()
         }
     }
     _arguments = validArgs;
+}
+
+const std::vector<Pizza> &InputParser::getPizza() const
+{
+    return (_pizza);
 }

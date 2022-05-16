@@ -33,18 +33,6 @@ namespace plazza {
         XXL = 16,
     };
 
-    /// \brief Structure for pizza.
-    struct Pizza {
-            /// \brief PizzaType Type of the pizza.
-            PizzaType type;
-            /// \brief PizzaSize Size of the pizza.
-            PizzaSize size;
-            /// \brief std::size_t Number of pizza.
-            std::size_t number;
-            /// \brief std::vector<Ingredient> Vector of ingredient in the pizza.
-            std::vector<Ingredient> ingredients;
-    };
-
     /// \brief Structure for ingredient.
     struct Ingredient {
             /// \brief Name of the ingredient.
@@ -71,6 +59,18 @@ namespace plazza {
             /// \param std::size_t & Reference to the number to remove.
             /// \return Ingredient after remove number passed as parameter.
             Ingredient &operator-=(std::size_t &);
+    };
+
+    /// \brief Structure for pizza.
+    struct Pizza {
+            /// \brief PizzaType Type of the pizza.
+            PizzaType type;
+            /// \brief PizzaSize Size of the pizza.
+            PizzaSize size;
+            /// \brief std::size_t Number of pizza.
+            std::size_t number;
+            /// \brief std::vector<Ingredient> Vector of ingredient in the pizza.
+            std::vector<Ingredient> ingredients;
     };
 }// namespace plazza
 
