@@ -343,21 +343,22 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    std::string input;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        std::getline(std::cin, input);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">if</span> (input == <span class="stringliteral">&quot;exit&quot;</span>) {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (input == <span class="stringliteral">&quot;status&quot;</span>) {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="classplazza_1_1_reception.html#ab7c952a340a547b8cb6fadea4f14669a">_displayKitchensStatus</a>();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (input == <span class="stringliteral">&quot;clear&quot;</span> || input == <span class="stringliteral">&quot;c&quot;</span>) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            std::system(<span class="stringliteral">&quot;clear&quot;</span>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classplazza_1_1_reception.html#a806f3e116779e70568d48931a765b6fd">_handleInput</a>(input)) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <a class="code" href="_exception_8hpp.html#a1c92790f33d41d0230cc5a141c425c21">ParserEX</a>(input + <span class="stringliteral">&quot; has a invalid pizza command.&quot;</span>, <a class="code" href="class_logger.html#a0444040bdc1a82659a84ad918b42a61d">Logger::INFO</a>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">if</span> (!std::getline(std::cin, input))</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span> (input == <span class="stringliteral">&quot;exit&quot;</span>) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (input == <span class="stringliteral">&quot;status&quot;</span>) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <a class="code" href="classplazza_1_1_reception.html#ab7c952a340a547b8cb6fadea4f14669a">_displayKitchensStatus</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (input == <span class="stringliteral">&quot;clear&quot;</span> || input == <span class="stringliteral">&quot;c&quot;</span>) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            std::system(<span class="stringliteral">&quot;clear&quot;</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classplazza_1_1_reception.html#a806f3e116779e70568d48931a765b6fd">_handleInput</a>(input)) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <a class="code" href="_exception_8hpp.html#a1c92790f33d41d0230cc5a141c425c21">ParserEX</a>(input + <span class="stringliteral">&quot; has a invalid pizza command.&quot;</span>, <a class="code" href="class_logger.html#a0444040bdc1a82659a84ad918b42a61d">Logger::INFO</a>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
