@@ -1,19 +1,6 @@
 var searchData=
 [
-  ['l_66',['L',['../namespaceplazza.html#a8b75d3915b8f7e5d1ff158526c08c374a8fbc0101344c8059bf7da2c369b74768',1,'plazza']]],
-  ['log_67',['log',['../class_logger.html#a8df79e4d3d6a1e747376357adaab6417',1,'Logger']]],
-  ['logger_68',['Logger',['../class_logger.html',1,'Logger'],['../class_logger.html#aefffc02e0c6c0ab09ec1f77fe35f6439',1,'Logger::Logger()']]],
-  ['logger_2ecpp_69',['Logger.cpp',['../_logger_8cpp.html',1,'']]],
-  ['logger_2ehpp_70',['Logger.hpp',['../_logger_8hpp.html',1,'']]],
-  ['logger_5fcolor_5fblack_71',['LOGGER_COLOR_BLACK',['../_exception_8hpp.html#a966845eadcec615575e9b9b498d15980',1,'Exception.hpp']]],
-  ['logger_5fcolor_5fblue_72',['LOGGER_COLOR_BLUE',['../_exception_8hpp.html#a8dd5be6eedc6989bdfe0c3d75715600f',1,'Exception.hpp']]],
-  ['logger_5fcolor_5fbold_73',['LOGGER_COLOR_BOLD',['../_exception_8hpp.html#afed90c757c8f3263de91c616966271af',1,'Exception.hpp']]],
-  ['logger_5fcolor_5fcyan_74',['LOGGER_COLOR_CYAN',['../_exception_8hpp.html#a090553be72c1bb74fffe5b6a1739504e',1,'Exception.hpp']]],
-  ['logger_5fcolor_5fgreen_75',['LOGGER_COLOR_GREEN',['../_exception_8hpp.html#a9326ad572338a7384550d4eb7e1dd289',1,'Exception.hpp']]],
-  ['logger_5fcolor_5fpurple_76',['LOGGER_COLOR_PURPLE',['../_exception_8hpp.html#a47fd9dd21d58bf7f2b7a1221dd846036',1,'Exception.hpp']]],
-  ['logger_5fcolor_5fred_77',['LOGGER_COLOR_RED',['../_exception_8hpp.html#a9c0a761d7fcefcef9849ce0e3900d962',1,'Exception.hpp']]],
-  ['logger_5fcolor_5freset_78',['LOGGER_COLOR_RESET',['../_exception_8hpp.html#a011fa8043c2689f76dad72c2c6eb31b6',1,'Exception.hpp']]],
-  ['logger_5fcolor_5fwhite_79',['LOGGER_COLOR_WHITE',['../_exception_8hpp.html#a9a1d0bfc50d3760c6ec27e30aa74eff9',1,'Exception.hpp']]],
-  ['logger_5fcolor_5fyellow_80',['LOGGER_COLOR_YELLOW',['../_exception_8hpp.html#a98277d3446d2917e7cb647b4d9fa15e7',1,'Exception.hpp']]],
-  ['low_81',['LOW',['../class_logger.html#af9a5cbfa2e29185315d0fb7b42ffcd79',1,'Logger']]]
+  ['kitchen_73',['Kitchen',['../classplazza_1_1_kitchen.html',1,'plazza::Kitchen'],['../classplazza_1_1_kitchen.html#a3289aa8cd732e28d9f88ca2b79722c84',1,'plazza::Kitchen::Kitchen()=delete'],['../classplazza_1_1_kitchen.html#a8fd2c1339cbf5882ba3d7e9370e959bc',1,'plazza::Kitchen::Kitchen(unsigned long nbCooks)']]],
+  ['kitchen_2ecpp_74',['Kitchen.cpp',['../_kitchen_8cpp.html',1,'']]],
+  ['kitchen_2ehpp_75',['Kitchen.hpp',['../_kitchen_8hpp.html',1,'']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['verystupiduserex_138',['VeryStupidUserEX',['../_exception_8hpp.html#a0ae399b5939ece8c60638d855d9db3c0',1,'Exception.hpp']]],
-  ['verystupiduserexception_139',['VeryStupidUserException',['../class_very_stupid_user_exception.html',1,'VeryStupidUserException'],['../class_very_stupid_user_exception.html#a66c0e36fcdd1e591ce4cc0012372e6a3',1,'VeryStupidUserException::VeryStupidUserException()']]]
+  ['type_150',['type',['../structplazza_1_1_pizza.html#a7d8a39a6e1d49e1c7f1a53124dc13c13',1,'plazza::Pizza']]]
 ];

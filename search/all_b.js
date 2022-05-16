@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['openqueue_99',['openQueue',['../class_message_queue.html#a88457184ce99ccafa8814ccd267c3a9c',1,'MessageQueue']]],
-  ['operator_2d_100',['operator-',['../structplazza_1_1_ingredient.html#a1ec2c654d0934ecbcb46c4e40367feab',1,'plazza::Ingredient::operator-(Ingredient &amp;)'],['../structplazza_1_1_ingredient.html#a6755c09d0b2ca859fab1a51a0fc8d333',1,'plazza::Ingredient::operator-(std::size_t &amp;)'],['../_pizza_8cpp.html#a3c5653109c7b341ca388d0ac61f684b4',1,'operator-(std::vector&lt; Ingredient &gt; &amp;lo, std::vector&lt; Ingredient &gt; &amp;ro):&#160;Pizza.cpp'],['../_pizza_8cpp.html#a0b4c4dbc1bf03c9360460b6126214b4a',1,'operator-(std::vector&lt; Ingredient &gt; &amp;lo, Pizza &amp;ro):&#160;Pizza.cpp']]],
-  ['operator_2d_3d_101',['operator-=',['../structplazza_1_1_ingredient.html#ab591d326c5cd36f8517b376772f65b05',1,'plazza::Ingredient::operator-=(Ingredient &amp;)'],['../structplazza_1_1_ingredient.html#aa64a8633e372aa6555ea8e4d96cddada',1,'plazza::Ingredient::operator-=(std::size_t &amp;)'],['../_pizza_8cpp.html#a4377698900285c19ac8a83ca5cd637e3',1,'operator-=(std::vector&lt; Ingredient &gt; &amp;lo, std::vector&lt; Ingredient &gt; &amp;ro):&#160;Pizza.cpp'],['../_pizza_8cpp.html#ac205cab719ab969bdf89d303beb75b14',1,'operator-=(std::vector&lt; Ingredient &gt; &amp;lo, Pizza &amp;ro):&#160;Pizza.cpp']]],
-  ['operator_3c_3c_102',['operator&lt;&lt;',['../_message_queue_8hpp.html#ada30eb8f40a008bf42f8f1adfda90443',1,'MessageQueue.hpp']]],
-  ['operator_3d_103',['operator=',['../class_message_queue.html#a1830f847ddb62bba6cb45361532415e8',1,'MessageQueue']]],
-  ['operator_3e_3e_104',['operator&gt;&gt;',['../_message_queue_8hpp.html#ae611b8ca2ab21ed48b407cd4e3e56288',1,'MessageQueue.hpp']]]
+  ['name_105',['name',['../structplazza_1_1_ingredient.html#a3ca2660c95cbcafc6e95b80374a337cc',1,'plazza::Ingredient']]],
+  ['none_106',['NONE',['../class_logger.html#a1d61a808908f837373dcd89f52fa0c2a',1,'Logger']]],
+  ['notimplementedexception_107',['NotImplementedException',['../class_not_implemented_exception.html',1,'NotImplementedException'],['../class_not_implemented_exception.html#aa64759e5effb1f917f668b5f00754d78',1,'NotImplementedException::NotImplementedException()']]],
+  ['number_108',['number',['../structplazza_1_1_pizza.html#a57de3884a638bc2e0c30afa80de4629d',1,'plazza::Pizza::number()'],['../structplazza_1_1_ingredient.html#a9a5b8c68e287f0e3b6931fcbfa2f94b3',1,'plazza::Ingredient::number()']]]
 ];

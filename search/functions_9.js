@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['openqueue_228',['openQueue',['../class_message_queue.html#a88457184ce99ccafa8814ccd267c3a9c',1,'MessageQueue']]],
-  ['operator_2d_229',['operator-',['../structplazza_1_1_ingredient.html#a1ec2c654d0934ecbcb46c4e40367feab',1,'plazza::Ingredient::operator-(Ingredient &amp;)'],['../structplazza_1_1_ingredient.html#a6755c09d0b2ca859fab1a51a0fc8d333',1,'plazza::Ingredient::operator-(std::size_t &amp;)'],['../_pizza_8cpp.html#a3c5653109c7b341ca388d0ac61f684b4',1,'operator-(std::vector&lt; Ingredient &gt; &amp;lo, std::vector&lt; Ingredient &gt; &amp;ro):&#160;Pizza.cpp'],['../_pizza_8cpp.html#a0b4c4dbc1bf03c9360460b6126214b4a',1,'operator-(std::vector&lt; Ingredient &gt; &amp;lo, Pizza &amp;ro):&#160;Pizza.cpp']]],
-  ['operator_2d_3d_230',['operator-=',['../structplazza_1_1_ingredient.html#ab591d326c5cd36f8517b376772f65b05',1,'plazza::Ingredient::operator-=(Ingredient &amp;)'],['../structplazza_1_1_ingredient.html#aa64a8633e372aa6555ea8e4d96cddada',1,'plazza::Ingredient::operator-=(std::size_t &amp;)'],['../_pizza_8cpp.html#a4377698900285c19ac8a83ca5cd637e3',1,'operator-=(std::vector&lt; Ingredient &gt; &amp;lo, std::vector&lt; Ingredient &gt; &amp;ro):&#160;Pizza.cpp'],['../_pizza_8cpp.html#ac205cab719ab969bdf89d303beb75b14',1,'operator-=(std::vector&lt; Ingredient &gt; &amp;lo, Pizza &amp;ro):&#160;Pizza.cpp']]],
-  ['operator_3c_3c_231',['operator&lt;&lt;',['../_message_queue_8hpp.html#ada30eb8f40a008bf42f8f1adfda90443',1,'MessageQueue.hpp']]],
-  ['operator_3d_232',['operator=',['../class_message_queue.html#a1830f847ddb62bba6cb45361532415e8',1,'MessageQueue']]],
-  ['operator_3e_3e_233',['operator&gt;&gt;',['../_message_queue_8hpp.html#ae611b8ca2ab21ed48b407cd4e3e56288',1,'MessageQueue.hpp']]]
+  ['main_241',['main',['../main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f',1,'main.cpp']]],
+  ['medium_242',['MEDIUM',['../class_logger.html#a8db5fb65e82f81fb04eb4e21a931a1d6',1,'Logger']]],
+  ['messagequeue_243',['MessageQueue',['../class_message_queue.html#a8662eead8fd2732f4cb68d23b89431c3',1,'MessageQueue::MessageQueue()=default'],['../class_message_queue.html#afb5f2277eac053fefd72c19987214f5d',1,'MessageQueue::MessageQueue(const MessageQueue &amp;)=delete']]],
+  ['messagequeueexception_244',['MessageQueueException',['../class_message_queue_exception.html#a79f1f95c0a72cf4c24a8f407a0160934',1,'MessageQueueException']]],
+  ['messagetoolongexception_245',['MessageTooLongException',['../class_message_too_long_exception.html#a9e3a00b16a6a2e1c3e76c596af8542e2',1,'MessageTooLongException']]]
 ];

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['sendmessage_240',['sendMessage',['../class_message_queue.html#adc775c0651d539d6268cde073a41451d',1,'MessageQueue']]],
-  ['setcommand_241',['setCommand',['../classplazza_1_1_input_parser.html#adb2033b9aa55e45d24387cbca82fd38f',1,'plazza::InputParser']]],
-  ['setcommandseparator_242',['setCommandSeparator',['../classplazza_1_1_input_parser.html#a9a089f2f7dccb953956a2aa7e82f4df3',1,'plazza::InputParser']]]
+  ['parserexception_254',['ParserException',['../class_parser_exception.html#a16e5d9b890cadf1e71f54a983cd412d7',1,'ParserException']]],
+  ['plazzaexception_255',['PlazzaException',['../class_plazza_exception.html#a3704944e6c066d009390f3199aa7df25',1,'PlazzaException']]],
+  ['processarguments_256',['processArguments',['../classplazza_1_1_a_parser.html#aab2412ccf8445f9a8210aab0a7b0a7b3',1,'plazza::AParser::processArguments()'],['../classplazza_1_1_arguments_parser.html#ab4f7c6395927475327259187040f270d',1,'plazza::ArgumentsParser::processArguments()'],['../classplazza_1_1_input_parser.html#a65748f951e8b895aceca27ed2ba0c75d',1,'plazza::InputParser::processArguments()'],['../classplazza_1_1_i_parser.html#a4695b00a938a7da28a6f23aee23b3c5f',1,'plazza::IParser::processArguments()']]]
 ];

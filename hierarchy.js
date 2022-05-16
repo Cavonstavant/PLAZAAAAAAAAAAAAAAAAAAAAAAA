@@ -19,6 +19,7 @@ var hierarchy =
         [ "plazza::InputParser", "classplazza_1_1_input_parser.html", null ]
       ] ]
     ] ],
+    [ "plazza::Kitchen", "classplazza_1_1_kitchen.html", null ],
     [ "Logger", "class_logger.html", null ],
     [ "MessageQueue", "class_message_queue.html", null ],
     [ "plazza::Pizza", "structplazza_1_1_pizza.html", null ],

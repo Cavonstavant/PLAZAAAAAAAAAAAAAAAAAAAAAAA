@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['none_226',['NONE',['../class_logger.html#a1d61a808908f837373dcd89f52fa0c2a',1,'Logger']]],
-  ['notimplementedexception_227',['NotImplementedException',['../class_not_implemented_exception.html#aa64759e5effb1f917f668b5f00754d78',1,'NotImplementedException']]]
+  ['log_238',['log',['../class_logger.html#a8df79e4d3d6a1e747376357adaab6417',1,'Logger']]],
+  ['logger_239',['Logger',['../class_logger.html#aefffc02e0c6c0ab09ec1f77fe35f6439',1,'Logger']]],
+  ['low_240',['LOW',['../class_logger.html#af9a5cbfa2e29185315d0fb7b42ffcd79',1,'Logger']]]
 ];

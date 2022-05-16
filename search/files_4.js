@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['main_2ecpp_179',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['messagequeue_2ecpp_180',['MessageQueue.cpp',['../_message_queue_8cpp.html',1,'']]],
-  ['messagequeue_2ehpp_181',['MessageQueue.hpp',['../_message_queue_8hpp.html',1,'']]]
+  ['logger_2ecpp_194',['Logger.cpp',['../_logger_8cpp.html',1,'']]],
+  ['logger_2ehpp_195',['Logger.hpp',['../_logger_8hpp.html',1,'']]]
 ];

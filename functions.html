@@ -92,11 +92,17 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>_arguments
 : <a class="el" href="classplazza_1_1_a_parser.html#a767152a34670578ba3f396ca1c119d12">plazza::AParser</a>
 </li>
+<li>_brigade
+: <a class="el" href="classplazza_1_1_kitchen.html#a1d701203be1eead9d7c4072e8d5b6e58">plazza::Kitchen</a>
+</li>
 <li>_checkArgumentsValidity()
 : <a class="el" href="classplazza_1_1_input_parser.html#a9694be8f01d555f89a54558343d09cda">plazza::InputParser</a>
 </li>
 <li>_command
 : <a class="el" href="classplazza_1_1_input_parser.html#a1d9eba00199c9b3c64960b32934e13b3">plazza::InputParser</a>
+</li>
+<li>_Cook()
+: <a class="el" href="classplazza_1_1_kitchen.html#a2146a91b2e80190dba0059487cb99f37">plazza::Kitchen</a>
 </li>
 <li>_cookingTime
 : <a class="el" href="classplazza_1_1_arguments_parser.html#abdde677c19ebd50558472287c5a0289d">plazza::ArgumentsParser</a>
@@ -133,8 +139,17 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>_line
 : <a class="el" href="class_plazza_exception.html#aebd77a2d1f95d0fff8928dea5e6efe54">PlazzaException</a>
 </li>
+<li>_mutex
+: <a class="el" href="classplazza_1_1_kitchen.html#a5b8df57076e63196c909744014a0d794">plazza::Kitchen</a>
+</li>
 <li>_name
 : <a class="el" href="class_plazza_exception.html#a3829264b705aba9c26d5efcc4fcd59ba">PlazzaException</a>
+</li>
+<li>_nbCooks
+: <a class="el" href="classplazza_1_1_kitchen.html#a67c93d0d471f721b6e184bb2bbf86437">plazza::Kitchen</a>
+</li>
+<li>_orders
+: <a class="el" href="classplazza_1_1_kitchen.html#aad7e61823a8e356b9da5dab25d8a0082">plazza::Kitchen</a>
 </li>
 <li>_pathname
 : <a class="el" href="class_message_queue.html#a3a634970029be5760122a4cc9de35ac9">MessageQueue</a>
@@ -160,6 +175,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>_setRefillTime()
 : <a class="el" href="classplazza_1_1_arguments_parser.html#a25c86ff36454522cc469089c61da019f">plazza::ArgumentsParser</a>
 </li>
+<li>_stopKitchen
+: <a class="el" href="classplazza_1_1_kitchen.html#a67d704debd43fe4daa82db0a15fa7113">plazza::Kitchen</a>
+</li>
 <li>_what
 : <a class="el" href="class_plazza_exception.html#aa5b69447b17a98d666c03e690f9ee718">PlazzaException</a>
 </li>
@@ -182,6 +200,13 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>CRITICAL()
 : <a class="el" href="class_logger.html#acc36409db358f1c0dc363ee4469a212f">Logger</a>
+</li>
+</ul>
+
+
+<h3><a id="index_e"></a>- e -</h3><ul>
+<li>enqueueJob()
+: <a class="el" href="classplazza_1_1_kitchen.html#a4f436b43b05cfe3a6e2bcf4110cd54a4">plazza::Kitchen</a>
 </li>
 </ul>
 
@@ -251,6 +276,13 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </ul>
 
 
+<h3><a id="index_k"></a>- k -</h3><ul>
+<li>Kitchen()
+: <a class="el" href="classplazza_1_1_kitchen.html#a3289aa8cd732e28d9f88ca2b79722c84">plazza::Kitchen</a>
+</li>
+</ul>
+
+
 <h3><a id="index_l"></a>- l -</h3><ul>
 <li>log()
 : <a class="el" href="class_logger.html#a8df79e4d3d6a1e747376357adaab6417">Logger</a>
@@ -305,10 +337,13 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="structplazza_1_1_ingredient.html#a1ec2c654d0934ecbcb46c4e40367feab">plazza::Ingredient</a>
 </li>
 <li>operator-=()
-: <a class="el" href="structplazza_1_1_ingredient.html#ab591d326c5cd36f8517b376772f65b05">plazza::Ingredient</a>
+: <a class="el" href="structplazza_1_1_ingredient.html#aa64a8633e372aa6555ea8e4d96cddada">plazza::Ingredient</a>
 </li>
 <li>operator=()
 : <a class="el" href="class_message_queue.html#a1830f847ddb62bba6cb45361532415e8">MessageQueue</a>
+</li>
+<li>order_condition
+: <a class="el" href="classplazza_1_1_kitchen.html#a3fcde824a9ec44d5663a8a6f91082095">plazza::Kitchen</a>
 </li>
 </ul>
 
@@ -379,6 +414,12 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>size
 : <a class="el" href="structplazza_1_1_pizza.html#adb22b76e4fa711a688b555e6e5a12208">plazza::Pizza</a>
 </li>
+<li>start()
+: <a class="el" href="classplazza_1_1_kitchen.html#ab6afa23613acf5e0680d8e5177f887f3">plazza::Kitchen</a>
+</li>
+<li>stop()
+: <a class="el" href="classplazza_1_1_kitchen.html#ae8e60ab81e8b36f69b44365d58042f99">plazza::Kitchen</a>
+</li>
 </ul>
 
 
@@ -418,6 +459,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>~IParser()
 : <a class="el" href="classplazza_1_1_i_parser.html#aed2adc8d94e723f1adbe023e90d974d8">plazza::IParser</a>
+</li>
+<li>~Kitchen()
+: <a class="el" href="classplazza_1_1_kitchen.html#a560e360631a961e5ab849f29cbbe6dae">plazza::Kitchen</a>
 </li>
 <li>~MessageQueue()
 : <a class="el" href="class_message_queue.html#a3640a8a6140801f1e127a41e60c014dd">MessageQueue</a>

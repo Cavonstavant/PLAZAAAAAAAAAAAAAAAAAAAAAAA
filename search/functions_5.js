@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['info_214',['INFO',['../class_logger.html#a0444040bdc1a82659a84ad918b42a61d',1,'Logger']]],
-  ['inputparser_215',['InputParser',['../classplazza_1_1_input_parser.html#a9e2e24cbf89184dd4fa72a74fb89773a',1,'plazza::InputParser']]],
-  ['invalidintcastexception_216',['InvalidIntCastException',['../class_invalid_int_cast_exception.html#ac68931c0482da9a6015834154da3c0b8',1,'InvalidIntCastException']]],
-  ['invalidnumberargumentsexception_217',['InvalidNumberArgumentsException',['../class_invalid_number_arguments_exception.html#a7ce330133b7c3d25f207ddb29815d21a',1,'InvalidNumberArgumentsException']]]
+  ['high_232',['HIGH',['../class_logger.html#abb157b6b8da36ba0bed016d56ec1101a',1,'Logger']]]
 ];

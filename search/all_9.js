@@ -1,16 +1,19 @@
 var searchData=
 [
-  ['m_82',['M',['../namespaceplazza.html#a8b75d3915b8f7e5d1ff158526c08c374aaa148666f97f9b5b524967c7599e27d1',1,'plazza']]],
-  ['main_83',['main',['../main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f',1,'main.cpp']]],
-  ['main_2ecpp_84',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['margarita_85',['Margarita',['../namespaceplazza.html#a3df93b5bf8fa865c6f1251078950734ca400594fcc93ec134511181fb2bc36855',1,'plazza']]],
-  ['max_5fmessage_5fsize_86',['MAX_MESSAGE_SIZE',['../_message_queue_8hpp.html#acb84a306ee37479f97cf0b476560f027',1,'MessageQueue.hpp']]],
-  ['medium_87',['MEDIUM',['../class_logger.html#a8db5fb65e82f81fb04eb4e21a931a1d6',1,'Logger']]],
-  ['messagequeue_88',['MessageQueue',['../class_message_queue.html',1,'MessageQueue'],['../class_message_queue.html#a8662eead8fd2732f4cb68d23b89431c3',1,'MessageQueue::MessageQueue()=default'],['../class_message_queue.html#afb5f2277eac053fefd72c19987214f5d',1,'MessageQueue::MessageQueue(const MessageQueue &amp;)=delete']]],
-  ['messagequeue_2ecpp_89',['MessageQueue.cpp',['../_message_queue_8cpp.html',1,'']]],
-  ['messagequeue_2ehpp_90',['MessageQueue.hpp',['../_message_queue_8hpp.html',1,'']]],
-  ['messagequeueex_91',['MessageQueueEx',['../_exception_8hpp.html#ad538f9c3d6a39de5fe29dd89f7c1ef3a',1,'Exception.hpp']]],
-  ['messagequeueexception_92',['MessageQueueException',['../class_message_queue_exception.html',1,'MessageQueueException'],['../class_message_queue_exception.html#a79f1f95c0a72cf4c24a8f407a0160934',1,'MessageQueueException::MessageQueueException()']]],
-  ['messagetoolongex_93',['MessageTooLongEX',['../_exception_8hpp.html#a108d8ebad34fa0f73d1653ef6e6a0301',1,'Exception.hpp']]],
-  ['messagetoolongexception_94',['MessageTooLongException',['../class_message_too_long_exception.html',1,'MessageTooLongException'],['../class_message_too_long_exception.html#a9e3a00b16a6a2e1c3e76c596af8542e2',1,'MessageTooLongException::MessageTooLongException()']]]
+  ['l_76',['L',['../namespaceplazza.html#a8b75d3915b8f7e5d1ff158526c08c374a8fbc0101344c8059bf7da2c369b74768',1,'plazza']]],
+  ['log_77',['log',['../class_logger.html#a8df79e4d3d6a1e747376357adaab6417',1,'Logger']]],
+  ['logger_78',['Logger',['../class_logger.html',1,'Logger'],['../class_logger.html#aefffc02e0c6c0ab09ec1f77fe35f6439',1,'Logger::Logger()']]],
+  ['logger_2ecpp_79',['Logger.cpp',['../_logger_8cpp.html',1,'']]],
+  ['logger_2ehpp_80',['Logger.hpp',['../_logger_8hpp.html',1,'']]],
+  ['logger_5fcolor_5fblack_81',['LOGGER_COLOR_BLACK',['../_exception_8hpp.html#a966845eadcec615575e9b9b498d15980',1,'Exception.hpp']]],
+  ['logger_5fcolor_5fblue_82',['LOGGER_COLOR_BLUE',['../_exception_8hpp.html#a8dd5be6eedc6989bdfe0c3d75715600f',1,'Exception.hpp']]],
+  ['logger_5fcolor_5fbold_83',['LOGGER_COLOR_BOLD',['../_exception_8hpp.html#afed90c757c8f3263de91c616966271af',1,'Exception.hpp']]],
+  ['logger_5fcolor_5fcyan_84',['LOGGER_COLOR_CYAN',['../_exception_8hpp.html#a090553be72c1bb74fffe5b6a1739504e',1,'Exception.hpp']]],
+  ['logger_5fcolor_5fgreen_85',['LOGGER_COLOR_GREEN',['../_exception_8hpp.html#a9326ad572338a7384550d4eb7e1dd289',1,'Exception.hpp']]],
+  ['logger_5fcolor_5fpurple_86',['LOGGER_COLOR_PURPLE',['../_exception_8hpp.html#a47fd9dd21d58bf7f2b7a1221dd846036',1,'Exception.hpp']]],
+  ['logger_5fcolor_5fred_87',['LOGGER_COLOR_RED',['../_exception_8hpp.html#a9c0a761d7fcefcef9849ce0e3900d962',1,'Exception.hpp']]],
+  ['logger_5fcolor_5freset_88',['LOGGER_COLOR_RESET',['../_exception_8hpp.html#a011fa8043c2689f76dad72c2c6eb31b6',1,'Exception.hpp']]],
+  ['logger_5fcolor_5fwhite_89',['LOGGER_COLOR_WHITE',['../_exception_8hpp.html#a9a1d0bfc50d3760c6ec27e30aa74eff9',1,'Exception.hpp']]],
+  ['logger_5fcolor_5fyellow_90',['LOGGER_COLOR_YELLOW',['../_exception_8hpp.html#a98277d3446d2917e7cb647b4d9fa15e7',1,'Exception.hpp']]],
+  ['low_91',['LOW',['../class_logger.html#af9a5cbfa2e29185315d0fb7b42ffcd79',1,'Logger']]]
 ];

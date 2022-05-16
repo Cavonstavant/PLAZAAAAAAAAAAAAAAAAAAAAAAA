@@ -208,12 +208,12 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_plazza_8cpp_source.html#l00017">17</a> of file <a class="el" href="_plazza_8cpp_source.html">Plazza.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classplazza_1_1_reception.html#a2a1dab5ea2a8bd22e2f2b685df391b51">_cookingTime</a> = cookingTime;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classplazza_1_1_reception.html#a793ede760fac53f5d221be826499a1d2">_cookNumber</a> = cookNumber;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classplazza_1_1_reception.html#ad633142b70dff3a2cc1f4cc21ae90447">_refillTime</a> = refillTime;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_plazza_8cpp_source.html#l00018">18</a> of file <a class="el" href="_plazza_8cpp_source.html">Plazza.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classplazza_1_1_reception.html#a2a1dab5ea2a8bd22e2f2b685df391b51">_cookingTime</a> = cookingTime;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classplazza_1_1_reception.html#a793ede760fac53f5d221be826499a1d2">_cookNumber</a> = cookNumber;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classplazza_1_1_reception.html#ad633142b70dff3a2cc1f4cc21ae90447">_refillTime</a> = refillTime;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -271,10 +271,10 @@ Private Attributes</h2></td></tr>
 
 <p>Display all of the kitchens current status. </p>
 
-<p class="definition">Definition at line <a class="el" href="_plazza_8cpp_source.html#l00024">24</a> of file <a class="el" href="_plazza_8cpp_source.html">Plazza.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Status command not implemented yet.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_plazza_8cpp_source.html#l00025">25</a> of file <a class="el" href="_plazza_8cpp_source.html">Plazza.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Status command not implemented yet.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -305,19 +305,19 @@ Private Attributes</h2></td></tr>
 <p>Handle the receive input. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if the input is valid, false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_plazza_8cpp_source.html#l00029">29</a> of file <a class="el" href="_plazza_8cpp_source.html">Plazza.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classplazza_1_1_input_parser.html">InputParser</a> server;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    server.<a class="code" href="classplazza_1_1_input_parser.html#adb2033b9aa55e45d24387cbca82fd38f">setCommand</a>(input);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        server.<a class="code" href="classplazza_1_1_input_parser.html#a65748f951e8b895aceca27ed2ba0c75d">processArguments</a>();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="class_plazza_exception.html">PlazzaException</a> &amp;e) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        std::cerr &lt;&lt; e.<a class="code" href="class_plazza_exception.html#af42078485825da6b030af687e5990044">what</a>() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_plazza_8cpp_source.html#l00030">30</a> of file <a class="el" href="_plazza_8cpp_source.html">Plazza.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classplazza_1_1_input_parser.html">InputParser</a> server;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    server.<a class="code" href="classplazza_1_1_input_parser.html#adb2033b9aa55e45d24387cbca82fd38f">setCommand</a>(input);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        server.<a class="code" href="classplazza_1_1_input_parser.html#a65748f951e8b895aceca27ed2ba0c75d">processArguments</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="class_plazza_exception.html">PlazzaException</a> &amp;e) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        std::cerr &lt;&lt; e.<a class="code" href="class_plazza_exception.html#af42078485825da6b030af687e5990044">what</a>() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -338,26 +338,26 @@ Private Attributes</h2></td></tr>
 
 <p>Main function of the program. </p>
 
-<p class="definition">Definition at line <a class="el" href="_plazza_8cpp_source.html#l00043">43</a> of file <a class="el" href="_plazza_8cpp_source.html">Plazza.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    std::string input;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        std::getline(std::cin, input);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span> (input == <span class="stringliteral">&quot;exit&quot;</span>) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (input == <span class="stringliteral">&quot;status&quot;</span>) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="classplazza_1_1_reception.html#ab7c952a340a547b8cb6fadea4f14669a">_displayKitchensStatus</a>();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (input == <span class="stringliteral">&quot;clear&quot;</span> || input == <span class="stringliteral">&quot;c&quot;</span>) {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            std::system(<span class="stringliteral">&quot;clear&quot;</span>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classplazza_1_1_reception.html#a806f3e116779e70568d48931a765b6fd">_handleInput</a>(input)) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <a class="code" href="_exception_8hpp.html#a1c92790f33d41d0230cc5a141c425c21">ParserEX</a>(input + <span class="stringliteral">&quot; has a invalid pizza command.&quot;</span>, <a class="code" href="class_logger.html#a0444040bdc1a82659a84ad918b42a61d">Logger::INFO</a>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_plazza_8cpp_source.html#l00044">44</a> of file <a class="el" href="_plazza_8cpp_source.html">Plazza.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    std::string input;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        std::getline(std::cin, input);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">if</span> (input == <span class="stringliteral">&quot;exit&quot;</span>) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (input == <span class="stringliteral">&quot;status&quot;</span>) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="classplazza_1_1_reception.html#ab7c952a340a547b8cb6fadea4f14669a">_displayKitchensStatus</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (input == <span class="stringliteral">&quot;clear&quot;</span> || input == <span class="stringliteral">&quot;c&quot;</span>) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            std::system(<span class="stringliteral">&quot;clear&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classplazza_1_1_reception.html#a806f3e116779e70568d48931a765b6fd">_handleInput</a>(input)) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <a class="code" href="_exception_8hpp.html#a1c92790f33d41d0230cc5a141c425c21">ParserEX</a>(input + <span class="stringliteral">&quot; has a invalid pizza command.&quot;</span>, <a class="code" href="class_logger.html#a0444040bdc1a82659a84ad918b42a61d">Logger::INFO</a>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -450,11 +450,11 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aclassplazza_1_1_input_parser_html_a65748f951e8b895aceca27ed2ba0c75d"><div class="ttname"><a href="classplazza_1_1_input_parser.html#a65748f951e8b895aceca27ed2ba0c75d">plazza::InputParser::processArguments</a></div><div class="ttdeci">void processArguments() override</div><div class="ttdoc">Process the argument to set them in a form usefull for the program.</div><div class="ttdef"><b>Definition:</b> <a href="_input_parser_8cpp_source.html#l00046">InputParser.cpp:46</a></div></div>
 <div class="ttc" id="aclass_plazza_exception_html"><div class="ttname"><a href="class_plazza_exception.html">PlazzaException</a></div><div class="ttdoc">Base exception class for all exceptions in the project.</div><div class="ttdef"><b>Definition:</b> <a href="_exception_8hpp_source.html#l00046">Exception.hpp:46</a></div></div>
 <div class="ttc" id="aclassplazza_1_1_input_parser_html"><div class="ttname"><a href="classplazza_1_1_input_parser.html">plazza::InputParser</a></div><div class="ttdoc">InputParser is a class used to parse command of pizza while the program is running.</div><div class="ttdef"><b>Definition:</b> <a href="_input_parser_8hpp_source.html#l00017">InputParser.hpp:17</a></div></div>
-<div class="ttc" id="aclassplazza_1_1_reception_html_ab7c952a340a547b8cb6fadea4f14669a"><div class="ttname"><a href="classplazza_1_1_reception.html#ab7c952a340a547b8cb6fadea4f14669a">plazza::Reception::_displayKitchensStatus</a></div><div class="ttdeci">void _displayKitchensStatus(void)</div><div class="ttdoc">Display all of the kitchens current status.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8cpp_source.html#l00024">Plazza.cpp:24</a></div></div>
+<div class="ttc" id="aclassplazza_1_1_reception_html_ab7c952a340a547b8cb6fadea4f14669a"><div class="ttname"><a href="classplazza_1_1_reception.html#ab7c952a340a547b8cb6fadea4f14669a">plazza::Reception::_displayKitchensStatus</a></div><div class="ttdeci">void _displayKitchensStatus(void)</div><div class="ttdoc">Display all of the kitchens current status.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8cpp_source.html#l00025">Plazza.cpp:25</a></div></div>
 <div class="ttc" id="aclass_plazza_exception_html_af42078485825da6b030af687e5990044"><div class="ttname"><a href="class_plazza_exception.html#af42078485825da6b030af687e5990044">PlazzaException::what</a></div><div class="ttdeci">const char * what() const noexcept override</div><div class="ttdoc">returns the description of the exception</div><div class="ttdef"><b>Definition:</b> <a href="_exception_8cpp_source.html#l00027">Exception.cpp:27</a></div></div>
 <div class="ttc" id="aclass_logger_html_a0444040bdc1a82659a84ad918b42a61d"><div class="ttname"><a href="class_logger.html#a0444040bdc1a82659a84ad918b42a61d">Logger::INFO</a></div><div class="ttdeci">static Severity INFO()</div><div class="ttdoc">pass this function to the macros and they will log an info</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00103">Logger.cpp:103</a></div></div>
 <div class="ttc" id="a_exception_8hpp_html_a1c92790f33d41d0230cc5a141c425c21"><div class="ttname"><a href="_exception_8hpp.html#a1c92790f33d41d0230cc5a141c425c21">ParserEX</a></div><div class="ttdeci">#define ParserEX(what, severity)</div><div class="ttdef"><b>Definition:</b> <a href="_exception_8hpp_source.html#l00026">Exception.hpp:26</a></div></div>
-<div class="ttc" id="aclassplazza_1_1_reception_html_a806f3e116779e70568d48931a765b6fd"><div class="ttname"><a href="classplazza_1_1_reception.html#a806f3e116779e70568d48931a765b6fd">plazza::Reception::_handleInput</a></div><div class="ttdeci">bool _handleInput(const std::string &amp;input)</div><div class="ttdoc">Handle the receive input.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8cpp_source.html#l00029">Plazza.cpp:29</a></div></div>
+<div class="ttc" id="aclassplazza_1_1_reception_html_a806f3e116779e70568d48931a765b6fd"><div class="ttname"><a href="classplazza_1_1_reception.html#a806f3e116779e70568d48931a765b6fd">plazza::Reception::_handleInput</a></div><div class="ttdeci">bool _handleInput(const std::string &amp;input)</div><div class="ttdoc">Handle the receive input.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8cpp_source.html#l00030">Plazza.cpp:30</a></div></div>
 <div class="ttc" id="aclassplazza_1_1_reception_html_a793ede760fac53f5d221be826499a1d2"><div class="ttname"><a href="classplazza_1_1_reception.html#a793ede760fac53f5d221be826499a1d2">plazza::Reception::_cookNumber</a></div><div class="ttdeci">size_t _cookNumber</div><div class="ttdoc">Store the cookNumber.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8hpp_source.html#l00041">Plazza.hpp:41</a></div></div>
 <div class="ttc" id="aclassplazza_1_1_reception_html_a2a1dab5ea2a8bd22e2f2b685df391b51"><div class="ttname"><a href="classplazza_1_1_reception.html#a2a1dab5ea2a8bd22e2f2b685df391b51">plazza::Reception::_cookingTime</a></div><div class="ttdeci">size_t _cookingTime</div><div class="ttdoc">Store the cookingTime.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8hpp_source.html#l00039">Plazza.hpp:39</a></div></div>
 <div class="ttc" id="aclassplazza_1_1_reception_html_ad633142b70dff3a2cc1f4cc21ae90447"><div class="ttname"><a href="classplazza_1_1_reception.html#ad633142b70dff3a2cc1f4cc21ae90447">plazza::Reception::_refillTime</a></div><div class="ttdeci">size_t _refillTime</div><div class="ttdoc">Store the refillTime.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8hpp_source.html#l00043">Plazza.hpp:43</a></div></div>
