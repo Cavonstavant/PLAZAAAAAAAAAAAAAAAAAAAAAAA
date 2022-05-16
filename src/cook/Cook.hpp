@@ -14,11 +14,14 @@
 namespace plazza {
     class Cook {
         public:
-            Cook();
-            Cook(const Pizza);
+            Cook(std::size_t multiplier = 1);
+            Cook(const Pizza, std::size_t multiplier = 1);
             ~Cook() = default;
-            void setCookingTimeMultipiler();
+            void setCookingTimeMultipiler(std::size_t multiplier);
+            void cookPizza(Pizza pizza);
+            bool getCookStatus();
         private:
+            void _setCookingTime();
             Pizza _pizza;
             bool _workInProgress;
             std::size_t _multiplier;
