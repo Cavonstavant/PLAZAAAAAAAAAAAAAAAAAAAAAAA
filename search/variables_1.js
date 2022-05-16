@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['number_258',['number',['../structplazza_1_1_pizza.html#a57de3884a638bc2e0c30afa80de4629d',1,'plazza::Pizza']]]
+  ['ingredients_268',['ingredients',['../structplazza_1_1_pizza.html#adfa2f65e6cfefba50f83a906c694f6b0',1,'plazza::Pizza']]]
 ];

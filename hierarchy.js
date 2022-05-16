@@ -12,6 +12,7 @@ var hierarchy =
         [ "VeryStupidUserException", "class_very_stupid_user_exception.html", null ]
       ] ]
     ] ],
+    [ "plazza::Ingredient", "structplazza_1_1_ingredient.html", null ],
     [ "plazza::IParser", "classplazza_1_1_i_parser.html", [
       [ "plazza::AParser", "classplazza_1_1_a_parser.html", [
         [ "plazza::ArgumentsParser", "classplazza_1_1_arguments_parser.html", null ],

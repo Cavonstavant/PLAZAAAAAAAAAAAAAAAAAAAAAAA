@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['size_259',['size',['../structplazza_1_1_pizza.html#adb22b76e4fa711a688b555e6e5a12208',1,'plazza::Pizza']]]
+  ['name_269',['name',['../structplazza_1_1_ingredient.html#a3ca2660c95cbcafc6e95b80374a337cc',1,'plazza::Ingredient']]],
+  ['number_270',['number',['../structplazza_1_1_pizza.html#a57de3884a638bc2e0c30afa80de4629d',1,'plazza::Pizza::number()'],['../structplazza_1_1_ingredient.html#a9a5b8c68e287f0e3b6931fcbfa2f94b3',1,'plazza::Ingredient::number()']]]
 ];
