@@ -5,6 +5,8 @@
 ** Kitchen
 */
 
+/// \file src/Core/Kitchen/Kitchen.cpp
+
 #include "Kitchen.hpp"
 #include <functional>
 #include <iostream>

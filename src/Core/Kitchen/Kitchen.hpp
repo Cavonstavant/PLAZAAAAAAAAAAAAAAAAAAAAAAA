@@ -5,7 +5,7 @@
 ** Kitchen
 */
 
-/// \file src/Kitchen/Kitchen.hpp
+/// \file src/Core/Kitchen/Kitchen.hpp
 
 #ifndef PLAZZA_KITCHEN_HPP
 #define PLAZZA_KITCHEN_HPP
@@ -42,6 +42,7 @@ class Kitchen {
         void enqueueJob(std::function<void()>& job);
 
     private:
+        /// \brief Main function instancied in each thread
         static void _Cook(Kitchen *obj);
 
         /// \brief The kitchen brigade regrouping all the cooks
