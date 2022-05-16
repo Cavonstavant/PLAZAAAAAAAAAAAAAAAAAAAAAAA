@@ -42,7 +42,7 @@ class Kitchen {
         void enqueueJob(std::function<void()>& job);
 
     private:
-        void _Cook();
+        static void _Cook(Kitchen *obj);
 
         /// \brief The kitchen brigade regrouping all the cooks
         std::vector<std::thread> _brigade;

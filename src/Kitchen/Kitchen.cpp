@@ -14,23 +14,44 @@ void Kitchen::start()
 {
     _brigade.reserve(_nbCooks);
     for (size_t i = 0; i < _nbCooks; i++)
-        _brigade.at(i) = std::thread(_Cook);
+        _brigade.at(i) = std::thread(_Cook, this);
 }
 
-void Kitchen::_Cook()
+void Kitchen::_Cook(Kitchen *obj)
 {
     while (true) {
         std::function<void()> order;
         {
-            std::unique_lock<std::mutex> lock(_mutex);
-            order_condition.wait(lock, [this] {
-                return !_orders.empty() || _stopKitchen;
+            std::unique_lock<std::mutex> lock(obj->_mutex);
+            obj->order_condition.wait(lock, [&obj] {
+                return !obj->_orders.empty() || obj->_stopKitchen;
             });
-            if (_stopKitchen)
+            if (obj->_stopKitchen)
                 return;
-            order = _orders.front();
-            _orders.pop();
+            order = obj->_orders.front();
+            obj->_orders.pop();
         }
         order();
     }
+}
+
+void Kitchen::enqueueJob(std::function<void()>& job)
+{
+    {
+        std::unique_lock<std::mutex> lock(_mutex);
+        _orders.push(job);
+    }
+    order_condition.notify_one();
+}
+
+void Kitchen::stop()
+{
+    {
+        std::unique_lock<std::mutex> lock(_mutex);
+        _stopKitchen = true;
+    }
+    order_condition.notify_all();
+    for (std::thread& active_thread : _brigade) {
+        active_thread.join();
+    }    _brigade.clear();
 }
