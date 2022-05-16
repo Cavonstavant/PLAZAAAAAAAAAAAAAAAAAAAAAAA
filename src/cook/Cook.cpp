@@ -5,27 +5,33 @@
 ** Cook
 */
 
+/// \file src/cook/Cook.cpp
+
 #include "Cook.hpp"
+#include <thread>
 
 using namespace plazza;
 
 Cook::Cook(std::size_t multiplier)
 {
+    _duration = 0;
     _workInProgress = false;
     _multiplier = multiplier;
 }
 
 Cook::Cook(Pizza pizza, std::size_t multiplier)
 {
+    _duration = 0;
     _multiplier = multiplier;
     cookPizza(pizza);
 }
 
 void Cook::cookPizza(Pizza pizza)
 {
-    // set the start timer of the cook
     _pizza = pizza;
     _workInProgress = true;
+    _setCookingTime();
+    _start = time(NULL);
 }
 
 void Cook::setCookingTimeMultipiler(std::size_t multiplier)
@@ -35,7 +41,9 @@ void Cook::setCookingTimeMultipiler(std::size_t multiplier)
 
 bool Cook::getCookStatus()
 {
-    // Check if the cook has finished and update the _workInProgress
+    if (std::size_t(time(NULL) - _start) >= _duration) {
+        _workInProgress = false;
+    }
     return (_workInProgress);
 }
 
@@ -58,5 +66,5 @@ void Cook::_setCookingTime()
         cookingTime = 4;
         break;
     }
-    // set the duration of pizza cook
+    _duration = cookingTime * _multiplier;
 }
