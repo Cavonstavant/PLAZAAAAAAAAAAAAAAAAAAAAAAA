@@ -63,6 +63,7 @@ namespace plazza {
             /// \param timeToFill number of time to fill the fridge
             static void _fillFridge(const std::size_t &timeToFill, Kitchen &obj);
 
+            /// \brief check every timeToWait to fill the fridge
             static void _waitToFillFridge(const std::size_t &timeToWait, Kitchen &obj);
 
             /// \brief The kitchen brigade regrouping all the cooks
@@ -83,6 +84,7 @@ namespace plazza {
             /// \brief The time to wait before fill the fridge
             unsigned long _refillTime;
 
+            /// \brief Store the oldTime to fill
             unsigned long _oldTime;
 
             /// \brief The flag used to stop the kitchen
