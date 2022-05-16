@@ -46,7 +46,8 @@ void Reception::run()
     std::string input;
 
     while (true) {
-        std::getline(std::cin, input);
+        if (!std::getline(std::cin, input))
+            return;
 
         if (input == "exit") {
             break;
