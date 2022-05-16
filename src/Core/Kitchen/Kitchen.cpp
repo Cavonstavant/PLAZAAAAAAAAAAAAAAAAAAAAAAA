@@ -9,7 +9,6 @@
 
 #include "Kitchen.hpp"
 #include <functional>
-#include <iostream>
 
 using namespace plazza;
 
