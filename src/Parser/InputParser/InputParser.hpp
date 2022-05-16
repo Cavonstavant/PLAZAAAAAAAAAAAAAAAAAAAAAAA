@@ -11,6 +11,7 @@
 #define INPUTPARSER_HPP_
 
 #include "AParser.hpp"
+#include "Pizza.hpp"
 
 namespace plazza {
     /// \brief InputParser is a class used to parse command of pizza while the program is running
@@ -32,6 +33,9 @@ namespace plazza {
             /// \brief Set the separator for the command
             /// \param const char Separator char
             void setCommandSeparator(const char);
+            /// \brief Get a vector of valid pizza.
+            /// \return std::vector<Pizza> &.
+            std::vector<Pizza> &getPizza() const;
 
         private:
             /// \brief Store the command that will be process.
