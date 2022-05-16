@@ -62,7 +62,7 @@ void InputParser::processArguments()
     _argumentsToPizza();
 }
 
-const PizzaType InputParser::_getPizzaType(const std::string &type) const
+PizzaType InputParser::_getPizzaType(const std::string &type) const
 {
     if (type == "regina")
         return (PizzaType::Regina);
@@ -75,7 +75,7 @@ const PizzaType InputParser::_getPizzaType(const std::string &type) const
     return PizzaType::Regina;
 }
 
-const PizzaSize InputParser::_getPizzaSize(const std::string &size) const
+PizzaSize InputParser::_getPizzaSize(const std::string &size) const
 {
     if (size == "S")
         return (PizzaSize::S);

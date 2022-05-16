@@ -67,9 +67,16 @@ namespace plazza {
             /// \param const std::string & is the pizza separator.
             /// \return true if it's std::string is a valid pizza separator, false otherwise.
             bool _isValidPizzaSeparator(const std::string &) const;
+            /// \brief Convert arguments to pizza.
             void _argumentsToPizza();
-            const PizzaType _getPizzaType(const std::string &type) const;
-            const PizzaSize _getPizzaSize(const std::string &size) const;
+            /// \brief Get the type of a pizza from is name.
+            /// \param std::string Name of the pizza.
+            /// \return PizzaType Type of the pizza.
+            PizzaType _getPizzaType(const std::string &type) const;
+            /// \brief Get the size of a pizza from is size.
+            /// \param std::string Size of the pizza.
+            /// \return PizzaSize Size of the pizza.
+            PizzaSize _getPizzaSize(const std::string &size) const;
     };
 }// namespace plazza
 

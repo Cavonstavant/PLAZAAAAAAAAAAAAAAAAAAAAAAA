@@ -5,6 +5,7 @@ set(SRC
     ${SRC_ROOT}/Plazza.cpp
     ${SRC_ROOT}/Plazza.hpp
     ${SRC_ROOT}/Pizza.hpp
+    ${SRC_ROOT}/Pizza.cpp
 )
 
 add_library(${PROJECT_NAME}_Core ${SRC})
