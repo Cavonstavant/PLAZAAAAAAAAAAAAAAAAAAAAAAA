@@ -10,8 +10,10 @@ add_compile_options(
     "-Wall" "-Wextra" "-Wshadow" "-pedantic" "-Wpointer-arith" "-fpic"
 )
 
-if (CMAKE_BUILD_TYPE STREQUAL Testing)
-    add_compile_options("-coverage")
+option(ENABLE_CODE_COVERAGE OFF)
+if (ENABLE_CODE_COVERAGE)
+    add_compile_options("--coverage" "-fprofile-arcs" "-ftest-coverage")
+    add_link_options("--coverage" "-fprofile-arcs" "-ftest-coverage")
 endif()
 
 add_subdirectory(src)
