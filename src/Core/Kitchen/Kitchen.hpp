@@ -10,6 +10,7 @@
 #ifndef PLAZZA_KITCHEN_HPP
 #define PLAZZA_KITCHEN_HPP
 
+#include "Pizza.hpp"
 #include <condition_variable>
 #include <functional>
 #include <mutex>
@@ -19,6 +20,19 @@
 
 namespace plazza {
 
+    /// \brief Enumeration for the different ingredients.
+    enum Ingredients {
+        Tomato,
+        Gruyere,
+        Ham,
+        Mushrooms,
+        Steak,
+        Eggplant,
+        GoatCheese,
+        ChiefLove,
+        IngredientNumber
+    };
+
     /// \brief The class used to manage all the cooks and the orders.
     class Kitchen {
         public:
@@ -26,7 +40,7 @@ namespace plazza {
             Kitchen() = delete;
 
             /// \brief Creating a Kitchen with a specified number of cooks
-            explicit Kitchen(unsigned long nbCooks) : _nbCooks(nbCooks), _stopKitchen(false){};
+            explicit Kitchen(unsigned long nbCooks) : _nbCooks(nbCooks), _stopKitchen(false), _fridge(8){};
 
             /// \brief Destructor
             ~Kitchen() = default;
@@ -42,8 +56,15 @@ namespace plazza {
             void enqueueJob(std::function<void()> &job);
 
         private:
+            /// \brief fill the ingredients of the fridge 1 x timeToFill
+            /// \param timeToFill number of time to fill the fridge 
+            void _fillFridge(const std::size_t &timeToFill);
+
             /// \brief Main function instancied in each thread
             static void _Cook(Kitchen *obj);
+
+            /// \brief The kitchen fridge, containing all of the ingredients
+            std::vector<Ingredient> _fridge;
 
             /// \brief The kitchen brigade regrouping all the cooks
             std::vector<std::thread> _brigade;

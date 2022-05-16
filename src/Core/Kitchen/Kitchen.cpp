@@ -14,6 +14,7 @@ using namespace plazza;
 
 void Kitchen::start()
 {
+    _fillFridge(5);
     for (size_t i = 0; i < _nbCooks; ++i)
         _brigade.emplace_back(std::thread(_Cook, this));
 }
@@ -56,4 +57,11 @@ void Kitchen::stop()
         active_thread.join();
     }
     _brigade.clear();
+}
+
+void Kitchen::_fillFridge(const std::size_t &timeToFill)
+{
+    for (size_t x = 0; 0 < IngredientNumber; ++x) {
+        _fridge[x].number += timeToFill;
+    }
 }
