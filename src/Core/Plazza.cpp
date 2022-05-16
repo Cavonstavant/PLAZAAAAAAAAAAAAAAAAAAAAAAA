@@ -41,6 +41,34 @@ bool Reception::_handleInput(const std::string &input)
     return true;
 }
 
+std::string Reception::pack(const Pizza &pizza)
+{
+    std::string order = "";
+
+    order.append("name:");
+    order.append(std::to_string(pizza.type));
+    order.append(";size:");
+    order.append(std::to_string(pizza.size));
+    order.append(";amount:");
+    order.append(std::to_string(pizza.number));
+    order.append("\n");
+    return (order);
+}
+
+Pizza Reception::unpack(const std::string &order)
+{
+    Pizza pizza;
+    std::string tmp = order;
+
+    tmp = tmp.substr(tmp.find("name:") + 5);
+    pizza.type = PizzaType(std::atoi(tmp.c_str()));
+    tmp = tmp.substr(tmp.find(";size:") + 6);
+    pizza.size = PizzaSize(std::atoi(tmp.c_str()));
+    tmp = tmp.substr(tmp.find(";amount:") + 8);
+    pizza.number = std::atoi(tmp.c_str());
+    return (pizza);
+}
+
 void Reception::run()
 {
     std::string input;
