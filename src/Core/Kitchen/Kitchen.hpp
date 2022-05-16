@@ -26,7 +26,7 @@ class Kitchen {
         Kitchen() = delete;
 
         /// \brief Creating a Kitchen with a specified number of cooks
-        explicit Kitchen(unsigned long nbCooks) : _brigade(nbCooks), _stopKitchen(false) {};
+        explicit Kitchen(unsigned long nbCooks) : _nbCooks(nbCooks), _stopKitchen(false) {};
 
         /// \brief Destructor
         ~Kitchen() = default;

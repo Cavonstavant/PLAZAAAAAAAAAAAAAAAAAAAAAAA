@@ -7,14 +7,14 @@
 
 #include "Kitchen.hpp"
 #include <functional>
+#include <iostream>
 
 using namespace plazza;
 
 void Kitchen::start()
 {
-    _brigade.reserve(_nbCooks);
-    for (size_t i = 0; i < _nbCooks; i++)
-        _brigade.at(i) = std::thread(_Cook, this);
+    for (size_t i = 0; i < _nbCooks; ++i)
+        _brigade.emplace_back(std::thread(_Cook, this));
 }
 
 void Kitchen::_Cook(Kitchen *obj)
