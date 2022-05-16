@@ -171,3 +171,8 @@ void InputParser::_checkArgumentsValidity()
     }
     _arguments = validArgs;
 }
+
+const std::vector<Pizza> &InputParser::getPizza() const
+{
+    return (_pizza);
+}

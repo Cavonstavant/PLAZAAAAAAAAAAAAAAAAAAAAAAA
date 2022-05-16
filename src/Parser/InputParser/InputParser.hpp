@@ -35,11 +35,13 @@ namespace plazza {
             void setCommandSeparator(const char);
             /// \brief Get a vector of valid pizza.
             /// \return std::vector<Pizza> &.
-            std::vector<Pizza> &getPizza() const;
+            const std::vector<Pizza> &getPizza() const;
 
         private:
             /// \brief Store the command that will be process.
             std::string _command;
+            /// \brief Store a vector of valid pizza.
+            std::vector<Pizza> _pizza;
             /// \brief Store the separator that will use for processArgument.
             char _separator;
             /// \brief Check the validity of all arguments of the command.
