@@ -1,5 +1,5 @@
-set (INCLUDE_ROOT ${PROJECT_SOURCE_DIR}/src/logger)
-set (SRC_ROOT ${PROJECT_SOURCE_DIR}/src/logger)
+set (INCLUDE_ROOT ${PROJECT_SOURCE_DIR}/src/Logger)
+set (SRC_ROOT ${PROJECT_SOURCE_DIR}/src/Logger)
 
 set (SRC
     ${SRC_ROOT}/Exception.cpp

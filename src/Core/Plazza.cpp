@@ -10,6 +10,7 @@
 #include "Plazza.hpp"
 #include "Exception.hpp"
 #include "InputParser.hpp"
+#include "Kitchen/Kitchen.hpp"
 #include <iostream>
 
 using namespace plazza;
