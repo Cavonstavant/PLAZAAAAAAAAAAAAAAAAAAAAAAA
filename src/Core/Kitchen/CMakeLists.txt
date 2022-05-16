@@ -1,4 +1,4 @@
-set (SRC_ROOT ${PROJECT_SOURCE_DIR}/src/Kitchen)
+set (SRC_ROOT ${PROJECT_SOURCE_DIR}/src/Core/Kitchen)
 
 set (KITCHEN_SRC
     ${SRC_ROOT}/Kitchen.cpp
