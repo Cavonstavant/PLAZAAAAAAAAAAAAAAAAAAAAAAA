@@ -12,6 +12,7 @@
 
 #include <cstddef>
 #include <string>
+#include "Pizza.hpp"
 
 namespace plazza {
     /// \brief Reception Class containing the main loop of the program
@@ -26,6 +27,8 @@ namespace plazza {
             Reception(size_t cookingTime, size_t cookNumber, size_t refillTime);
             /// \brief Default Constructor of the Reception
             ~Reception() = default;
+            std::string pack(const Pizza &);
+            Pizza unpack(const std::string &);
             /// \brief Main function of the program
             void run();
 
