@@ -28,6 +28,10 @@ Cook::Cook(Pizza pizza, std::size_t multiplier)
 
 void Cook::cookPizza(Pizza pizza)
 {
+    if (_workInProgress) {
+        PlazzaEX("Cook is already working !", Logger::HIGH);
+        return;
+    }
     _pizza = pizza;
     _workInProgress = true;
     _setCookingTime();
