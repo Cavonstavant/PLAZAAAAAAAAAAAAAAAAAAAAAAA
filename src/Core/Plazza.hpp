@@ -10,9 +10,9 @@
 #ifndef PLAZZA_HPP_
 #define PLAZZA_HPP_
 
+#include "Pizza.hpp"
 #include <cstddef>
 #include <string>
-#include "Pizza.hpp"
 
 namespace plazza {
     /// \brief Reception Class containing the main loop of the program
