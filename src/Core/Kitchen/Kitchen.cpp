@@ -55,5 +55,6 @@ void Kitchen::stop()
     order_condition.notify_all();
     for (std::thread& active_thread : _brigade) {
         active_thread.join();
-    }    _brigade.clear();
+    }
+    _brigade.clear();
 }
