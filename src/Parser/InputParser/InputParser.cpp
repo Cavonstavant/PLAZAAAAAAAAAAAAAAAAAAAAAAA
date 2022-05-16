@@ -96,18 +96,18 @@ void InputParser::_argumentsToPizza()
 
     for (std::size_t i = 0; i < _arguments.size(); i++) {
         switch (i % 4) {
-        case 0:
-            pizza.type = _getPizzaType(_arguments[i]);
-            break;
-        case 1:
-            pizza.size = _getPizzaSize(_arguments[i]);
-            break;
-        case 2:
-            pizza.number = std::atoi(_arguments[i].c_str());
-            break;
-        case 3:
-            _pizza.push_back(pizza);
-            break;
+            case 0:
+                pizza.type = _getPizzaType(_arguments[i]);
+                break;
+            case 1:
+                pizza.size = _getPizzaSize(_arguments[i]);
+                break;
+            case 2:
+                pizza.number = std::atoi(_arguments[i].c_str());
+                break;
+            case 3:
+                _pizza.push_back(pizza);
+                break;
         }
     }
 }
@@ -120,11 +120,10 @@ void InputParser::setCommandSeparator(char sep)
 bool InputParser::_isValidPizzaName(const std::string &pizza) const
 {
     const std::string availablePizza[4] = {
-        "regina",
-        "margarita",
-        "americana",
-        "fantasia"
-    };
+            "regina",
+            "margarita",
+            "americana",
+            "fantasia"};
     bool findValidPizza = false;
 
     for (std::size_t index = 0; index < 4; index++) {
@@ -139,12 +138,11 @@ bool InputParser::_isValidPizzaName(const std::string &pizza) const
 bool InputParser::_isValidPizzaSize(const std::string &pizzaSize) const
 {
     const std::string availablePizzaSize[5] = {
-        "S",
-        "M",
-        "L",
-        "XL",
-        "XXL"
-    };
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"};
     bool findValidPizzaSize = false;
 
     for (std::size_t index = 0; index < 5; index++) {
@@ -197,18 +195,18 @@ void InputParser::_checkArgumentsValidity()
             continue;
         }
         switch (index % 4) {
-        case 0:
-            argIsValid = _isValidPizzaName(it);
-            break;
-        case 1:
-            argIsValid = _isValidPizzaSize(it);
-            break;
-        case 2:
-            argIsValid = _isValidPizzaNumber(it);
-            break;
-        case 3:
-            argIsValid = _isValidPizzaSeparator(it);
-            break;
+            case 0:
+                argIsValid = _isValidPizzaName(it);
+                break;
+            case 1:
+                argIsValid = _isValidPizzaSize(it);
+                break;
+            case 2:
+                argIsValid = _isValidPizzaNumber(it);
+                break;
+            case 3:
+                argIsValid = _isValidPizzaSeparator(it);
+                break;
         }
         index++;
         if (argIsValid)
