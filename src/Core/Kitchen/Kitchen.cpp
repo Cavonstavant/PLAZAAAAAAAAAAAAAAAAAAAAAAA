@@ -37,7 +37,7 @@ void Kitchen::_Cook(Kitchen *obj)
     }
 }
 
-void Kitchen::enqueueJob(std::function<void()>& job)
+void Kitchen::enqueueJob(std::function<void()> &job)
 {
     {
         std::unique_lock<std::mutex> lock(_mutex);
@@ -53,7 +53,7 @@ void Kitchen::stop()
         _stopKitchen = true;
     }
     order_condition.notify_all();
-    for (std::thread& active_thread : _brigade) {
+    for (std::thread &active_thread: _brigade) {
         active_thread.join();
     }
     _brigade.clear();
