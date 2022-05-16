@@ -12,3 +12,8 @@ target_include_directories(${PROJECT_NAME}_cook
     PRIVATE ${SRC_ROOT}
     PUBLIC ${INCLUDE_ROOT}
 )
+
+target_link_libraries(${PROJECT_NAME}_cook
+    PUBLIC ${PROJECT_NAME}_logger
+    PRIVATE ${PROJECT_NAME}_Core
+)
