@@ -1,7 +1,11 @@
 <map id="src/Parser/InputParser/InputParser.hpp" name="src/Parser/InputParser/InputParser.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,168,47"/>
-<area shape="rect" id="node2" href="$_a_parser_8hpp.html" title=" " alt="" coords="37,95,136,121"/>
-<area shape="rect" id="node3" href="$_i_parser_8hpp.html" title=" " alt="" coords="40,169,133,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="15,244,73,271"/>
-<area shape="rect" id="node5" title=" " alt="" coords="98,244,161,271"/>
+<area shape="rect" id="node1" title=" " alt="" coords="37,5,200,47"/>
+<area shape="rect" id="node2" href="$_a_parser_8hpp.html" title=" " alt="" coords="12,95,111,121"/>
+<area shape="rect" id="node6" href="$_pizza_8hpp.html" title=" " alt="" coords="139,95,223,121"/>
+<area shape="rect" id="node3" href="$_i_parser_8hpp.html" title=" " alt="" coords="5,169,99,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="152,244,211,271"/>
+<area shape="rect" id="node5" title=" " alt="" coords="43,244,106,271"/>
+<area shape="rect" id="node7" href="$_exception_8hpp.html" title=" " alt="" coords="224,169,339,196"/>
+<area shape="rect" id="node8" href="$_logger_8hpp.html" title=" " alt="" coords="235,244,328,271"/>
+<area shape="rect" id="node9" title=" " alt="" coords="353,244,439,271"/>
 </map>

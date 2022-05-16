@@ -72,7 +72,13 @@ var menudata={children:[
 {text:"v",url:"functions_func.html#index_v"},
 {text:"w",url:"functions_func.html#index_w"},
 {text:"~",url:"functions_func.html#index__7E"}]},
-{text:"Variables",url:"functions_vars.html"},
+{text:"Variables",url:"functions_vars.html",children:[
+{text:"_",url:"functions_vars.html#index__5F"},
+{text:"i",url:"functions_vars.html#index_i"},
+{text:"n",url:"functions_vars.html#index_n"},
+{text:"o",url:"functions_vars.html#index_o"},
+{text:"s",url:"functions_vars.html#index_s"},
+{text:"t",url:"functions_vars.html#index_t"}]},
 {text:"Enumerations",url:"functions_enum.html"},
 {text:"Enumerator",url:"functions_eval.html"}]}]},
 {text:"Files",url:"files.html",children:[

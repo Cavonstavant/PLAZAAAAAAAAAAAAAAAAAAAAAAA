@@ -1,7 +1,7 @@
 var _pizza_8hpp =
 [
-    [ "Pizza", "structplazza_1_1_pizza.html", "structplazza_1_1_pizza" ],
     [ "Ingredient", "structplazza_1_1_ingredient.html", "structplazza_1_1_ingredient" ],
+    [ "Pizza", "structplazza_1_1_pizza.html", "structplazza_1_1_pizza" ],
     [ "PizzaSize", "_pizza_8hpp.html#a8b75d3915b8f7e5d1ff158526c08c374", [
       [ "S", "_pizza_8hpp.html#a8b75d3915b8f7e5d1ff158526c08c374af09175b981bdc9d19aa106cba5936b78", null ],
       [ "M", "_pizza_8hpp.html#a8b75d3915b8f7e5d1ff158526c08c374aaa148666f97f9b5b524967c7599e27d1", null ],

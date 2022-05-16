@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['verystupiduserexception_181',['VeryStupidUserException',['../class_very_stupid_user_exception.html',1,'']]]
+  ['verystupiduserexception_186',['VeryStupidUserException',['../class_very_stupid_user_exception.html',1,'']]]
 ];
