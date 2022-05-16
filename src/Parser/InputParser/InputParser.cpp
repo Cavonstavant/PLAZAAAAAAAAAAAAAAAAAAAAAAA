@@ -96,18 +96,18 @@ void InputParser::_argumentsToPizza()
 
     for (std::size_t i = 0; i < _arguments.size(); i++) {
         switch (i % 4) {
-        case 0:
-            pizza.type = _getPizzaType(_arguments[i]);
-            break;
-        case 1:
-            pizza.size = _getPizzaSize(_arguments[i]);
-            break;
-        case 2:
-            pizza.number = std::atoi(_arguments[i].c_str());
-            break;
-        case 3:
-            _pizza.push_back(pizza);
-            break;
+            case 0:
+                pizza.type = _getPizzaType(_arguments[i]);
+                break;
+            case 1:
+                pizza.size = _getPizzaSize(_arguments[i]);
+                break;
+            case 2:
+                pizza.number = std::atoi(_arguments[i].c_str());
+                break;
+            case 3:
+                _pizza.push_back(pizza);
+                break;
         }
     }
 }
