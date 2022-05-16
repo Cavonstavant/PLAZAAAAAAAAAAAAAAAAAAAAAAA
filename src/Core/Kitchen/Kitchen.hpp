@@ -22,7 +22,7 @@ namespace plazza {
 
     /// \brief Enumeration for the different ingredients.
     enum Ingredients {
-        Tomato,
+        Tomato = 0,
         Gruyere,
         Ham,
         Mushrooms,
@@ -40,7 +40,7 @@ namespace plazza {
             Kitchen() = delete;
 
             /// \brief Creating a Kitchen with a specified number of cooks
-            explicit Kitchen(unsigned long nbCooks) : _nbCooks(nbCooks), _stopKitchen(false), _fridge(8){};
+            explicit Kitchen(unsigned long nbCooks, unsigned long refillTime) : _nbCooks(nbCooks), _refillTime(refillTime), _stopKitchen(false), _fridge(IngredientNumber){};
 
             /// \brief Destructor
             ~Kitchen() = default;
@@ -56,15 +56,14 @@ namespace plazza {
             void enqueueJob(std::function<void()> &job);
 
         private:
-            /// \brief fill the ingredients of the fridge 1 x timeToFill
-            /// \param timeToFill number of time to fill the fridge 
-            void _fillFridge(const std::size_t &timeToFill);
-
             /// \brief Main function instancied in each thread
             static void _Cook(Kitchen *obj);
 
-            /// \brief The kitchen fridge, containing all of the ingredients
-            std::vector<Ingredient> _fridge;
+            /// \brief fill the ingredients of the fridge 1 x timeToFill
+            /// \param timeToFill number of time to fill the fridge
+            static void _fillFridge(const std::size_t &timeToFill, Kitchen &obj);
+
+            static void _waitToFillFridge(const std::size_t &timeToWait, Kitchen &obj);
 
             /// \brief The kitchen brigade regrouping all the cooks
             std::vector<std::thread> _brigade;
@@ -81,8 +80,16 @@ namespace plazza {
             /// \brief The number of cooks in the kitchen
             unsigned long _nbCooks;
 
+            /// \brief The time to wait before fill the fridge
+            unsigned long _refillTime;
+
+            unsigned long _oldTime;
+
             /// \brief The flag used to stop the kitchen
             bool _stopKitchen;
+
+            /// \brief The kitchen fridge, containing all of the ingredients
+            std::vector<Ingredient> _fridge;
     };
 
 }// namespace plazza

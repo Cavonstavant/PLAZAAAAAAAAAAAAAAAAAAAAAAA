@@ -9,12 +9,14 @@
 
 #include "Kitchen.hpp"
 #include <functional>
+#include <ctime>
 
 using namespace plazza;
 
 void Kitchen::start()
 {
-    _fillFridge(5);
+    _oldTime = std::time(nullptr);
+    _fillFridge(5, *this);
     for (size_t i = 0; i < _nbCooks; ++i)
         _brigade.emplace_back(std::thread(_Cook, this));
 }
@@ -33,6 +35,7 @@ void Kitchen::_Cook(Kitchen *obj)
             order = obj->_orders.front();
             obj->_orders.pop();
         }
+        _waitToFillFridge(obj->_refillTime, *obj);
         order();
     }
 }
@@ -59,9 +62,17 @@ void Kitchen::stop()
     _brigade.clear();
 }
 
-void Kitchen::_fillFridge(const std::size_t &timeToFill)
+void Kitchen::_fillFridge(const std::size_t &timeToFill, Kitchen &obj)
 {
-    for (size_t x = 0; 0 < IngredientNumber; ++x) {
-        _fridge[x].number += timeToFill;
+    for (size_t x = 0; x < IngredientNumber; ++x) {
+        obj._fridge[x].number += timeToFill;
+    }
+}
+
+void Kitchen::_waitToFillFridge(const std::size_t &timeToWait, Kitchen &obj)
+{
+    if (std::time(nullptr) - obj._oldTime > timeToWait) {
+        obj._oldTime = std::time(nullptr);
+        _fillFridge(1, obj);
     }
 }
