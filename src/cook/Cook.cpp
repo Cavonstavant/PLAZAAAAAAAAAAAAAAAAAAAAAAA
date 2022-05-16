@@ -7,14 +7,20 @@
 
 #include "Cook.hpp"
 
-plazza::Cook::Cook()
+using namespace plazza;
+
+Cook::Cook()
 {
-    _IHaveACommand = false;
+    _workInProgress = false;
 }
 
-void plazza::Cook::cookTakeThisCommand(const std::string command)
+Cook::Cook(Pizza pizza)
 {
-    _IHaveToMakeThisPizza = command;
-    _IHaveACommand = true;
-    _setIngredientsListFromCommand();
+    _pizza = pizza;
+    _workInProgress = true;
+}
+
+void Cook::setCookingTimeMultiplier(std::size_t multiplier)
+{
+    _multiplier = multiplier;
 }
