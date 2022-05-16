@@ -18,6 +18,7 @@ add_library(${PROJECT_NAME}_parser ${SRC})
 
 target_link_libraries(${PROJECT_NAME}_parser
     PUBLIC ${PROJECT_NAME}_logger
+    PRIVATE ${PROJECT_NAME}_Core
 )
 
 target_include_directories(${PROJECT_NAME}_parser
