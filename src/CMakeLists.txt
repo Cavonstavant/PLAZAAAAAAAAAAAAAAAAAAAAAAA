@@ -14,6 +14,7 @@ add_library(${PROJECT_NAME}_core SHARED ${TARGET_ARCHIVE_SRC})
 target_link_libraries(${PROJECT_NAME}_core
     PUBLIC ${PROJECT_NAME}_logger
     PUBLIC ${PROJECT_NAME}_parser
+    PUBLIC ${PROJECT_NAME}_Core
     PRIVATE rt
 )
 
@@ -35,3 +36,4 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 
 add_subdirectory(Logger)
 add_subdirectory(Parser)
+add_subdirectory(Core)
