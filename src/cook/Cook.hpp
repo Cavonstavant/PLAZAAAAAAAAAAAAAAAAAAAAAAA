@@ -10,12 +10,12 @@
 #ifndef COOK_H_
 #define COOK_H_
 
+#include "Pizza.hpp"
 #include <string>
 #include <vector>
-#include "Pizza.hpp"
 
 extern "C" {
-    #include <time.h>
+#include <time.h>
 }
 
 namespace plazza {
@@ -40,6 +40,7 @@ namespace plazza {
             /// \brief Get the status of a cook.
             /// \return true if the cook is cooking, false otherwise.
             bool getCookStatus();
+
         private:
             /// \brief Set the cooking time depending of the pizza to be cook.
             void _setCookingTime();
@@ -54,6 +55,6 @@ namespace plazza {
             /// \brief Store the duration of the cooking time of the pizza.
             std::size_t _duration;
     };
-}
+}// namespace plazza
 
 #endif
