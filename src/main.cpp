@@ -6,6 +6,7 @@
 */
 
 #include "ArgumentsParser.hpp"
+#include "Exception.hpp"
 #include "MessageQueue/MessageQueue.hpp"
 #include "Plazza.hpp"
 #include <iostream>
@@ -15,11 +16,15 @@ int main(int ac, char **av)
 {
     plazza::ArgumentsParser args(ac - 1, av + 1);
 
-    args.processArguments();
+    try {
+        args.processArguments();
+    } catch (const PlazzaException &exc) {
+        std::cerr << exc.what() << std::endl;
+        return 84;
+    }
+    plazza::Reception reception(args.getCookingTime(), args.getCookNumber(), args.getRefillTime());
 
-    plazza::Core core(args.getCookingTime(), args.getCookNumber(), args.getRefillTime());
-
-    core.run();
+    reception.run();
 
     return 0;
 }
