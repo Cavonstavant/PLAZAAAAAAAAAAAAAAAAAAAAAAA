@@ -52,7 +52,9 @@ Test(InputParser, test_InputParser5)
     plazza::InputParser p;
 
     p.setCommand("reginat S x25");
-    cr_assert_throw(p.processArguments(), std::exception);
+    //cr_assert_throw(p.processArguments(), std::exception);
+    p.processArguments();
+    cr_assert_eq(p.getPizza().size(), 0);
 }
 
 Test(InputParser, test_InputParser6)
@@ -60,7 +62,9 @@ Test(InputParser, test_InputParser6)
     plazza::InputParser p;
 
     p.setCommand("regina XS x2");
-    cr_assert_throw(p.processArguments(), std::exception);
+    //cr_assert_throw(p.processArguments(), std::exception);
+    p.processArguments();
+    cr_assert_eq(p.getPizza().size(), 0);
 }
 
 Test(InputParser, test_InputParser7)
@@ -68,7 +72,9 @@ Test(InputParser, test_InputParser7)
     plazza::InputParser p;
 
     p.setCommand("regina S x0");
-    cr_assert_throw(p.processArguments(), std::exception);
+    //cr_assert_throw(p.processArguments(), std::exception);
+    p.processArguments();
+    cr_assert_eq(p.getPizza().size(), 0);
 }
 
 Test(InputParser, test_InputParser8)
@@ -85,7 +91,9 @@ Test(InputParser, test_InputParser9)
     plazza::InputParser p;
 
     p.setCommand("regina S x1; americana XL x15                   fantasia XXL x2486");
-    cr_assert_throw(p.processArguments(), std::exception);
+    //cr_assert_throw(p.processArguments(), std::exception);
+    p.processArguments();
+    cr_assert_eq(p.getPizza().size(), 1);
 }
 
 Test(InputParser, test_InputParser10)
@@ -95,4 +103,23 @@ Test(InputParser, test_InputParser10)
     p.setCommand("regina S x1; americana XL x15          ;   ;   ;; ; ;;;;;         fantasia XXL x2486");
     p.processArguments();
     cr_assert_eq(p.getPizza().size(), 3);
+}
+
+Test(InputParser, test_InputParser11)
+{
+    plazza::InputParser p;
+
+    p.setCommand("regina S x1; americana M x58 ; margarita L x52; fantasia XL x1 ; fantasia XXL x123456");
+    p.processArguments();
+    cr_assert_eq(p.getPizza().size(), 5);
+}
+
+Test(InputParser, test_InputParser12)
+{
+    plazza::InputParser p;
+
+    p.setCommand("regina S; americana M x5");
+    //cr_assert_throw(p.processArguments(), std::exception);
+    p.processArguments();
+    cr_assert_eq(p.getPizza().size(), 1);
 }
