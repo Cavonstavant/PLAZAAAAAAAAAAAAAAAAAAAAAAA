@@ -52,10 +52,47 @@ Test(InputParser, test_InputParser5)
     plazza::InputParser p;
 
     p.setCommand("reginat S x25");
-    try {
-        p.processArguments();
-        cr_assert_eq(0, 1);
-    } catch (std::exception &e) {
-        cr_assert_eq(1, 1);
-    }
+    cr_assert_throw(p.processArguments(), std::exception);
+}
+
+Test(InputParser, test_InputParser6)
+{
+    plazza::InputParser p;
+
+    p.setCommand("regina XS x2");
+    cr_assert_throw(p.processArguments(), std::exception);
+}
+
+Test(InputParser, test_InputParser7)
+{
+    plazza::InputParser p;
+
+    p.setCommand("regina S x0");
+    cr_assert_throw(p.processArguments(), std::exception);
+}
+
+Test(InputParser, test_InputParser8)
+{
+    plazza::InputParser p;
+
+    p.setCommand("regina S x1; americana XL x15           ;      ;     ;;;     fantasia XXL x254");
+    p.processArguments();
+    cr_assert_eq(p.getPizza().size(), 3);
+}
+
+Test(InputParser, test_InputParser9)
+{
+    plazza::InputParser p;
+
+    p.setCommand("regina S x1; americana XL x15                   fantasia XXL x2486");
+    cr_assert_throw(p.processArguments(), std::exception);
+}
+
+Test(InputParser, test_InputParser10)
+{
+    plazza::InputParser p;
+
+    p.setCommand("regina S x1; americana XL x15          ;   ;   ;; ; ;;;;;         fantasia XXL x2486");
+    p.processArguments();
+    cr_assert_eq(p.getPizza().size(), 3);
 }

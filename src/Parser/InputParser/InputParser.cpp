@@ -43,6 +43,8 @@ const std::string &InputParser::getCommand() const
     return (_command);
 }
 
+#include <iostream>
+
 void InputParser::processArguments()
 {
     std::vector<std::string> tmp = _arguments;
@@ -51,13 +53,17 @@ void InputParser::processArguments()
     setCommandSeparator(' ');
     for (auto it: tmp) {
         _arguments.clear();
+        std::cout << it << std::endl;
         setCommand(it);
         for (auto arg: _arguments) {
             args.push_back(arg);
         }
-        args.push_back(";");
+        if (args[args.size() - 1] != ";")
+            args.push_back(";");
     }
     _arguments = args;
+    for (auto it : _arguments)
+        std::cout << it << std::endl;
     _checkArgumentsValidity();
     _argumentsToPizza();
 }
