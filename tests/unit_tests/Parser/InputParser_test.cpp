@@ -5,8 +5,8 @@
 ** InputParser_test
 */
 
-#include <criterion/criterion.h>
 #include "InputParser.hpp"
+#include <criterion/criterion.h>
 
 Test(InputParser, test_InputParser1)
 {
