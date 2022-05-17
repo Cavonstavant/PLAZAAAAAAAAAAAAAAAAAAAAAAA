@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2022
 ** plazza
 ** File description:
-** Parser_test
+** InputParser_test
 */
 
 #include <criterion/criterion.h>
@@ -45,4 +45,17 @@ Test(InputParser, test_InputParser4)
     p.processArguments();
     v = p.getPizza();
     cr_assert_eq(v.size(), 1);
+}
+
+Test(InputParser, test_InputParser5)
+{
+    plazza::InputParser p;
+
+    p.setCommand("reginat S x25");
+    try {
+        p.processArguments();
+        cr_assert_eq(0, 1);
+    } catch (std::exception &e) {
+        cr_assert_eq(1, 1);
+    }
 }

@@ -2,7 +2,7 @@ set (INCLUDE_ROOT ${PROJECT_SOURCE_DIR}/tests/unit_tests/Parser)
 set (SRC_ROOT ${PROJECT_SOURCE_DIR}/tests/unit_tests/Parser)
 
 set (SRC
-    ${SRC_ROOT}/Parser_test.cpp
+    ${SRC_ROOT}/InputParser_test.cpp
 )
 
 create_test(
