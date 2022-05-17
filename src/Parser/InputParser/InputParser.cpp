@@ -53,7 +53,6 @@ void InputParser::processArguments()
     setCommandSeparator(' ');
     for (auto it: tmp) {
         _arguments.clear();
-        std::cout << it << std::endl;
         setCommand(it);
         for (auto arg: _arguments) {
             args.push_back(arg);
@@ -62,8 +61,6 @@ void InputParser::processArguments()
             args.push_back(";");
     }
     _arguments = args;
-    for (auto it : _arguments)
-        std::cout << it << std::endl;
     _checkArgumentsValidity();
     _argumentsToPizza();
 }
@@ -137,7 +134,7 @@ bool InputParser::_isValidPizzaName(const std::string &pizza) const
             findValidPizza = true;
     }
     if (!findValidPizza)
-        throw ParserEX("Invalid pizza name in the command: " + pizza, Logger::LOW);
+        ParserEX("Invalid pizza name in the command: " + pizza, Logger::LOW);
     return (findValidPizza);
 }
 
@@ -156,7 +153,7 @@ bool InputParser::_isValidPizzaSize(const std::string &pizzaSize) const
             findValidPizzaSize = true;
     }
     if (!findValidPizzaSize)
-        throw ParserEX("Invalid pizza size in the command: " + pizzaSize, Logger::LOW);
+        ParserEX("Invalid pizza size in the command: " + pizzaSize, Logger::LOW);
     return (findValidPizzaSize);
 }
 
@@ -171,7 +168,7 @@ bool InputParser::_isValidPizzaNumber(const std::string &pizzaNumber) const
             findValidPizzaNumber = true;
     }
     if (!findValidPizzaNumber)
-        throw ParserEX("Invalid pizza number in the command: " + pizzaNumber, Logger::LOW);
+        ParserEX("Invalid pizza number in the command: " + pizzaNumber, Logger::LOW);
     return (findValidPizzaNumber);
 }
 
@@ -180,7 +177,7 @@ bool InputParser::_isValidPizzaSeparator(const std::string &pizzaSeparator) cons
     bool findValidPizzaSeparator = true;
 
     if (pizzaSeparator != ";") {
-        throw ParserEX("Invalid pizza separator in the command: " + pizzaSeparator, Logger::LOW);
+        ParserEX("Invalid pizza separator in the command: " + pizzaSeparator, Logger::LOW);
         findValidPizzaSeparator = false;
     }
     return (findValidPizzaSeparator);
