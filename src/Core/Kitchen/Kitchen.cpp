@@ -16,7 +16,7 @@ using namespace plazza;
 void Kitchen::start()
 {
     _oldTime = std::time(nullptr);
-    _fillFridge(5, *this);
+    _initFridge(*this);
     for (std::size_t i = 0; i < _nbCooks; ++i)
         _brigade.emplace_back(std::thread(_Cook, this));
 }
@@ -75,4 +75,17 @@ void Kitchen::_waitToFillFridge(const std::size_t &timeToWait, Kitchen &obj)
         obj._oldTime = std::time(nullptr);
         _fillFridge(1, obj);
     }
+}
+
+void Kitchen::_initFridge(Kitchen &obj)
+{
+    obj._fridge[Tomato].name = "tomato";
+    obj._fridge[Gruyere].name = "gruyere";
+    obj._fridge[Ham].name = "ham";
+    obj._fridge[Mushrooms].name = "mushrooms";
+    obj._fridge[Steak].name = "steak";
+    obj._fridge[Eggplant].name = "eggplant";
+    obj._fridge[GoatCheese].name = "goatCheese";
+    obj._fridge[ChiefLove].name = "chiefLove";
+    _fillFridge(5, obj);
 }
