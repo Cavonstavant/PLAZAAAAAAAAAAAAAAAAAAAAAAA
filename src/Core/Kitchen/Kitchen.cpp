@@ -11,6 +11,7 @@
 #include <ctime>
 #include <iostream>
 #include <functional>
+#include "Pizza.hpp"
 
 using namespace plazza;
 
@@ -27,9 +28,20 @@ void Kitchen::_receptCook(Kitchen *obj)
 {
     while (true) {
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
-        std::string command = obj->commandQueue.get()->receiveMessage();
+        std::string fullCommand = obj->commandQueue.get()->receiveMessage();
 
-        std::cout << command << std::endl;
+        /// name:1
+        std::string name = fullCommand.substr(0, fullCommand.find(";"));
+
+        /// amount:2
+        std::string quantity = fullCommand.substr(fullCommand.find(";") + 1);
+        quantity = quantity.substr(quantity.find(";") + 1);
+
+        name = name.substr(name.find(":") + 1);
+
+        quantity = quantity.substr(quantity.find(":") + 1);
+        std::cout << name  + " " + quantity << std::endl;
+
     }
 }
 
