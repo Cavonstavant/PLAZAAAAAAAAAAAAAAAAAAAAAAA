@@ -10,6 +10,7 @@
 #ifndef PLAZZA_HPP_
 #define PLAZZA_HPP_
 
+#include "Kitchen.hpp"
 #include "Pizza.hpp"
 #include <cstddef>
 #include <string>
