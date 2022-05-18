@@ -1,0 +1,4 @@
+<map id="plazza::Cook" name="plazza::Cook">
+<area shape="rect" id="node1" title="Cook class is use to cook a pizza with a duration time." alt="" coords="6,95,111,121"/>
+<area shape="rect" id="node2" href="$structplazza_1_1_pizza.html" title="Structure for pizza." alt="" coords="5,5,112,32"/>
+</map>

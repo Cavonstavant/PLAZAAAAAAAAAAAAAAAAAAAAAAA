@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['americana_40',['Americana',['../namespaceplazza.html#a3df93b5bf8fa865c6f1251078950734ca6f5eff189eeb6d0ab3210c37331e0d2d',1,'plazza']]],
-  ['aparser_41',['AParser',['../classplazza_1_1_a_parser.html',1,'plazza']]],
-  ['aparser_2ecpp_42',['AParser.cpp',['../_a_parser_8cpp.html',1,'']]],
-  ['aparser_2ehpp_43',['AParser.hpp',['../_a_parser_8hpp.html',1,'']]],
-  ['argumentsparser_44',['ArgumentsParser',['../classplazza_1_1_arguments_parser.html',1,'plazza::ArgumentsParser'],['../classplazza_1_1_arguments_parser.html#a15318e1aadd194871e91346cc75bb00c',1,'plazza::ArgumentsParser::ArgumentsParser()=default'],['../classplazza_1_1_arguments_parser.html#a37dff9e5bbfc47cba9cdd93caef6c77b',1,'plazza::ArgumentsParser::ArgumentsParser(int, char **)']]],
-  ['argumentsparser_2ecpp_45',['ArgumentsParser.cpp',['../_arguments_parser_8cpp.html',1,'']]],
-  ['argumentsparser_2ehpp_46',['ArgumentsParser.hpp',['../_arguments_parser_8hpp.html',1,'']]]
+  ['americana_44',['Americana',['../namespaceplazza.html#a3df93b5bf8fa865c6f1251078950734ca6f5eff189eeb6d0ab3210c37331e0d2d',1,'plazza']]],
+  ['aparser_45',['AParser',['../classplazza_1_1_a_parser.html',1,'plazza']]],
+  ['aparser_2ecpp_46',['AParser.cpp',['../_a_parser_8cpp.html',1,'']]],
+  ['aparser_2ehpp_47',['AParser.hpp',['../_a_parser_8hpp.html',1,'']]],
+  ['argumentsparser_48',['ArgumentsParser',['../classplazza_1_1_arguments_parser.html',1,'plazza::ArgumentsParser'],['../classplazza_1_1_arguments_parser.html#a15318e1aadd194871e91346cc75bb00c',1,'plazza::ArgumentsParser::ArgumentsParser()=default'],['../classplazza_1_1_arguments_parser.html#a37dff9e5bbfc47cba9cdd93caef6c77b',1,'plazza::ArgumentsParser::ArgumentsParser(int, char **)']]],
+  ['argumentsparser_2ecpp_49',['ArgumentsParser.cpp',['../_arguments_parser_8cpp.html',1,'']]],
+  ['argumentsparser_2ehpp_50',['ArgumentsParser.hpp',['../_arguments_parser_8hpp.html',1,'']]]
 ];

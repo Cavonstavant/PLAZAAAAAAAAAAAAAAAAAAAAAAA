@@ -118,6 +118,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>_displayKitchensStatus()
 : <a class="el" href="classplazza_1_1_reception.html#ab7c952a340a547b8cb6fadea4f14669a">plazza::Reception</a>
 </li>
+<li>_duration
+: <a class="el" href="classplazza_1_1_cook.html#a0644a74c7aec9ebcf80f92df9b113ed8">plazza::Cook</a>
+</li>
 <li>_file
 : <a class="el" href="class_plazza_exception.html#ab16a1175c56ad65feac8cb94286de6d9">PlazzaException</a>
 </li>
@@ -154,6 +157,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>_line
 : <a class="el" href="class_plazza_exception.html#aebd77a2d1f95d0fff8928dea5e6efe54">PlazzaException</a>
 </li>
+<li>_multiplier
+: <a class="el" href="classplazza_1_1_cook.html#a19c28f33b0d983cf8209696968abef06">plazza::Cook</a>
+</li>
 <li>_mutex
 : <a class="el" href="classplazza_1_1_kitchen.html#a5b8df57076e63196c909744014a0d794">plazza::Kitchen</a>
 </li>
@@ -173,7 +179,8 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="class_message_queue.html#a3a634970029be5760122a4cc9de35ac9">MessageQueue</a>
 </li>
 <li>_pizza
-: <a class="el" href="classplazza_1_1_input_parser.html#a8101cdcf9191d57a6fe74a11e1006f81">plazza::InputParser</a>
+: <a class="el" href="classplazza_1_1_cook.html#ac1e112afc72e41a3292393bd2e4aa3e6">plazza::Cook</a>
+, <a class="el" href="classplazza_1_1_input_parser.html#a8101cdcf9191d57a6fe74a11e1006f81">plazza::InputParser</a>
 </li>
 <li>_queue_fd
 : <a class="el" href="class_message_queue.html#a6beea1668b922f4fd5e09029ccf33459">MessageQueue</a>
@@ -190,12 +197,16 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>_setCookingTime()
 : <a class="el" href="classplazza_1_1_arguments_parser.html#a0afd00dac145620df24e1d468d4c71b5">plazza::ArgumentsParser</a>
+, <a class="el" href="classplazza_1_1_cook.html#a84e8be4f6e79fd9a30a5fecadf094d7f">plazza::Cook</a>
 </li>
 <li>_setCookNumber()
 : <a class="el" href="classplazza_1_1_arguments_parser.html#a2500d7284967d1c0596af250065c7ceb">plazza::ArgumentsParser</a>
 </li>
 <li>_setRefillTime()
 : <a class="el" href="classplazza_1_1_arguments_parser.html#a25c86ff36454522cc469089c61da019f">plazza::ArgumentsParser</a>
+</li>
+<li>_start
+: <a class="el" href="classplazza_1_1_cook.html#a5793fe39cd7f2623bcb89aceecefa39d">plazza::Cook</a>
 </li>
 <li>_stopKitchen
 : <a class="el" href="classplazza_1_1_kitchen.html#a67d704debd43fe4daa82db0a15fa7113">plazza::Kitchen</a>
@@ -208,6 +219,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>_where
 : <a class="el" href="class_plazza_exception.html#ad28e457edc10701f828467d85b2404a7">PlazzaException</a>
+</li>
+<li>_workInProgress
+: <a class="el" href="classplazza_1_1_cook.html#aa9857ef412324523a6a76c75909d5fbd">plazza::Cook</a>
 </li>
 </ul>
 
@@ -222,6 +236,12 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <h3><a id="index_c"></a>- c -</h3><ul>
 <li>clear()
 : <a class="el" href="class_message_queue.html#ab6b4070382056e86fdc2042ae99de401">MessageQueue</a>
+</li>
+<li>Cook()
+: <a class="el" href="classplazza_1_1_cook.html#a6e150d302e70037913eaad94bbd87a32">plazza::Cook</a>
+</li>
+<li>cookPizza()
+: <a class="el" href="classplazza_1_1_cook.html#a0282ad6aca993f2bb231a60b97755b06">plazza::Cook</a>
 </li>
 <li>CRITICAL()
 : <a class="el" href="class_logger.html#acc36409db358f1c0dc363ee4469a212f">Logger</a>
@@ -253,6 +273,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>getCookNumber()
 : <a class="el" href="classplazza_1_1_arguments_parser.html#a526753b1dddd60803ef79ea0b1505dfc">plazza::ArgumentsParser</a>
+</li>
+<li>getCookStatus()
+: <a class="el" href="classplazza_1_1_cook.html#ab4025ed602cb6db8c0cb8320fd5f5d21">plazza::Cook</a>
 </li>
 <li>getFile()
 : <a class="el" href="class_plazza_exception.html#ae4f35e7167e5a7b85173f08ce41ae96b">PlazzaException</a>
@@ -418,6 +441,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>setCommandSeparator()
 : <a class="el" href="classplazza_1_1_input_parser.html#a9a089f2f7dccb953956a2aa7e82f4df3">plazza::InputParser</a>
 </li>
+<li>setCookingTimeMultipiler()
+: <a class="el" href="classplazza_1_1_cook.html#afe9e6de9dcba89e4b02cc9b7b2467256">plazza::Cook</a>
+</li>
 <li>Severity
 : <a class="el" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15">Logger</a>
 </li>
@@ -491,6 +517,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>~ArgumentsParser()
 : <a class="el" href="classplazza_1_1_arguments_parser.html#a07fe7333578ec4d56000be777f5aeebc">plazza::ArgumentsParser</a>
+</li>
+<li>~Cook()
+: <a class="el" href="classplazza_1_1_cook.html#a4059df6e37c838bde695462e00cef32b">plazza::Cook</a>
 </li>
 <li>~InputParser()
 : <a class="el" href="classplazza_1_1_input_parser.html#af6e573f29c8e22eed861a0bf12c9fef7">plazza::InputParser</a>

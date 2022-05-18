@@ -1,3 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classplazza_1_1_kitchen.html" title="The class used to manage all the cooks and the orders." alt="" coords="5,5,127,32"/>
+<area shape="rect" id="node1" href="$classplazza_1_1_i_parser.html" title="Base parser class for all parser class in the project." alt="" coords="5,31,121,57"/>
+<area shape="rect" id="node2" href="$classplazza_1_1_a_parser.html" title="Aparser class define global fonctions for all parser class in the project." alt="" coords="169,31,291,57"/>
+<area shape="rect" id="node3" href="$classplazza_1_1_arguments_parser.html" title="ArgumentsParser class define functions for parsing received arguments." alt="" coords="339,5,521,32"/>
+<area shape="rect" id="node4" href="$classplazza_1_1_input_parser.html" title="InputParser is a class used to parse command of pizza while the program is running." alt="" coords="357,56,503,83"/>
 </map>
