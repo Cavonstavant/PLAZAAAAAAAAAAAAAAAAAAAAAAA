@@ -8,5 +8,5 @@ set(SRC
 create_test(
     TEST_NAME MessageQueue_tests
     TEST_SRC ${SRC}
-    TEST_DEPS ${PROJECT_NAME}_core
+    TEST_DEPS ${PROJECT_NAME}_messageQueue
 )
