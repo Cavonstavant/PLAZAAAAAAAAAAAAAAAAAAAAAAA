@@ -52,73 +52,71 @@ int Kitchen::getQuantityFromFullCommand(const std::string &fullCommand)
     return stoi(quantity);
 }
 
-const std::vector<Ingredient> &Kitchen::getIngredientsFromPizzaType(PizzaType type)
+void Kitchen::getIngredientsFromPizzaType(Pizza &toCook, PizzaType type)
 {
-    std::vector<Ingredient> neededIngredients;
     Ingredient ingredient;
 
     switch (type) {
         case Margarita:
             ingredient.name = "doe";
             ingredient.number = 1;
-            neededIngredients.push_back(ingredient);
+            toCook.ingredients.push_back(ingredient);
             ingredient.name = "tomato";
             ingredient.number = 1;
-            neededIngredients.push_back(ingredient);
+            toCook.ingredients.push_back(ingredient);
             ingredient.name = "gruyere";
             ingredient.number = 1;
-            neededIngredients.push_back(ingredient);
+            toCook.ingredients.push_back(ingredient);
             break;
         case Regina:
             ingredient.name = "doe";
             ingredient.number = 1;
-            neededIngredients.push_back(ingredient);
+            toCook.ingredients.push_back(ingredient);
             ingredient.name = "tomato";
             ingredient.number = 1;
-            neededIngredients.push_back(ingredient);
+            toCook.ingredients.push_back(ingredient);
             ingredient.name = "gruyere";
             ingredient.number = 1;
-            neededIngredients.push_back(ingredient);
+            toCook.ingredients.push_back(ingredient);
             ingredient.name = "ham";
             ingredient.number = 1;
-            neededIngredients.push_back(ingredient);
+            toCook.ingredients.push_back(ingredient);
             ingredient.name = "mushrooms";
             ingredient.number = 1;
-            neededIngredients.push_back(ingredient);
+            toCook.ingredients.push_back(ingredient);
             break;
         case Americana:
             ingredient.name = "doe";
             ingredient.number = 1;
-            neededIngredients.push_back(ingredient);
+            toCook.ingredients.push_back(ingredient);
             ingredient.name = "tomato";
             ingredient.number = 1;
-            neededIngredients.push_back(ingredient);
+            toCook.ingredients.push_back(ingredient);
             ingredient.name = "gruyere";
             ingredient.number = 1;
-            neededIngredients.push_back(ingredient);
+            toCook.ingredients.push_back(ingredient);
             ingredient.name = "steak";
             ingredient.number = 1;
-            neededIngredients.push_back(ingredient);
+            toCook.ingredients.push_back(ingredient);
             break;
         case Fantasia:
             ingredient.name = "doe";
             ingredient.number = 1;
-            neededIngredients.push_back(ingredient);
+            toCook.ingredients.push_back(ingredient);
             ingredient.name = "tomato";
             ingredient.number = 1;
-            neededIngredients.push_back(ingredient);
+            toCook.ingredients.push_back(ingredient);
             ingredient.name = "eggplant";
             ingredient.number = 1;
-            neededIngredients.push_back(ingredient);
+            toCook.ingredients.push_back(ingredient);
             ingredient.name = "goatCheese";
             ingredient.number = 1;
-            neededIngredients.push_back(ingredient);
+            toCook.ingredients.push_back(ingredient);
             ingredient.name = "chiefLove";
             ingredient.number = 1;
-            neededIngredients.push_back(ingredient);
+            toCook.ingredients.push_back(ingredient);
             break;
     }
-    return neededIngredients;
 }
 
 void Kitchen::_receptCook(Kitchen *obj)
@@ -133,7 +131,7 @@ void Kitchen::_receptCook(Kitchen *obj)
         Pizza toCook;
         toCook.type = type;
         toCook.number = 1;
-        toCook.ingredients = getIngredientsFromPizzaType(type);
+        getIngredientsFromPizzaType(toCook, type);
 
         for (int x = 0; x < quantity; ++x) {
             // Send a Pizza to the Cook in the thread pool

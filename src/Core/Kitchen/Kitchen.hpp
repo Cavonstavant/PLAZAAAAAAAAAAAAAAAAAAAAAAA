@@ -67,7 +67,7 @@ namespace plazza {
             static int getQuantityFromFullCommand(const std::string &FullCommand);
 
             /// \brief get the necessary ingredients from the pizza type
-            static const std::vector<Ingredient> &getIngredientsFromPizzaType(PizzaType type);
+            static void getIngredientsFromPizzaType(Pizza &toCook, PizzaType type);
         private:
             /// \brief Function getting the command and give it in the job queue
             static void _receptCook(Kitchen *obj);
