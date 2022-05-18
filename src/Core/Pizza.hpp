@@ -74,4 +74,9 @@ namespace plazza {
     };
 }// namespace plazza
 
+std::vector<plazza::Ingredient> &operator-(std::vector<plazza::Ingredient> &lo, std::vector<plazza::Ingredient> &ro);
+std::vector<plazza::Ingredient> &operator-=(std::vector<plazza::Ingredient> &lo, std::vector<plazza::Ingredient> &ro);
+std::vector<plazza::Ingredient> &operator-(std::vector<plazza::Ingredient> &lo, plazza::Pizza &ro);
+std::vector<plazza::Ingredient> &operator-=(std::vector<plazza::Ingredient> &lo, plazza::Pizza &ro);
+
 #endif /* !PIZZA_H_ */

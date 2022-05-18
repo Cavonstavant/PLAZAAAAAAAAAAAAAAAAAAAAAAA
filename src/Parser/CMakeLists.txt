@@ -17,8 +17,8 @@ set (SRC
 add_library(${PROJECT_NAME}_parser ${SRC})
 
 target_link_libraries(${PROJECT_NAME}_parser
-    PUBLIC ${PROJECT_NAME}_logger
     PRIVATE ${PROJECT_NAME}_Core
+    PRIVATE ${PROJECT_NAME}_logger
 )
 
 target_include_directories(${PROJECT_NAME}_parser
@@ -26,7 +26,4 @@ target_include_directories(${PROJECT_NAME}_parser
     PUBLIC ${SRC_ROOT}
     PUBLIC ${ARG_ROOT}
     PUBLIC ${INP_ROOT}
-)
-target_link_libraries(${PROJECT_NAME}_parser
-    PRIVATE ${PROJECT_NAME}_logger
 )
