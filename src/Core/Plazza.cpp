@@ -10,9 +10,12 @@
 #include "Plazza.hpp"
 #include "Exception.hpp"
 #include "Kitchen/Kitchen.hpp"
-#include <unistd.h>
 #include <iostream>
 #include <utility>
+
+extern "C" {
+#include <unistd.h>
+}
 
 using namespace plazza;
 
