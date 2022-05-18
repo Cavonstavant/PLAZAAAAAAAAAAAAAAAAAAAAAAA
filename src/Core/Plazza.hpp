@@ -10,6 +10,7 @@
 #ifndef PLAZZA_HPP_
 #define PLAZZA_HPP_
 
+#include "Pizza.hpp"
 #include <cstddef>
 #include <string>
 
@@ -26,6 +27,14 @@ namespace plazza {
             Reception(size_t cookingTime, size_t cookNumber, size_t refillTime);
             /// \brief Default Constructor of the Reception
             ~Reception() = default;
+            /// \brief Pack a Pizza in std::string.
+            /// \param Pizza to be pack.
+            /// \return std::string packed.
+            std::string pack(const Pizza &);
+            /// \brief Unpack std::string in Pizza.
+            /// \param std::string to be unpack.
+            /// \return Pizza unpacked.
+            Pizza unpack(const std::string &);
             /// \brief Main function of the program
             void run();
 
