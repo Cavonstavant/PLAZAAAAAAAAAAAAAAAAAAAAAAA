@@ -18,6 +18,7 @@ void Kitchen::start()
 {
     _oldTime = std::time(nullptr);
     _initFridge(*this);
+    _brigade.emplace_back(std::thread(_receptCook, this));
     for (std::size_t i = 0; i < _nbCooks; ++i)
         _brigade.emplace_back(std::thread(_Cook, this));
 }
@@ -25,10 +26,10 @@ void Kitchen::start()
 void Kitchen::_receptCook(Kitchen *obj)
 {
     while (true) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
         std::string command = obj->commandQueue.get()->receiveMessage();
 
         std::cout << command << std::endl;
-        break;
     }
 }
 
