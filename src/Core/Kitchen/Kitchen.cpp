@@ -26,10 +26,10 @@ void Kitchen::start()
 void Kitchen::_receptCook(Kitchen *obj)
 {
     while (true) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
         std::string command = obj->commandQueue.get()->receiveMessage();
 
         std::cout << command << std::endl;
-        break;
     }
 }
 
