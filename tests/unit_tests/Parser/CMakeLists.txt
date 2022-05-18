@@ -8,6 +8,5 @@ set (SRC
 create_test(
     TEST_NAME Parser_tests
     TEST_SRC ${SRC}
-    TEST_DEPS ${PROJECT_NAME}_parser
-    TEST_DEPS ${PROJECT_NAME}_Core
+    TEST_DEPS ${PROJECT_NAME}_parser ${PROJECT_NAME}_Core
 )
