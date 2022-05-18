@@ -2,6 +2,7 @@ set (SRC_ROOT ${PROJECT_SOURCE_DIR}/src/Core)
 set (INC_ROOT ${PROJECT_SOURCE_DIR}/src/Core)
 
 add_subdirectory(Kitchen)
+add_subdirectory(Cook)
 
 set(SRC
     ${SRC_ROOT}/Plazza.cpp
@@ -12,6 +13,7 @@ set(SRC
 )
 
 add_library(${PROJECT_NAME}_Core ${SRC})
+
 target_include_directories(${PROJECT_NAME}_Core
     PUBLIC ${INC_ROOT}
     PRIVATE ${SRC_ROOT}

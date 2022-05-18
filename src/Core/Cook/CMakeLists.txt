@@ -1,5 +1,5 @@
-set(INCLUDE_ROOT ${PROJECT_SOURCE_DIR}/src/cook)
-set(SRC_ROOT ${PROJECT_SOURCE_DIR}/src/cook)
+set(INCLUDE_ROOT ${PROJECT_SOURCE_DIR}/src/Core/Cook)
+set(SRC_ROOT ${PROJECT_SOURCE_DIR}/src/Core/Cook)
 
 set(SRC
     ${SRC_ROOT}/Cook.cpp
