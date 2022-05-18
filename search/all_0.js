@@ -38,11 +38,12 @@ var searchData=
   ['_5fseparator_35',['_separator',['../classplazza_1_1_input_parser.html#a06d25281be79f1a6f673641501232ecc',1,'plazza::InputParser']]],
   ['_5fsetcookingtime_36',['_setCookingTime',['../classplazza_1_1_cook.html#a84e8be4f6e79fd9a30a5fecadf094d7f',1,'plazza::Cook::_setCookingTime()'],['../classplazza_1_1_arguments_parser.html#a0afd00dac145620df24e1d468d4c71b5',1,'plazza::ArgumentsParser::_setCookingTime()']]],
   ['_5fsetcooknumber_37',['_setCookNumber',['../classplazza_1_1_arguments_parser.html#a2500d7284967d1c0596af250065c7ceb',1,'plazza::ArgumentsParser']]],
-  ['_5fsetrefilltime_38',['_setRefillTime',['../classplazza_1_1_arguments_parser.html#a25c86ff36454522cc469089c61da019f',1,'plazza::ArgumentsParser']]],
-  ['_5fstart_39',['_start',['../classplazza_1_1_cook.html#a5793fe39cd7f2623bcb89aceecefa39d',1,'plazza::Cook']]],
-  ['_5fstopkitchen_40',['_stopKitchen',['../classplazza_1_1_kitchen.html#a67d704debd43fe4daa82db0a15fa7113',1,'plazza::Kitchen']]],
-  ['_5fwaittofillfridge_41',['_waitToFillFridge',['../classplazza_1_1_kitchen.html#a85a79ba2d20c88b33dd133a956a8b17b',1,'plazza::Kitchen']]],
-  ['_5fwhat_42',['_what',['../class_plazza_exception.html#aa5b69447b17a98d666c03e690f9ee718',1,'PlazzaException']]],
-  ['_5fwhere_43',['_where',['../class_plazza_exception.html#ad28e457edc10701f828467d85b2404a7',1,'PlazzaException']]],
-  ['_5fworkinprogress_44',['_workInProgress',['../classplazza_1_1_cook.html#aa9857ef412324523a6a76c75909d5fbd',1,'plazza::Cook']]]
+  ['_5fsetingredientsinpizza_38',['_setIngredientsInPizza',['../classplazza_1_1_input_parser.html#a2869e036487f76af8a9409d37b60d321',1,'plazza::InputParser']]],
+  ['_5fsetrefilltime_39',['_setRefillTime',['../classplazza_1_1_arguments_parser.html#a25c86ff36454522cc469089c61da019f',1,'plazza::ArgumentsParser']]],
+  ['_5fstart_40',['_start',['../classplazza_1_1_cook.html#a5793fe39cd7f2623bcb89aceecefa39d',1,'plazza::Cook']]],
+  ['_5fstopkitchen_41',['_stopKitchen',['../classplazza_1_1_kitchen.html#a67d704debd43fe4daa82db0a15fa7113',1,'plazza::Kitchen']]],
+  ['_5fwaittofillfridge_42',['_waitToFillFridge',['../classplazza_1_1_kitchen.html#a85a79ba2d20c88b33dd133a956a8b17b',1,'plazza::Kitchen']]],
+  ['_5fwhat_43',['_what',['../class_plazza_exception.html#aa5b69447b17a98d666c03e690f9ee718',1,'PlazzaException']]],
+  ['_5fwhere_44',['_where',['../class_plazza_exception.html#ad28e457edc10701f828467d85b2404a7',1,'PlazzaException']]],
+  ['_5fworkinprogress_45',['_workInProgress',['../classplazza_1_1_cook.html#aa9857ef412324523a6a76c75909d5fbd',1,'plazza::Cook']]]
 ];

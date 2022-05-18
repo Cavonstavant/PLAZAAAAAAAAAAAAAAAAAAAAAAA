@@ -10,6 +10,7 @@ var classplazza_1_1_input_parser =
     [ "_isValidPizzaNumber", "classplazza_1_1_input_parser.html#a66707cf056bfe55c40055173c9a0858a", null ],
     [ "_isValidPizzaSeparator", "classplazza_1_1_input_parser.html#a0d672fc92c861f6c4c252870c8598fae", null ],
     [ "_isValidPizzaSize", "classplazza_1_1_input_parser.html#a02461cb5be366fd0fb4b3539aa38461b", null ],
+    [ "_setIngredientsInPizza", "classplazza_1_1_input_parser.html#a2869e036487f76af8a9409d37b60d321", null ],
     [ "getCommand", "classplazza_1_1_input_parser.html#a465baa28e8b2b2bc59abe9de345a6c45", null ],
     [ "getPizza", "classplazza_1_1_input_parser.html#a1b50e55e7fc97ab09eb119040517ac61", null ],
     [ "processArguments", "classplazza_1_1_input_parser.html#a65748f951e8b895aceca27ed2ba0c75d", null ],

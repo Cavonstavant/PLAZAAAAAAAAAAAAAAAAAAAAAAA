@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['xl_186',['XL',['../namespaceplazza.html#a8b75d3915b8f7e5d1ff158526c08c374ace26de9c660d0f96bd073f7d9012f728',1,'plazza']]],
-  ['xxl_187',['XXL',['../namespaceplazza.html#a8b75d3915b8f7e5d1ff158526c08c374a11d7aa18ea1e5720601be0f4de68a31d',1,'plazza']]]
+  ['what_186',['what',['../class_plazza_exception.html#af42078485825da6b030af687e5990044',1,'PlazzaException']]],
+  ['where_187',['where',['../class_plazza_exception.html#a1a80b426b2c62ec9e54e727b6d9f63cf',1,'PlazzaException']]]
 ];
