@@ -31,7 +31,8 @@ namespace plazza {
         Eggplant,
         GoatCheese,
         ChiefLove,
-        IngredientNumber = 8
+        Doe,
+        IngredientNumber = 9
     };
 
     /// \brief The class used to manage all the cooks and the orders.
