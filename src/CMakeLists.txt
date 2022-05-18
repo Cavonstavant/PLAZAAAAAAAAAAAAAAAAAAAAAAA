@@ -35,3 +35,4 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 add_subdirectory(Logger)
 add_subdirectory(Parser)
 add_subdirectory(Core)
+add_subdirectory(cook)
