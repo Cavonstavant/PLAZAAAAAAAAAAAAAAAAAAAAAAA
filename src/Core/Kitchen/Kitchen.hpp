@@ -57,6 +57,7 @@ namespace plazza {
             /// \brief Adds an order to the kitchen
             void enqueueJob(std::function<void()> &job);
 
+            /// \brief MessageQueue recepting the command from the reception
             std::shared_ptr<MessageQueue> commandQueue;
         private:
             /// \brief Function getting the command and give it in the job queue
