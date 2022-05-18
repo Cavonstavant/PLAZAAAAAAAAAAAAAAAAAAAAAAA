@@ -9,6 +9,7 @@
 
 #include "Kitchen.hpp"
 #include <ctime>
+#include <iostream>
 #include <functional>
 
 using namespace plazza;
@@ -25,6 +26,9 @@ void Kitchen::start()
 void Kitchen::_receptCook(Kitchen *obj)
 {
     while (true) {
+        std::string command = obj->commandQueue.get()->receiveMessage();
+
+        std::cout << command << std::endl;
         break;
     }
 }

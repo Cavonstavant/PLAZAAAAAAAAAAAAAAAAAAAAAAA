@@ -11,9 +11,11 @@
 #define PLAZZA_HPP_
 
 #include "Kitchen.hpp"
+#include "InputParser.hpp"
 #include "Pizza.hpp"
 #include <cstddef>
 #include <string>
+#include <map>
 
 namespace plazza {
     /// \brief Reception Class containing the main loop of the program
@@ -45,6 +47,10 @@ namespace plazza {
             /// \brief Handle the receive input
             /// \return true if the input is valid, false otherwise
             bool _handleInput(const std::string &input);
+
+            void _sendCommand(const InputParser &command);
+
+            std::map<pid_t, std::shared_ptr<MessageQueue>> _kitchenQueues;
             /// \brief Store the cookingTime
             size_t _cookingTime;
             /// \brief Store the cookNumber
