@@ -34,6 +34,7 @@
 # Project specific files
 plazza
 build
+cmake-build-debug-coverage
 
 # Editor files
 *.swp
@@ -41,6 +42,5 @@ build
 .vscode/
 .idea/
 graph/
-
 
 Plazza.log
