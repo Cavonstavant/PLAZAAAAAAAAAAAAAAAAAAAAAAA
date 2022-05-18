@@ -17,7 +17,7 @@ void Kitchen::start()
 {
     _oldTime = std::time(nullptr);
     _fillFridge(5, *this);
-    for (size_t i = 0; i < _nbCooks; ++i)
+    for (std::size_t i = 0; i < _nbCooks; ++i)
         _brigade.emplace_back(std::thread(_Cook, this));
 }
 
@@ -64,7 +64,7 @@ void Kitchen::stop()
 
 void Kitchen::_fillFridge(const std::size_t &timeToFill, Kitchen &obj)
 {
-    for (size_t x = 0; x < IngredientNumber; ++x) {
+    for (std::size_t x = 0; x < IngredientNumber; ++x) {
         obj._fridge[x].number += timeToFill;
     }
 }
