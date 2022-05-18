@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fantasia_316',['Fantasia',['../namespaceplazza.html#a3df93b5bf8fa865c6f1251078950734ca9ad0cad5cc44aa8b718efad5232ce471',1,'plazza']]]
+  ['chieflove_334',['ChiefLove',['../namespaceplazza.html#a8e7ea4dc8410183b3d67d9467938a88da9a7fa0068939590d7c64e7433a091f95',1,'plazza']]]
 ];
