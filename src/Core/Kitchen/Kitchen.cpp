@@ -13,6 +13,7 @@
 #include <ctime>
 #include <iostream>
 #include <functional>
+#include "Pizza.hpp"
 
 using namespace plazza;
 
