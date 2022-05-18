@@ -17,8 +17,16 @@ void Kitchen::start()
 {
     _oldTime = std::time(nullptr);
     _fillFridge(5, *this);
+    _brigade.emplace_back(std::thread(_receptCook, this));
     for (std::size_t i = 0; i < _nbCooks; ++i)
         _brigade.emplace_back(std::thread(_Cook, this));
+}
+
+void Kitchen::_receptCook(Kitchen *obj)
+{
+    while (true) {
+        break;
+    }
 }
 
 void Kitchen::_Cook(Kitchen *obj)
