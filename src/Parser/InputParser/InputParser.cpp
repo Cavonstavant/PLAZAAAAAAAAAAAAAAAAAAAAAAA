@@ -5,6 +5,8 @@
 ** InputParser
 */
 
+/// \file src/Parser/InputParser/InputParser.cpp
+
 #include "InputParser.hpp"
 #include "Exception.hpp"
 #include <iostream>
