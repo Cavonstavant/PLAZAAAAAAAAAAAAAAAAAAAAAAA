@@ -54,18 +54,18 @@ void Cook::_setCookingTime()
     std::size_t cookingTime = 0;
 
     switch (_pizza.type) {
-        case PizzaType::Regina:
-            cookingTime = 2;
-            break;
-        case PizzaType::Americana:
-            cookingTime = 2;
-            break;
-        case PizzaType::Margarita:
-            cookingTime = 1;
-            break;
-        case PizzaType::Fantasia:
-            cookingTime = 4;
-            break;
+    case PizzaType::Regina:
+        cookingTime = 2;
+        break;
+    case PizzaType::Americana:
+        cookingTime = 2;
+        break;
+    case PizzaType::Margarita:
+        cookingTime = 1;
+        break;
+    case PizzaType::Fantasia:
+        cookingTime = 4;
+        break;
     }
     _duration = cookingTime * _multiplier;
 }
