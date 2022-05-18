@@ -1,5 +1,5 @@
-<map id="src/cook/Cook.cpp" name="src/cook/Cook.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="351,5,491,32"/>
+<map id="src/Core/Cook/Cook.cpp" name="src/Core/Cook/Cook.cpp">
+<area shape="rect" id="node1" title=" " alt="" coords="333,5,509,32"/>
 <area shape="rect" id="node2" href="$_cook_8hpp.html" title=" " alt="" coords="332,80,415,107"/>
 <area shape="rect" id="node10" title=" " alt="" coords="439,80,503,107"/>
 <area shape="rect" id="node3" href="$_pizza_8hpp.html" title=" " alt="" coords="222,155,306,181"/>
