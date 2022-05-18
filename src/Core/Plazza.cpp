@@ -31,6 +31,7 @@ void Reception::_displayKitchensStatus(void)
 bool Reception::_handleInput(const std::string &input)
 {
     InputParser server;
+    Kitchen obj(_cookNumber, _refillTime);
 
     server.setCommand(input);
     try {
@@ -49,7 +50,7 @@ void Reception::_sendCommand(const InputParser &command)
     std::shared_ptr<MessageQueue> newQueue = std::make_shared<MessageQueue>();
 
     newQueue.get()->openQueue("/plazzaQueueNumberOne");
-    
+
     pid_t newKitchenPid = fork();
 
     if (newKitchenPid == 0) {
