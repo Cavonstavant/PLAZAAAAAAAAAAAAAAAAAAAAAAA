@@ -11,6 +11,7 @@
 #include "Cook/Cook.hpp"
 #include "Pizza.hpp"
 #include <ctime>
+#include <iostream>
 #include <functional>
 
 using namespace plazza;
