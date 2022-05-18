@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"functions.html":[1,3,0],
 "functions_enum.html":[1,3,3],
 "functions_eval.html":[1,3,4],
 "functions_func.html":[1,3,1],
@@ -15,8 +16,8 @@ var NAVTREEINDEX1 =
 "namespacemembers.html":[0,1,0],
 "namespacemembers_enum.html":[0,1,1],
 "namespacemembers_eval.html":[0,1,2],
-"namespaceplazza.html":[0,0,0],
 "namespaceplazza.html":[1,0,0],
+"namespaceplazza.html":[0,0,0],
 "namespaces.html":[0,0],
 "pages.html":[],
 "structplazza_1_1_ingredient.html":[1,0,0,3],

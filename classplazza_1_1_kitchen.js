@@ -5,6 +5,7 @@ var classplazza_1_1_kitchen =
     [ "~Kitchen", "classplazza_1_1_kitchen.html#a560e360631a961e5ab849f29cbbe6dae", null ],
     [ "_Cook", "classplazza_1_1_kitchen.html#a2146a91b2e80190dba0059487cb99f37", null ],
     [ "_fillFridge", "classplazza_1_1_kitchen.html#aed0223c7e20b4a5c9d587be4eab6bd49", null ],
+    [ "_initFridge", "classplazza_1_1_kitchen.html#a0de9d7a10fbd3ff9276962d4726f1855", null ],
     [ "_waitToFillFridge", "classplazza_1_1_kitchen.html#a85a79ba2d20c88b33dd133a956a8b17b", null ],
     [ "enqueueJob", "classplazza_1_1_kitchen.html#a4f436b43b05cfe3a6e2bcf4110cd54a4", null ],
     [ "start", "classplazza_1_1_kitchen.html#ab6afa23613acf5e0680d8e5177f887f3", null ],
