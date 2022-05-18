@@ -173,7 +173,7 @@ void InputParser::_argumentsToPizza()
                 pizza.size = _getPizzaSize(_arguments[i]);
                 break;
             case 2:
-                pizza.number = std::atoi(_arguments[i].c_str());
+                pizza.number = std::atoi(_arguments[i].erase(_arguments[i].begin()).base());
                 break;
             case 3:
                 _setIngredientsInPizza(pizza);
