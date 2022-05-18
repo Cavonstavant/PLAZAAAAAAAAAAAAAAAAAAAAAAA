@@ -59,6 +59,15 @@ namespace plazza {
 
             /// \brief MessageQueue recepting the command from the reception
             std::shared_ptr<MessageQueue> commandQueue;
+
+            /// \brief get the Pizza Type from the Command
+            static PizzaType getTypeFromFullCommand(const std::string &fullCommand);
+
+            /// \brief get the number of the pizza from the Command
+            static int getQuantityFromFullCommand(const std::string &FullCommand);
+
+
+            static const std::vector<Ingredient> &getIngredientsFromPizzaType(PizzaType type);
         private:
             /// \brief Function getting the command and give it in the job queue
             static void _receptCook(Kitchen *obj);

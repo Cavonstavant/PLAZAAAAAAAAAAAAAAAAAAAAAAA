@@ -24,24 +24,120 @@ void Kitchen::start()
         _brigade.emplace_back(std::thread(_Cook, this));
 }
 
+PizzaType Kitchen::getTypeFromFullCommand(const std::string &fullCommand)
+{
+    std::string name = fullCommand.substr(0, fullCommand.find(";"));
+
+    name = name.substr(name.find(":") + 1);
+    switch (stoi(name)) {
+    case Regina:
+        return Regina;
+    case Margarita:
+        return Margarita;
+    case Americana:
+        return Americana;
+    case Fantasia:
+        return Fantasia;
+    default:
+        throw VeryStupidUserEX("Not supposed to append (PizzaType)", Logger::CRITICAL);
+    }
+}
+
+int Kitchen::getQuantityFromFullCommand(const std::string &fullCommand)
+{
+    std::string quantity = fullCommand.substr(fullCommand.find(";") + 1);
+
+    quantity = quantity.substr(quantity.find(";") + 1);
+    quantity = quantity.substr(quantity.find(":") + 1);
+    return stoi(quantity);
+}
+
+const std::vector<Ingredient> &Kitchen::getIngredientsFromPizzaType(PizzaType type)
+{
+    std::vector<Ingredient> neededIngredients;
+    Ingredient ingredient;
+
+    switch (type) {
+        case Margarita:
+            ingredient.name = "doe";
+            ingredient.number = 1;
+            neededIngredients.push_back(ingredient);
+            ingredient.name = "tomato";
+            ingredient.number = 1;
+            neededIngredients.push_back(ingredient);
+            ingredient.name = "gruyere";
+            ingredient.number = 1;
+            neededIngredients.push_back(ingredient);
+            break;
+        case Regina:
+            ingredient.name = "doe";
+            ingredient.number = 1;
+            neededIngredients.push_back(ingredient);
+            ingredient.name = "tomato";
+            ingredient.number = 1;
+            neededIngredients.push_back(ingredient);
+            ingredient.name = "gruyere";
+            ingredient.number = 1;
+            neededIngredients.push_back(ingredient);
+            ingredient.name = "ham";
+            ingredient.number = 1;
+            neededIngredients.push_back(ingredient);
+            ingredient.name = "mushrooms";
+            ingredient.number = 1;
+            neededIngredients.push_back(ingredient);
+            break;
+        case Americana:
+            ingredient.name = "doe";
+            ingredient.number = 1;
+            neededIngredients.push_back(ingredient);
+            ingredient.name = "tomato";
+            ingredient.number = 1;
+            neededIngredients.push_back(ingredient);
+            ingredient.name = "gruyere";
+            ingredient.number = 1;
+            neededIngredients.push_back(ingredient);
+            ingredient.name = "steak";
+            ingredient.number = 1;
+            neededIngredients.push_back(ingredient);
+            break;
+        case Fantasia:
+            ingredient.name = "doe";
+            ingredient.number = 1;
+            neededIngredients.push_back(ingredient);
+            ingredient.name = "tomato";
+            ingredient.number = 1;
+            neededIngredients.push_back(ingredient);
+            ingredient.name = "eggplant";
+            ingredient.number = 1;
+            neededIngredients.push_back(ingredient);
+            ingredient.name = "goatCheese";
+            ingredient.number = 1;
+            neededIngredients.push_back(ingredient);
+            ingredient.name = "chiefLove";
+            ingredient.number = 1;
+            neededIngredients.push_back(ingredient);
+            break;
+    }
+    return neededIngredients;
+}
+
 void Kitchen::_receptCook(Kitchen *obj)
 {
     while (true) {
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
         std::string fullCommand = obj->commandQueue.get()->receiveMessage();
 
-        /// name:1
-        std::string name = fullCommand.substr(0, fullCommand.find(";"));
+        PizzaType type = getTypeFromFullCommand(fullCommand);
+        int quantity = getQuantityFromFullCommand(fullCommand);
 
-        /// amount:2
-        std::string quantity = fullCommand.substr(fullCommand.find(";") + 1);
-        quantity = quantity.substr(quantity.find(";") + 1);
+        Pizza toCook;
+        toCook.type = type;
+        toCook.number = 1;
+        toCook.ingredients = getIngredientsFromPizzaType(type);
 
-        name = name.substr(name.find(":") + 1);
-
-        quantity = quantity.substr(quantity.find(":") + 1);
-        std::cout << name  + " " + quantity << std::endl;
-
+        for (int x = 0; x < quantity; ++x) {
+            // Send a Pizza to the Cook in the thread pool
+        }
     }
 }
 
