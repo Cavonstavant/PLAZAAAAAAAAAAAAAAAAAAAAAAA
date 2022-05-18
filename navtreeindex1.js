@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"pages.html":[],
+"structplazza_1_1_ingredient.html":[1,0,0,2],
 "structplazza_1_1_ingredient.html#a1ec2c654d0934ecbcb46c4e40367feab":[1,0,0,2,0],
 "structplazza_1_1_ingredient.html#a3ca2660c95cbcafc6e95b80374a337cc":[1,0,0,2,4],
 "structplazza_1_1_ingredient.html#a6755c09d0b2ca859fab1a51a0fc8d333":[1,0,0,2,1],

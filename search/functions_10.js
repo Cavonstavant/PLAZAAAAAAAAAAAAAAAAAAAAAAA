@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['what_290',['what',['../class_plazza_exception.html#af42078485825da6b030af687e5990044',1,'PlazzaException']]],
-  ['where_291',['where',['../class_plazza_exception.html#a1a80b426b2c62ec9e54e727b6d9f63cf',1,'PlazzaException']]]
+  ['verystupiduserexception_293',['VeryStupidUserException',['../class_very_stupid_user_exception.html#a66c0e36fcdd1e591ce4cc0012372e6a3',1,'VeryStupidUserException']]]
 ];

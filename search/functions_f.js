@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['verystupiduserexception_289',['VeryStupidUserException',['../class_very_stupid_user_exception.html#a66c0e36fcdd1e591ce4cc0012372e6a3',1,'VeryStupidUserException']]]
+  ['unpack_292',['unpack',['../classplazza_1_1_reception.html#a29b2128afd9048572db31c47dcfafb05',1,'plazza::Reception']]]
 ];
