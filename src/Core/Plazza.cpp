@@ -49,7 +49,7 @@ void Reception::_sendCommand(const InputParser &command)
     Kitchen newKitchen(_cookNumber, _refillTime);
     std::shared_ptr<MessageQueue> newQueue = std::make_shared<MessageQueue>();
 
-    newQueue.get()->openQueue("/plazzaQueueNumberOne");
+    newQueue.get()->openQueue(std::string("/plazzaQueueNumber" + _kitchenQueues.size()));
 
     pid_t newKitchenPid = fork();
 
