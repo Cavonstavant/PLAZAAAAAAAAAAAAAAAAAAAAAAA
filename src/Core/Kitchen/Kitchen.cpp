@@ -8,8 +8,8 @@
 /// \file src/Core/Kitchen/Kitchen.cpp
 
 #include "Kitchen.hpp"
-#include <functional>
 #include <ctime>
+#include <functional>
 
 using namespace plazza;
 
