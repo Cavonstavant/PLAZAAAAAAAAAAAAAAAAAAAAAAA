@@ -87,5 +87,6 @@ void Kitchen::_initFridge(Kitchen &obj)
     obj._fridge[Eggplant].name = "eggplant";
     obj._fridge[GoatCheese].name = "goatCheese";
     obj._fridge[ChiefLove].name = "chiefLove";
+    obj._fridge[Doe].name = "doe";
     _fillFridge(5, obj);
 }

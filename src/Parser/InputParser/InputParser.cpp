@@ -90,6 +90,73 @@ PizzaSize InputParser::_getPizzaSize(const std::string &size) const
     return (PizzaSize::S);
 }
 
+void InputParser::_setIngredientsInPizza(Pizza &pizza)
+{
+    Ingredient ingredient;
+
+    switch (pizza.type) {
+    case Margarita:
+        ingredient.name = "doe";
+        ingredient.number = 1;
+        pizza.ingredients.push_back(ingredient);
+        ingredient.name = "tomato";
+        ingredient.number = 1;
+        pizza.ingredients.push_back(ingredient);
+        ingredient.name = "gruyere";
+        ingredient.number = 1;
+        pizza.ingredients.push_back(ingredient);
+        break;
+    case Regina:
+        ingredient.name = "doe";
+        ingredient.number = 1;
+        pizza.ingredients.push_back(ingredient);
+        ingredient.name = "tomato";
+        ingredient.number = 1;
+        pizza.ingredients.push_back(ingredient);
+        ingredient.name = "gruyere";
+        ingredient.number = 1;
+        pizza.ingredients.push_back(ingredient);
+        ingredient.name = "ham";
+        ingredient.number = 1;
+        pizza.ingredients.push_back(ingredient);
+        ingredient.name = "mushrooms";
+        ingredient.number = 1;
+        pizza.ingredients.push_back(ingredient);
+        break;
+    case Americana:
+        ingredient.name = "doe";
+        ingredient.number = 1;
+        pizza.ingredients.push_back(ingredient);
+        ingredient.name = "tomato";
+        ingredient.number = 1;
+        pizza.ingredients.push_back(ingredient);
+        ingredient.name = "gruyere";
+        ingredient.number = 1;
+        pizza.ingredients.push_back(ingredient);
+        ingredient.name = "steak";
+        ingredient.number = 1;
+        pizza.ingredients.push_back(ingredient);
+        break;
+    case Fantasia:
+        ingredient.name = "doe";
+        ingredient.number = 1;
+        pizza.ingredients.push_back(ingredient);
+        ingredient.name = "tomato";
+        ingredient.number = 1;
+        pizza.ingredients.push_back(ingredient);
+        ingredient.name = "eggplant";
+        ingredient.number = 1;
+        pizza.ingredients.push_back(ingredient);
+        ingredient.name = "goatCheese";
+        ingredient.number = 1;
+        pizza.ingredients.push_back(ingredient);
+        ingredient.name = "chiefLove";
+        ingredient.number = 1;
+        pizza.ingredients.push_back(ingredient);
+        break;
+    }
+}
+
 void InputParser::_argumentsToPizza()
 {
     Pizza pizza;
@@ -106,6 +173,7 @@ void InputParser::_argumentsToPizza()
                 pizza.number = std::atoi(_arguments[i].c_str());
                 break;
             case 3:
+                _setIngredientsInPizza(pizza);
                 _pizza.push_back(pizza);
                 break;
         }

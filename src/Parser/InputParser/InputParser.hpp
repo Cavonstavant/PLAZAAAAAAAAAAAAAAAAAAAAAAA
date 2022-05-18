@@ -77,6 +77,7 @@ namespace plazza {
             /// \param std::string Size of the pizza.
             /// \return PizzaSize Size of the pizza.
             PizzaSize _getPizzaSize(const std::string &size) const;
+            void _setIngredientsInPizza(Pizza &pizza);
     };
 }// namespace plazza
 
