@@ -5,6 +5,8 @@
 ** InputParser
 */
 
+/// \file src/Parser/InputParser/InputParser.cpp
+
 #include "InputParser.hpp"
 #include "Exception.hpp"
 #include <iostream>
@@ -55,7 +57,8 @@ void InputParser::processArguments()
         for (auto arg: _arguments) {
             args.push_back(arg);
         }
-        args.push_back(";");
+        if (args[args.size() - 1] != ";")
+            args.push_back(";");
     }
     _arguments = args;
     _checkArgumentsValidity();
@@ -170,7 +173,7 @@ void InputParser::_argumentsToPizza()
                 pizza.size = _getPizzaSize(_arguments[i]);
                 break;
             case 2:
-                pizza.number = std::atoi(_arguments[i].c_str());
+                pizza.number = std::atoi(_arguments[i].erase(_arguments[i].begin()).base());
                 break;
             case 3:
                 _setIngredientsInPizza(pizza);
@@ -199,7 +202,7 @@ bool InputParser::_isValidPizzaName(const std::string &pizza) const
             findValidPizza = true;
     }
     if (!findValidPizza)
-        throw ParserEX("Invalid pizza name in the command: " + pizza, Logger::LOW);
+        ParserEX("Invalid pizza name in the command: " + pizza, Logger::LOW);
     return (findValidPizza);
 }
 
@@ -218,7 +221,7 @@ bool InputParser::_isValidPizzaSize(const std::string &pizzaSize) const
             findValidPizzaSize = true;
     }
     if (!findValidPizzaSize)
-        throw ParserEX("Invalid pizza size in the command: " + pizzaSize, Logger::LOW);
+        ParserEX("Invalid pizza size in the command: " + pizzaSize, Logger::LOW);
     return (findValidPizzaSize);
 }
 
@@ -233,7 +236,7 @@ bool InputParser::_isValidPizzaNumber(const std::string &pizzaNumber) const
             findValidPizzaNumber = true;
     }
     if (!findValidPizzaNumber)
-        throw ParserEX("Invalid pizza number in the command: " + pizzaNumber, Logger::LOW);
+        ParserEX("Invalid pizza number in the command: " + pizzaNumber, Logger::LOW);
     return (findValidPizzaNumber);
 }
 
@@ -242,7 +245,7 @@ bool InputParser::_isValidPizzaSeparator(const std::string &pizzaSeparator) cons
     bool findValidPizzaSeparator = true;
 
     if (pizzaSeparator != ";") {
-        throw ParserEX("Invalid pizza separator in the command: " + pizzaSeparator, Logger::LOW);
+        ParserEX("Invalid pizza separator in the command: " + pizzaSeparator, Logger::LOW);
         findValidPizzaSeparator = false;
     }
     return (findValidPizzaSeparator);
