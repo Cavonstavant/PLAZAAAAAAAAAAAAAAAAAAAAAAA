@@ -30,6 +30,7 @@ void Reception::_displayKitchensStatus(void)
 bool Reception::_handleInput(const std::string &input)
 {
     InputParser server;
+    Kitchen obj(_cookNumber, _refillTime);
 
     server.setCommand(input);
     try {
@@ -38,6 +39,8 @@ bool Reception::_handleInput(const std::string &input)
         std::cerr << e.what() << std::endl;
         return false;
     }
+    obj.start();
+    obj.stop();
     return true;
 }
 

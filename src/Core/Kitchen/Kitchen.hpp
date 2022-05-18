@@ -30,7 +30,7 @@ namespace plazza {
         Eggplant,
         GoatCheese,
         ChiefLove,
-        IngredientNumber
+        IngredientNumber = 8
     };
 
     /// \brief The class used to manage all the cooks and the orders.
@@ -58,6 +58,9 @@ namespace plazza {
         private:
             /// \brief Main function instancied in each thread
             static void _Cook(Kitchen *obj);
+
+            /// \brief Init the fridge at the Kitchen Creation
+            static void _initFridge(Kitchen &obj);
 
             /// \brief fill the ingredients of the fridge 1 x timeToFill
             /// \param timeToFill number of time to fill the fridge
