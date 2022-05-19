@@ -13,7 +13,6 @@
 #include "MessageQueue.hpp"
 #include "Pizza.hpp"
 #include <condition_variable>
-#include <functional>
 #include <mutex>
 #include <queue>
 #include <thread>
