@@ -57,7 +57,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_parser_8cpp.html",
-"classplazza_1_1_reception.html#ab7c952a340a547b8cb6fadea4f14669a"
+"dir_889795c093700a0da6ffc59eab49a66c.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
