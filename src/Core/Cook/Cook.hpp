@@ -14,10 +14,6 @@
 #include <string>
 #include <vector>
 
-extern "C" {
-#include <time.h>
-}
-
 namespace plazza {
     /// \brief Cook class is use to cook a pizza with a duration time.
     class Cook {
@@ -37,9 +33,6 @@ namespace plazza {
             /// \brief Set a pizza to be cook.
             /// \param Pizza The pizza to be cook.
             void cookPizza(Pizza pizza);
-            /// \brief Get the status of a cook.
-            /// \return true if the cook is cooking, false otherwise.
-            bool getCookStatus();
 
         private:
             /// \brief Set the cooking time depending of the pizza to be cook.
@@ -50,8 +43,6 @@ namespace plazza {
             bool _workInProgress;
             /// \brief Store the multiplier of cooking time.
             std::size_t _multiplier;
-            /// \brief Store the start time of the cook.
-            time_t _start;
             /// \brief Store the duration of the cooking time of the pizza.
             std::size_t _duration;
     };
