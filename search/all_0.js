@@ -7,7 +7,7 @@ var searchData=
   ['_5fcheckargumentsvalidity_4',['_checkArgumentsValidity',['../classplazza_1_1_input_parser.html#a9694be8f01d555f89a54558343d09cda',1,'plazza::InputParser']]],
   ['_5fcommand_5',['_command',['../classplazza_1_1_input_parser.html#a1d9eba00199c9b3c64960b32934e13b3',1,'plazza::InputParser']]],
   ['_5fcook_6',['_Cook',['../classplazza_1_1_kitchen.html#a2146a91b2e80190dba0059487cb99f37',1,'plazza::Kitchen']]],
-  ['_5fcookingtime_7',['_cookingTime',['../classplazza_1_1_reception.html#a2a1dab5ea2a8bd22e2f2b685df391b51',1,'plazza::Reception::_cookingTime()'],['../classplazza_1_1_arguments_parser.html#abdde677c19ebd50558472287c5a0289d',1,'plazza::ArgumentsParser::_cookingTime()']]],
+  ['_5fcookingtime_7',['_cookingTime',['../classplazza_1_1_kitchen.html#a6ba06d8974ce66d7ace31ae66d42eb3d',1,'plazza::Kitchen::_cookingTime()'],['../classplazza_1_1_reception.html#a2a1dab5ea2a8bd22e2f2b685df391b51',1,'plazza::Reception::_cookingTime()'],['../classplazza_1_1_arguments_parser.html#abdde677c19ebd50558472287c5a0289d',1,'plazza::ArgumentsParser::_cookingTime()']]],
   ['_5fcooknumber_8',['_cookNumber',['../classplazza_1_1_reception.html#a793ede760fac53f5d221be826499a1d2',1,'plazza::Reception::_cookNumber()'],['../classplazza_1_1_arguments_parser.html#ac6a0a89dc0733b658e1e296dd6adbfc7',1,'plazza::ArgumentsParser::_cookNumber()']]],
   ['_5fdisplaykitchensstatus_9',['_displayKitchensStatus',['../classplazza_1_1_reception.html#ab7c952a340a547b8cb6fadea4f14669a',1,'plazza::Reception']]],
   ['_5fduration_10',['_duration',['../classplazza_1_1_cook.html#a0644a74c7aec9ebcf80f92df9b113ed8',1,'plazza::Cook']]],

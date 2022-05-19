@@ -1,7 +1,7 @@
 var classplazza_1_1_kitchen =
 [
     [ "Kitchen", "classplazza_1_1_kitchen.html#a3289aa8cd732e28d9f88ca2b79722c84", null ],
-    [ "Kitchen", "classplazza_1_1_kitchen.html#a26c34b5f5acb387b36250986cc2d6a9f", null ],
+    [ "Kitchen", "classplazza_1_1_kitchen.html#ac79c56a3d4a832da8d4d809fde4682b1", null ],
     [ "~Kitchen", "classplazza_1_1_kitchen.html#a560e360631a961e5ab849f29cbbe6dae", null ],
     [ "_Cook", "classplazza_1_1_kitchen.html#a2146a91b2e80190dba0059487cb99f37", null ],
     [ "_fillFridge", "classplazza_1_1_kitchen.html#aed0223c7e20b4a5c9d587be4eab6bd49", null ],
@@ -15,6 +15,7 @@ var classplazza_1_1_kitchen =
     [ "start", "classplazza_1_1_kitchen.html#ab6afa23613acf5e0680d8e5177f887f3", null ],
     [ "stop", "classplazza_1_1_kitchen.html#ae8e60ab81e8b36f69b44365d58042f99", null ],
     [ "_brigade", "classplazza_1_1_kitchen.html#a1d701203be1eead9d7c4072e8d5b6e58", null ],
+    [ "_cookingTime", "classplazza_1_1_kitchen.html#a6ba06d8974ce66d7ace31ae66d42eb3d", null ],
     [ "_fridge", "classplazza_1_1_kitchen.html#a22842032e863063242e7e78abbf9b3d9", null ],
     [ "_mutex", "classplazza_1_1_kitchen.html#a5b8df57076e63196c909744014a0d794", null ],
     [ "_nbCooks", "classplazza_1_1_kitchen.html#a67c93d0d471f721b6e184bb2bbf86437", null ],
