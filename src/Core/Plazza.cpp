@@ -12,10 +12,7 @@
 #include "Kitchen/Kitchen.hpp"
 #include <iostream>
 #include <utility>
-
-extern "C" {
 #include <unistd.h>
-}
 
 using namespace plazza;
 
