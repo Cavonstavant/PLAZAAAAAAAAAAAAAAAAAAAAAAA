@@ -48,7 +48,7 @@ bool Reception::_handleInput(const std::string &input)
 
 void Reception::_sendCommand(const InputParser &command)
 {
-    Kitchen newKitchen(_cookNumber, _refillTime);
+    Kitchen newKitchen(_cookNumber, _refillTime, _cookingTime);
     std::shared_ptr<MessageQueue> newQueue = std::make_shared<MessageQueue>();
 
     newQueue.get()->openQueue(std::string("/plazzaQueueNumber" + _kitchenQueues.size()));
