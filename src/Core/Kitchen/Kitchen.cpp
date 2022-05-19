@@ -9,7 +9,6 @@
 
 #include "Kitchen.hpp"
 #include <ctime>
-#include <iostream>
 #include <functional>
 #include "Pizza.hpp"
 
