@@ -5,7 +5,7 @@
 ** messageQueue_test
 */
 
-#include "MessageQueue/MessageQueue.hpp"
+#include "MessageQueue.hpp"
 #include <criterion/criterion.h>
 #include <fcntl.h>
 #include <iostream>

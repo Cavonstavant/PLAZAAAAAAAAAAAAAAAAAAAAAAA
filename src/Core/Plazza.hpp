@@ -10,8 +10,11 @@
 #ifndef PLAZZA_HPP_
 #define PLAZZA_HPP_
 
+#include "InputParser.hpp"
+#include "Kitchen.hpp"
 #include "Pizza.hpp"
 #include <cstddef>
+#include <map>
 #include <string>
 
 namespace plazza {
@@ -44,6 +47,10 @@ namespace plazza {
             /// \brief Handle the receive input
             /// \return true if the input is valid, false otherwise
             bool _handleInput(const std::string &input);
+            /// \brief Create a kitchen if necessary, and send the command to the child process
+            void _sendCommand(const InputParser &command);
+            /// \brief Map of the different child process, with the linked queues
+            std::map<pid_t, std::shared_ptr<MessageQueue>> _kitchenQueues;
             /// \brief Store the cookingTime
             size_t _cookingTime;
             /// \brief Store the cookNumber

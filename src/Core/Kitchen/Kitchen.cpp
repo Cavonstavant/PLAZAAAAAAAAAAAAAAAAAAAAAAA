@@ -8,6 +8,7 @@
 /// \file src/Core/Kitchen/Kitchen.cpp
 
 #include "Kitchen.hpp"
+#include "Pizza.hpp"
 #include <ctime>
 #include <functional>
 
@@ -17,8 +18,124 @@ void Kitchen::start()
 {
     _oldTime = std::time(nullptr);
     _initFridge(*this);
+    _brigade.emplace_back(std::thread(_receptCook, this));
     for (std::size_t i = 0; i < _nbCooks; ++i)
         _brigade.emplace_back(std::thread(_Cook, this));
+}
+
+PizzaType Kitchen::getTypeFromFullCommand(const std::string &fullCommand)
+{
+    std::string name = fullCommand.substr(0, fullCommand.find(";"));
+
+    name = name.substr(name.find(":") + 1);
+    switch (stoi(name)) {
+        case Regina:
+            return Regina;
+        case Margarita:
+            return Margarita;
+        case Americana:
+            return Americana;
+        case Fantasia:
+            return Fantasia;
+        default:
+            throw VeryStupidUserEX("Not supposed to append (PizzaType)", Logger::CRITICAL);
+    }
+}
+
+int Kitchen::getQuantityFromFullCommand(const std::string &fullCommand)
+{
+    std::string quantity = fullCommand.substr(fullCommand.find(";") + 1);
+
+    quantity = quantity.substr(quantity.find(";") + 1);
+    quantity = quantity.substr(quantity.find(":") + 1);
+    return stoi(quantity);
+}
+
+void Kitchen::getIngredientsFromPizzaType(Pizza &toCook, PizzaType type)
+{
+    Ingredient ingredient;
+
+    switch (type) {
+        case Margarita:
+            ingredient.name = "doe";
+            ingredient.number = 1;
+            toCook.ingredients.push_back(ingredient);
+            ingredient.name = "tomato";
+            ingredient.number = 1;
+            toCook.ingredients.push_back(ingredient);
+            ingredient.name = "gruyere";
+            ingredient.number = 1;
+            toCook.ingredients.push_back(ingredient);
+            break;
+        case Regina:
+            ingredient.name = "doe";
+            ingredient.number = 1;
+            toCook.ingredients.push_back(ingredient);
+            ingredient.name = "tomato";
+            ingredient.number = 1;
+            toCook.ingredients.push_back(ingredient);
+            ingredient.name = "gruyere";
+            ingredient.number = 1;
+            toCook.ingredients.push_back(ingredient);
+            ingredient.name = "ham";
+            ingredient.number = 1;
+            toCook.ingredients.push_back(ingredient);
+            ingredient.name = "mushrooms";
+            ingredient.number = 1;
+            toCook.ingredients.push_back(ingredient);
+            break;
+        case Americana:
+            ingredient.name = "doe";
+            ingredient.number = 1;
+            toCook.ingredients.push_back(ingredient);
+            ingredient.name = "tomato";
+            ingredient.number = 1;
+            toCook.ingredients.push_back(ingredient);
+            ingredient.name = "gruyere";
+            ingredient.number = 1;
+            toCook.ingredients.push_back(ingredient);
+            ingredient.name = "steak";
+            ingredient.number = 1;
+            toCook.ingredients.push_back(ingredient);
+            break;
+        case Fantasia:
+            ingredient.name = "doe";
+            ingredient.number = 1;
+            toCook.ingredients.push_back(ingredient);
+            ingredient.name = "tomato";
+            ingredient.number = 1;
+            toCook.ingredients.push_back(ingredient);
+            ingredient.name = "eggplant";
+            ingredient.number = 1;
+            toCook.ingredients.push_back(ingredient);
+            ingredient.name = "goatCheese";
+            ingredient.number = 1;
+            toCook.ingredients.push_back(ingredient);
+            ingredient.name = "chiefLove";
+            ingredient.number = 1;
+            toCook.ingredients.push_back(ingredient);
+            break;
+    }
+}
+
+void Kitchen::_receptCook(Kitchen *obj)
+{
+    while (true) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        std::string fullCommand = obj->commandQueue.get()->receiveMessage();
+
+        PizzaType type = getTypeFromFullCommand(fullCommand);
+        int quantity = getQuantityFromFullCommand(fullCommand);
+
+        Pizza toCook;
+        toCook.type = type;
+        toCook.number = 1;
+        getIngredientsFromPizzaType(toCook, type);
+
+        for (int x = 0; x < quantity; ++x) {
+            // Send a Pizza to the Cook in the thread pool
+        }
+    }
 }
 
 void Kitchen::_Cook(Kitchen *obj)

@@ -9,9 +9,13 @@
 
 #include "Plazza.hpp"
 #include "Exception.hpp"
-#include "InputParser.hpp"
 #include "Kitchen/Kitchen.hpp"
 #include <iostream>
+#include <utility>
+
+extern "C" {
+#include <unistd.h>
+}
 
 using namespace plazza;
 
@@ -39,9 +43,33 @@ bool Reception::_handleInput(const std::string &input)
         std::cerr << e.what() << std::endl;
         return false;
     }
-    obj.start();
-    obj.stop();
+    _sendCommand(server);
     return true;
+}
+
+void Reception::_sendCommand(const InputParser &command)
+{
+    Kitchen newKitchen(_cookNumber, _refillTime);
+    std::shared_ptr<MessageQueue> newQueue = std::make_shared<MessageQueue>();
+
+    newQueue.get()->openQueue(std::string("/plazzaQueueNumber" + _kitchenQueues.size()));
+
+    pid_t newKitchenPid = fork();
+
+    if (newKitchenPid == 0) {
+        newKitchen.commandQueue = newQueue;
+        newKitchen.start();
+        newKitchen.stop();
+    } else {
+        std::vector<Pizza> pizzaToCook = command.getPizza();
+
+        _kitchenQueues[newKitchenPid] = newQueue;
+
+        for (std::size_t x = 0; x < pizzaToCook.size(); ++x) {
+            std::this_thread::sleep_for(std::chrono::milliseconds(10));
+            newQueue.get()->sendMessage(pack(pizzaToCook[x]));
+        }
+    }
 }
 
 std::string Reception::pack(const Pizza &pizza)

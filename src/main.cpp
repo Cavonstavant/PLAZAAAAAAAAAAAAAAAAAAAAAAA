@@ -7,7 +7,6 @@
 
 #include "ArgumentsParser.hpp"
 #include "Exception.hpp"
-#include "MessageQueue/MessageQueue.hpp"
 #include "Plazza.hpp"
 #include <iostream>
 #include <string>
