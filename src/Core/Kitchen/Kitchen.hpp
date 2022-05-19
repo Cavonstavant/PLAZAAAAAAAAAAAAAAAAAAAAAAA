@@ -55,7 +55,7 @@ namespace plazza {
             void stop();
 
             /// \brief Adds an order to the kitchen
-            void enqueueJob(std::function<void()> &job);
+            void enqueueJob(Pizza &pizza);
 
             /// \brief MessageQueue recepting the command from the reception
             std::shared_ptr<MessageQueue> commandQueue;
@@ -101,8 +101,8 @@ namespace plazza {
             /// \brief The condition variable used to notify the cooks that there is an order
             std::condition_variable order_condition;
 
-            /// \brief The queue of orders coming from the reception
-            std::queue<std::function<void()>> _orders;
+            /// \brief The list of pizzas waiting to be cooked by the cooks
+            std::queue<Pizza> _orders;
 
             /// \brief The number of cooks in the kitchen
             unsigned long _nbCooks;
