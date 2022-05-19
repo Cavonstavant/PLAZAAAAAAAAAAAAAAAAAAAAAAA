@@ -11,6 +11,7 @@
 #define PLAZZA_KITCHEN_HPP
 
 #include "Pizza.hpp"
+#include "MessageQueue.hpp"
 #include <condition_variable>
 #include <functional>
 #include <mutex>
@@ -57,6 +58,9 @@ namespace plazza {
             void enqueueJob(std::function<void()> &job);
 
         private:
+            /// \brief Function getting the command and give it in the job queue
+            static void _receptCook(Kitchen *obj);
+
             /// \brief Main function instancied in each thread
             static void _Cook(Kitchen *obj);
 
@@ -79,7 +83,9 @@ namespace plazza {
             /// \brief The condition variable used to notify the cooks that there is an order
             std::condition_variable order_condition;
 
-            /// \brief The queue of orders comming from the reception
+            MessageQueue _commandQueue;
+
+            /// \brief The queue of orders coming from the reception
             std::queue<std::function<void()>> _orders;
 
             /// \brief The number of cooks in the kitchen
