@@ -6,8 +6,12 @@ var classplazza_1_1_kitchen =
     [ "_Cook", "classplazza_1_1_kitchen.html#a2146a91b2e80190dba0059487cb99f37", null ],
     [ "_fillFridge", "classplazza_1_1_kitchen.html#aed0223c7e20b4a5c9d587be4eab6bd49", null ],
     [ "_initFridge", "classplazza_1_1_kitchen.html#a0de9d7a10fbd3ff9276962d4726f1855", null ],
+    [ "_receptCook", "classplazza_1_1_kitchen.html#afb4206c2c981ce9e344c65244bdc64dc", null ],
     [ "_waitToFillFridge", "classplazza_1_1_kitchen.html#a85a79ba2d20c88b33dd133a956a8b17b", null ],
     [ "enqueueJob", "classplazza_1_1_kitchen.html#a4f436b43b05cfe3a6e2bcf4110cd54a4", null ],
+    [ "getIngredientsFromPizzaType", "classplazza_1_1_kitchen.html#a00eb583457c01a6e8ccd1b926fd0c7b2", null ],
+    [ "getQuantityFromFullCommand", "classplazza_1_1_kitchen.html#aa94fbcaea7dc94b28a2770577a21316f", null ],
+    [ "getTypeFromFullCommand", "classplazza_1_1_kitchen.html#a7f43b50b8ac62f0dd9ae2c1703180a47", null ],
     [ "start", "classplazza_1_1_kitchen.html#ab6afa23613acf5e0680d8e5177f887f3", null ],
     [ "stop", "classplazza_1_1_kitchen.html#ae8e60ab81e8b36f69b44365d58042f99", null ],
     [ "_brigade", "classplazza_1_1_kitchen.html#a1d701203be1eead9d7c4072e8d5b6e58", null ],
@@ -18,5 +22,6 @@ var classplazza_1_1_kitchen =
     [ "_orders", "classplazza_1_1_kitchen.html#aad7e61823a8e356b9da5dab25d8a0082", null ],
     [ "_refillTime", "classplazza_1_1_kitchen.html#ac00f3f022a7c954b151ba0afc4fdf443", null ],
     [ "_stopKitchen", "classplazza_1_1_kitchen.html#a67d704debd43fe4daa82db0a15fa7113", null ],
+    [ "commandQueue", "classplazza_1_1_kitchen.html#a4abffc67076cfa4cb9daf75e8e4024a8", null ],
     [ "order_condition", "classplazza_1_1_kitchen.html#a3fcde824a9ec44d5663a8a6f91082095", null ]
 ];

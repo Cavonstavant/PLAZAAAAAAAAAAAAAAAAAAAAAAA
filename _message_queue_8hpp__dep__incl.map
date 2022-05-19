@@ -1,5 +1,9 @@
 <map id="src/MessageQueue/MessageQueue.hpp" name="src/MessageQueue/MessageQueue.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="44,5,251,47"/>
-<area shape="rect" id="node2" href="$main_8cpp.html" title=" " alt="" coords="5,102,111,129"/>
-<area shape="rect" id="node3" href="$_message_queue_8cpp.html" title=" " alt="" coords="135,95,341,136"/>
+<area shape="rect" id="node1" title=" " alt="" coords="263,5,470,47"/>
+<area shape="rect" id="node2" href="$_kitchen_8hpp.html" title=" " alt="" coords="146,102,355,129"/>
+<area shape="rect" id="node7" href="$_message_queue_8cpp.html" title=" " alt="" coords="379,95,586,136"/>
+<area shape="rect" id="node3" href="$_kitchen_8cpp.html" title=" " alt="" coords="5,184,213,211"/>
+<area shape="rect" id="node4" href="$_plazza_8hpp.html" title=" " alt="" coords="288,184,437,211"/>
+<area shape="rect" id="node5" href="$_plazza_8cpp.html" title=" " alt="" coords="177,259,325,285"/>
+<area shape="rect" id="node6" href="$main_8cpp.html" title=" " alt="" coords="349,259,454,285"/>
 </map>

@@ -83,6 +83,8 @@ $(document).ready(function(){initNavTree('_message_queue_8cpp.html',''); initRes
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">MessageQueue.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -111,8 +113,87 @@ Include dependency graph for MessageQueue.cpp:</div>
 </div>
 </div>
 <p><a href="_message_queue_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ada30eb8f40a008bf42f8f1adfda90443"><td class="memItemLeft" align="right" valign="top">std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_message_queue_8cpp.html#ada30eb8f40a008bf42f8f1adfda90443">operator&lt;&lt;</a> (std::string &amp;i, const <a class="el" href="class_message_queue.html">MessageQueue</a> &amp;queue)</td></tr>
+<tr class="separator:ada30eb8f40a008bf42f8f1adfda90443"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae611b8ca2ab21ed48b407cd4e3e56288"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_message_queue.html">MessageQueue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_message_queue_8cpp.html#ae611b8ca2ab21ed48b407cd4e3e56288">operator&gt;&gt;</a> (<a class="el" href="class_message_queue.html">MessageQueue</a> &amp;queue, std::string &amp;i)</td></tr>
+<tr class="separator:ae611b8ca2ab21ed48b407cd4e3e56288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ada30eb8f40a008bf42f8f1adfda90443"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada30eb8f40a008bf42f8f1adfda90443">&#9670;&nbsp;</a></span>operator&lt;&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_message_queue.html">MessageQueue</a> &amp;&#160;</td>
+          <td class="paramname"><em>queue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_message_queue_8cpp_source.html#l00060">60</a> of file <a class="el" href="_message_queue_8cpp_source.html">MessageQueue.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    i = queue.<a class="code" href="class_message_queue.html#a94087136a3aed67e2f1069e2bdd0571f">receiveMessage</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> i;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae611b8ca2ab21ed48b407cd4e3e56288"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae611b8ca2ab21ed48b407cd4e3e56288">&#9670;&nbsp;</a></span>operator&gt;&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_message_queue.html">MessageQueue</a>&amp; operator&gt;&gt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_message_queue.html">MessageQueue</a> &amp;&#160;</td>
+          <td class="paramname"><em>queue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_message_queue_8cpp_source.html#l00066">66</a> of file <a class="el" href="_message_queue_8cpp_source.html">MessageQueue.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    queue.<a class="code" href="class_message_queue.html#adc775c0651d539d6268cde073a41451d">sendMessage</a>(i);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> queue;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclass_message_queue_html_adc775c0651d539d6268cde073a41451d"><div class="ttname"><a href="class_message_queue.html#adc775c0651d539d6268cde073a41451d">MessageQueue::sendMessage</a></div><div class="ttdeci">void sendMessage(const std::string &amp;message_text) const</div><div class="ttdoc">Sends a message to the queue.</div><div class="ttdef"><b>Definition:</b> <a href="_message_queue_8cpp_source.html#l00033">MessageQueue.cpp:33</a></div></div>
+<div class="ttc" id="aclass_message_queue_html_a94087136a3aed67e2f1069e2bdd0571f"><div class="ttname"><a href="class_message_queue.html#a94087136a3aed67e2f1069e2bdd0571f">MessageQueue::receiveMessage</a></div><div class="ttdeci">std::string receiveMessage() const</div><div class="ttdoc">Receives a message from the queue.</div><div class="ttdef"><b>Definition:</b> <a href="_message_queue_8cpp_source.html#l00041">MessageQueue.cpp:41</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

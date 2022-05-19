@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unpack_315',['unpack',['../classplazza_1_1_reception.html#a29b2128afd9048572db31c47dcfafb05',1,'plazza::Reception']]]
+  ['unpack_327',['unpack',['../classplazza_1_1_reception.html#a29b2128afd9048572db31c47dcfafb05',1,'plazza::Reception']]]
 ];
