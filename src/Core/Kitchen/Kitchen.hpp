@@ -10,8 +10,8 @@
 #ifndef PLAZZA_KITCHEN_HPP
 #define PLAZZA_KITCHEN_HPP
 
-#include "Pizza.hpp"
 #include "MessageQueue.hpp"
+#include "Pizza.hpp"
 #include <condition_variable>
 #include <functional>
 #include <mutex>
@@ -74,6 +74,7 @@ namespace plazza {
             /// \param toCook the Pizza to be filled with ingredients
             /// \param type the type of the Pizza
             static void getIngredientsFromPizzaType(Pizza &toCook, PizzaType type);
+
         private:
             /// \brief Main function for the Blocking thread on the message queue, getting the command and give it in the job queue
             static void _receptCook(Kitchen *obj);

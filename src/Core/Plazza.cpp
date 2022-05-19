@@ -63,7 +63,7 @@ void Reception::_sendCommand(const InputParser &command)
     } else {
         std::vector<Pizza> pizzaToCook = command.getPizza();
 
-       _kitchenQueues[newKitchenPid] = newQueue;
+        _kitchenQueues[newKitchenPid] = newQueue;
 
         for (std::size_t x = 0; x < pizzaToCook.size(); ++x) {
             std::this_thread::sleep_for(std::chrono::milliseconds(10));

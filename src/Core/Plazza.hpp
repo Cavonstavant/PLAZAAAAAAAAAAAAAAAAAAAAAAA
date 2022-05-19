@@ -10,12 +10,12 @@
 #ifndef PLAZZA_HPP_
 #define PLAZZA_HPP_
 
-#include "Kitchen.hpp"
 #include "InputParser.hpp"
+#include "Kitchen.hpp"
 #include "Pizza.hpp"
 #include <cstddef>
-#include <string>
 #include <map>
+#include <string>
 
 namespace plazza {
     /// \brief Reception Class containing the main loop of the program
