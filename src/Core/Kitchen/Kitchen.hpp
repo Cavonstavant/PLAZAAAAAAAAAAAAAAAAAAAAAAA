@@ -101,13 +101,8 @@ public:
     /// \brief The condition variable used to notify the cooks that there is an order
     std::condition_variable order_condition;
 
-<<<<<<< HEAD
             /// \brief The list of pizzas waiting to be cooked by the cooks
             std::queue<Pizza> _orders;
-=======
-    /// \brief The queue of orders coming from the reception
-    std::queue<std::function<void()>> _orders;
->>>>>>> f550447 (Restyled by astyle)
 
     /// \brief The number of cooks in the kitchen
     unsigned long _nbCooks;
