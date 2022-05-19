@@ -39,12 +39,10 @@ namespace plazza {
             void _setCookingTime();
             /// \brief Store the pizza to be cook.
             Pizza _pizza;
-            /// \brief Store if the cook is working.
-            bool _workInProgress;
             /// \brief Store the multiplier of cooking time.
             std::size_t _multiplier;
             /// \brief Store the duration of the cooking time of the pizza.
-            std::size_t _duration;
+            std::size_t _cookingTime;
     };
 }// namespace plazza
 

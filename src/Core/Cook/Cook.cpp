@@ -18,25 +18,22 @@ using namespace plazza;
 
 Cook::Cook(std::size_t multiplier)
 {
-    _duration = 0;
-    _workInProgress = false;
+    _cookingTime = 0;
     _multiplier = multiplier;
 }
 
 Cook::Cook(Pizza pizza, std::size_t multiplier)
 {
-    _duration = 0;
+    _cookingTime = 0;
     _multiplier = multiplier;
     cookPizza(pizza);
 }
 
 void Cook::cookPizza(Pizza pizza)
 {
-    if (_workInProgress)
-        throw PlazzaEX("Cook is already working !", Logger::HIGH);
     _pizza = pizza;
     _setCookingTime();
-    sleep(_duration);
+    sleep(_cookingTime);
 }
 
 void Cook::setCookingTimeMultipiler(std::size_t multiplier)
@@ -62,5 +59,5 @@ void Cook::_setCookingTime()
             cookingTime = 4;
             break;
     }
-    _duration = cookingTime * _multiplier;
+    _cookingTime = cookingTime * _multiplier;
 }
