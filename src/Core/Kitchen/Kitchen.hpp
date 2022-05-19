@@ -61,12 +61,18 @@ namespace plazza {
             std::shared_ptr<MessageQueue> commandQueue;
 
             /// \brief get the Pizza Type from the Command
+            /// \param fullCommand the String received in the Queue
+            /// \return the pizza type
             static PizzaType getTypeFromFullCommand(const std::string &fullCommand);
 
             /// \brief get the number of the pizza from the Command
+            /// \param fullCommand the String received in the Queue
+            /// \return the quantity of the Pizza
             static int getQuantityFromFullCommand(const std::string &FullCommand);
 
             /// \brief get the necessary ingredients from the pizza type
+            /// \param toCook the Pizza to be filled with ingredients
+            /// \param type the type of the Pizza
             static void getIngredientsFromPizzaType(Pizza &toCook, PizzaType type);
         private:
             /// \brief Main function for the Blocking thread on the message queue, getting the command and give it in the job queue
