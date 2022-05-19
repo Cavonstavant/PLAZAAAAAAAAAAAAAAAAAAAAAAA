@@ -5,8 +5,8 @@
 ** Pizza_test
 */
 
-#include <criterion/criterion.h>
 #include "Pizza.hpp"
+#include <criterion/criterion.h>
 
 Test(Ingredient, test01)
 {
