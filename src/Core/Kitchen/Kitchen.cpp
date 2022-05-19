@@ -8,8 +8,8 @@
 /// \file src/Core/Kitchen/Kitchen.cpp
 
 #include "Kitchen.hpp"
-#include "Pizza.hpp"
 #include "Cook/Cook.hpp"
+#include "Pizza.hpp"
 #include <ctime>
 #include <functional>
 
