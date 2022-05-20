@@ -24,5 +24,6 @@ var hierarchy =
     [ "Logger", "class_logger.html", null ],
     [ "MessageQueue", "class_message_queue.html", null ],
     [ "plazza::Pizza", "structplazza_1_1_pizza.html", null ],
+    [ "plazza::PizzaLogger", "structplazza_1_1_pizza_logger.html", null ],
     [ "plazza::Reception", "classplazza_1_1_reception.html", null ]
 ];

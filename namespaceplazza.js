@@ -8,5 +8,6 @@ var namespaceplazza =
     [ "IParser", "classplazza_1_1_i_parser.html", "classplazza_1_1_i_parser" ],
     [ "Kitchen", "classplazza_1_1_kitchen.html", "classplazza_1_1_kitchen" ],
     [ "Pizza", "structplazza_1_1_pizza.html", "structplazza_1_1_pizza" ],
+    [ "PizzaLogger", "structplazza_1_1_pizza_logger.html", "structplazza_1_1_pizza_logger" ],
     [ "Reception", "classplazza_1_1_reception.html", "classplazza_1_1_reception" ]
 ];

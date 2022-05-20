@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ingredients_370',['Ingredients',['../namespaceplazza.html#a8e7ea4dc8410183b3d67d9467938a88d',1,'plazza']]]
+  ['action_394',['Action',['../structplazza_1_1_pizza_logger.html#a944d859ecf90efc751e98e63a8592f41',1,'plazza::PizzaLogger']]]
 ];

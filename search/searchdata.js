@@ -6,7 +6,7 @@ var indexSectionsWithContent =
   3: "aceiklmpr",
   4: "_aceghiklmnoprsuvw~",
   5: "_cinost",
-  6: "ips",
+  6: "aips",
   7: "adefghilmrstx",
   8: "eilmpv",
   9: "p"
