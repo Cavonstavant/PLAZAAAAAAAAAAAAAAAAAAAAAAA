@@ -8,10 +8,10 @@
 /// \file src/cook/Cook.cpp
 
 #include "Cook.hpp"
-#include <thread>
-#include <unistd.h>
 #include "PizzaLogger.hpp"
 #include <iostream>
+#include <thread>
+#include <unistd.h>
 
 using namespace plazza;
 

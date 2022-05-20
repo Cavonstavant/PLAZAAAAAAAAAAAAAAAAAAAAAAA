@@ -40,7 +40,7 @@ namespace plazza {
             Kitchen() = delete;
 
             /// \brief Creating a Kitchen with a specified number of cooks
-            explicit Kitchen(unsigned long nbCooks, unsigned long refillTime, unsigned long cookingTime) : _nbCooks(nbCooks), _availCooks(nbCooks), _refillTime(refillTime), _cookingTime(cookingTime), _stopKitchen(false) 
+            explicit Kitchen(unsigned long nbCooks, unsigned long refillTime, unsigned long cookingTime) : _nbCooks(nbCooks), _availCooks(nbCooks), _refillTime(refillTime), _cookingTime(cookingTime), _stopKitchen(false)
             {
                 _fridge.resize(IngredientNumber);
             };
