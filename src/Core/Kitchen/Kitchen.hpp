@@ -109,14 +109,12 @@ namespace plazza {
             /// \brief The time to wait before fill the fridge
             unsigned long _refillTime;
 
-            /// \brief The multiplier for the cooking Time
-            unsigned long _cookingTime;
-
-            /// \brief Store the oldTime to fill
+            unsigned int _cookingTime;
             unsigned long _oldTime;
 
             /// \brief The flag used to stop the kitchen
             bool _stopKitchen;
+
 
             /// \brief The kitchen fridge, containing all of the ingredients
             std::vector<Ingredient> _fridge;
