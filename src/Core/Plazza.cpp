@@ -23,6 +23,8 @@ Reception::Reception(float cookingTime, size_t cookNumber, size_t refillTime)
     _cookingTime = cookingTime;
     _cookNumber = cookNumber;
     _refillTime = refillTime;
+    _busyCooks.resize(_cookNumber);
+    _busyCooksTotal = 0;
 }
 
 void Reception::_displayKitchensStatus(void)
@@ -48,6 +50,7 @@ bool Reception::_handleInput(const std::string &input)
 void Reception::_sendCommand(const InputParser &command)
 {
     std::vector<Pizza> pizzaToCook = command.getPizza();
+    unsigned int pizzaPerKitchen = 0;
 
     if (pizzaToCook.size() == 0)
         return;

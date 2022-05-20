@@ -44,6 +44,16 @@ namespace plazza {
         private:
             /// \brief Close the Kitchens Queues and send a kill signal
             void _cleanKitchens(void);
+
+            /// \brief Create a new Kitchen and it's associated Message Queue
+            void _createNewKitchen(void);
+
+            /// \brief Sends the `avail_slots?` to all the kitchens and updates `_busyCooks`
+            void _updateBusyCooks(void);
+
+            /// \brief return true or false wether there is a need to create a new kitchen
+            bool _isNewKitchenNeeded(void);
+
             /// \brief Display all of the kitchens current status
             void _displayKitchensStatus(void);
             /// \brief Handle the receive input
@@ -59,6 +69,8 @@ namespace plazza {
             size_t _cookNumber;
             /// \brief Store the refillTime
             size_t _refillTime;
+            std::vector<unsigned int> _busyCooks;
+            int _busyCooksTotal;
     };
 }// namespace plazza
 
