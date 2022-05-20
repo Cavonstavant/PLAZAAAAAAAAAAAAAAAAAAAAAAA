@@ -13,9 +13,9 @@
 #include <iostream>
 #include <signal.h>
 #include <sys/types.h>
+#include <tuple>
 #include <unistd.h>
 #include <utility>
-#include <tuple>
 
 using namespace plazza;
 
@@ -51,10 +51,10 @@ void Reception::_displayKitchensStatus(void)
     std::string message;
 
     std::cout << "Available Kitchen: " << _kitchenMap.size() << std::endl;
-    for (auto it : _kitchenMap) {
+    for (auto it: _kitchenMap) {
         std::cout << "====================" << std::endl;
         pid = it.first;
-        std::cout << "Kitchen PID: " << (int)pid << std::endl;
+        std::cout << "Kitchen PID: " << (int) pid << std::endl;
         it.second.get()->sendMessage("avail_slots?");
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
         message = it.second.get()->receiveMessage();
