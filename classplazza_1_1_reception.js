@@ -3,6 +3,7 @@ var classplazza_1_1_reception =
     [ "Reception", "classplazza_1_1_reception.html#ab30fd98e6a6f7ed242eec12cb829e494", null ],
     [ "Reception", "classplazza_1_1_reception.html#a73783d7fbf080dc9e708783ff0880bf9", null ],
     [ "~Reception", "classplazza_1_1_reception.html#a5f27dbfd24a17ff8d41b852db436f688", null ],
+    [ "_cleanKitchens", "classplazza_1_1_reception.html#a7f3293c467547f02d1cfb0d9de546f3f", null ],
     [ "_displayKitchensStatus", "classplazza_1_1_reception.html#ab7c952a340a547b8cb6fadea4f14669a", null ],
     [ "_handleInput", "classplazza_1_1_reception.html#a806f3e116779e70568d48931a765b6fd", null ],
     [ "_sendCommand", "classplazza_1_1_reception.html#aaf9213d113caa6887a2ab6cf6cae84dd", null ],
