@@ -8,5 +8,5 @@ set (SRC
 create_test(
     TEST_NAME Pizza_tests
     TEST_SRC ${SRC}
-    TEST_DEPS ${PROJECT_NAME}_Core ${PROJECT_NAME}_logger
+    TEST_DEPS ${PROJECT_NAME}_pizza
 )
