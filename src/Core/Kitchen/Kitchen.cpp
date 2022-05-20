@@ -119,23 +119,43 @@ void Kitchen::getIngredientsFromPizzaType(Pizza &toCook, PizzaType type)
     }
 }
 
+bool Kitchen::_isAvailableCook(std::string &command)
+{
+    if (command == "avail_slots?")
+        return (true);
+    return (false);
+}
+
 void Kitchen::_receptCook(Kitchen *obj)
 {
     while (true) {
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
         std::string fullCommand = obj->commandQueue.get()->receiveMessage();
 
-        PizzaType type = getTypeFromFullCommand(fullCommand);
-        int quantity = getQuantityFromFullCommand(fullCommand);
+        if (_isAvailableCook(fullCommand)) {
+            obj->commandQueue.get()->sendMessage("avail_slots:" + std::to_string(obj->_availCooks));
+            continue;
+        }
+        Pizza toCook = unpack(fullCommand);
+        getIngredientsFromPizzaType(toCook, toCook.type);
 
-        Pizza toCook;
-        toCook.type = type;
-        toCook.number = 1;
-        getIngredientsFromPizzaType(toCook, type);
-
-        for (int x = 0; x < quantity; ++x)
+        for (std::size_t x = 0; x < toCook.number; ++x)
             obj->_orders.push(toCook);
     }
+}
+
+Pizza Kitchen::unpack(const std::string &order)
+{
+    Pizza pizza;
+    std::string tmp = order;
+
+    tmp = tmp.substr(tmp.find("name:") + 5);
+    pizza.type = PizzaType(std::atoi(tmp.c_str()));
+    tmp = tmp.substr(tmp.find(";size:") + 6);
+    pizza.size = PizzaSize(std::atoi(tmp.c_str()));
+    tmp = tmp.substr(tmp.find(";amount:") + 8);
+    pizza.number = std::atoi(tmp.c_str());
+    return (pizza);
 }
 
 void Kitchen::_Cook(Kitchen *obj)
@@ -143,6 +163,7 @@ void Kitchen::_Cook(Kitchen *obj)
     Cook cook;
     cook.setCookingTimeMultipiler(obj->_cookingTime);
 
+    obj->_availCooks = obj->_nbCooks;
     while (true) {
         Pizza order;
         {
@@ -154,9 +175,14 @@ void Kitchen::_Cook(Kitchen *obj)
                 return;
             order = obj->_orders.front();
             obj->_orders.pop();
+            obj->_availCooks--;
         }
         _waitToFillFridge(obj->_refillTime, *obj);
         cook.cookPizza(order);
+        {
+            std::unique_lock<std::mutex> lock(obj->_mutex);
+            obj->_availCooks++;
+        }
     }
 }
 

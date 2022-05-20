@@ -42,6 +42,7 @@ namespace plazza {
             void run();
 
         private:
+            int _isAvailableSlots(std::string);
             /// \brief Display all of the kitchens current status
             void _displayKitchensStatus(void);
             /// \brief Handle the receive input
