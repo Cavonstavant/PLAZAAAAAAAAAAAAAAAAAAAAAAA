@@ -9,10 +9,7 @@
 
 #include "Cook.hpp"
 #include <thread>
-
-extern "C" {
 #include <unistd.h>
-}
 
 using namespace plazza;
 
@@ -29,11 +26,26 @@ Cook::Cook(Pizza pizza, std::size_t multiplier)
     cookPizza(pizza);
 }
 
+std::string Cook::pack(const Pizza &pizza)
+{
+    std::string order = "";
+
+    order.append("name:");
+    order.append(std::to_string(pizza.type));
+    order.append(";size:");
+    order.append(std::to_string(pizza.size));
+    order.append(";amount:");
+    order.append(std::to_string(pizza.number));
+    order.append("\n");
+    return (order);
+}
+
 void Cook::cookPizza(Pizza pizza)
 {
     _pizza = pizza;
     _setCookingTime();
     sleep(_cookingTime);
+    PlazzaEX(pack(pizza), Logger::INFO);
 }
 
 void Cook::setCookingTimeMultipiler(std::size_t multiplier)
