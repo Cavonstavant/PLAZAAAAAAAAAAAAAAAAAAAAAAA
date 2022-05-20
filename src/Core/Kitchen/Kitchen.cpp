@@ -13,8 +13,6 @@
 #include <ctime>
 #include <functional>
 
-#include <iostream>
-
 using namespace plazza;
 
 void Kitchen::start()
@@ -136,13 +134,13 @@ void Kitchen::_receptCook(Kitchen *obj)
             continue;
         }
         Pizza toCook = unpack(fullCommand);
+        size_t quantity = toCook.number;
+        toCook.number = 1;
         getIngredientsFromPizzaType(toCook, toCook.type);
 
-        for (std::size_t x = 0; x < toCook.number; ++x) {
-            std::cout << "Push orders" << std::endl;
-            obj->_orders.push(toCook);
+        for (std::size_t x = 0; x < quantity; ++x) {
+            obj->enqueueJob(toCook);
         }
-        std::cout << obj->_orders.size() << std::endl;
     }
 }
 
@@ -165,31 +163,24 @@ void Kitchen::_Cook(Kitchen *obj)
     Cook cook;
     cook.setCookingTimeMultipiler(obj->_cookingTime);
 
-    obj->_availCooks = obj->_nbCooks;
     while (true) {
         Pizza order;
         {
             std::unique_lock<std::mutex> lock(obj->_mutex);
             obj->order_condition.wait(lock, [&obj] {
-                std::cout << "size: " << obj->_orders.size() << std::endl;
                 return !obj->_orders.empty() || obj->_stopKitchen;
             });
-            std::cout << "OK" << std::endl;
             if (obj->_stopKitchen) {
-                std::cout << "STOP" << std::endl;
                 return;
             }
             order = obj->_orders.front();
             obj->_orders.pop();
             obj->_availCooks--;
-            std::cout << "New Work!" <<  std::endl;
         }
-        std::cout << "DEBUG" << std::endl;
         _waitToFillFridge(obj->_refillTime, *obj);
         cook.cookPizza(order);
         {
             std::unique_lock<std::mutex> lock(obj->_mutex);
-            std::cout << "Work finished!" << std::endl;
             obj->_availCooks++;
         }
     }
