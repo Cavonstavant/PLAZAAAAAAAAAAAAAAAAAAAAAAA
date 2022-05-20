@@ -41,8 +41,8 @@ public:
     /// \brief Creating a Kitchen without specifying the number of cooks should not be possible
     Kitchen() = delete;
 
-            /// \brief Creating a Kitchen with a specified number of cooks
-            explicit Kitchen(unsigned long nbCooks, unsigned long refillTime, unsigned long cookingTime) : _nbCooks(nbCooks), _refillTime(refillTime), _cookingTime(cookingTime), _stopKitchen(false), _fridge(IngredientNumber){};
+    /// \brief Creating a Kitchen with a specified number of cooks
+    explicit Kitchen(unsigned long nbCooks, unsigned long refillTime, unsigned long cookingTime) : _nbCooks(nbCooks), _refillTime(refillTime), _cookingTime(cookingTime), _stopKitchen(false), _fridge(IngredientNumber) {};
 
     /// \brief Destructor
     ~Kitchen() = default;
@@ -54,8 +54,8 @@ public:
     /// \brief Stops the kitchen and joins all the cooks
     void stop();
 
-            /// \brief Adds an order to the kitchen
-            void enqueueJob(Pizza &pizza);
+    /// \brief Adds an order to the kitchen
+    void enqueueJob(Pizza &pizza);
 
     /// \brief MessageQueue recepting the command from the reception
     std::shared_ptr<MessageQueue> commandQueue;
@@ -70,14 +70,14 @@ public:
     /// \return the quantity of the Pizza
     static int getQuantityFromFullCommand(const std::string &FullCommand);
 
-            /// \brief get the necessary ingredients from the pizza type
-            /// \param toCook the Pizza to be filled with ingredients
-            /// \param type the type of the Pizza
-            static void getIngredientsFromPizzaType(Pizza &toCook, PizzaType type);
+    /// \brief get the necessary ingredients from the pizza type
+    /// \param toCook the Pizza to be filled with ingredients
+    /// \param type the type of the Pizza
+    static void getIngredientsFromPizzaType(Pizza &toCook, PizzaType type);
 
-        private:
-            /// \brief Main function for the Blocking thread on the message queue, getting the command and give it in the job queue
-            static void _receptCook(Kitchen *obj);
+private:
+    /// \brief Main function for the Blocking thread on the message queue, getting the command and give it in the job queue
+    static void _receptCook(Kitchen *obj);
 
     /// \brief Main function instancied in each thread
     static void _Cook(Kitchen *obj);
@@ -101,8 +101,8 @@ public:
     /// \brief The condition variable used to notify the cooks that there is an order
     std::condition_variable order_condition;
 
-            /// \brief The list of pizzas waiting to be cooked by the cooks
-            std::queue<Pizza> _orders;
+    /// \brief The list of pizzas waiting to be cooked by the cooks
+    std::queue<Pizza> _orders;
 
     /// \brief The number of cooks in the kitchen
     unsigned long _nbCooks;

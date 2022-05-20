@@ -263,7 +263,7 @@ Test(Ingredient, test19)
     j.push_back(k);
     p.ingredients = j;
     cr_assert_throw(i = i - p, std::exception);
-<<<<<<< HEAD
+    <<<<<<< HEAD
 }
 =======
 }
