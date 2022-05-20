@@ -13,6 +13,8 @@
 #include <ctime>
 #include <functional>
 
+#include <iostream>
+
 using namespace plazza;
 
 void Kitchen::start()
@@ -136,8 +138,11 @@ void Kitchen::_receptCook(Kitchen *obj)
         Pizza toCook = unpack(fullCommand);
         getIngredientsFromPizzaType(toCook, toCook.type);
 
-        for (std::size_t x = 0; x < toCook.number; ++x)
+        for (std::size_t x = 0; x < toCook.number; ++x) {
+            std::cout << "Push orders" << std::endl;
             obj->_orders.push(toCook);
+        }
+        std::cout << obj->_orders.size() << std::endl;
     }
 }
 
@@ -166,18 +171,25 @@ void Kitchen::_Cook(Kitchen *obj)
         {
             std::unique_lock<std::mutex> lock(obj->_mutex);
             obj->order_condition.wait(lock, [&obj] {
+                std::cout << "size: " << obj->_orders.size() << std::endl;
                 return !obj->_orders.empty() || obj->_stopKitchen;
             });
-            if (obj->_stopKitchen)
+            std::cout << "OK" << std::endl;
+            if (obj->_stopKitchen) {
+                std::cout << "STOP" << std::endl;
                 return;
+            }
             order = obj->_orders.front();
             obj->_orders.pop();
             obj->_availCooks--;
+            std::cout << "New Work!" <<  std::endl;
         }
+        std::cout << "DEBUG" << std::endl;
         _waitToFillFridge(obj->_refillTime, *obj);
         cook.cookPizza(order);
         {
             std::unique_lock<std::mutex> lock(obj->_mutex);
+            std::cout << "Work finished!" << std::endl;
             obj->_availCooks++;
         }
     }

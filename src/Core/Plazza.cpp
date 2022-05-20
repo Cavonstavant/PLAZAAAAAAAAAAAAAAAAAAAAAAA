@@ -104,7 +104,7 @@ void Reception::_sendCommand(const InputParser &command)
     if (newKitchenPid == 0) {
         newKitchen.commandQueue = newQueue;
         newKitchen.start();
-        newKitchen.stop();
+        // newKitchen.stop();
     } else {
         _kitchenMap[newKitchenPid] = newQueue;
 
