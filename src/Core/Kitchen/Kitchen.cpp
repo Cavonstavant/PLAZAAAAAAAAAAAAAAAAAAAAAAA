@@ -191,7 +191,7 @@ void Kitchen::_fillFridge(const std::size_t &timeToFill, Kitchen &obj)
 
 void Kitchen::_waitToFillFridge(const std::size_t &timeToWait, Kitchen &obj)
 {
-    std::unique_lock<std::mutex> lock(obj._mutex);
+    std::unique_lock<std::mutex> lock(obj._fridgeMutex);
 
     if (std::time(nullptr) - obj._oldTime > timeToWait) {
         obj._oldTime = std::time(nullptr);
