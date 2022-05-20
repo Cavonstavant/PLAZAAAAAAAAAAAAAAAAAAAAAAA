@@ -153,9 +153,6 @@ void InputParser::_setIngredientsInPizza(Pizza &pizza)
             ingredient.name = "goatCheese";
             ingredient.number = 1;
             pizza.ingredients.push_back(ingredient);
-            ingredient.name = "chiefLove";
-            ingredient.number = 1;
-            pizza.ingredients.push_back(ingredient);
             break;
     }
 }

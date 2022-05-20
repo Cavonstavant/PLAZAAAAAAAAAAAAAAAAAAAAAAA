@@ -112,9 +112,6 @@ void Kitchen::getIngredientsFromPizzaType(Pizza &toCook, PizzaType type)
             ingredient.name = "goatCheese";
             ingredient.number = 1;
             toCook.ingredients.push_back(ingredient);
-            ingredient.name = "chiefLove";
-            ingredient.number = 1;
-            toCook.ingredients.push_back(ingredient);
             break;
     }
 }
@@ -217,6 +214,8 @@ void Kitchen::_fillFridge(const std::size_t &timeToFill, Kitchen &obj)
 
 void Kitchen::_waitToFillFridge(const std::size_t &timeToWait, Kitchen &obj)
 {
+    std::unique_lock<std::mutex> lock(obj._fridgeMutex);
+
     if (std::time(nullptr) - obj._oldTime > timeToWait) {
         obj._oldTime = std::time(nullptr);
         _fillFridge(1, obj);
@@ -232,7 +231,6 @@ void Kitchen::_initFridge(Kitchen &obj)
     obj._fridge[Steak].name = "steak";
     obj._fridge[Eggplant].name = "eggplant";
     obj._fridge[GoatCheese].name = "goatCheese";
-    obj._fridge[ChiefLove].name = "chiefLove";
     obj._fridge[Doe].name = "doe";
     _fillFridge(5, obj);
 }

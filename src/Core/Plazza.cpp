@@ -11,6 +11,8 @@
 #include "Exception.hpp"
 #include "Kitchen/Kitchen.hpp"
 #include <iostream>
+#include <signal.h>
+#include <sys/types.h>
 #include <unistd.h>
 #include <utility>
 #include <tuple>
@@ -141,6 +143,13 @@ Pizza Reception::unpack(const std::string &order)
     return (pizza);
 }
 
+void Reception::_cleanKitchens(void)
+{
+    for (auto x = _kitchenMap.begin(); x != _kitchenMap.end(); ++x) {
+        kill(x->first, SIGTERM);
+    }
+}
+
 void Reception::run()
 {
     std::string input;
@@ -161,4 +170,5 @@ void Reception::run()
             }
         }
     }
+    _cleanKitchens();
 }
