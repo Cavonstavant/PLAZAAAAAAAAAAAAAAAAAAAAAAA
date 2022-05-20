@@ -5,8 +5,8 @@
 ** Pizza_test
 */
 
-#include "Pizza.hpp"
 #include <criterion/criterion.h>
+#include "Pizza.hpp"
 
 Test(Ingredient, test01)
 {
@@ -263,4 +263,8 @@ Test(Ingredient, test19)
     j.push_back(k);
     p.ingredients = j;
     cr_assert_throw(i = i - p, std::exception);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> c85deb1 ([+] fix some conflict on merge from main)
