@@ -11,6 +11,6 @@ var classplazza_1_1_reception =
     [ "unpack", "classplazza_1_1_reception.html#a29b2128afd9048572db31c47dcfafb05", null ],
     [ "_cookingTime", "classplazza_1_1_reception.html#a2a1dab5ea2a8bd22e2f2b685df391b51", null ],
     [ "_cookNumber", "classplazza_1_1_reception.html#a793ede760fac53f5d221be826499a1d2", null ],
-    [ "_kitchenMap", "classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624", null ],
+    [ "_kitchenQueues", "classplazza_1_1_reception.html#a186a78ce68db440f88c4243b2752eb1d", null ],
     [ "_refillTime", "classplazza_1_1_reception.html#ad633142b70dff3a2cc1f4cc21ae90447", null ]
 ];

@@ -241,7 +241,7 @@ var NAVTREEINDEX0 =
 "classplazza_1_1_kitchen.html#afaadbf3cf5d181b188be6f1d62a1556e":[1,0,0,6,20],
 "classplazza_1_1_kitchen.html#afb4206c2c981ce9e344c65244bdc64dc":[1,0,0,6,6],
 "classplazza_1_1_reception.html":[1,0,0,8],
-"classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624":[1,0,0,8,11],
+"classplazza_1_1_reception.html#a186a78ce68db440f88c4243b2752eb1d":[1,0,0,8,11],
 "classplazza_1_1_reception.html#a29b2128afd9048572db31c47dcfafb05":[1,0,0,8,8],
 "classplazza_1_1_reception.html#a2a1dab5ea2a8bd22e2f2b685df391b51":[1,0,0,8,9],
 "classplazza_1_1_reception.html#a3f021dd7112c61bfced3477a892a8685":[1,0,0,8,6],
