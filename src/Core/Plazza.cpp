@@ -66,6 +66,14 @@ void Reception::_displayKitchensStatus(void)
         cookAvailable = _isAvailableSlots(message);
         std::cout << "Available cooks: " << cookAvailable << "/" << _cookNumber << std::endl;
         std::cout << "Fridge:" << std::endl;
+        message = message.substr(message.find("fridge"));
+        message = message.substr(message.find(":") + 1);
+        while (!message.empty()) {
+            std::cout << message.substr(0, message.find(","));
+            message = message.substr(message.find(",") + 1);
+            std::cout << ": " << message.substr(0, message.find(";")) << std::endl;
+            message = message.substr(message.find(";") + 1);
+        }
         std::cout << "====================" << std::endl;
     }
 }

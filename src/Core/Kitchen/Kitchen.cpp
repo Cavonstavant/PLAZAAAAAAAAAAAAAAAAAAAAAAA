@@ -18,7 +18,7 @@ using namespace plazza;
 void Kitchen::start()
 {
     _oldTime = std::time(nullptr);
-    _initFridge(*this);
+    _initFridge(this);
     _brigade.emplace_back(std::thread(_receptCook, this));
     for (std::size_t i = 0; i < _nbCooks; ++i)
         _brigade.emplace_back(std::thread(_Cook, this));
@@ -123,6 +123,8 @@ bool Kitchen::_isAvailableCook(std::string &command)
     return (false);
 }
 
+#include <iostream>
+
 void Kitchen::_receptCook(Kitchen *obj)
 {
     while (true) {
@@ -134,8 +136,19 @@ void Kitchen::_receptCook(Kitchen *obj)
             continue;
         }
         if (_isAvailableCook(fullCommand)) {
+            std::cout << "START" << std::endl;
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
-            obj->commandQueue.get()->sendMessage("avail_slots:" + std::to_string(obj->_availCooks));
+            std::string message = "avail_slots:" + std::to_string(obj->_availCooks) + ";fridge:";
+            {
+                std::unique_lock<std::mutex> lock(obj->_fridgeMutex);
+                std::cout << "aziefjgoz" << std::endl;
+                std::cout << obj->_fridge[Tomato].name << std::endl;
+                // message.append(obj->_fridge[Tomato].name);
+                message.append("," + std::to_string(obj->_fridge[Tomato].number) + ";");
+            }
+            std::cout << "END" << std::endl;
+            std::cout << message << std::endl;
+            obj->commandQueue.get()->sendMessage(message);
             continue;
         }
         Pizza toCook = unpack(fullCommand);
@@ -182,7 +195,7 @@ void Kitchen::_Cook(Kitchen *obj)
             obj->_orders.pop();
             obj->_availCooks--;
         }
-        _waitToFillFridge(obj->_refillTime, *obj);
+        _waitToFillFridge(obj->_refillTime, obj);
         cook.cookPizza(order);
         {
             std::unique_lock<std::mutex> lock(obj->_mutex);
@@ -213,32 +226,34 @@ void Kitchen::stop()
     _brigade.clear();
 }
 
-void Kitchen::_fillFridge(const std::size_t &timeToFill, Kitchen &obj)
+void Kitchen::_fillFridge(const std::size_t &timeToFill, Kitchen *obj)
 {
     for (std::size_t x = 0; x < IngredientNumber; ++x) {
-        obj._fridge[x].number += timeToFill;
+        obj->_fridge[x].number += timeToFill;
     }
 }
 
-void Kitchen::_waitToFillFridge(const std::size_t &timeToWait, Kitchen &obj)
+void Kitchen::_waitToFillFridge(const std::size_t &timeToWait, Kitchen *obj)
 {
-    std::unique_lock<std::mutex> lock(obj._fridgeMutex);
+    {
+        std::unique_lock<std::mutex> lock(obj->_fridgeMutex);
 
-    if (std::time(nullptr) - obj._oldTime > timeToWait) {
-        obj._oldTime = std::time(nullptr);
-        _fillFridge(1, obj);
+        if (std::time(nullptr) - obj->_oldTime > timeToWait) {
+            obj->_oldTime = std::time(nullptr);
+            _fillFridge(1, obj);
+        }
     }
 }
 
-void Kitchen::_initFridge(Kitchen &obj)
+void Kitchen::_initFridge(Kitchen *obj)
 {
-    obj._fridge[Tomato].name = "tomato";
-    obj._fridge[Gruyere].name = "gruyere";
-    obj._fridge[Ham].name = "ham";
-    obj._fridge[Mushrooms].name = "mushrooms";
-    obj._fridge[Steak].name = "steak";
-    obj._fridge[Eggplant].name = "eggplant";
-    obj._fridge[GoatCheese].name = "goatCheese";
-    obj._fridge[Doe].name = "doe";
+    obj->_fridge[Tomato].name = "tomato";
+    obj->_fridge[Gruyere].name = "gruyere";
+    obj->_fridge[Ham].name = "ham";
+    obj->_fridge[Mushrooms].name = "mushrooms";
+    obj->_fridge[Steak].name = "steak";
+    obj->_fridge[Eggplant].name = "eggplant";
+    obj->_fridge[GoatCheese].name = "goatCheese";
+    obj->_fridge[Doe].name = "doe";
     _fillFridge(5, obj);
 }

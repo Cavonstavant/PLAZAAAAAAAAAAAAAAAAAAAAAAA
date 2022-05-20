@@ -23,13 +23,13 @@ namespace plazza {
     /// \brief Enumeration for the different ingredients.
     enum Ingredients {
         Tomato = 0,
-        Gruyere,
-        Ham,
-        Mushrooms,
-        Steak,
-        Eggplant,
-        GoatCheese,
-        Doe,
+        Gruyere = 1,
+        Ham = 2,
+        Mushrooms = 3,
+        Steak = 4,
+        Eggplant = 5,
+        GoatCheese = 6,
+        Doe = 7,
         IngredientNumber = 8
     };
 
@@ -82,14 +82,14 @@ namespace plazza {
             static void _Cook(Kitchen *obj);
 
             /// \brief Init the fridge at the Kitchen Creation
-            static void _initFridge(Kitchen &obj);
+            static void _initFridge(Kitchen *obj);
 
             /// \brief fill the ingredients of the fridge 1 x timeToFill
             /// \param timeToFill number of time to fill the fridge
-            static void _fillFridge(const std::size_t &timeToFill, Kitchen &obj);
+            static void _fillFridge(const std::size_t &timeToFill, Kitchen *obj);
 
             /// \brief check every timeToWait to fill the fridge
-            static void _waitToFillFridge(const std::size_t &timeToWait, Kitchen &obj);
+            static void _waitToFillFridge(const std::size_t &timeToWait, Kitchen *obj);
 
             /// \brief The kitchen brigade regrouping all the cooks
             std::vector<std::thread> _brigade;
