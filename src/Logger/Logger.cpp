@@ -66,11 +66,11 @@ PlazzaException Logger::log(PlazzaException ex, Severity severity)
     try {
         ss << "[LOGGER:" << severityString << "] " << ex.getName() << " >> " << ex.what() << std::endl;
         ss << ">> " << ex.getFunc() << " (" << ex.getFile() << ":" << ex.getLine() << ")" << std::endl;
-        ofLog.open("Plazza.log", std::ios::app);
+        ofLog.open("log/ExceptPlazza.log", std::ios::app);
         ofLog << ss.str() << std::endl;
         ofLog.close();
     } catch (std::exception &e) {
-        std::cerr << "Logging into 'Plazza.log' file failed (" << e.what() << ")" << std::endl;
+        std::cerr << "Logging into 'log/ExceptPlazza.log' file failed (" << e.what() << ")" << std::endl;
     }
     return ex;
 }
