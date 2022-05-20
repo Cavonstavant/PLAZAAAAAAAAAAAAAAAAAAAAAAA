@@ -112,9 +112,6 @@ void Kitchen::getIngredientsFromPizzaType(Pizza &toCook, PizzaType type)
             ingredient.name = "goatCheese";
             ingredient.number = 1;
             toCook.ingredients.push_back(ingredient);
-            ingredient.name = "chiefLove";
-            ingredient.number = 1;
-            toCook.ingredients.push_back(ingredient);
             break;
     }
 }
@@ -208,7 +205,6 @@ void Kitchen::_initFridge(Kitchen &obj)
     obj._fridge[Steak].name = "steak";
     obj._fridge[Eggplant].name = "eggplant";
     obj._fridge[GoatCheese].name = "goatCheese";
-    obj._fridge[ChiefLove].name = "chiefLove";
     obj._fridge[Doe].name = "doe";
     _fillFridge(5, obj);
 }
