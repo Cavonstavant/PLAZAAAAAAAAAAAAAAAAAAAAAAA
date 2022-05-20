@@ -14,5 +14,5 @@ target_include_directories(${PROJECT_NAME}_cook
 )
 
 target_link_libraries(${PROJECT_NAME}_cook
-    PRIVATE ${PROJECT_NAME}_pizza
+    PUBLIC ${PROJECT_NAME}_pizza
 )
