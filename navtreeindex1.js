@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"classplazza_1_1_reception.html#a806f3e116779e70568d48931a765b6fd":[1,0,0,8,4],
 "classplazza_1_1_reception.html#aaf9213d113caa6887a2ab6cf6cae84dd":[1,0,0,8,5],
 "classplazza_1_1_reception.html#ab30fd98e6a6f7ed242eec12cb829e494":[1,0,0,8,0],
 "classplazza_1_1_reception.html#ab7c952a340a547b8cb6fadea4f14669a":[1,0,0,8,3],
@@ -31,8 +32,8 @@ var NAVTREEINDEX1 =
 "namespacemembers.html":[0,1,0],
 "namespacemembers_enum.html":[0,1,1],
 "namespacemembers_eval.html":[0,1,2],
-"namespaceplazza.html":[0,0,0],
 "namespaceplazza.html":[1,0,0],
+"namespaceplazza.html":[0,0,0],
 "namespaces.html":[0,0],
 "pages.html":[],
 "structplazza_1_1_ingredient.html":[1,0,0,3],
