@@ -45,10 +45,19 @@ bool Reception::_handleInput(const std::string &input)
 
 void Reception::_sendCommand(const InputParser &command)
 {
+    std::vector<Pizza> pizzaToCook = command.getPizza();
+
+    if (pizzaToCook.size() == 0)
+        return;
+    if (_kitchenMap.size() == 9) {
+        MessageQueueEx("You can not open more than 9 Kitchens", Logger::MEDIUM);
+        return;
+    }
+
     Kitchen newKitchen(_cookNumber, _refillTime, _cookingTime);
     std::shared_ptr<MessageQueue> newQueue = std::make_shared<MessageQueue>();
 
-    newQueue.get()->openQueue(std::string("/plazzaQueueNumber" + _kitchenQueues.size()));
+    newQueue.get()->openQueue(std::string("/plazzaQueueNumber" + std::to_string(_kitchenMap.size())));
 
     pid_t newKitchenPid = fork();
 
@@ -57,9 +66,7 @@ void Reception::_sendCommand(const InputParser &command)
         newKitchen.start();
         newKitchen.stop();
     } else {
-        std::vector<Pizza> pizzaToCook = command.getPizza();
-
-        _kitchenQueues[newKitchenPid] = newQueue;
+        _kitchenMap[newKitchenPid] = newQueue;
 
         for (std::size_t x = 0; x < pizzaToCook.size(); ++x) {
             std::this_thread::sleep_for(std::chrono::milliseconds(10));

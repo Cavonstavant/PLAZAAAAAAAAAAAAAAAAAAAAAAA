@@ -50,7 +50,7 @@ namespace plazza {
             /// \brief Create a kitchen if necessary, and send the command to the child process
             void _sendCommand(const InputParser &command);
             /// \brief Map of the different child process, with the linked queues
-            std::map<pid_t, std::shared_ptr<MessageQueue>> _kitchenQueues;
+            std::map<pid_t, std::shared_ptr<MessageQueue>> _kitchenMap;
             /// \brief Store the cookingTime
             size_t _cookingTime;
             /// \brief Store the cookNumber
