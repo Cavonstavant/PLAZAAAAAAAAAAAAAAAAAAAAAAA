@@ -9,7 +9,6 @@
 
 #include "Cook.hpp"
 #include "PizzaLogger.hpp"
-#include <iostream>
 #include <thread>
 #include <unistd.h>
 
