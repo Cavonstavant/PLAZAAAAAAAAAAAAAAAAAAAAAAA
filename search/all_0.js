@@ -22,7 +22,7 @@ var searchData=
   ['_5fisvalidpizzanumber_19',['_isValidPizzaNumber',['../classplazza_1_1_input_parser.html#a66707cf056bfe55c40055173c9a0858a',1,'plazza::InputParser']]],
   ['_5fisvalidpizzaseparator_20',['_isValidPizzaSeparator',['../classplazza_1_1_input_parser.html#a0d672fc92c861f6c4c252870c8598fae',1,'plazza::InputParser']]],
   ['_5fisvalidpizzasize_21',['_isValidPizzaSize',['../classplazza_1_1_input_parser.html#a02461cb5be366fd0fb4b3539aa38461b',1,'plazza::InputParser']]],
-  ['_5fkitchenqueues_22',['_kitchenQueues',['../classplazza_1_1_reception.html#a186a78ce68db440f88c4243b2752eb1d',1,'plazza::Reception']]],
+  ['_5fkitchenmap_22',['_kitchenMap',['../classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624',1,'plazza::Reception']]],
   ['_5fline_23',['_line',['../class_plazza_exception.html#aebd77a2d1f95d0fff8928dea5e6efe54',1,'PlazzaException']]],
   ['_5fmultiplier_24',['_multiplier',['../classplazza_1_1_cook.html#a19c28f33b0d983cf8209696968abef06',1,'plazza::Cook']]],
   ['_5fmutex_25',['_mutex',['../classplazza_1_1_kitchen.html#a5b8df57076e63196c909744014a0d794',1,'plazza::Kitchen']]],

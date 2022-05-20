@@ -9,7 +9,7 @@ var searchData=
   ['_5ffile_340',['_file',['../class_plazza_exception.html#ab16a1175c56ad65feac8cb94286de6d9',1,'PlazzaException']]],
   ['_5ffridge_341',['_fridge',['../classplazza_1_1_kitchen.html#a22842032e863063242e7e78abbf9b3d9',1,'plazza::Kitchen']]],
   ['_5ffunc_342',['_func',['../class_plazza_exception.html#a9256b5f8b90dd1d2cc754ea971067fad',1,'PlazzaException']]],
-  ['_5fkitchenqueues_343',['_kitchenQueues',['../classplazza_1_1_reception.html#a186a78ce68db440f88c4243b2752eb1d',1,'plazza::Reception']]],
+  ['_5fkitchenmap_343',['_kitchenMap',['../classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624',1,'plazza::Reception']]],
   ['_5fline_344',['_line',['../class_plazza_exception.html#aebd77a2d1f95d0fff8928dea5e6efe54',1,'PlazzaException']]],
   ['_5fmultiplier_345',['_multiplier',['../classplazza_1_1_cook.html#a19c28f33b0d983cf8209696968abef06',1,'plazza::Cook']]],
   ['_5fmutex_346',['_mutex',['../classplazza_1_1_kitchen.html#a5b8df57076e63196c909744014a0d794',1,'plazza::Kitchen']]],
