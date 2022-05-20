@@ -15,7 +15,7 @@ var classplazza_1_1_kitchen =
     [ "start", "classplazza_1_1_kitchen.html#ab6afa23613acf5e0680d8e5177f887f3", null ],
     [ "stop", "classplazza_1_1_kitchen.html#ae8e60ab81e8b36f69b44365d58042f99", null ],
     [ "_brigade", "classplazza_1_1_kitchen.html#a1d701203be1eead9d7c4072e8d5b6e58", null ],
-    [ "_cookingTime", "classplazza_1_1_kitchen.html#a6ba06d8974ce66d7ace31ae66d42eb3d", null ],
+    [ "_cookingTime", "classplazza_1_1_kitchen.html#a85462570d3da1354b9d810ad9304691d", null ],
     [ "_fridge", "classplazza_1_1_kitchen.html#a22842032e863063242e7e78abbf9b3d9", null ],
     [ "_mutex", "classplazza_1_1_kitchen.html#a5b8df57076e63196c909744014a0d794", null ],
     [ "_nbCooks", "classplazza_1_1_kitchen.html#a67c93d0d471f721b6e184bb2bbf86437", null ],

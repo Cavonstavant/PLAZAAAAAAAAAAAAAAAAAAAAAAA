@@ -1,5 +1,9 @@
 var NAVTREEINDEX1 =
 {
+"classplazza_1_1_reception.html#ab30fd98e6a6f7ed242eec12cb829e494":[1,0,0,8,0],
+"classplazza_1_1_reception.html#ab7c952a340a547b8cb6fadea4f14669a":[1,0,0,8,3],
+"classplazza_1_1_reception.html#ad633142b70dff3a2cc1f4cc21ae90447":[1,0,0,8,12],
+"dir_0f6d8182e806e437aa178d07e21b4f1b.html":[2,0,0,0,2,0],
 "dir_68267d1309a1af8e8297ef4c3efbcdba.html":[2,0,0],
 "dir_8f0b3f7980e34df6ffa966aa02879872.html":[2,0,0,0,2],
 "dir_a2f0e5642e47e7ed59fe0f0829eafb5f.html":[2,0,0,0],
