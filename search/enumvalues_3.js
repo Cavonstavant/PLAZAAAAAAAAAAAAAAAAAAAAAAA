@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['eggplant_378',['Eggplant',['../namespaceplazza.html#a8e7ea4dc8410183b3d67d9467938a88daa964b5c862ec055d7f0493e4d9fbe42f',1,'plazza']]]
+  ['fantasia_377',['Fantasia',['../namespaceplazza.html#a3df93b5bf8fa865c6f1251078950734ca9ad0cad5cc44aa8b718efad5232ce471',1,'plazza']]]
 ];

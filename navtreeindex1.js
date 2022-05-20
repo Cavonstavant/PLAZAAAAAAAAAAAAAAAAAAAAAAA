@@ -1,6 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"classplazza_1_1_reception.html#a7f3293c467547f02d1cfb0d9de546f3f":[1,0,0,8,3],
 "classplazza_1_1_reception.html#a806f3e116779e70568d48931a765b6fd":[1,0,0,8,5],
 "classplazza_1_1_reception.html#aaf9213d113caa6887a2ab6cf6cae84dd":[1,0,0,8,6],
 "classplazza_1_1_reception.html#ab30fd98e6a6f7ed242eec12cb829e494":[1,0,0,8,0],

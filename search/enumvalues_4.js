@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['fantasia_379',['Fantasia',['../namespaceplazza.html#a3df93b5bf8fa865c6f1251078950734ca9ad0cad5cc44aa8b718efad5232ce471',1,'plazza']]]
+  ['goatcheese_378',['GoatCheese',['../namespaceplazza.html#a8e7ea4dc8410183b3d67d9467938a88dade747cb5319cc11d7d7f6db71c46e653',1,'plazza']]],
+  ['gruyere_379',['Gruyere',['../namespaceplazza.html#a8e7ea4dc8410183b3d67d9467938a88daeb7eb35062911abff1faf350541e9dce',1,'plazza']]]
 ];
