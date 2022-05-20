@@ -14,6 +14,11 @@
 #include <unistd.h>
 #include <utility>
 
+extern "C" {
+    #include <sys/types.h>
+    #include <signal.h>
+}
+
 using namespace plazza;
 
 Reception::Reception(size_t cookingTime, size_t cookNumber, size_t refillTime)
@@ -103,6 +108,13 @@ Pizza Reception::unpack(const std::string &order)
     return (pizza);
 }
 
+void Reception::_cleanKitchens(void)
+{
+    for (auto x = _kitchenMap.begin(); x != _kitchenMap.end(); ++x) {
+        kill(x->first, SIGTERM);
+    }
+}
+
 void Reception::run()
 {
     std::string input;
@@ -123,4 +135,5 @@ void Reception::run()
             }
         }
     }
+    _cleanKitchens();
 }

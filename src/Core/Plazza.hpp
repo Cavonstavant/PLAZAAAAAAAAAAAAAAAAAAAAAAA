@@ -42,6 +42,8 @@ namespace plazza {
             void run();
 
         private:
+            /// \brief Close the Kitchens Queues and send a kill signal
+            void _cleanKitchens(void);
             /// \brief Display all of the kitchens current status
             void _displayKitchensStatus(void);
             /// \brief Handle the receive input
