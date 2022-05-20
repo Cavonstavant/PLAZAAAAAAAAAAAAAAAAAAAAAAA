@@ -40,7 +40,7 @@ namespace plazza {
             Kitchen() = delete;
 
             /// \brief Creating a Kitchen with a specified number of cooks
-            explicit Kitchen(unsigned long nbCooks, unsigned long refillTime, unsigned long cookingTime) : _nbCooks(nbCooks), _refillTime(refillTime), _cookingTime(cookingTime), _stopKitchen(false), _fridge(IngredientNumber){};
+            explicit Kitchen(unsigned long nbCooks, unsigned long refillTime, float cookingTime) : _nbCooks(nbCooks), _refillTime(refillTime), _cookingTime(cookingTime), _stopKitchen(false), _fridge(IngredientNumber){};
 
             /// \brief Destructor
             ~Kitchen() = default;
@@ -111,7 +111,10 @@ namespace plazza {
             /// \brief The time to wait before fill the fridge
             unsigned long _refillTime;
 
-            unsigned int _cookingTime;
+            /// \brief The multiplier for the cooking Time
+            float _cookingTime;
+
+            /// \brief Store the old time to refill the fridge
             unsigned long _oldTime;
 
             /// \brief The flag used to stop the kitchen
