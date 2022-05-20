@@ -97,6 +97,9 @@ namespace plazza {
             /// \brief The mutex used to protect the kitchen ingredients
             std::mutex _mutex;
 
+            /// \brief The mutex used to protect the refill of the kitchen ingredients
+            std::mutex _fridgeMutex;
+
             /// \brief The condition variable used to notify the cooks that there is an order
             std::condition_variable order_condition;
 
