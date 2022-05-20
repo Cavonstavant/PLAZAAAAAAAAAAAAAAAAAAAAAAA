@@ -33,6 +33,10 @@ namespace plazza {
             /// \brief Set a pizza to be cook.
             /// \param Pizza The pizza to be cook.
             void cookPizza(Pizza pizza);
+            /// \brief Pack a pizza to a std::string.
+            /// \param const Pizza &The pizza to be pack.
+            /// \return std::string The pizza pack.
+            std::string pack(const Pizza &);
 
         private:
             /// \brief Set the cooking time depending of the pizza to be cook.
