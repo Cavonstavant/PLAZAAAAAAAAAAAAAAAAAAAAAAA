@@ -27,7 +27,7 @@ namespace plazza {
             /// \param cookingTime needs to be get of an ArgumentsParser Object with getCookingTime() method
             /// \param cookNumber needs to be get of an ArgumentsParser Object with getCookNumber() method
             /// \param refillTime needs to be get of an ArgumentsParser Object with getRefillTime() method
-            Reception(size_t cookingTime, size_t cookNumber, size_t refillTime);
+            Reception(float cookingTime, size_t cookNumber, size_t refillTime);
             /// \brief Default Constructor of the Reception
             ~Reception() = default;
             /// \brief Pack a Pizza in std::string.
@@ -54,7 +54,7 @@ namespace plazza {
             /// \brief Map of the different child process, with the linked queues
             std::map<pid_t, std::shared_ptr<MessageQueue>> _kitchenMap;
             /// \brief Store the cookingTime
-            size_t _cookingTime;
+            float _cookingTime;
             /// \brief Store the cookNumber
             size_t _cookNumber;
             /// \brief Store the refillTime

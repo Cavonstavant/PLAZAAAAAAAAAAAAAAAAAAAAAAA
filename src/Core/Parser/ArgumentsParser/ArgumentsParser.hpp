@@ -26,7 +26,7 @@ namespace plazza {
             ~ArgumentsParser() = default;
             /// \brief Get the cooking Time for the Plazza
             /// \return const size_t &, the cooking time
-            inline const size_t &getCookingTime(void) const
+            inline const float &getCookingTime(void) const
             {
                 return _cookingTime;
             };
@@ -48,7 +48,7 @@ namespace plazza {
         private:
             /// \brief Set a new cooking Time with the given parameter
             /// \param newCookingTime the new cooking time to be set
-            inline void _setCookingTime(size_t newCookingTime)
+            inline void _setCookingTime(float newCookingTime)
             {
                 _cookingTime = newCookingTime;
             };
@@ -68,7 +68,7 @@ namespace plazza {
             /// \brief Store the cook Number after processArguments() method is called
             size_t _cookNumber;
             /// \brief Store the cooking Time after processArguments() method is called
-            size_t _cookingTime;
+            float _cookingTime;
             /// \brief Store the refill Time after processArguments() method is called
             size_t _refillTimeMs;
     };
