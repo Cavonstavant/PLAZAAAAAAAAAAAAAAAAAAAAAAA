@@ -141,13 +141,10 @@ void Kitchen::_receptCook(Kitchen *obj)
             std::string message = "avail_slots:" + std::to_string(obj->_availCooks) + ";fridge:";
             {
                 std::unique_lock<std::mutex> lock(obj->_fridgeMutex);
-                std::cout << "aziefjgoz" << std::endl;
                 std::cout << obj->_fridge[Tomato].name << std::endl;
-                // message.append(obj->_fridge[Tomato].name);
                 message.append("," + std::to_string(obj->_fridge[Tomato].number) + ";");
             }
             std::cout << "END" << std::endl;
-            std::cout << message << std::endl;
             obj->commandQueue.get()->sendMessage(message);
             continue;
         }
@@ -228,8 +225,8 @@ void Kitchen::stop()
 
 void Kitchen::_fillFridge(const std::size_t &timeToFill, Kitchen *obj)
 {
-    for (std::size_t x = 0; x < IngredientNumber; ++x) {
-        obj->_fridge[x].number += timeToFill;
+    for (auto &ingredient: obj->_fridge) {
+        ingredient.number += timeToFill;
     }
 }
 
