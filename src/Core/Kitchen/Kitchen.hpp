@@ -110,11 +110,8 @@ public:
     /// \brief The time to wait before fill the fridge
     unsigned long _refillTime;
 
-            /// \brief The multiplier for the cooking Time
-            unsigned long _cookingTime;
-
-            /// \brief Store the oldTime to fill
-            unsigned long _oldTime;
+            /// \brief Store the refill time
+            unsigned long _refillTime;
 
     /// \brief The flag used to stop the kitchen
     bool _stopKitchen;
