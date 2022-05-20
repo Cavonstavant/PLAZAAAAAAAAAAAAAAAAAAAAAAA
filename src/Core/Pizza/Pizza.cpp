@@ -62,13 +62,15 @@ Ingredient &Ingredient::operator-=(std::size_t &nbr)
 
 std::vector<Ingredient> &operator-(std::vector<Ingredient> &lo, std::vector<Ingredient> &ro)
 {
-    std::vector<Ingredient> tmp = lo;
-
+    std::vector<Ingredient> tmp(9);
+    for (size_t i = 1; i < 9; i++) {
+        tmp[i] = lo[i];
+    }
     for (std::size_t i = 0; i < tmp.size(); i++) {
         for (std::size_t j = 0; j < ro.size(); j++) {
             if (tmp[i].name == ro[j].name) {
                 try {
-                    tmp[i] -= ro[i];
+                    tmp[i] -= ro[i].number;
                 } catch (PlazzaException &e) {
                     std::cerr << e.what() << std::endl;
                     throw PlazzaEX("There is not enought ingredient in the vector.", Logger::LOW);
@@ -76,7 +78,9 @@ std::vector<Ingredient> &operator-(std::vector<Ingredient> &lo, std::vector<Ingr
             }
         }
     }
-    lo = tmp;
+    for (size_t i = 1; i < 9; i++) {
+        lo[i] = tmp[i];
+    }
     return (lo);
 }
 

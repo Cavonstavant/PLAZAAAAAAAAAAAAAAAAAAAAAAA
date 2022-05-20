@@ -31,23 +31,50 @@ std::string Cook::pack(const Pizza &pizza)
 {
     std::string order = "";
 
-    order.append("name:");
-    order.append(std::to_string(pizza.type));
-    order.append(";size:");
-    order.append(std::to_string(pizza.size));
-    order.append(";amount:");
-    order.append(std::to_string(pizza.number));
-    order.append("\n");
+    switch (pizza.type) {
+        case Regina:
+            order.append("regina");
+            break;
+        case Americana:
+            order.append("americana");
+            break;
+        case Fantasia:
+            order.append("fantasia");
+            break;
+        case Margarita:
+            order.append("margarita");
+            break;
+    }
+    order.append(" of size ");
+    switch (pizza.size) {
+        case S:
+            order.append("S");
+            break;
+        case M:
+            order.append("M");
+            break;
+        case L:
+            order.append("L");
+            break;
+        case XL:
+            order.append("XL");
+            break;
+        case XXL:
+            order.append("XXL");
+            break;
+    }
     return (order);
 }
 
 void Cook::cookPizza(Pizza pizza)
 {
-    PizzaLogger::logPizza(pack(pizza), PizzaLogger::Action::ACTION_COOKING_STARTED);
+    std::string p = pack(pizza);
+
+    PizzaLogger::logPizza(p, PizzaLogger::Action::ACTION_COOKING_STARTED);
     _pizza = pizza;
     _setCookingTime();
     sleep(_cookingTime);
-    PizzaLogger::logPizza(pack(pizza), PizzaLogger::Action::ACTION_COOKING_FINISHED);
+    PizzaLogger::logPizza(p, PizzaLogger::Action::ACTION_COOKING_FINISHED);
 }
 
 void Cook::setCookingTimeMultipiler(std::size_t multiplier)

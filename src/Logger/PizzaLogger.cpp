@@ -33,10 +33,10 @@ void PizzaLogger::logPizza(std::string const &pizza, Action action)
 {
     std::ofstream pizzaOf;
     std::stringstream ss;
-    std::cout << pizza << ": " << getActionString(action) << std::endl;
+    std::cout << pizza << "\t|\t " << getActionString(action) << std::endl;
 
     try {
-        ss << pizza << ": " << getActionString(action) << std::endl;
+        ss << pizza << "\t|\t " << getActionString(action) << std::endl;
         pizzaOf.open("OrderBacklog.log", std::ios::app);
         pizzaOf << ss.str();
         pizzaOf.close();
