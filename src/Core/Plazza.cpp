@@ -59,7 +59,6 @@ void Reception::_displayKitchensStatus(void)
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
         message = it.second.get()->receiveMessage();
         while (_isAvailableSlots(message) < 0) {
-            std::cout << "\t\t" << message << std::endl;
             it.second.get()->sendMessage(message);
             std::this_thread::sleep_for(std::chrono::milliseconds(100));
             message = it.second.get()->receiveMessage();
