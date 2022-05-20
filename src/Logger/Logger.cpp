@@ -18,36 +18,36 @@
 static std::string getSeverityColor(Logger::Severity severity)
 {
     switch (severity) {
-        case Logger::SEVERITY_LOW:
-            return LOGGER_COLOR_GREEN;
-        case Logger::SEVERITY_MEDIUM:
-            return LOGGER_COLOR_YELLOW;
-        case Logger::SEVERITY_HIGH:
-            return LOGGER_COLOR_RED;
-        case Logger::SEVERITY_CRITICAL:
-            return LOGGER_COLOR_PURPLE;
-        case Logger::SEVERITY_INFO:
-            return LOGGER_COLOR_CYAN;
-        default:
-            return LOGGER_COLOR_RESET;
+    case Logger::SEVERITY_LOW:
+        return LOGGER_COLOR_GREEN;
+    case Logger::SEVERITY_MEDIUM:
+        return LOGGER_COLOR_YELLOW;
+    case Logger::SEVERITY_HIGH:
+        return LOGGER_COLOR_RED;
+    case Logger::SEVERITY_CRITICAL:
+        return LOGGER_COLOR_PURPLE;
+    case Logger::SEVERITY_INFO:
+        return LOGGER_COLOR_CYAN;
+    default:
+        return LOGGER_COLOR_RESET;
     }
 }
 
 static std::string getSeverityString(Logger::Severity severity)
 {
     switch (severity) {
-        case Logger::Severity::SEVERITY_LOW:
-            return "LOW";
-        case Logger::Severity::SEVERITY_MEDIUM:
-            return "MEDIUM";
-        case Logger::Severity::SEVERITY_HIGH:
-            return "HIGH";
-        case Logger::Severity::SEVERITY_CRITICAL:
-            return "CRITICAL";
-        case Logger::Severity::SEVERITY_INFO:
-            return "INFO";
-        default:
-            return "MEDIUM";
+    case Logger::Severity::SEVERITY_LOW:
+        return "LOW";
+    case Logger::Severity::SEVERITY_MEDIUM:
+        return "MEDIUM";
+    case Logger::Severity::SEVERITY_HIGH:
+        return "HIGH";
+    case Logger::Severity::SEVERITY_CRITICAL:
+        return "CRITICAL";
+    case Logger::Severity::SEVERITY_INFO:
+        return "INFO";
+    default:
+        return "MEDIUM";
     }
 }
 
