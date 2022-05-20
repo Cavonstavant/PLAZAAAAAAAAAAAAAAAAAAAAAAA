@@ -123,13 +123,20 @@ bool Kitchen::_isAvailableCook(std::string &command)
     return (false);
 }
 
+#include <iostream>
+
 void Kitchen::_receptCook(Kitchen *obj)
 {
     while (true) {
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
         std::string fullCommand = obj->commandQueue.get()->receiveMessage();
 
+        if (fullCommand.find("avail_slots:") == 0) {
+            obj->commandQueue.get()->sendMessage(fullCommand);
+            continue;
+        }
         if (_isAvailableCook(fullCommand)) {
+            std::this_thread::sleep_for(std::chrono::milliseconds(10));
             obj->commandQueue.get()->sendMessage("avail_slots:" + std::to_string(obj->_availCooks));
             continue;
         }

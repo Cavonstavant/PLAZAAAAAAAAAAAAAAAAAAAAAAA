@@ -29,7 +29,7 @@ Reception::Reception(float cookingTime, size_t cookNumber, size_t refillTime)
 
 int Reception::_isAvailableSlots(std::string message)
 {
-    std::size_t slots = 0;
+    int slots = 0;
 
     if (message.find("avail_slots:") == 0) {
         message = message.substr(message.find(":") + 1);
@@ -59,7 +59,9 @@ void Reception::_displayKitchensStatus(void)
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
         message = it.second.get()->receiveMessage();
         while (_isAvailableSlots(message) < 0) {
+            std::cout << "\t\t" << message << std::endl;
             it.second.get()->sendMessage(message);
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
             message = it.second.get()->receiveMessage();
         }
         cookAvailable = _isAvailableSlots(message);

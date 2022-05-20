@@ -10,6 +10,8 @@
 #include "Cook.hpp"
 #include <thread>
 #include <unistd.h>
+#include "PizzaLogger.hpp"
+#include <iostream>
 
 using namespace plazza;
 
@@ -42,10 +44,11 @@ std::string Cook::pack(const Pizza &pizza)
 
 void Cook::cookPizza(Pizza pizza)
 {
+    PizzaLogger::logPizza(pack(pizza), PizzaLogger::Action::ACTION_COOKING_STARTED);
     _pizza = pizza;
     _setCookingTime();
     sleep(_cookingTime);
-    PlazzaEX(pack(pizza), Logger::INFO);
+    PizzaLogger::logPizza(pack(pizza), PizzaLogger::Action::ACTION_COOKING_FINISHED);
 }
 
 void Cook::setCookingTimeMultipiler(std::size_t multiplier)
