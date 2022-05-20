@@ -13,15 +13,16 @@
 #include <iostream>
 <<<<<<< HEAD
 #include <unistd.h>
-#include <utility>
+    #include <utility>
 
-extern "C" {
-    =======
-        >>>>>>> c7b04d96e035f908a8d70c6e55a714ce63f74a6d
-#include <unistd.h>
-#include <utility>
+extern "C"
+{
+    == == == =
+                     >>>>>>> c7b04d96e035f908a8d70c6e55a714ce63f74a6d
+    #include <unistd.h>
+    #include <utility>
 
-        using namespace plazza;
+                     using namespace plazza;
 
     Reception::Reception(size_t cookingTime, size_t cookNumber, size_t refillTime)
     {
