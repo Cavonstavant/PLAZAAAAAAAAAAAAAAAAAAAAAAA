@@ -76,8 +76,9 @@ namespace plazza {
             /// \param toCook the Pizza to be filled with ingredients
             /// \param type the type of the Pizza
             static void getIngredientsFromPizzaType(Pizza &toCook, PizzaType type);
-
+            static Pizza unpack(const std::string &order);
         private:
+            static bool _isAvailableCook(std::string &);
             /// \brief Main function for the Blocking thread on the message queue, getting the command and give it in the job queue
             static void _receptCook(Kitchen *obj);
 
@@ -111,7 +112,7 @@ namespace plazza {
 
             /// \brief The number of cooks in the kitchen
             unsigned long _nbCooks;
-
+            unsigned long _availCooks;
             /// \brief The time to wait before fill the fridge
             unsigned long _refillTime;
 

@@ -54,6 +54,7 @@ namespace plazza {
             /// \brief return true or false wether there is a need to create a new kitchen
             bool _isNewKitchenNeeded(int pizzaAmt);
 
+            int _isAvailableSlots(std::string);
             /// \brief Display all of the kitchens current status
             void _displayKitchensStatus(void);
 

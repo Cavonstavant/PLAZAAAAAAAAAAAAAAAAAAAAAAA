@@ -15,6 +15,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <utility>
+#include <tuple>
 
 using namespace plazza;
 
@@ -26,9 +27,46 @@ Reception::Reception(float cookingTime, size_t cookNumber, size_t refillTime)
     _availSlotsTotal = 0;
 }
 
+int Reception::_isAvailableSlots(std::string message)
+{
+    std::size_t slots = 0;
+
+    if (message.find("avail_slots:") == 0) {
+        message = message.substr(message.find(":") + 1);
+        try {
+            slots = std::stoi(message);
+        } catch (std::exception &e) {
+            std::cerr << "Error:" << e.what() << std::endl;
+            return (-1);
+        }
+    } else
+        return (-1);
+    return (slots);
+}
+
 void Reception::_displayKitchensStatus(void)
 {
-    std::cout << "Status command not implemented yet." << std::endl;
+    pid_t pid;
+    int cookAvailable = 0;
+    std::string message;
+
+    std::cout << "Available Kitchen: " << _kitchenMap.size() << std::endl;
+    for (auto it : _kitchenMap) {
+        std::cout << "====================" << std::endl;
+        pid = it.first;
+        std::cout << "Kitchen PID: " << (int)pid << std::endl;
+        it.second.get()->sendMessage("avail_slots?");
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        message = it.second.get()->receiveMessage();
+        while (_isAvailableSlots(message) < 0) {
+            it.second.get()->sendMessage(message);
+            message = it.second.get()->receiveMessage();
+        }
+        cookAvailable = _isAvailableSlots(message);
+        std::cout << "Available cooks: " << cookAvailable << "/" << _cookNumber << std::endl;
+        std::cout << "Fridge:" << std::endl;
+        std::cout << "====================" << std::endl;
+    }
 }
 
 bool Reception::_handleInput(const std::string &input)
