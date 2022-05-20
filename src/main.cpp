@@ -7,6 +7,7 @@
 
 #include "ArgumentsParser.hpp"
 #include "Exception.hpp"
+#include "Logger/Logger.hpp"
 #include "Plazza.hpp"
 #include <iostream>
 #include <string>
@@ -24,6 +25,5 @@ int main(int ac, char **av)
     plazza::Reception reception(args.getCookingTime(), args.getCookNumber(), args.getRefillTime());
 
     reception.run();
-
     return 0;
 }
