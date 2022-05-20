@@ -23,14 +23,14 @@ namespace plazza {
     /// \brief Enumeration for the different ingredients.
     enum Ingredients {
         Tomato = 1,
-        Gruyere = 2,
-        Ham = 3,
-        Mushrooms = 4,
-        Steak = 5,
-        Eggplant = 6,
-        GoatCheese = 7,
-        Doe = 8,
-        IngredientNumber = 9
+        Gruyere,
+        Ham,
+        Mushrooms,
+        Steak,
+        Eggplant,
+        GoatCheese,
+        Doe,
+        IngredientNumber
     };
 
     /// \brief The class used to manage all the cooks and the orders.
@@ -75,9 +75,17 @@ namespace plazza {
             /// \param toCook the Pizza to be filled with ingredients
             /// \param type the type of the Pizza
             static void getIngredientsFromPizzaType(Pizza &toCook, PizzaType type);
+            /// \brief Unpack std::string in Pizza.
+            /// \param std::string to be unpack.
+            /// \return Pizza unpacked.
             static Pizza unpack(const std::string &order);
+
         private:
+            /// \brief Check if the command ask for available cook ("avail_cooks ?")
+            /// \param std::string & The command to be check
+            /// \return bool True if it is the correct command, false otherwise
             static bool _isAvailableCook(std::string &);
+
             /// \brief Main function for the Blocking thread on the message queue, getting the command and give it in the job queue
             static void _receptCook(Kitchen *obj);
 
@@ -111,7 +119,10 @@ namespace plazza {
 
             /// \brief The number of cooks in the kitchen
             unsigned long _nbCooks;
+
+            /// \brief The number of available cooks
             unsigned long _availCooks;
+
             /// \brief The time to wait before fill the fridge
             unsigned long _refillTime;
 
@@ -123,7 +134,6 @@ namespace plazza {
 
             /// \brief The flag used to stop the kitchen
             bool _stopKitchen;
-
 
             /// \brief The kitchen fridge, containing all of the ingredients
             std::vector<Ingredient> _fridge;
