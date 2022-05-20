@@ -112,7 +112,10 @@ namespace plazza {
             /// \brief The time to wait before fill the fridge
             unsigned long _refillTime;
 
-            unsigned int _cookingTime;
+            /// \brief The multiplier for the cooking Time
+            float _cookingTime;
+
+            /// \brief Store the old time to refill the fridge
             unsigned long _oldTime;
 
             /// \brief The flag used to stop the kitchen

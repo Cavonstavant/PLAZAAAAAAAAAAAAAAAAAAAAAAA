@@ -19,7 +19,7 @@
 
 using namespace plazza;
 
-Reception::Reception(size_t cookingTime, size_t cookNumber, size_t refillTime)
+Reception::Reception(float cookingTime, size_t cookNumber, size_t refillTime)
 {
     _cookingTime = cookingTime;
     _cookNumber = cookNumber;

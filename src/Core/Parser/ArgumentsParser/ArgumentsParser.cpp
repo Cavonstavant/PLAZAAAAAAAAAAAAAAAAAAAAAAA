@@ -27,26 +27,32 @@ void ArgumentsParser::processArguments()
     if (_argumentNumber != 3) {
         throw InvalidNbrArgumentsEX("You need 3 arguments.\n", Logger::CRITICAL);
     }
-    for (size_t x = _arguments.size() - 1; x > 0; --x) {
+    for (size_t x = 0; x < _arguments.size(); ++x) {
 
-        size_t value = 0;
-        try {
-            value = std::stoi(_arguments[x]);
-        } catch (...) {
-            throw InvalidIntCastEX("One of the arguments isn't a int", Logger::CRITICAL);
-        }
-        switch (x) {
-            case 2:
-                _setRefillTime(value);
-                break;
-            case 1:
+        if (x == 0) {
+            float value = 0.0;
+            try {
+                value = std::stof(_arguments[x]);
+            } catch (...) {
+                throw InvalidIntCastEX("Multiplier time isn't a float", Logger::CRITICAL);
+            }
+            if (value < 0.1)
+                throw InvalidIntCastEX("Multiplier time isn't a positive float", Logger::CRITICAL);
+            _setCookingTime(value);
+        } else {
+            size_t value = 0;
+
+            try {
+                value = std::stoi(_arguments[x]);
+            } catch (...) {
+                throw InvalidIntCastEX("One of the arguments isn't a int", Logger::CRITICAL);
+            }
+            if (value <= 0)
+                throw InvalidIntCastEX("One of the arguments isn't a positive int", Logger::CRITICAL);
+            if (x == 1)
                 _setCookNumber(value);
-                break;
-            case 0:
-                _setCookingTime(value);
-                break;
-            default:
-                throw VeryStupidUserEX("That's not possible, or you've broke my program...", Logger::CRITICAL);
+            else
+                _setRefillTime(value);
         }
     }
 }
