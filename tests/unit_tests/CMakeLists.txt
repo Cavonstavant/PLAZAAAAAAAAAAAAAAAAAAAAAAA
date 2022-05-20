@@ -23,3 +23,4 @@ endfunction()
 
 add_subdirectory(Parser)
 add_subdirectory(MessageQueue)
+add_subdirectory(Pizza)

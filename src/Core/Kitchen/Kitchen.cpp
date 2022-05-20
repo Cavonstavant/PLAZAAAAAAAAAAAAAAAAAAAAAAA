@@ -39,7 +39,7 @@ PizzaType Kitchen::getTypeFromFullCommand(const std::string &fullCommand)
         case Fantasia:
             return Fantasia;
         default:
-            throw VeryStupidUserEX("Not supposed to append (PizzaType)", Logger::CRITICAL);
+            throw VeryStupidUserEX("Not supposed to happen (PizzaType)", Logger::CRITICAL);
     }
 }
 
