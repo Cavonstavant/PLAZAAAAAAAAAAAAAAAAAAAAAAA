@@ -8,6 +8,7 @@
 /// \file src/Core/Kitchen/Kitchen.cpp
 
 #include "Kitchen.hpp"
+#include "Cook.hpp"
 #include "Pizza.hpp"
 #include <ctime>
 #include <functional>
@@ -132,16 +133,18 @@ void Kitchen::_receptCook(Kitchen *obj)
         toCook.number = 1;
         getIngredientsFromPizzaType(toCook, type);
 
-        for (int x = 0; x < quantity; ++x) {
-            // Send a Pizza to the Cook in the thread pool
-        }
+        for (int x = 0; x < quantity; ++x)
+            obj->_orders.push(toCook);
     }
 }
 
 void Kitchen::_Cook(Kitchen *obj)
 {
+    Cook cook;
+    cook.setCookingTimeMultipiler(obj->_cookingTime);
+
     while (true) {
-        std::function<void()> order;
+        Pizza order;
         {
             std::unique_lock<std::mutex> lock(obj->_mutex);
             obj->order_condition.wait(lock, [&obj] {
@@ -153,15 +156,15 @@ void Kitchen::_Cook(Kitchen *obj)
             obj->_orders.pop();
         }
         _waitToFillFridge(obj->_refillTime, *obj);
-        order();
+        cook.cookPizza(order);
     }
 }
 
-void Kitchen::enqueueJob(std::function<void()> &job)
+void Kitchen::enqueueJob(Pizza &pizza)
 {
     {
         std::unique_lock<std::mutex> lock(_mutex);
-        _orders.push(job);
+        _orders.emplace(pizza);
     }
     order_condition.notify_one();
 }

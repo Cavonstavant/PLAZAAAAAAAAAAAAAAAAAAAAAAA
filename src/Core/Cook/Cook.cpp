@@ -10,43 +10,35 @@
 #include "Cook.hpp"
 #include <thread>
 
+extern "C" {
+#include <unistd.h>
+}
+
 using namespace plazza;
 
 Cook::Cook(std::size_t multiplier)
 {
-    _duration = 0;
-    _workInProgress = false;
+    _cookingTime = 0;
     _multiplier = multiplier;
 }
 
 Cook::Cook(Pizza pizza, std::size_t multiplier)
 {
-    _duration = 0;
+    _cookingTime = 0;
     _multiplier = multiplier;
     cookPizza(pizza);
 }
 
 void Cook::cookPizza(Pizza pizza)
 {
-    if (_workInProgress)
-        throw PlazzaEX("Cook is already working !", Logger::HIGH);
     _pizza = pizza;
-    _workInProgress = true;
     _setCookingTime();
-    _start = time(NULL);
+    sleep(_cookingTime);
 }
 
 void Cook::setCookingTimeMultipiler(std::size_t multiplier)
 {
     _multiplier = multiplier;
-}
-
-bool Cook::getCookStatus()
-{
-    if (std::size_t(time(NULL) - _start) >= _duration) {
-        _workInProgress = false;
-    }
-    return (_workInProgress);
 }
 
 void Cook::_setCookingTime()
@@ -67,5 +59,5 @@ void Cook::_setCookingTime()
             cookingTime = 4;
             break;
     }
-    _duration = cookingTime * _multiplier;
+    _cookingTime = cookingTime * _multiplier;
 }

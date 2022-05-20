@@ -1,8 +1,8 @@
-set (INCLUDE_ROOT ${PROJECT_SOURCE_DIR}/src/Parser)
-set (SRC_ROOT ${PROJECT_SOURCE_DIR}/src/Parser)
+set (INCLUDE_ROOT ${PROJECT_SOURCE_DIR}/src/Core/Parser)
+set (SRC_ROOT ${PROJECT_SOURCE_DIR}/src/Core/Parser)
 set (ARG_ROOT ${SRC_ROOT}/ArgumentsParser)
-set (LOG_ROOT ${PROJECT_SOURCE_DIR}/src/logger)
 set (INP_ROOT ${SRC_ROOT}/InputParser)
+# set (LOG_ROOT ${PROJECT_SOURCE_DIR}/src/logger)
 
 set (SRC
     ${SRC_ROOT}/IParser.hpp
@@ -17,8 +17,8 @@ set (SRC
 add_library(${PROJECT_NAME}_parser ${SRC})
 
 target_link_libraries(${PROJECT_NAME}_parser
-    PRIVATE ${PROJECT_NAME}_Core
-    PRIVATE ${PROJECT_NAME}_logger
+    # PUBLIC ${PROJECT_NAME}_logger
+    PUBLIC ${PROJECT_NAME}_pizza
 )
 
 target_include_directories(${PROJECT_NAME}_parser

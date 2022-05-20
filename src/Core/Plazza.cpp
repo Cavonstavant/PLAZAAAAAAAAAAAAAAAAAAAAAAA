@@ -11,11 +11,8 @@
 #include "Exception.hpp"
 #include "Kitchen/Kitchen.hpp"
 #include <iostream>
-#include <utility>
-
-extern "C" {
 #include <unistd.h>
-}
+#include <utility>
 
 using namespace plazza;
 
