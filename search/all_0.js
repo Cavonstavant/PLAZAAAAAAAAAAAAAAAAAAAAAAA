@@ -29,7 +29,7 @@ var searchData=
   ['_5fname_26',['_name',['../class_plazza_exception.html#a3829264b705aba9c26d5efcc4fcd59ba',1,'PlazzaException']]],
   ['_5fnbcooks_27',['_nbCooks',['../classplazza_1_1_kitchen.html#a67c93d0d471f721b6e184bb2bbf86437',1,'plazza::Kitchen']]],
   ['_5foldtime_28',['_oldTime',['../classplazza_1_1_kitchen.html#a62fe901ee139baeb371d6f367162f08f',1,'plazza::Kitchen']]],
-  ['_5forders_29',['_orders',['../classplazza_1_1_kitchen.html#aad7e61823a8e356b9da5dab25d8a0082',1,'plazza::Kitchen']]],
+  ['_5forders_29',['_orders',['../classplazza_1_1_kitchen.html#afaadbf3cf5d181b188be6f1d62a1556e',1,'plazza::Kitchen']]],
   ['_5fpathname_30',['_pathname',['../class_message_queue.html#a3a634970029be5760122a4cc9de35ac9',1,'MessageQueue']]],
   ['_5fpizza_31',['_pizza',['../classplazza_1_1_cook.html#ac1e112afc72e41a3292393bd2e4aa3e6',1,'plazza::Cook::_pizza()'],['../classplazza_1_1_input_parser.html#a8101cdcf9191d57a6fe74a11e1006f81',1,'plazza::InputParser::_pizza()']]],
   ['_5fqueue_5ffd_32',['_queue_fd',['../class_message_queue.html#a6beea1668b922f4fd5e09029ccf33459',1,'MessageQueue']]],
