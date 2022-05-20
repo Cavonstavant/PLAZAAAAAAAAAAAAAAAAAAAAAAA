@@ -110,11 +110,12 @@ public:
     /// \brief The time to wait before fill the fridge
     unsigned long _refillTime;
 
-            /// \brief Store the refill time
-            unsigned long _refillTime;
+    unsigned int _cookingTime;
+    unsigned long _oldTime;
 
     /// \brief The flag used to stop the kitchen
     bool _stopKitchen;
+
 
     /// \brief The kitchen fridge, containing all of the ingredients
     std::vector<Ingredient> _fridge;
