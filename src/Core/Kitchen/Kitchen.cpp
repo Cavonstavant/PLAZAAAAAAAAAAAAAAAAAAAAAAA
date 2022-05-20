@@ -162,9 +162,9 @@ void Kitchen::_Cook(Kitchen *obj)
             obj->_orders.pop();
             obj->_availCooks--;
         }
-        _waitToFillFridge(obj->_refillTime, obj);
         {
             std::unique_lock<std::mutex> lock(obj->_fridgeMutex);
+            _waitToFillFridge(obj->_refillTime, obj);
             obj->_fridge -= order;
         }
         cook.cookPizza(order);
@@ -206,12 +206,9 @@ void Kitchen::_fillFridge(const std::size_t &timeToFill, Kitchen *obj)
 
 void Kitchen::_waitToFillFridge(const std::size_t &timeToWait, Kitchen *obj)
 {
-    {
-        std::unique_lock<std::mutex> lock(obj->_fridgeMutex);
-        if (std::time(nullptr) - obj->_oldTime > timeToWait) {
-            obj->_oldTime = std::time(nullptr);
-            _fillFridge(1, obj);
-        }
+    if (std::time(nullptr) - obj->_oldTime > timeToWait) {
+        obj->_oldTime = std::time(nullptr);
+        _fillFridge(1, obj);
     }
 }
 
