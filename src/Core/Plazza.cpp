@@ -49,15 +49,15 @@ void Reception::_sendCommand(const InputParser &command)
 
     if (pizzaToCook.size() == 0)
         return;
-    if (_kitchenQueues.size() == 9) {
-        VeryStupidUserEX("You can not open more than 9 Queues (UNIX)", Logger::MEDIUM);
+    if (_kitchenMap.size() == 9) {
+        MessageQueueEx("You can not open more than 9 Kitchens (UNIX)", Logger::MEDIUM);
         return;
     }
 
     Kitchen newKitchen(_cookNumber, _refillTime, _cookingTime);
     std::shared_ptr<MessageQueue> newQueue = std::make_shared<MessageQueue>();
 
-    newQueue.get()->openQueue(std::string("/plazzaQueueNumber" + std::to_string(_kitchenQueues.size())));
+    newQueue.get()->openQueue(std::string("/plazzaQueueNumber" + std::to_string(_kitchenMap.size())));
 
     pid_t newKitchenPid = fork();
 
@@ -66,7 +66,7 @@ void Reception::_sendCommand(const InputParser &command)
         newKitchen.start();
         newKitchen.stop();
     } else {
-        _kitchenQueues[newKitchenPid] = newQueue;
+        _kitchenMap[newKitchenPid] = newQueue;
 
         for (std::size_t x = 0; x < pizzaToCook.size(); ++x) {
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
