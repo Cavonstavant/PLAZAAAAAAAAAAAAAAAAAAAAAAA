@@ -123,8 +123,6 @@ bool Kitchen::_isAvailableCook(std::string &command)
     return (false);
 }
 
-#include <iostream>
-
 void Kitchen::_receptCook(Kitchen *obj)
 {
     while (true) {
