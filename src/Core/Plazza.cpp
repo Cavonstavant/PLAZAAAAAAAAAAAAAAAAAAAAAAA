@@ -50,7 +50,7 @@ void Reception::_sendCommand(const InputParser &command)
     if (pizzaToCook.size() == 0)
         return;
     if (_kitchenMap.size() == 9) {
-        MessageQueueEx("You can not open more than 9 Kitchens (UNIX)", Logger::MEDIUM);
+        MessageQueueEx("You can not open more than 9 Kitchens", Logger::MEDIUM);
         return;
     }
 
