@@ -13,11 +13,8 @@
 #include <iostream>
 #include <unistd.h>
 #include <utility>
-
-extern "C" {
-    #include <sys/types.h>
-    #include <signal.h>
-}
+#include <sys/types.h>
+#include <signal.h>
 
 using namespace plazza;
 
