@@ -1,12 +1,12 @@
-<map id="src/Parser/IParser.hpp" name="src/Parser/IParser.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="214,5,374,32"/>
-<area shape="rect" id="node2" href="$_a_parser_8hpp.html" title=" " alt="" coords="211,80,377,107"/>
-<area shape="rect" id="node3" href="$_a_parser_8cpp.html" title=" " alt="" coords="5,162,169,189"/>
-<area shape="rect" id="node4" href="$_arguments_parser_8hpp.html" title=" " alt="" coords="194,155,394,196"/>
-<area shape="rect" id="node7" href="$_input_parser_8hpp.html" title=" " alt="" coords="418,155,581,196"/>
-<area shape="rect" id="node5" href="$main_8cpp.html" title=" " alt="" coords="200,333,305,360"/>
-<area shape="rect" id="node6" href="$_arguments_parser_8cpp.html" title=" " alt="" coords="197,244,397,285"/>
-<area shape="rect" id="node8" href="$_plazza_8hpp.html" title=" " alt="" coords="421,251,570,278"/>
-<area shape="rect" id="node10" href="$_input_parser_8cpp.html" title=" " alt="" coords="594,244,757,285"/>
-<area shape="rect" id="node9" href="$_plazza_8cpp.html" title=" " alt="" coords="421,333,569,360"/>
+<map id="src/Core/Parser/IParser.hpp" name="src/Core/Parser/IParser.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="233,5,427,32"/>
+<area shape="rect" id="node2" href="$_a_parser_8hpp.html" title=" " alt="" coords="231,80,429,107"/>
+<area shape="rect" id="node3" href="$_a_parser_8cpp.html" title=" " alt="" coords="5,162,204,189"/>
+<area shape="rect" id="node4" href="$_arguments_parser_8hpp.html" title=" " alt="" coords="228,155,432,196"/>
+<area shape="rect" id="node7" href="$_input_parser_8hpp.html" title=" " alt="" coords="456,155,652,196"/>
+<area shape="rect" id="node5" href="$_arguments_parser_8cpp.html" title=" " alt="" coords="134,244,337,285"/>
+<area shape="rect" id="node6" href="$main_8cpp.html" title=" " alt="" coords="413,333,519,360"/>
+<area shape="rect" id="node8" href="$_input_parser_8cpp.html" title=" " alt="" coords="412,244,608,285"/>
+<area shape="rect" id="node9" href="$_plazza_8hpp.html" title=" " alt="" coords="633,251,782,278"/>
+<area shape="rect" id="node10" href="$_plazza_8cpp.html" title=" " alt="" coords="633,333,781,360"/>
 </map>
