@@ -15,17 +15,17 @@ using namespace plazza;
 Test(pizza_logger, log_pizza_order_received, .init = cr_redirect_stdout)
 {
     PizzaLogger::logPizza("pizza", PizzaLogger::ACTION_ORDER_RECIEVED);
-    cr_assert_stdout_eq_str("pizza: ORDER RECIEVED\n");
+    cr_assert_stdout_eq_str("pizza\tStatus: ORDER RECIEVED\n");
 }
 
 Test(pizza_logger, log_pizza_cooking_started, .init = cr_redirect_stdout)
 {
     PizzaLogger::logPizza("pizza", PizzaLogger::ACTION_COOKING_STARTED);
-    cr_assert_stdout_eq_str("pizza: COOKING STARTED\n");
+    cr_assert_stdout_eq_str("pizza\tStatus: COOKING STARTED\n");
 }
 
 Test(pizza_logger, log_pizza_cooking_finished, .init = cr_redirect_stdout)
 {
     PizzaLogger::logPizza("pizza", PizzaLogger::ACTION_COOKING_FINISHED);
-    cr_assert_stdout_eq_str("pizza: COOKING FINISHED\n");
+    cr_assert_stdout_eq_str("pizza\tStatus: COOKING FINISHED\n");
 }
