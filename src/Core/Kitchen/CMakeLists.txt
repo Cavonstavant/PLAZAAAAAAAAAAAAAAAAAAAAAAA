@@ -11,7 +11,8 @@ add_library(${PROJECT_NAME}_kitchen ${SRC})
 target_link_libraries(${PROJECT_NAME}_kitchen
     # PUBLIC ${PROJECT_NAME}_logger
     PUBLIC ${PROJECT_NAME}_messageQueue
-    PRIVATE ${PROJECT_NAME}_pizza
+    # PRIVATE ${PROJECT_NAME}_pizza
+    PUBLIC ${PROJECT_NAME}_cook
 )
 
 target_include_directories(${PROJECT_NAME}_kitchen

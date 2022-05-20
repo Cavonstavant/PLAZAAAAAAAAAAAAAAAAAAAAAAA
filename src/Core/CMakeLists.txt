@@ -21,8 +21,6 @@ target_include_directories(${PROJECT_NAME}_core
 target_link_libraries(${PROJECT_NAME}_core
     PUBLIC ${PROJECT_NAME}_parser
     PUBLIC ${PROJECT_NAME}_kitchen
-    PUBLIC ${PROJECT_NAME}_cook
-    # PUBLIC ${PROJECT_NAME}_logger
-    # PUBLIC ${PROJECT_NAME}_messageQueue
+    # PUBLIC ${PROJECT_NAME}_cook
     PRIVATE pthread
 )
