@@ -22,15 +22,15 @@ namespace plazza {
 
     /// \brief Enumeration for the different ingredients.
     enum Ingredients {
-        Tomato = 0,
-        Gruyere = 1,
-        Ham = 2,
-        Mushrooms = 3,
-        Steak = 4,
-        Eggplant = 5,
-        GoatCheese = 6,
-        Doe = 7,
-        IngredientNumber = 8
+        Tomato = 1,
+        Gruyere = 2,
+        Ham = 3,
+        Mushrooms = 4,
+        Steak = 5,
+        Eggplant = 6,
+        GoatCheese = 7,
+        Doe = 8,
+        IngredientNumber = 9
     };
 
     /// \brief The class used to manage all the cooks and the orders.
@@ -40,7 +40,10 @@ namespace plazza {
             Kitchen() = delete;
 
             /// \brief Creating a Kitchen with a specified number of cooks
-            explicit Kitchen(unsigned long nbCooks, unsigned long refillTime, unsigned long cookingTime) : _nbCooks(nbCooks), _availCooks(nbCooks), _refillTime(refillTime), _cookingTime(cookingTime), _stopKitchen(false), _fridge(IngredientNumber){};
+            explicit Kitchen(unsigned long nbCooks, unsigned long refillTime, unsigned long cookingTime) : _nbCooks(nbCooks), _availCooks(nbCooks), _refillTime(refillTime), _cookingTime(cookingTime), _stopKitchen(false) 
+            {
+                _fridge.resize(IngredientNumber);
+            };
 
             /// \brief Destructor
             ~Kitchen() = default;
