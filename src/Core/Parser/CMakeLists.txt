@@ -18,7 +18,7 @@ add_library(${PROJECT_NAME}_parser ${SRC})
 
 target_link_libraries(${PROJECT_NAME}_parser
     # PUBLIC ${PROJECT_NAME}_logger
-    PRIVATE ${PROJECT_NAME}_pizza
+    PUBLIC ${PROJECT_NAME}_pizza
 )
 
 target_include_directories(${PROJECT_NAME}_parser
