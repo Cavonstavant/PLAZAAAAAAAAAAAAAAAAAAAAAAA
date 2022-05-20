@@ -11,10 +11,10 @@
 #include "Exception.hpp"
 #include "Kitchen/Kitchen.hpp"
 #include <iostream>
+#include <signal.h>
+#include <sys/types.h>
 #include <unistd.h>
 #include <utility>
-#include <sys/types.h>
-#include <signal.h>
 
 using namespace plazza;
 
