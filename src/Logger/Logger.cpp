@@ -59,18 +59,18 @@ PlazzaException Logger::log(PlazzaException ex, Severity severity)
     std::string severityString = getSeverityString(severity);
     std::string severityColor = getSeverityColor(severity);
 
-    ssColor << "[LOGGER:" << severityColor << severityString << LOGGER_COLOR_RESET << "] " << severityColor << LOGGER_COLOR_BOLD << ex.getName() << LOGGER_COLOR_RESET << " >> " << LOGGER_COLOR_BOLD << ex.what() << LOGGER_COLOR_RESET << std::endl;
-    ssColor << LOGGER_COLOR_RED << ">> " << LOGGER_COLOR_WHITE << LOGGER_COLOR_BOLD << ex.getFunc() << LOGGER_COLOR_RESET << " (" << ex.getFile() << ":" << ex.getLine() << ")" << std::endl;
-    std::cerr << ssColor.str() << std::endl;
+    // ssColor << "[LOGGER:" << severityColor << severityString << LOGGER_COLOR_RESET << "] " << severityColor << LOGGER_COLOR_BOLD << ex.getName() << LOGGER_COLOR_RESET << " >> " << LOGGER_COLOR_BOLD << ex.what() << LOGGER_COLOR_RESET << std::endl;
+    // ssColor << LOGGER_COLOR_RED << ">> " << LOGGER_COLOR_WHITE << LOGGER_COLOR_BOLD << ex.getFunc() << LOGGER_COLOR_RESET << " (" << ex.getFile() << ":" << ex.getLine() << ")" << std::endl;
+    // std::cerr << ssColor.str() << std::endl;
 
     try {
         ss << "[LOGGER:" << severityString << "] " << ex.getName() << " >> " << ex.what() << std::endl;
         ss << ">> " << ex.getFunc() << " (" << ex.getFile() << ":" << ex.getLine() << ")" << std::endl;
-        ofLog.open("log/ExceptPlazza.log", std::ios::app);
+        ofLog.open("ExceptPlazza.log", std::ios::app);
         ofLog << ss.str() << std::endl;
         ofLog.close();
     } catch (std::exception &e) {
-        std::cerr << "Logging into 'log/ExceptPlazza.log' file failed (" << e.what() << ")" << std::endl;
+        std::cerr << "Logging into 'ExceptPlazza.log' file failed (" << e.what() << ")" << std::endl;
     }
     return ex;
 }

@@ -37,7 +37,7 @@ void PizzaLogger::logPizza(std::string const &pizza, Action action)
 
     try {
         ss << pizza << ": " << getActionString(action) << std::endl;
-        pizzaOf.open("log/OrderBacklog.log", std::ios::app);
+        pizzaOf.open("OrderBacklog.log", std::ios::app);
         pizzaOf << ss.str();
         pizzaOf.close();
     } catch (std::exception &e) {
