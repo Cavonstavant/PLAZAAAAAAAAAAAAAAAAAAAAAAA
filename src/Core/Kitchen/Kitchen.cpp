@@ -166,6 +166,16 @@ void Kitchen::enqueueJob(Pizza &pizza)
     order_condition.notify_one();
 }
 
+bool Kitchen::isBusy()
+{
+    bool busy;
+    {
+        std::unique_lock<std::mutex> lock(_mutex);
+        busy = _orders.empty();
+    }
+    return busy;
+}
+
 void Kitchen::stop()
 {
     {

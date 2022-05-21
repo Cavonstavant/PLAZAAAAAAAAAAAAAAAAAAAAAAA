@@ -55,6 +55,10 @@ namespace plazza {
             /// \brief Adds an order to the kitchen
             void enqueueJob(Pizza &pizza);
 
+            /// \brief used to check if all the cooks have finished cooking
+            /// or still have order to process
+            bool isBusy();
+
             /// \brief MessageQueue recepting the command from the reception
             std::shared_ptr<MessageQueue> commandQueue;
 
@@ -120,6 +124,9 @@ namespace plazza {
             /// \brief The flag used to stop the kitchen
             bool _stopKitchen;
 
+            /// \brief Used to monitor the last order that finished beign cooked
+            /// \note When the ellasped time is >= 5s, _stopKitchen will be set to true
+            unsigned long _ellapsedTimeSinceLastCommand;
 
             /// \brief The kitchen fridge, containing all of the ingredients
             std::vector<Ingredient> _fridge;
