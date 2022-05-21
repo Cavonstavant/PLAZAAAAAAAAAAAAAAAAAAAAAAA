@@ -58,12 +58,12 @@ namespace plazza {
             /// \brief Adds an order to the kitchen
             void enqueueJob(Pizza &pizza);
 
-    /// \brief used to check if all the cooks have finished cooking
-    /// or still have order to process
-    bool isBusy();
+            /// \brief used to check if all the cooks have finished cooking
+            /// or still have order to process
+            bool isBusy();
 
-    /// \brief MessageQueue recepting the command from the reception
-    std::shared_ptr<MessageQueue> commandQueue;
+            /// \brief MessageQueue recepting the command from the reception
+            std::shared_ptr<MessageQueue> commandQueue;
 
             /// \brief get the Pizza Type from the Command
             /// \param fullCommand the String received in the Queue
