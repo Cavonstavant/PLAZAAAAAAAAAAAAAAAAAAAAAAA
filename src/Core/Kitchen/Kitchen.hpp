@@ -124,10 +124,6 @@ namespace plazza {
             /// \brief The flag used to stop the kitchen
             bool _stopKitchen;
 
-            /// \brief Used to monitor the last order that finished beign cooked
-            /// \note When the ellasped time is >= 5s, _stopKitchen will be set to true
-            unsigned long _ellapsedTimeSinceLastCommand;
-
             /// \brief The kitchen fridge, containing all of the ingredients
             std::vector<Ingredient> _fridge;
     };
