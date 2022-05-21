@@ -8,6 +8,7 @@
 /// \file src/cook/Cook.cpp
 
 #include "Cook.hpp"
+#include "PizzaLogger.hpp"
 #include <thread>
 #include <unistd.h>
 
@@ -30,22 +31,50 @@ std::string Cook::pack(const Pizza &pizza)
 {
     std::string order = "";
 
-    order.append("name:");
-    order.append(std::to_string(pizza.type));
-    order.append(";size:");
-    order.append(std::to_string(pizza.size));
-    order.append(";amount:");
-    order.append(std::to_string(pizza.number));
-    order.append("\n");
+    switch (pizza.type) {
+        case Regina:
+            order.append("regina");
+            break;
+        case Americana:
+            order.append("americana");
+            break;
+        case Fantasia:
+            order.append("fantasia");
+            break;
+        case Margarita:
+            order.append("margarita");
+            break;
+    }
+    order.append(" of size ");
+    switch (pizza.size) {
+        case S:
+            order.append("S");
+            break;
+        case M:
+            order.append("M");
+            break;
+        case L:
+            order.append("L");
+            break;
+        case XL:
+            order.append("XL");
+            break;
+        case XXL:
+            order.append("XXL");
+            break;
+    }
     return (order);
 }
 
 void Cook::cookPizza(Pizza pizza)
 {
+    std::string p = pack(pizza);
+
+    PizzaLogger::logPizza(p, PizzaLogger::Action::ACTION_COOKING_STARTED);
     _pizza = pizza;
     _setCookingTime();
     sleep(_cookingTime);
-    PlazzaEX(pack(pizza), Logger::INFO);
+    PizzaLogger::logPizza(p, PizzaLogger::Action::ACTION_COOKING_FINISHED);
 }
 
 void Cook::setCookingTimeMultipiler(std::size_t multiplier)

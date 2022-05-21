@@ -18,38 +18,10 @@ using namespace plazza;
 void Kitchen::start()
 {
     _oldTime = std::time(nullptr);
-    _initFridge(*this);
+    _initFridge(this);
     _brigade.emplace_back(std::thread(_receptCook, this));
     for (std::size_t i = 0; i < _nbCooks; ++i)
         _brigade.emplace_back(std::thread(_Cook, this));
-}
-
-PizzaType Kitchen::getTypeFromFullCommand(const std::string &fullCommand)
-{
-    std::string name = fullCommand.substr(0, fullCommand.find(";"));
-
-    name = name.substr(name.find(":") + 1);
-    switch (stoi(name)) {
-        case Regina:
-            return Regina;
-        case Margarita:
-            return Margarita;
-        case Americana:
-            return Americana;
-        case Fantasia:
-            return Fantasia;
-        default:
-            throw VeryStupidUserEX("Not supposed to happen (PizzaType)", Logger::CRITICAL);
-    }
-}
-
-int Kitchen::getQuantityFromFullCommand(const std::string &fullCommand)
-{
-    std::string quantity = fullCommand.substr(fullCommand.find(";") + 1);
-
-    quantity = quantity.substr(quantity.find(";") + 1);
-    quantity = quantity.substr(quantity.find(":") + 1);
-    return stoi(quantity);
 }
 
 void Kitchen::getIngredientsFromPizzaType(Pizza &toCook, PizzaType type)
@@ -116,28 +88,65 @@ void Kitchen::getIngredientsFromPizzaType(Pizza &toCook, PizzaType type)
     }
 }
 
+bool Kitchen::_isAvailableCook(std::string &command)
+{
+    if (command == "avail_slots?")
+        return (true);
+    return (false);
+}
+
 void Kitchen::_receptCook(Kitchen *obj)
 {
     while (true) {
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
         std::string fullCommand = obj->commandQueue.get()->receiveMessage();
 
-        PizzaType type = getTypeFromFullCommand(fullCommand);
-        int quantity = getQuantityFromFullCommand(fullCommand);
-
-        Pizza toCook;
-        toCook.type = type;
+        if (fullCommand.find("avail_slots:") == 0) {
+            obj->commandQueue.get()->sendMessage(fullCommand);
+            continue;
+        }
+        if (_isAvailableCook(fullCommand)) {
+            std::this_thread::sleep_for(std::chrono::milliseconds(10));
+            std::string message = "avail_slots:" + std::to_string(obj->_availCooks) + ";fridge:";
+            {
+                std::unique_lock<std::mutex> lock(obj->_fridgeMutex);
+                for (size_t x = 1; x < IngredientNumber; x++) {
+                    message.append(obj->_fridge[x].name);
+                    message.append("," + std::to_string(obj->_fridge[x].number) + ";");
+                }
+            }
+            obj->commandQueue.get()->sendMessage(message);
+            continue;
+        }
+        Pizza toCook = unpack(fullCommand);
+        size_t quantity = toCook.number;
         toCook.number = 1;
-        getIngredientsFromPizzaType(toCook, type);
+        getIngredientsFromPizzaType(toCook, toCook.type);
 
-        for (int x = 0; x < quantity; ++x)
-            obj->_orders.push(toCook);
+        for (std::size_t x = 0; x < quantity; ++x) {
+            obj->enqueueJob(toCook);
+        }
     }
+}
+
+Pizza Kitchen::unpack(const std::string &order)
+{
+    Pizza pizza;
+    std::string tmp = order;
+
+    tmp = tmp.substr(tmp.find("name:") + 5);
+    pizza.type = PizzaType(std::atoi(tmp.c_str()));
+    tmp = tmp.substr(tmp.find(";size:") + 6);
+    pizza.size = PizzaSize(std::atoi(tmp.c_str()));
+    tmp = tmp.substr(tmp.find(";amount:") + 8);
+    pizza.number = std::atoi(tmp.c_str());
+    return (pizza);
 }
 
 void Kitchen::_Cook(Kitchen *obj)
 {
     Cook cook;
+    bool asEnoughIngredients = false;
     cook.setCookingTimeMultipiler(obj->_cookingTime);
 
     while (true) {
@@ -147,13 +156,30 @@ void Kitchen::_Cook(Kitchen *obj)
             obj->order_condition.wait(lock, [&obj] {
                 return !obj->_orders.empty() || obj->_stopKitchen;
             });
-            if (obj->_stopKitchen)
+            if (obj->_stopKitchen) {
                 return;
+            }
             order = obj->_orders.front();
             obj->_orders.pop();
+            obj->_availCooks--;
         }
-        _waitToFillFridge(obj->_refillTime, *obj);
+        {
+            std::unique_lock<std::mutex> lock(obj->_fridgeMutex);
+            while (!asEnoughIngredients) {
+                _waitToFillFridge(obj->_refillTime, obj);
+                try {
+                    obj->_fridge -= order;
+                } catch (...) {
+                    continue;
+                }
+                asEnoughIngredients = true;
+            }
+        }
         cook.cookPizza(order);
+        {
+            std::unique_lock<std::mutex> lock(obj->_mutex);
+            obj->_availCooks++;
+        }
     }
 }
 
@@ -189,32 +215,30 @@ void Kitchen::stop()
     _brigade.clear();
 }
 
-void Kitchen::_fillFridge(const std::size_t &timeToFill, Kitchen &obj)
+void Kitchen::_fillFridge(const std::size_t &timeToFill, Kitchen *obj)
 {
-    for (std::size_t x = 0; x < IngredientNumber; ++x) {
-        obj._fridge[x].number += timeToFill;
+    for (auto &ingredient: obj->_fridge) {
+        ingredient.number += timeToFill;
     }
 }
 
-void Kitchen::_waitToFillFridge(const std::size_t &timeToWait, Kitchen &obj)
+void Kitchen::_waitToFillFridge(const std::size_t &timeToWait, Kitchen *obj)
 {
-    std::unique_lock<std::mutex> lock(obj._fridgeMutex);
-
-    if (std::time(nullptr) - obj._oldTime > timeToWait) {
-        obj._oldTime = std::time(nullptr);
+    if (std::time(nullptr) - obj->_oldTime > timeToWait) {
+        obj->_oldTime = std::time(nullptr);
         _fillFridge(1, obj);
     }
 }
 
-void Kitchen::_initFridge(Kitchen &obj)
+void Kitchen::_initFridge(Kitchen *obj)
 {
-    obj._fridge[Tomato].name = "tomato";
-    obj._fridge[Gruyere].name = "gruyere";
-    obj._fridge[Ham].name = "ham";
-    obj._fridge[Mushrooms].name = "mushrooms";
-    obj._fridge[Steak].name = "steak";
-    obj._fridge[Eggplant].name = "eggplant";
-    obj._fridge[GoatCheese].name = "goatCheese";
-    obj._fridge[Doe].name = "doe";
+    obj->_fridge[Tomato].name = "tomato";
+    obj->_fridge[Gruyere].name = "gruyere";
+    obj->_fridge[Ham].name = "ham";
+    obj->_fridge[Mushrooms].name = "mushrooms";
+    obj->_fridge[Steak].name = "steak";
+    obj->_fridge[Eggplant].name = "eggplant";
+    obj->_fridge[GoatCheese].name = "goatCheese";
+    obj->_fridge[Doe].name = "doe";
     _fillFridge(5, obj);
 }

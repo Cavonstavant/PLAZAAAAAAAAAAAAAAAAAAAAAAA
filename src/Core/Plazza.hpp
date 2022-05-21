@@ -42,6 +42,10 @@ namespace plazza {
             void run();
 
         private:
+            /// \brief Get the answer of avail_slots
+            /// \param std::string The message get from the queue
+            /// \return int The number of available cook
+            int _isAvailableSlots(std::string);
             /// \brief Close the Kitchens Queues and send a kill signal
             void _cleanKitchens(void);
 

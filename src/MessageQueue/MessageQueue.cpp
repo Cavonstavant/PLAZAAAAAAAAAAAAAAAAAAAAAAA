@@ -14,8 +14,8 @@
 
 MessageQueue::~MessageQueue()
 {
-    clear();
     mq_close(this->_queue_fd);
+    clear();
 }
 
 void MessageQueue::openQueue(const std::string &pathname)
