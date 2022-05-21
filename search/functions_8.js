@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['log_315',['log',['../class_logger.html#a8df79e4d3d6a1e747376357adaab6417',1,'Logger']]],
-  ['logger_316',['Logger',['../class_logger.html#aefffc02e0c6c0ab09ec1f77fe35f6439',1,'Logger']]],
-  ['logpizza_317',['logPizza',['../structplazza_1_1_pizza_logger.html#ac1ab8eea90632afbdf59cbebac1982e8',1,'plazza::PizzaLogger']]],
-  ['low_318',['LOW',['../class_logger.html#af9a5cbfa2e29185315d0fb7b42ffcd79',1,'Logger']]]
+  ['log_320',['log',['../class_logger.html#a8df79e4d3d6a1e747376357adaab6417',1,'Logger']]],
+  ['logger_321',['Logger',['../class_logger.html#aefffc02e0c6c0ab09ec1f77fe35f6439',1,'Logger']]],
+  ['logpizza_322',['logPizza',['../structplazza_1_1_pizza_logger.html#ac1ab8eea90632afbdf59cbebac1982e8',1,'plazza::PizzaLogger']]],
+  ['low_323',['LOW',['../class_logger.html#af9a5cbfa2e29185315d0fb7b42ffcd79',1,'Logger']]]
 ];

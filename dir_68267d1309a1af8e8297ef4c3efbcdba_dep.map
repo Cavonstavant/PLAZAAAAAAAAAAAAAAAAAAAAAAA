@@ -1,7 +1,7 @@
 <map id="src" name="src">
 <area shape="rect" id="node2" href="dir_a2f0e5642e47e7ed59fe0f0829eafb5f.html" title="Core" alt="" coords="27,27,99,75"/>
 <area shape="rect" id="node3" href="dir_ce44ad55c7286bf5a6cd8cf01717cab8.html" title="Logger" alt="" coords="57,219,129,267"/>
-<area shape="rect" id="edge1-headlabel" href="dir_000001_000008.html" title="4" alt="" coords="68,192,77,206"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000001_000008.html" title="5" alt="" coords="68,192,77,206"/>
 <area shape="rect" id="node4" href="dir_c4d7db7b7a958e1f3a3a35c10bfa1200.html" title="MessageQueue" alt="" coords="63,123,185,171"/>
 <area shape="rect" id="edge2-headlabel" href="dir_000001_000009.html" title="1" alt="" coords="101,95,111,110"/>
 <area shape="rect" id="edge3-headlabel" href="dir_000009_000008.html" title="2" alt="" coords="110,197,119,211"/>

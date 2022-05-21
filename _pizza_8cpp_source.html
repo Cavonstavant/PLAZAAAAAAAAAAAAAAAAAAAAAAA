@@ -150,65 +150,73 @@ $(document).ready(function(){initNavTree('_pizza_8cpp_source.html',''); initResi
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="_pizza_8hpp.html#adfb26aad8c943cab2202ec3c1a4c932d">   63</a></span>&#160;std::vector&lt;Ingredient&gt; &amp;<a class="code" href="_pizza_8cpp.html#a3c5653109c7b341ca388d0ac61f684b4">operator-</a>(std::vector&lt;Ingredient&gt; &amp;lo, std::vector&lt;Ingredient&gt; &amp;ro)</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    std::vector&lt;Ingredient&gt; tmp = lo;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; tmp.size(); i++) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">for</span> (std::size_t j = 0; j &lt; ro.size(); j++) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">if</span> (tmp[i].name == ro[j].name) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    tmp[i] -= ro[i];</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                } <span class="keywordflow">catch</span> (<a class="code" href="class_plazza_exception.html">PlazzaException</a> &amp;e) {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    std::cerr &lt;&lt; e.<a class="code" href="class_plazza_exception.html#af42078485825da6b030af687e5990044">what</a>() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    <span class="keywordflow">throw</span> <a class="code" href="_exception_8hpp.html#a8ef0a847cd4c54afe916ea3129b03b52">PlazzaEX</a>(<span class="stringliteral">&quot;There is not enought ingredient in the vector.&quot;</span>, <a class="code" href="class_logger.html#af9a5cbfa2e29185315d0fb7b42ffcd79">Logger::LOW</a>);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    lo = tmp;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">return</span> (lo);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="_pizza_8hpp.html#a9fa300ac2896bcfdaa94be9274f87634">   83</a></span>&#160;std::vector&lt;Ingredient&gt; &amp;<a class="code" href="_pizza_8cpp.html#a4377698900285c19ac8a83ca5cd637e3">operator-=</a>(std::vector&lt;Ingredient&gt; &amp;lo, std::vector&lt;Ingredient&gt; &amp;ro)</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    std::vector&lt;Ingredient&gt; tmp = lo;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    std::vector&lt;Ingredient&gt; tmp(9);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; i &lt; 9; i++) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        tmp[i] = lo[i];</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; tmp.size(); i++) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">for</span> (std::size_t j = 0; j &lt; ro.size(); j++) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">if</span> (tmp[i].name == ro[j].name) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    tmp[i] -= ro[i].number;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                } <span class="keywordflow">catch</span> (<a class="code" href="class_plazza_exception.html">PlazzaException</a> &amp;e) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    std::cerr &lt;&lt; e.<a class="code" href="class_plazza_exception.html#af42078485825da6b030af687e5990044">what</a>() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    <span class="keywordflow">throw</span> <a class="code" href="_exception_8hpp.html#a8ef0a847cd4c54afe916ea3129b03b52">PlazzaEX</a>(<span class="stringliteral">&quot;There is not enought ingredient in the vector.&quot;</span>, <a class="code" href="class_logger.html#af9a5cbfa2e29185315d0fb7b42ffcd79">Logger::LOW</a>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; i &lt; 9; i++) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        lo[i] = tmp[i];</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span> (lo);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; tmp.size(); i++) {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">for</span> (std::size_t j = 0; j &lt; ro.size(); j++) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">if</span> (tmp[i].name == ro[j].name) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    tmp[i] -= ro[i];</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                } <span class="keywordflow">catch</span> (<a class="code" href="class_plazza_exception.html">PlazzaException</a> &amp;e) {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                    std::cerr &lt;&lt; e.<a class="code" href="class_plazza_exception.html#af42078485825da6b030af687e5990044">what</a>() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                    <span class="keywordflow">throw</span> <a class="code" href="_exception_8hpp.html#a8ef0a847cd4c54afe916ea3129b03b52">PlazzaEX</a>(<span class="stringliteral">&quot;There is not enought ingredient in the vector.&quot;</span>, <a class="code" href="class_logger.html#af9a5cbfa2e29185315d0fb7b42ffcd79">Logger::LOW</a>);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    lo = tmp;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">return</span> (lo);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="_pizza_8hpp.html#a520adad5088971e057c1eeb96a86f904">  103</a></span>&#160;std::vector&lt;Ingredient&gt; &amp;<a class="code" href="_pizza_8cpp.html#a3c5653109c7b341ca388d0ac61f684b4">operator-</a>(std::vector&lt;Ingredient&gt; &amp;lo, <a class="code" href="structplazza_1_1_pizza.html">Pizza</a> &amp;ro)</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        lo -= ro.<a class="code" href="structplazza_1_1_pizza.html#adfa2f65e6cfefba50f83a906c694f6b0">ingredients</a>;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    } <span class="keywordflow">catch</span> (<a class="code" href="class_plazza_exception.html">PlazzaException</a> &amp;e) {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        std::cerr &lt;&lt; e.<a class="code" href="class_plazza_exception.html#af42078485825da6b030af687e5990044">what</a>() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="_exception_8hpp.html#a8ef0a847cd4c54afe916ea3129b03b52">PlazzaEX</a>(<span class="stringliteral">&quot;There is not enought ingredient in the vector.&quot;</span>, <a class="code" href="class_logger.html#af9a5cbfa2e29185315d0fb7b42ffcd79">Logger::LOW</a>);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">return</span> (lo);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="_pizza_8hpp.html#adc04e4603b4bfcb6389c2a4fa25bcb79">  114</a></span>&#160;std::vector&lt;Ingredient&gt; &amp;<a class="code" href="_pizza_8cpp.html#a4377698900285c19ac8a83ca5cd637e3">operator-=</a>(std::vector&lt;Ingredient&gt; &amp;lo, <a class="code" href="structplazza_1_1_pizza.html">Pizza</a> &amp;ro)</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        lo -= ro.<a class="code" href="structplazza_1_1_pizza.html#adfa2f65e6cfefba50f83a906c694f6b0">ingredients</a>;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    } <span class="keywordflow">catch</span> (<a class="code" href="class_plazza_exception.html">PlazzaException</a> &amp;e) {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        std::cerr &lt;&lt; e.<a class="code" href="class_plazza_exception.html#af42078485825da6b030af687e5990044">what</a>() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="_exception_8hpp.html#a8ef0a847cd4c54afe916ea3129b03b52">PlazzaEX</a>(<span class="stringliteral">&quot;There is not enought ingredient in the vector.&quot;</span>, <a class="code" href="class_logger.html#af9a5cbfa2e29185315d0fb7b42ffcd79">Logger::LOW</a>);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">return</span> (lo);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="_pizza_8hpp.html#a9fa300ac2896bcfdaa94be9274f87634">   87</a></span>&#160;std::vector&lt;Ingredient&gt; &amp;<a class="code" href="_pizza_8cpp.html#a4377698900285c19ac8a83ca5cd637e3">operator-=</a>(std::vector&lt;Ingredient&gt; &amp;lo, std::vector&lt;Ingredient&gt; &amp;ro)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    std::vector&lt;Ingredient&gt; tmp(9);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; i &lt; 9; i++) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        tmp[i] = lo[i];</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 1; i &lt; tmp.size(); i++) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">for</span> (std::size_t j = 0; j &lt; ro.size(); j++) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keywordflow">if</span> (tmp[i].name == ro[j].name) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                    tmp[i] -= ro[j].number;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                } <span class="keywordflow">catch</span> (<a class="code" href="class_plazza_exception.html">PlazzaException</a> &amp;e) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                    std::cerr &lt;&lt; e.<a class="code" href="class_plazza_exception.html#af42078485825da6b030af687e5990044">what</a>() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                    <span class="keywordflow">throw</span> <a class="code" href="_exception_8hpp.html#a8ef0a847cd4c54afe916ea3129b03b52">PlazzaEX</a>(<span class="stringliteral">&quot;There is not enought ingredient in the vector.&quot;</span>, <a class="code" href="class_logger.html#af9a5cbfa2e29185315d0fb7b42ffcd79">Logger::LOW</a>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; i &lt; 9; i++) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        lo[i] = tmp[i];</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">return</span> (lo);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="_pizza_8hpp.html#a520adad5088971e057c1eeb96a86f904">  111</a></span>&#160;std::vector&lt;Ingredient&gt; &amp;<a class="code" href="_pizza_8cpp.html#a3c5653109c7b341ca388d0ac61f684b4">operator-</a>(std::vector&lt;Ingredient&gt; &amp;lo, <a class="code" href="structplazza_1_1_pizza.html">Pizza</a> &amp;ro)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;{</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        lo -= ro.<a class="code" href="structplazza_1_1_pizza.html#adfa2f65e6cfefba50f83a906c694f6b0">ingredients</a>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    } <span class="keywordflow">catch</span> (<a class="code" href="class_plazza_exception.html">PlazzaException</a> &amp;e) {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        std::cerr &lt;&lt; e.<a class="code" href="class_plazza_exception.html#af42078485825da6b030af687e5990044">what</a>() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="_exception_8hpp.html#a8ef0a847cd4c54afe916ea3129b03b52">PlazzaEX</a>(<span class="stringliteral">&quot;There is not enought ingredient in the vector.&quot;</span>, <a class="code" href="class_logger.html#af9a5cbfa2e29185315d0fb7b42ffcd79">Logger::LOW</a>);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">return</span> (lo);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="_pizza_8hpp.html#adc04e4603b4bfcb6389c2a4fa25bcb79">  122</a></span>&#160;std::vector&lt;Ingredient&gt; &amp;<a class="code" href="_pizza_8cpp.html#a4377698900285c19ac8a83ca5cd637e3">operator-=</a>(std::vector&lt;Ingredient&gt; &amp;lo, <a class="code" href="structplazza_1_1_pizza.html">Pizza</a> &amp;ro)</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        lo -= ro.<a class="code" href="structplazza_1_1_pizza.html#adfa2f65e6cfefba50f83a906c694f6b0">ingredients</a>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    } <span class="keywordflow">catch</span> (<a class="code" href="class_plazza_exception.html">PlazzaException</a> &amp;e) {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        std::cerr &lt;&lt; e.<a class="code" href="class_plazza_exception.html#af42078485825da6b030af687e5990044">what</a>() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="_exception_8hpp.html#a8ef0a847cd4c54afe916ea3129b03b52">PlazzaEX</a>(<span class="stringliteral">&quot;There is not enought ingredient in the vector.&quot;</span>, <a class="code" href="class_logger.html#af9a5cbfa2e29185315d0fb7b42ffcd79">Logger::LOW</a>);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">return</span> (lo);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_plazza_exception_html"><div class="ttname"><a href="class_plazza_exception.html">PlazzaException</a></div><div class="ttdoc">Base exception class for all exceptions in the project.</div><div class="ttdef"><b>Definition:</b> <a href="_exception_8hpp_source.html#l00046">Exception.hpp:46</a></div></div>
@@ -225,7 +233,7 @@ $(document).ready(function(){initNavTree('_pizza_8cpp_source.html',''); initResi
 <div class="ttc" id="astructplazza_1_1_ingredient_html"><div class="ttname"><a href="structplazza_1_1_ingredient.html">plazza::Ingredient</a></div><div class="ttdoc">Structure for ingredient.</div><div class="ttdef"><b>Definition:</b> <a href="_pizza_8hpp_source.html#l00037">Pizza.hpp:37</a></div></div>
 <div class="ttc" id="astructplazza_1_1_pizza_html"><div class="ttname"><a href="structplazza_1_1_pizza.html">plazza::Pizza</a></div><div class="ttdoc">Structure for pizza.</div><div class="ttdef"><b>Definition:</b> <a href="_pizza_8hpp_source.html#l00065">Pizza.hpp:65</a></div></div>
 <div class="ttc" id="astructplazza_1_1_pizza_html_adfa2f65e6cfefba50f83a906c694f6b0"><div class="ttname"><a href="structplazza_1_1_pizza.html#adfa2f65e6cfefba50f83a906c694f6b0">plazza::Pizza::ingredients</a></div><div class="ttdeci">std::vector&lt; Ingredient &gt; ingredients</div><div class="ttdoc">std::vector&lt;Ingredient&gt; Vector of ingredient in the pizza.</div><div class="ttdef"><b>Definition:</b> <a href="_pizza_8hpp_source.html#l00073">Pizza.hpp:73</a></div></div>
-<div class="ttc" id="a_pizza_8cpp_html_a4377698900285c19ac8a83ca5cd637e3"><div class="ttname"><a href="_pizza_8cpp.html#a4377698900285c19ac8a83ca5cd637e3">operator-=</a></div><div class="ttdeci">std::vector&lt; Ingredient &gt; &amp; operator-=(std::vector&lt; Ingredient &gt; &amp;lo, std::vector&lt; Ingredient &gt; &amp;ro)</div><div class="ttdef"><b>Definition:</b> <a href="_pizza_8cpp_source.html#l00083">Pizza.cpp:83</a></div></div>
+<div class="ttc" id="a_pizza_8cpp_html_a4377698900285c19ac8a83ca5cd637e3"><div class="ttname"><a href="_pizza_8cpp.html#a4377698900285c19ac8a83ca5cd637e3">operator-=</a></div><div class="ttdeci">std::vector&lt; Ingredient &gt; &amp; operator-=(std::vector&lt; Ingredient &gt; &amp;lo, std::vector&lt; Ingredient &gt; &amp;ro)</div><div class="ttdef"><b>Definition:</b> <a href="_pizza_8cpp_source.html#l00087">Pizza.cpp:87</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
