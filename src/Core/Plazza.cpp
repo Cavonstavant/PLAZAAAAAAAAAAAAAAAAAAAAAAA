@@ -138,7 +138,7 @@ void Reception::_createNewKitchen(void)
     if (newKitchenPid == 0) {
         newKitchen.commandQueue = newQueue;
         newKitchen.start();
-    } else
+    } else {
         _kitchenMap[newKitchenPid] = newQueue;
 }
 
