@@ -52,7 +52,7 @@ namespace plazza {
             void _updateBusyCooks(void);
 
             /// \brief return true or false wether there is a need to create a new kitchen
-            bool _isNewKitchenNeeded(std::size_t);
+            bool _isNewKitchenNeeded(int pizzaAmt);
 
             /// \brief Display all of the kitchens current status
             void _displayKitchensStatus(void);

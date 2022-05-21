@@ -46,9 +46,9 @@ bool Reception::_handleInput(const std::string &input)
     return true;
 }
 
-bool Reception::_isNewKitchenNeeded(std::size_t nbPizza)
+bool Reception::_isNewKitchenNeeded(int pizzaAmt)
 {
-    if (_availSlotsTotal < nbPizza)
+    if (_availSlotsTotal < pizzaAmt)
         return true;
     return false;
 }
@@ -69,7 +69,12 @@ void Reception::_updateBusyCooks(void)
             kitchen.second->sendMessage(kitchenResponse);
             kitchenResponse = kitchen.second->receiveMessage();
         }
-        tmp_avail = std::stoi(kitchenResponse.substr(kitchenResponse.find(":") + 1));
+        try {
+            tmp_avail = std::stoi(kitchenResponse.substr(kitchenResponse.find(":") + 1));
+        } catch (const std::exception &e) {
+            std::cerr << "Error: " << kitchenResponse << " " << e.what() << std::endl;
+            return;
+        }
         _availSlots[kitchen.first] = _cookNumber - tmp_avail;
         _availSlotsTotal += _cookNumber - tmp_avail;
     }
@@ -88,7 +93,7 @@ void Reception::_createNewKitchen(void)
         newKitchen.start();
         // newKitchen.stop();
     } else
-        _kitchenMap.insert(std::make_pair(newKitchenPid, std::make_shared<MessageQueue>(newQueue)));
+        _kitchenMap[newKitchenPid] = newQueue;
 }
 
 void Reception::_sendPizza(std::vector<Pizza> &pizzaToCook, int amt, pid_t kitchenPid)
@@ -110,8 +115,9 @@ void Reception::_manageOrders(const InputParser &command)
     if (pizzaToCook.size() == 0)
         return;
     _updateBusyCooks();
-    pizzaPerKitchen = _availSlotsTotal + pizzaToCook.size() / _kitchenMap.size();
-    if (_isNewKitchenNeeded(pizzaToCook.size())){
+    if (!_kitchenMap.empty())
+        pizzaPerKitchen = _availSlotsTotal + pizzaToCook.size() / _kitchenMap.size();
+    if (_kitchenMap.empty() || _isNewKitchenNeeded(pizzaToCook.size())){
         if (_kitchenMap.size() < 9){
             _createNewKitchen();
             _updateBusyCooks();
