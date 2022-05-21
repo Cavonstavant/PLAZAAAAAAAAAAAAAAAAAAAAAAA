@@ -146,6 +146,7 @@ Pizza Kitchen::unpack(const std::string &order)
 void Kitchen::_Cook(Kitchen *obj)
 {
     Cook cook;
+    bool asEnoughIngredients = false;
     cook.setCookingTimeMultipiler(obj->_cookingTime);
 
     while (true) {
@@ -164,8 +165,15 @@ void Kitchen::_Cook(Kitchen *obj)
         }
         {
             std::unique_lock<std::mutex> lock(obj->_fridgeMutex);
-            _waitToFillFridge(obj->_refillTime, obj);
-            obj->_fridge -= order;
+            while (!asEnoughIngredients) {
+                _waitToFillFridge(obj->_refillTime, obj);
+                try {
+                    obj->_fridge -= order;
+                } catch (...) {
+                    continue;
+                }
+                asEnoughIngredients = true;
+            }
         }
         cook.cookPizza(order);
         {
