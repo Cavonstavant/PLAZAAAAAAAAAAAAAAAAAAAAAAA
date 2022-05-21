@@ -155,6 +155,7 @@ void Reception::_cleanKitchens(void)
 {
     for (auto x = _kitchenMap.begin(); x != _kitchenMap.end(); ++x) {
         kill(x->first, SIGTERM);
+        _kitchenMap.erase(x->first);
     }
 }
 
