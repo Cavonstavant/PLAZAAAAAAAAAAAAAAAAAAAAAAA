@@ -153,7 +153,7 @@ Pizza Reception::unpack(const std::string &order)
 
 void Reception::_cleanKitchens(void)
 {
-    for (auto x = _kitchenMap.begin(); x != _kitchenMap.end(); ++x) {
+    for (auto x = _kitchenMap.begin(); x != _kitchenMap.end() && !_kitchenMap.empty(); ++x) {
         kill(x->first, SIGTERM);
         _kitchenMap.erase(x->first);
     }
