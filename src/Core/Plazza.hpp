@@ -48,29 +48,45 @@ namespace plazza {
             /// \brief Create a new Kitchen and it's associated Message Queue
             void _createNewKitchen(void);
 
-            /// \brief Sends the `avail_slots?` to all the kitchens and updates `_busyCooks`
+            /// \brief Sends the `avail_slots?` command² to all the kitchens and updates `_busyCooks`
             void _updateBusyCooks(void);
 
             /// \brief return true or false wether there is a need to create a new kitchen
-            bool _isNewKitchenNeeded(void);
+            bool _isNewKitchenNeeded(std::size_t);
 
             /// \brief Display all of the kitchens current status
             void _displayKitchensStatus(void);
+
             /// \brief Handle the receive input
             /// \return true if the input is valid, false otherwise
             bool _handleInput(const std::string &input);
+
             /// \brief Create a kitchen if necessary, and send the command to the child process
-            void _sendCommand(const InputParser &command);
+            void _manageOrders(const InputParser &command);
+
+            /// \brief Sends amt of pizza to the kitchen referenced by it's id
+            /// \param pizzaToCook The collection of pizza to cook
+            /// \param amt The amount of pizza to send to the kitchen
+            /// \param kitchenPid The kitchen subprocess pid
+            void _sendPizza(std::vector<Pizza> &pizzaToCook, int amt, pid_t kitchenPid);
+
             /// \brief Map of the different child process, with the linked queues
             std::map<pid_t, std::shared_ptr<MessageQueue>> _kitchenMap;
+
             /// \brief Store the cookingTime
             float _cookingTime;
+
             /// \brief Store the cookNumber
             size_t _cookNumber;
+
             /// \brief Store the refillTime
             size_t _refillTime;
-            std::vector<unsigned int> _busyCooks;
-            int _busyCooksTotal;
+
+            /// \brief Maps the number of available pizza slots to the pid of a forked kitchen
+            std::map<pid_t, unsigned int> _availSlots;
+
+            /// \brief Total number of available pizza slots
+            int _availSlotsTotal;
     };
 }// namespace plazza
 
