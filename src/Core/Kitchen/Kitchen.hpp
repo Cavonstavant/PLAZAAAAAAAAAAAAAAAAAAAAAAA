@@ -22,7 +22,7 @@ namespace plazza {
 
     /// \brief Enumeration for the different ingredients.
     enum Ingredients {
-        Tomato = 0,
+        Tomato = 1,
         Gruyere,
         Ham,
         Mushrooms,
@@ -30,7 +30,7 @@ namespace plazza {
         Eggplant,
         GoatCheese,
         Doe,
-        IngredientNumber = 8
+        IngredientNumber
     };
 
     /// \brief The class used to manage all the cooks and the orders.
@@ -40,7 +40,10 @@ namespace plazza {
             Kitchen() = delete;
 
             /// \brief Creating a Kitchen with a specified number of cooks
-            explicit Kitchen(unsigned long nbCooks, unsigned long refillTime, float cookingTime) : _nbCooks(nbCooks), _refillTime(refillTime), _cookingTime(cookingTime), _stopKitchen(false), _fridge(IngredientNumber){};
+            explicit Kitchen(unsigned long nbCooks, unsigned long refillTime, unsigned long cookingTime) : _nbCooks(nbCooks), _availCooks(nbCooks), _refillTime(refillTime), _cookingTime(cookingTime), _stopKitchen(false)
+            {
+                _fridge.resize(IngredientNumber);
+            };
 
             /// \brief Destructor
             ~Kitchen() = default;
@@ -72,8 +75,17 @@ namespace plazza {
             /// \param toCook the Pizza to be filled with ingredients
             /// \param type the type of the Pizza
             static void getIngredientsFromPizzaType(Pizza &toCook, PizzaType type);
+            /// \brief Unpack std::string in Pizza.
+            /// \param std::string to be unpack.
+            /// \return Pizza unpacked.
+            static Pizza unpack(const std::string &order);
 
         private:
+            /// \brief Check if the command ask for available cook ("avail_cooks ?")
+            /// \param std::string & The command to be check
+            /// \return bool True if it is the correct command, false otherwise
+            static bool _isAvailableCook(std::string &);
+
             /// \brief Main function for the Blocking thread on the message queue, getting the command and give it in the job queue
             static void _receptCook(Kitchen *obj);
 
@@ -81,14 +93,14 @@ namespace plazza {
             static void _Cook(Kitchen *obj);
 
             /// \brief Init the fridge at the Kitchen Creation
-            static void _initFridge(Kitchen &obj);
+            static void _initFridge(Kitchen *obj);
 
             /// \brief fill the ingredients of the fridge 1 x timeToFill
             /// \param timeToFill number of time to fill the fridge
-            static void _fillFridge(const std::size_t &timeToFill, Kitchen &obj);
+            static void _fillFridge(const std::size_t &timeToFill, Kitchen *obj);
 
             /// \brief check every timeToWait to fill the fridge
-            static void _waitToFillFridge(const std::size_t &timeToWait, Kitchen &obj);
+            static void _waitToFillFridge(const std::size_t &timeToWait, Kitchen *obj);
 
             /// \brief The kitchen brigade regrouping all the cooks
             std::vector<std::thread> _brigade;
@@ -108,6 +120,9 @@ namespace plazza {
             /// \brief The number of cooks in the kitchen
             unsigned long _nbCooks;
 
+            /// \brief The number of available cooks
+            unsigned long _availCooks;
+
             /// \brief The time to wait before fill the fridge
             unsigned long _refillTime;
 
@@ -119,7 +134,6 @@ namespace plazza {
 
             /// \brief The flag used to stop the kitchen
             bool _stopKitchen;
-
 
             /// \brief The kitchen fridge, containing all of the ingredients
             std::vector<Ingredient> _fridge;
