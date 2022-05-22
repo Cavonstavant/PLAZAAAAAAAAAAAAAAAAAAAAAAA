@@ -35,6 +35,7 @@
 plazza
 build
 cmake-build-debug-coverage
+.gdb_history
 
 # Editor files
 *.swp
