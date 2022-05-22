@@ -182,7 +182,7 @@ void Reception::_manageOrders(const InputParser &command)
         pizzaPerKitchen = _availSlotsTotal + pizzaToCook.size() / _kitchenMap.size();
     }
     if (_kitchenMap.empty() || _isNewKitchenNeeded(pizzaToCook.size())){
-        if (_kitchenMap.size() < 9){
+        if (_kitchenMap.size() < 9 || !getuid()){
             pizzaToCook = _createNewKitchen(pizzaToCook, pizzaPerKitchen);
             _updateBusyCooks();
         } else
