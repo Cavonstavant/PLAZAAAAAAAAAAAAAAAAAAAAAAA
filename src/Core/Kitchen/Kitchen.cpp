@@ -29,62 +29,62 @@ void Kitchen::getIngredientsFromPizzaType(Pizza &toCook, PizzaType type)
     Ingredient ingredient;
 
     switch (type) {
-        case Margarita:
-            ingredient.name = "doe";
-            ingredient.number = 1;
-            toCook.ingredients.push_back(ingredient);
-            ingredient.name = "tomato";
-            ingredient.number = 1;
-            toCook.ingredients.push_back(ingredient);
-            ingredient.name = "gruyere";
-            ingredient.number = 1;
-            toCook.ingredients.push_back(ingredient);
-            break;
-        case Regina:
-            ingredient.name = "doe";
-            ingredient.number = 1;
-            toCook.ingredients.push_back(ingredient);
-            ingredient.name = "tomato";
-            ingredient.number = 1;
-            toCook.ingredients.push_back(ingredient);
-            ingredient.name = "gruyere";
-            ingredient.number = 1;
-            toCook.ingredients.push_back(ingredient);
-            ingredient.name = "ham";
-            ingredient.number = 1;
-            toCook.ingredients.push_back(ingredient);
-            ingredient.name = "mushrooms";
-            ingredient.number = 1;
-            toCook.ingredients.push_back(ingredient);
-            break;
-        case Americana:
-            ingredient.name = "doe";
-            ingredient.number = 1;
-            toCook.ingredients.push_back(ingredient);
-            ingredient.name = "tomato";
-            ingredient.number = 1;
-            toCook.ingredients.push_back(ingredient);
-            ingredient.name = "gruyere";
-            ingredient.number = 1;
-            toCook.ingredients.push_back(ingredient);
-            ingredient.name = "steak";
-            ingredient.number = 1;
-            toCook.ingredients.push_back(ingredient);
-            break;
-        case Fantasia:
-            ingredient.name = "doe";
-            ingredient.number = 1;
-            toCook.ingredients.push_back(ingredient);
-            ingredient.name = "tomato";
-            ingredient.number = 1;
-            toCook.ingredients.push_back(ingredient);
-            ingredient.name = "eggplant";
-            ingredient.number = 1;
-            toCook.ingredients.push_back(ingredient);
-            ingredient.name = "goatCheese";
-            ingredient.number = 1;
-            toCook.ingredients.push_back(ingredient);
-            break;
+    case Margarita:
+        ingredient.name = "doe";
+        ingredient.number = 1;
+        toCook.ingredients.push_back(ingredient);
+        ingredient.name = "tomato";
+        ingredient.number = 1;
+        toCook.ingredients.push_back(ingredient);
+        ingredient.name = "gruyere";
+        ingredient.number = 1;
+        toCook.ingredients.push_back(ingredient);
+        break;
+    case Regina:
+        ingredient.name = "doe";
+        ingredient.number = 1;
+        toCook.ingredients.push_back(ingredient);
+        ingredient.name = "tomato";
+        ingredient.number = 1;
+        toCook.ingredients.push_back(ingredient);
+        ingredient.name = "gruyere";
+        ingredient.number = 1;
+        toCook.ingredients.push_back(ingredient);
+        ingredient.name = "ham";
+        ingredient.number = 1;
+        toCook.ingredients.push_back(ingredient);
+        ingredient.name = "mushrooms";
+        ingredient.number = 1;
+        toCook.ingredients.push_back(ingredient);
+        break;
+    case Americana:
+        ingredient.name = "doe";
+        ingredient.number = 1;
+        toCook.ingredients.push_back(ingredient);
+        ingredient.name = "tomato";
+        ingredient.number = 1;
+        toCook.ingredients.push_back(ingredient);
+        ingredient.name = "gruyere";
+        ingredient.number = 1;
+        toCook.ingredients.push_back(ingredient);
+        ingredient.name = "steak";
+        ingredient.number = 1;
+        toCook.ingredients.push_back(ingredient);
+        break;
+    case Fantasia:
+        ingredient.name = "doe";
+        ingredient.number = 1;
+        toCook.ingredients.push_back(ingredient);
+        ingredient.name = "tomato";
+        ingredient.number = 1;
+        toCook.ingredients.push_back(ingredient);
+        ingredient.name = "eggplant";
+        ingredient.number = 1;
+        toCook.ingredients.push_back(ingredient);
+        ingredient.name = "goatCheese";
+        ingredient.number = 1;
+        toCook.ingredients.push_back(ingredient);
+        break;
     }
 }
 
@@ -264,7 +264,7 @@ void Kitchen::stop()
     order_condition.notify_all();
     std::size_t index = 0;
     for (std::thread &active_thread: _brigade) {
-            active_thread.join();
+        active_thread.join();
         index++;
     }
     _brigade.clear();
