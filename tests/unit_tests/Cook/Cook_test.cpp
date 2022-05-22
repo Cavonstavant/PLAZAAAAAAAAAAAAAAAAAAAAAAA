@@ -63,7 +63,7 @@ Test(cook, cook_cook_pizza, .init = cr_redirect_stdout)
 
     Cook cook;
     cook.cookPizza(pizza);
-    cr_assert_stdout_eq_str("regina of size S\tStatus: COOKING STARTED\nregina of size S\tStatus: COOKING FINISHED\n");
+    cr_assert_stdout_eq_str("regina of size S\n\tStatus: COOKING STARTED\nregina of size S\n\tStatus: COOKING FINISHED\n");
 }
 
 Test(cook, setCookingTimeMult)
