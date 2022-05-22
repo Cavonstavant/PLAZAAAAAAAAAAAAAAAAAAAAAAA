@@ -18,6 +18,7 @@
 #include <utility>
 
 using namespace plazza;
+using namespace std::string_literals;
 
 Reception::Reception(float cookingTime, size_t cookNumber, size_t refillTime)
 {
@@ -37,7 +38,7 @@ int Reception::_isAvailableSlots(std::string message)
         try {
             slots = std::stoi(message);
         } catch (std::exception &e) {
-            std::cerr << "Error:" << e.what() << std::endl;
+            PlazzaEX(message + ": "s + e.what(), Logger::INFO);
             return (-1);
         }
     } else
@@ -116,18 +117,15 @@ void Reception::_updateBusyCooks(void)
         kitchen.second->sendMessage("avail_slots?");
         kitchenResponse = kitchen.second->receiveMessage();
         while (kitchenResponse.find("avail_slots:") == std::string::npos) {
-            kitchen.second->sendMessage("avail_slots?");
-            kitchenResponse = kitchen.second->receiveMessage();
-        }
-        {
             kitchen.second->sendMessage(kitchenResponse);
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
             kitchenResponse = kitchen.second->receiveMessage();
         }
         try {
             tmp_avail = std::stoi(kitchenResponse.substr(kitchenResponse.find(":") + 1));
         } catch (const std::exception &e) {
-            std::cerr << "Error: " << kitchenResponse << " " << e.what() << std::endl;
-            return;
+            PlazzaEX(kitchenResponse + ": "s + e.what(), Logger::INFO);
+            continue;
         }
         _availSlots[kitchen.first] = _cookNumber - tmp_avail;
         _availSlotsTotal += _cookNumber - tmp_avail;
@@ -178,9 +176,10 @@ void Reception::_manageOrders(const InputParser &command)
 
     if (pizzaToCook.size() == 0)
         return;
-    _updateBusyCooks();
-    if (!_kitchenMap.empty())
+    if (!_kitchenMap.empty()){
+        _updateBusyCooks();
         pizzaPerKitchen = _availSlotsTotal + pizzaToCook.size() / _kitchenMap.size();
+    }
     if (_kitchenMap.empty() || _isNewKitchenNeeded(pizzaToCook.size())){
         if (_kitchenMap.size() < 9){
             _createNewKitchen(pizzaToCook, pizzaPerKitchen);
