@@ -32,5 +32,5 @@ Test(kitchen, kitchen_instaciation)
 
     kitchen.commandQueue = std::make_shared<MessageQueue>();
     kitchen.commandQueue.get()->openQueue("/TestMessageQueue");
-    cr_assert_str_eq(kitchen.commandQueue.get()->getQueueName().c_str(), "/TestMessageQueue");
+    cr_assert_str_eq(kitchen.commandQueue.get()->getPath().c_str(), "/TestMessageQueue");
 }
