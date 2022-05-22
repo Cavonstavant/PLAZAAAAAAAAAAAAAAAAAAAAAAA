@@ -125,7 +125,7 @@ void Kitchen::_refillFridge(Kitchen *obj)
     time_t time = std::time(nullptr);
 
     while (true) {
-        if (std::time(nullptr) - time > (time_t)obj->_refillTime) {
+        if (std::time(nullptr) - time > (time_t) obj->_refillTime) {
             time = std::time(nullptr);
             {
                 std::unique_lock<std::mutex> lock(obj->_fridgeMutex);
