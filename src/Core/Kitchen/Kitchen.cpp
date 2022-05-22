@@ -107,7 +107,7 @@ void Kitchen::_receptCook(Kitchen *obj)
         }
         if (_isAvailableCook(fullCommand)) {
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
-            std::string message = "avail_slots:" + std::to_string(obj->_availCooks) + ";fridge:";
+            std::string message = "avail_slots:" + std::to_string(obj->_orders.size() + (obj->_nbCooks - obj->_availCooks)) + ";fridge:";
             {
                 std::unique_lock<std::mutex> lock(obj->_fridgeMutex);
                 for (size_t x = 1; x < IngredientNumber; x++) {
