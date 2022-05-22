@@ -327,11 +327,16 @@ void Reception::_kitchenExit(Reception *obj)
             }
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
             std::string message = it.second.get()->receiveMessage();
+            time_t oldTime = std::time(nullptr);
             while (message.find("exit:") != 0) {
                 {
                     std::unique_lock<std::mutex> lock(obj->_mutex);
                     it.second.get()->sendMessage(message);
                     message = it.second.get()->receiveMessage();
+                }
+                if (std::time(nullptr) - oldTime > 3) {
+                    std::cout << "dont need tp exit" << std::endl;
+                    break;
                 }
                 std::this_thread::sleep_for(std::chrono::milliseconds(100));
             }
