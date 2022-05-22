@@ -114,6 +114,7 @@ void Kitchen::_timerCook(Kitchen *obj)
             }
             if (isWorking == false && std::time(nullptr) - timer >= 5) {
                 obj->_needToBeKilled = true;
+                return;
             }
         }
     }
