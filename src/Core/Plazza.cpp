@@ -179,7 +179,7 @@ void Reception::_kitchenExit(Reception *obj)
             std::unique_lock<std::mutex> lock(obj->_mutex);
             if (obj->_endRun)
                 break;
-            for (auto it : obj->_kitchenMap) {
+            for (auto it: obj->_kitchenMap) {
                 it.second.get()->sendMessage("exit?");
                 std::this_thread::sleep_for(std::chrono::milliseconds(10));
                 std::string message = it.second.get()->receiveMessage();
