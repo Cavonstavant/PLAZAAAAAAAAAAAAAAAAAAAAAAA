@@ -106,256 +106,323 @@ $(document).ready(function(){initNavTree('_plazza_8cpp_source.html',''); initRes
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceplazza.html">plazza</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classplazza_1_1_reception.html#ad3b50c0e4a66baf6fd97458c43d12f7a">   22</a></span>&#160;<a class="code" href="classplazza_1_1_reception.html#ab30fd98e6a6f7ed242eec12cb829e494">Reception::Reception</a>(<span class="keywordtype">float</span> cookingTime, <span class="keywordtype">size_t</span> cookNumber, <span class="keywordtype">size_t</span> refillTime)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classplazza_1_1_reception.html#a10c4258175d9089a2e58177f2a76a8f0">_cookingTime</a> = cookingTime;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classplazza_1_1_reception.html#a793ede760fac53f5d221be826499a1d2">_cookNumber</a> = cookNumber;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classplazza_1_1_reception.html#ad633142b70dff3a2cc1f4cc21ae90447">_refillTime</a> = refillTime;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classplazza_1_1_reception.html#a410e023bb6fcba6911b258bc150afa54">_endRun</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classplazza_1_1_reception.html#a46ba35a369297fcde3bfad28c0e82dc8">   30</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classplazza_1_1_reception.html#a46ba35a369297fcde3bfad28c0e82dc8">Reception::_isAvailableSlots</a>(std::string message)</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> slots = 0;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span> (message.find(<span class="stringliteral">&quot;avail_slots:&quot;</span>) == 0) {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        message = message.substr(message.find(<span class="stringliteral">&quot;:&quot;</span>) + 1);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            slots = std::stoi(message);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        } <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            std::cerr &lt;&lt; <span class="stringliteral">&quot;Error:&quot;</span> &lt;&lt; e.what() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">return</span> (-1);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    } <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> (-1);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> (slots);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classplazza_1_1_reception.html#ab7c952a340a547b8cb6fadea4f14669a">   47</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classplazza_1_1_reception.html#ab7c952a340a547b8cb6fadea4f14669a">Reception::_displayKitchensStatus</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    pid_t pid;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">int</span> cookAvailable = 0;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    std::string message;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        std::unique_lock&lt;std::mutex&gt; lock(<a class="code" href="classplazza_1_1_reception.html#ae1a056d3d58e4ecb3c10c0d35cc2a2c4">_mutex</a>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Available Kitchen: &quot;</span> &lt;&lt; <a class="code" href="classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624">_kitchenMap</a>.size() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it: <a class="code" href="classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624">_kitchenMap</a>) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            std::unique_lock&lt;std::mutex&gt; lock(<a class="code" href="classplazza_1_1_reception.html#ae1a056d3d58e4ecb3c10c0d35cc2a2c4">_mutex</a>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;====================&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            pid = it.first;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Kitchen PID: &quot;</span> &lt;&lt; (int) pid &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            it.second.get()-&gt;sendMessage(<span class="stringliteral">&quot;avail_slots?&quot;</span>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            std::this_thread::sleep_for(std::chrono::milliseconds(10));</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            message = it.second.get()-&gt;receiveMessage();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">while</span> (<a class="code" href="classplazza_1_1_reception.html#a46ba35a369297fcde3bfad28c0e82dc8">_isAvailableSlots</a>(message) &lt; 0) {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                it.second.get()-&gt;sendMessage(message);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                std::this_thread::sleep_for(std::chrono::milliseconds(100));</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                message = it.second.get()-&gt;receiveMessage();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            cookAvailable = <a class="code" href="classplazza_1_1_reception.html#a46ba35a369297fcde3bfad28c0e82dc8">_isAvailableSlots</a>(message);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Available slots: &quot;</span> &lt;&lt; <a class="code" href="classplazza_1_1_reception.html#a793ede760fac53f5d221be826499a1d2">_cookNumber</a> * 2 - cookAvailable &lt;&lt; <span class="stringliteral">&quot;/&quot;</span> &lt;&lt; <a class="code" href="classplazza_1_1_reception.html#a793ede760fac53f5d221be826499a1d2">_cookNumber</a> * 2 &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Fridge:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            message = message.substr(message.find(<span class="stringliteral">&quot;fridge&quot;</span>));</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            message = message.substr(message.find(<span class="stringliteral">&quot;:&quot;</span>) + 1);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">while</span> (!message.empty()) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                std::cout &lt;&lt; message.substr(0, message.find(<span class="stringliteral">&quot;,&quot;</span>));</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                message = message.substr(message.find(<span class="stringliteral">&quot;,&quot;</span>) + 1);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; message.substr(0, message.find(<span class="stringliteral">&quot;;&quot;</span>)) &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                message = message.substr(message.find(<span class="stringliteral">&quot;;&quot;</span>) + 1);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;====================&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classplazza_1_1_reception.html#a806f3e116779e70568d48931a765b6fd">   87</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classplazza_1_1_reception.html#a806f3e116779e70568d48931a765b6fd">Reception::_handleInput</a>(<span class="keyword">const</span> std::string &amp;input)</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="classplazza_1_1_input_parser.html">InputParser</a> server;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    server.<a class="code" href="classplazza_1_1_input_parser.html#adb2033b9aa55e45d24387cbca82fd38f">setCommand</a>(input);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        server.<a class="code" href="classplazza_1_1_input_parser.html#a65748f951e8b895aceca27ed2ba0c75d">processArguments</a>();</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="class_plazza_exception.html">PlazzaException</a> &amp;e) {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        std::cerr &lt;&lt; e.<a class="code" href="class_plazza_exception.html#af42078485825da6b030af687e5990044">what</a>() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="classplazza_1_1_reception.html#aaf9213d113caa6887a2ab6cf6cae84dd">_sendCommand</a>(server);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classplazza_1_1_reception.html#aaf9213d113caa6887a2ab6cf6cae84dd">  102</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classplazza_1_1_reception.html#aaf9213d113caa6887a2ab6cf6cae84dd">Reception::_sendCommand</a>(<span class="keyword">const</span> <a class="code" href="classplazza_1_1_input_parser.html">InputParser</a> &amp;command)</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    std::vector&lt;Pizza&gt; pizzaToCook = command.<a class="code" href="classplazza_1_1_input_parser.html#a1b50e55e7fc97ab09eb119040517ac61">getPizza</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">using namespace </span>std::string_literals;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classplazza_1_1_reception.html#ad3b50c0e4a66baf6fd97458c43d12f7a">   23</a></span>&#160;<a class="code" href="classplazza_1_1_reception.html#ab30fd98e6a6f7ed242eec12cb829e494">Reception::Reception</a>(<span class="keywordtype">float</span> cookingTime, <span class="keywordtype">size_t</span> cookNumber, <span class="keywordtype">size_t</span> refillTime)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    _cookingTime = cookingTime;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    _cookNumber = cookNumber;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    _refillTime = refillTime;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    _endRun = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    _availSlotsTotal = 0;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classplazza_1_1_reception.html#a46ba35a369297fcde3bfad28c0e82dc8">   32</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classplazza_1_1_reception.html#a46ba35a369297fcde3bfad28c0e82dc8">Reception::_isAvailableSlots</a>(std::string message)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">int</span> slots = 0;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span> (message.find(<span class="stringliteral">&quot;avail_slots:&quot;</span>) == 0) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        message = message.substr(message.find(<span class="stringliteral">&quot;:&quot;</span>) + 1);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            slots = std::stoi(message);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        } <span class="keywordflow">catch</span> (std::exception &amp;e) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <a class="code" href="_exception_8hpp.html#a8ef0a847cd4c54afe916ea3129b03b52">PlazzaEX</a>(message + <span class="stringliteral">&quot;: &quot;</span>s + e.what(), <a class="code" href="class_logger.html#a0444040bdc1a82659a84ad918b42a61d">Logger::INFO</a>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">return</span> (-1);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> (-1);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> (slots);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classplazza_1_1_reception.html#ab7c952a340a547b8cb6fadea4f14669a">   49</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classplazza_1_1_reception.html#ab7c952a340a547b8cb6fadea4f14669a">Reception::_displayKitchensStatus</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    pid_t pid;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">int</span> cookAvailable = 0;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    std::string message;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        std::unique_lock&lt;std::mutex&gt; lock(_mutex);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Available Kitchen: &quot;</span> &lt;&lt; _kitchenMap.size() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it: _kitchenMap) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            std::unique_lock&lt;std::mutex&gt; lock(_mutex);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;====================&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            pid = it.first;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Kitchen PID: &quot;</span> &lt;&lt; (int) pid &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            it.second.get()-&gt;sendMessage(<span class="stringliteral">&quot;avail_slots?&quot;</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        std::this_thread::sleep_for(std::chrono::milliseconds(10));</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            std::unique_lock&lt;std::mutex&gt; lock(_mutex);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            message = it.second.get()-&gt;receiveMessage();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        time_t oldTime = std::time(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">while</span> (_isAvailableSlots(message) &lt; 0) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                std::unique_lock&lt;std::mutex&gt; lock(_mutex);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                it.second.get()-&gt;sendMessage(message);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            std::this_thread::sleep_for(std::chrono::milliseconds(100));</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                std::unique_lock&lt;std::mutex&gt; lock(_mutex);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                message = it.second.get()-&gt;receiveMessage();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordflow">if</span> (std::time(<span class="keyword">nullptr</span>) - oldTime &gt; 3) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot;Fail to print status, maybe the kitchen have been killed. You can continue.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        cookAvailable = _isAvailableSlots(message);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            std::unique_lock&lt;std::mutex&gt; lock(_mutex);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Available slots: &quot;</span> &lt;&lt; _cookNumber * 2 - cookAvailable &lt;&lt; <span class="stringliteral">&quot;/&quot;</span> &lt;&lt; _cookNumber * 2 &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Fridge:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        message = message.substr(message.find(<span class="stringliteral">&quot;fridge&quot;</span>));</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        message = message.substr(message.find(<span class="stringliteral">&quot;:&quot;</span>) + 1);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">while</span> (!message.empty()) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            std::cout &lt;&lt; message.substr(0, message.find(<span class="stringliteral">&quot;,&quot;</span>));</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            message = message.substr(message.find(<span class="stringliteral">&quot;,&quot;</span>) + 1);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; message.substr(0, message.find(<span class="stringliteral">&quot;;&quot;</span>)) &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            message = message.substr(message.find(<span class="stringliteral">&quot;;&quot;</span>) + 1);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;====================&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        std::unique_lock&lt;std::mutex&gt; lock(<a class="code" href="classplazza_1_1_reception.html#ae1a056d3d58e4ecb3c10c0d35cc2a2c4">_mutex</a>);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">if</span> (pizzaToCook.size() == 0)</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624">_kitchenMap</a>.size() == 9) {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <a class="code" href="_exception_8hpp.html#ad538f9c3d6a39de5fe29dd89f7c1ef3a">MessageQueueEx</a>(<span class="stringliteral">&quot;You can not open more than 9 Kitchens&quot;</span>, <a class="code" href="class_logger.html#a8db5fb65e82f81fb04eb4e21a931a1d6">Logger::MEDIUM</a>);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="classplazza_1_1_kitchen.html">Kitchen</a> newKitchen(<a class="code" href="classplazza_1_1_reception.html#a793ede760fac53f5d221be826499a1d2">_cookNumber</a>, <a class="code" href="classplazza_1_1_reception.html#ad633142b70dff3a2cc1f4cc21ae90447">_refillTime</a>, <a class="code" href="classplazza_1_1_reception.html#a10c4258175d9089a2e58177f2a76a8f0">_cookingTime</a>);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        std::shared_ptr&lt;MessageQueue&gt; newQueue = std::make_shared&lt;MessageQueue&gt;();</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classplazza_1_1_reception.html#a806f3e116779e70568d48931a765b6fd">  106</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classplazza_1_1_reception.html#a806f3e116779e70568d48931a765b6fd">Reception::_handleInput</a>(<span class="keyword">const</span> std::string &amp;input)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;{</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="classplazza_1_1_input_parser.html">InputParser</a> server;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    server.<a class="code" href="classplazza_1_1_input_parser.html#adb2033b9aa55e45d24387cbca82fd38f">setCommand</a>(input);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    server.<a class="code" href="classplazza_1_1_input_parser.html#a65748f951e8b895aceca27ed2ba0c75d">processArguments</a>();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">if</span> (server.<a class="code" href="classplazza_1_1_a_parser.html#a2ebaa016b31902e66dcfb014a969e456">getArguments</a>().empty())</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    _manageOrders(server);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        newQueue.get()-&gt;openQueue(std::string(<span class="stringliteral">&quot;/plazzaQueueNumber&quot;</span> + std::to_string(<a class="code" href="classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624">_kitchenMap</a>.size())));</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        pid_t newKitchenPid = fork();</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">if</span> (newKitchenPid == 0) {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            newKitchen.<a class="code" href="classplazza_1_1_kitchen.html#a4abffc67076cfa4cb9daf75e8e4024a8">commandQueue</a> = newQueue;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            newKitchen.<a class="code" href="classplazza_1_1_kitchen.html#ab6afa23613acf5e0680d8e5177f887f3">start</a>();</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <a class="code" href="classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624">_kitchenMap</a>[newKitchenPid] = newQueue;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keywordflow">for</span> (std::size_t x = 0; x &lt; pizzaToCook.size(); ++x) {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                std::this_thread::sleep_for(std::chrono::milliseconds(10));</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                newQueue.get()-&gt;sendMessage(<a class="code" href="classplazza_1_1_reception.html#a3f021dd7112c61bfced3477a892a8685">pack</a>(pizzaToCook[x]));</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            }</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="classplazza_1_1_reception.html#a3f021dd7112c61bfced3477a892a8685">  136</a></span>&#160;std::string <a class="code" href="classplazza_1_1_reception.html#a3f021dd7112c61bfced3477a892a8685">Reception::pack</a>(<span class="keyword">const</span> <a class="code" href="structplazza_1_1_pizza.html">Pizza</a> &amp;pizza)</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;{</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    std::string order = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    order.append(<span class="stringliteral">&quot;name:&quot;</span>);</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    order.append(std::to_string(pizza.<a class="code" href="structplazza_1_1_pizza.html#a7d8a39a6e1d49e1c7f1a53124dc13c13">type</a>));</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    order.append(<span class="stringliteral">&quot;;size:&quot;</span>);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    order.append(std::to_string(pizza.<a class="code" href="structplazza_1_1_pizza.html#adb22b76e4fa711a688b555e6e5a12208">size</a>));</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    order.append(<span class="stringliteral">&quot;;amount:&quot;</span>);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    order.append(std::to_string(pizza.<a class="code" href="structplazza_1_1_pizza.html#a57de3884a638bc2e0c30afa80de4629d">number</a>));</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    order.append(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">return</span> (order);</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;}</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="classplazza_1_1_reception.html#a29b2128afd9048572db31c47dcfafb05">  150</a></span>&#160;<a class="code" href="structplazza_1_1_pizza.html">Pizza</a> <a class="code" href="classplazza_1_1_reception.html#a29b2128afd9048572db31c47dcfafb05">Reception::unpack</a>(<span class="keyword">const</span> std::string &amp;order)</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;{</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <a class="code" href="structplazza_1_1_pizza.html">Pizza</a> pizza;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    std::string tmp = order;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    tmp = tmp.substr(tmp.find(<span class="stringliteral">&quot;name:&quot;</span>) + 5);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    pizza.<a class="code" href="structplazza_1_1_pizza.html#a7d8a39a6e1d49e1c7f1a53124dc13c13">type</a> = <a class="code" href="namespaceplazza.html#a3df93b5bf8fa865c6f1251078950734c">PizzaType</a>(std::atoi(tmp.c_str()));</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    tmp = tmp.substr(tmp.find(<span class="stringliteral">&quot;;size:&quot;</span>) + 6);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    pizza.<a class="code" href="structplazza_1_1_pizza.html#adb22b76e4fa711a688b555e6e5a12208">size</a> = <a class="code" href="namespaceplazza.html#a8b75d3915b8f7e5d1ff158526c08c374">PizzaSize</a>(std::atoi(tmp.c_str()));</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    tmp = tmp.substr(tmp.find(<span class="stringliteral">&quot;;amount:&quot;</span>) + 8);</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    pizza.<a class="code" href="structplazza_1_1_pizza.html#a57de3884a638bc2e0c30afa80de4629d">number</a> = std::atoi(tmp.c_str());</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">return</span> (pizza);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="classplazza_1_1_reception.html#a7f3293c467547f02d1cfb0d9de546f3f">  164</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classplazza_1_1_reception.html#a7f3293c467547f02d1cfb0d9de546f3f">Reception::_cleanKitchens</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;{</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    {</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        std::unique_lock&lt;std::mutex&gt; lock(<a class="code" href="classplazza_1_1_reception.html#ae1a056d3d58e4ecb3c10c0d35cc2a2c4">_mutex</a>);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> x = <a class="code" href="classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624">_kitchenMap</a>.begin(); x != <a class="code" href="classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624">_kitchenMap</a>.end() &amp;&amp; !<a class="code" href="classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624">_kitchenMap</a>.empty(); ++x) {</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            kill(x-&gt;first, SIGTERM);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <a class="code" href="classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624">_kitchenMap</a>.erase(x-&gt;first);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        }</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="classplazza_1_1_reception.html#a24e75238836afbeacc5a7e62075c796f">  175</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classplazza_1_1_reception.html#a24e75238836afbeacc5a7e62075c796f">Reception::_kitchenExit</a>(<a class="code" href="classplazza_1_1_reception.html">Reception</a> *obj)</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;{</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        {</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            std::unique_lock&lt;std::mutex&gt; lock(obj-&gt;<a class="code" href="classplazza_1_1_reception.html#ae1a056d3d58e4ecb3c10c0d35cc2a2c4">_mutex</a>);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <span class="keywordflow">if</span> (obj-&gt;<a class="code" href="classplazza_1_1_reception.html#a410e023bb6fcba6911b258bc150afa54">_endRun</a>)</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> it: obj-&gt;<a class="code" href="classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624">_kitchenMap</a>) {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                it.second.get()-&gt;sendMessage(<span class="stringliteral">&quot;exit?&quot;</span>);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                std::this_thread::sleep_for(std::chrono::milliseconds(10));</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                std::string message = it.second.get()-&gt;receiveMessage();</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                <span class="keywordflow">while</span> (message.find(<span class="stringliteral">&quot;exit:&quot;</span>) != 0) {</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                    it.second.get()-&gt;sendMessage(message);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                    message = it.second.get()-&gt;receiveMessage();</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                }</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                <span class="keywordflow">if</span> (message == <span class="stringliteral">&quot;exit:OK&quot;</span>) {</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                    kill(it.first, SIGTERM);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                    obj-&gt;<a class="code" href="classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624">_kitchenMap</a>.erase(it.first);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                }</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            }</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        }</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        std::this_thread::sleep_for(std::chrono::milliseconds(100));</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    }</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;}</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="classplazza_1_1_reception.html#a73430319934872441506482fba8cf642">  201</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classplazza_1_1_reception.html#a73430319934872441506482fba8cf642">Reception::run</a>()</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;{</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    std::string input;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    std::thread exitThread(<a class="code" href="classplazza_1_1_reception.html#a24e75238836afbeacc5a7e62075c796f">_kitchenExit</a>, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keywordflow">if</span> (!std::getline(std::cin, input))</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="classplazza_1_1_reception.html#a3ca1b4dc210f101ffa60bca2bc0cadff">  118</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classplazza_1_1_reception.html#a3ca1b4dc210f101ffa60bca2bc0cadff">Reception::_manageOrders</a>(<span class="keyword">const</span> <a class="code" href="classplazza_1_1_input_parser.html">InputParser</a> &amp;server)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        std::unique_lock&lt;std::mutex&gt; lock(_mutex);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        std::vector&lt;Pizza&gt; orders = server.<a class="code" href="classplazza_1_1_input_parser.html#a1b50e55e7fc97ab09eb119040517ac61">getPizza</a>();</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        std::size_t nbKitchen = _kitchenMap.size();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        std::size_t nbMaxKitchen = 9;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        std::size_t totalAvail = 0;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        std::string message;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        std::vector&lt;std::size_t&gt; availSlots;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="structplazza_1_1_pizza.html">Pizza</a> order: orders) {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            availSlots.clear();</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            totalAvail = 0;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            nbKitchen = _kitchenMap.size();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> it: _kitchenMap) {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                it.second.get()-&gt;sendMessage(<span class="stringliteral">&quot;avail_slots?&quot;</span>);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                std::this_thread::sleep_for(std::chrono::milliseconds(10));</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                message = it.second.get()-&gt;receiveMessage();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                <span class="keywordflow">while</span> (_isAvailableSlots(message) &lt; 0) {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                    it.second.get()-&gt;sendMessage(message);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                    std::this_thread::sleep_for(std::chrono::milliseconds(100));</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                    message = it.second.get()-&gt;receiveMessage();</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                availSlots.push_back(_cookNumber * 2 - _isAvailableSlots(message));</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <span class="keywordflow">for</span> (std::size_t it: availSlots)</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                totalAvail += it;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="keywordflow">if</span> (order.number &gt; totalAvail) {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                <span class="keywordflow">if</span> (nbKitchen &lt; nbMaxKitchen) {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                    std::size_t nbNewKitchen = (order.number % (_cookNumber * 2) == 0) ? order.number / (_cookNumber * 2) : order.number / (_cookNumber * 2) + 1;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                    <span class="keywordflow">if</span> (nbNewKitchen + nbKitchen &gt; nbMaxKitchen) {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                        nbNewKitchen = nbMaxKitchen - nbKitchen;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                    }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                    pid_t newKitchenPid;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                    <span class="keywordflow">for</span> (; nbNewKitchen &gt; 0; nbNewKitchen--) {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                        <a class="code" href="classplazza_1_1_kitchen.html">Kitchen</a> newKitchen(_cookNumber, _refillTime, _cookingTime);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                        std::shared_ptr&lt;MessageQueue&gt; newQueue = std::make_shared&lt;MessageQueue&gt;();</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                        newQueue.get()-&gt;openQueue(std::string(<span class="stringliteral">&quot;/plazzaQueueNumber&quot;</span> + std::to_string(_kitchenMap.size())));</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                        newKitchenPid = fork();</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                        <span class="keywordflow">if</span> (newKitchenPid == 0) {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                            newKitchen.<a class="code" href="classplazza_1_1_kitchen.html#a4abffc67076cfa4cb9daf75e8e4024a8">commandQueue</a> = newQueue;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                            newKitchen.<a class="code" href="classplazza_1_1_kitchen.html#ab6afa23613acf5e0680d8e5177f887f3">start</a>();</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                            newKitchen.<a class="code" href="classplazza_1_1_kitchen.html#abd875fb3f41b2899b37f45440da45830">work</a>();</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                            exit(0);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                            _kitchenMap[newKitchenPid] = newQueue;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                            availSlots.push_back(_cookNumber * 2);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                        }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                    }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                }</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            }</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <span class="keywordflow">for</span> (; order.number &gt; 0; order.number--) {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                std::size_t indexMin = 0;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                std::size_t index = 0;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                <a class="code" href="structplazza_1_1_pizza.html">Pizza</a> tmp = order;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                tmp.<a class="code" href="structplazza_1_1_pizza.html#a57de3884a638bc2e0c30afa80de4629d">number</a> = 1;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                <span class="keywordflow">for</span> (std::size_t it: availSlots) {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                    <span class="keywordflow">if</span> (it &lt; availSlots[indexMin])</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                        indexMin = index;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                    index++;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                index = 0;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> it: _kitchenMap) {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                    <span class="keywordflow">if</span> (index == indexMin)</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                        it.second.get()-&gt;sendMessage(pack(tmp));</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                    index++;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                }</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        }</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    }</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;}</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="classplazza_1_1_reception.html#a3f021dd7112c61bfced3477a892a8685">  191</a></span>&#160;std::string <a class="code" href="classplazza_1_1_reception.html#a3f021dd7112c61bfced3477a892a8685">Reception::pack</a>(<span class="keyword">const</span> <a class="code" href="structplazza_1_1_pizza.html">Pizza</a> &amp;pizza)</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;{</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    std::string order = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    order.append(<span class="stringliteral">&quot;name:&quot;</span>);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    order.append(std::to_string(pizza.<a class="code" href="structplazza_1_1_pizza.html#a7d8a39a6e1d49e1c7f1a53124dc13c13">type</a>));</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    order.append(<span class="stringliteral">&quot;;size:&quot;</span>);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    order.append(std::to_string(pizza.<a class="code" href="structplazza_1_1_pizza.html#adb22b76e4fa711a688b555e6e5a12208">size</a>));</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    order.append(<span class="stringliteral">&quot;;amount:&quot;</span>);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    order.append(std::to_string(pizza.<a class="code" href="structplazza_1_1_pizza.html#a57de3884a638bc2e0c30afa80de4629d">number</a>));</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    order.append(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordflow">return</span> (order);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;}</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="classplazza_1_1_reception.html#a29b2128afd9048572db31c47dcfafb05">  205</a></span>&#160;<a class="code" href="structplazza_1_1_pizza.html">Pizza</a> <a class="code" href="classplazza_1_1_reception.html#a29b2128afd9048572db31c47dcfafb05">Reception::unpack</a>(<span class="keyword">const</span> std::string &amp;order)</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;{</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <a class="code" href="structplazza_1_1_pizza.html">Pizza</a> pizza;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    std::string tmp = order;</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordflow">if</span> (input == <span class="stringliteral">&quot;exit&quot;</span>) {</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            {</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                std::unique_lock&lt;std::mutex&gt; lock(<a class="code" href="classplazza_1_1_reception.html#ae1a056d3d58e4ecb3c10c0d35cc2a2c4">_mutex</a>);</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                <a class="code" href="classplazza_1_1_reception.html#a410e023bb6fcba6911b258bc150afa54">_endRun</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            }</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (input == <span class="stringliteral">&quot;status&quot;</span>) {</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            <a class="code" href="classplazza_1_1_reception.html#ab7c952a340a547b8cb6fadea4f14669a">_displayKitchensStatus</a>();</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (input == <span class="stringliteral">&quot;clear&quot;</span> || input == <span class="stringliteral">&quot;c&quot;</span>) {</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            std::system(<span class="stringliteral">&quot;clear&quot;</span>);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classplazza_1_1_reception.html#a806f3e116779e70568d48931a765b6fd">_handleInput</a>(input)) {</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                <a class="code" href="_exception_8hpp.html#a1c92790f33d41d0230cc5a141c425c21">ParserEX</a>(input + <span class="stringliteral">&quot; has a invalid pizza command.&quot;</span>, <a class="code" href="class_logger.html#a0444040bdc1a82659a84ad918b42a61d">Logger::INFO</a>);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            }</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        }</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    }</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    exitThread.join();</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <a class="code" href="classplazza_1_1_reception.html#a7f3293c467547f02d1cfb0d9de546f3f">_cleanKitchens</a>();</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    tmp = tmp.substr(tmp.find(<span class="stringliteral">&quot;name:&quot;</span>) + 5);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    pizza.<a class="code" href="structplazza_1_1_pizza.html#a7d8a39a6e1d49e1c7f1a53124dc13c13">type</a> = <a class="code" href="namespaceplazza.html#a3df93b5bf8fa865c6f1251078950734c">PizzaType</a>(std::atoi(tmp.c_str()));</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    tmp = tmp.substr(tmp.find(<span class="stringliteral">&quot;;size:&quot;</span>) + 6);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    pizza.<a class="code" href="structplazza_1_1_pizza.html#adb22b76e4fa711a688b555e6e5a12208">size</a> = <a class="code" href="namespaceplazza.html#a8b75d3915b8f7e5d1ff158526c08c374">PizzaSize</a>(std::atoi(tmp.c_str()));</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    tmp = tmp.substr(tmp.find(<span class="stringliteral">&quot;;amount:&quot;</span>) + 8);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    pizza.<a class="code" href="structplazza_1_1_pizza.html#a57de3884a638bc2e0c30afa80de4629d">number</a> = std::atoi(tmp.c_str());</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordflow">return</span> (pizza);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;}</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno"><a class="line" href="classplazza_1_1_reception.html#a7f3293c467547f02d1cfb0d9de546f3f">  219</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classplazza_1_1_reception.html#a7f3293c467547f02d1cfb0d9de546f3f">Reception::_cleanKitchens</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;{</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    {</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        std::unique_lock&lt;std::mutex&gt; lock(_mutex);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> x = _kitchenMap.begin(); x != _kitchenMap.end() &amp;&amp; !_kitchenMap.empty(); ++x) {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            kill(x-&gt;first, SIGTERM);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            _kitchenMap.erase(x-&gt;first);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        }</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    }</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;}</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno"><a class="line" href="classplazza_1_1_reception.html#a24e75238836afbeacc5a7e62075c796f">  230</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classplazza_1_1_reception.html#a24e75238836afbeacc5a7e62075c796f">Reception::_kitchenExit</a>(<a class="code" href="classplazza_1_1_reception.html">Reception</a> *obj)</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;{</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        {</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            std::unique_lock&lt;std::mutex&gt; lock(obj-&gt;<a class="code" href="classplazza_1_1_reception.html#ae1a056d3d58e4ecb3c10c0d35cc2a2c4">_mutex</a>);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <span class="keywordflow">if</span> (obj-&gt;<a class="code" href="classplazza_1_1_reception.html#a410e023bb6fcba6911b258bc150afa54">_endRun</a>) {</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            }</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        }</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> it: obj-&gt;<a class="code" href="classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624">_kitchenMap</a>) {</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            {</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                std::unique_lock&lt;std::mutex&gt; lock(obj-&gt;<a class="code" href="classplazza_1_1_reception.html#ae1a056d3d58e4ecb3c10c0d35cc2a2c4">_mutex</a>);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                it.second.get()-&gt;sendMessage(<span class="stringliteral">&quot;exit?&quot;</span>);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            }</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            std::this_thread::sleep_for(std::chrono::milliseconds(10));</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            std::string message;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            {</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                std::unique_lock&lt;std::mutex&gt; lock(obj-&gt;<a class="code" href="classplazza_1_1_reception.html#ae1a056d3d58e4ecb3c10c0d35cc2a2c4">_mutex</a>);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                message = it.second.get()-&gt;receiveMessage();</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            }</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            time_t oldTime = std::time(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            <span class="keywordflow">while</span> (message.find(<span class="stringliteral">&quot;exit:&quot;</span>) != 0) {</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                    std::unique_lock&lt;std::mutex&gt; lock(obj-&gt;<a class="code" href="classplazza_1_1_reception.html#ae1a056d3d58e4ecb3c10c0d35cc2a2c4">_mutex</a>);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                    it.second.get()-&gt;sendMessage(message);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                    message = it.second.get()-&gt;receiveMessage();</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                <span class="keywordflow">if</span> (std::time(<span class="keyword">nullptr</span>) - oldTime &gt; 3) {</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                }</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                std::this_thread::sleep_for(std::chrono::milliseconds(100));</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            }</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            <span class="keywordflow">if</span> (message == <span class="stringliteral">&quot;exit:OK&quot;</span>) {</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot;KILL&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                kill(it.first, SIGTERM);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                obj-&gt;<a class="code" href="classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624">_kitchenMap</a>.erase(it.first);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            }</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        }</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        std::this_thread::sleep_for(std::chrono::milliseconds(100));</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    }</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;}</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
+<div class="line"><a name="l00273"></a><span class="lineno"><a class="line" href="classplazza_1_1_reception.html#a73430319934872441506482fba8cf642">  273</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classplazza_1_1_reception.html#a73430319934872441506482fba8cf642">Reception::run</a>()</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;{</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    std::string input;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    std::thread exitThread(_kitchenExit, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keywordflow">if</span> (!std::getline(std::cin, input))</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keywordflow">if</span> (input == <span class="stringliteral">&quot;exit&quot;</span>) {</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            {</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                std::unique_lock&lt;std::mutex&gt; lock(_mutex);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                _endRun = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            }</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (input == <span class="stringliteral">&quot;status&quot;</span>) {</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            _displayKitchensStatus();</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (input == <span class="stringliteral">&quot;clear&quot;</span> || input == <span class="stringliteral">&quot;c&quot;</span>) {</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            std::system(<span class="stringliteral">&quot;clear&quot;</span>);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            <span class="keywordflow">if</span> (!_handleInput(input)) {</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                <a class="code" href="_exception_8hpp.html#a1c92790f33d41d0230cc5a141c425c21">ParserEX</a>(input + <span class="stringliteral">&quot; has a invalid pizza command.&quot;</span>, <a class="code" href="class_logger.html#a0444040bdc1a82659a84ad918b42a61d">Logger::INFO</a>);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            }</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        }</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    }</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    exitThread.join();</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    _cleanKitchens();</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassplazza_1_1_input_parser_html_adb2033b9aa55e45d24387cbca82fd38f"><div class="ttname"><a href="classplazza_1_1_input_parser.html#adb2033b9aa55e45d24387cbca82fd38f">plazza::InputParser::setCommand</a></div><div class="ttdeci">void setCommand(const std::string &amp;)</div><div class="ttdoc">Set the command that will be parsed.</div><div class="ttdef"><b>Definition:</b> <a href="_input_parser_8cpp_source.html#l00024">InputParser.cpp:24</a></div></div>
 <div class="ttc" id="anamespaceplazza_html_a3df93b5bf8fa865c6f1251078950734c"><div class="ttname"><a href="namespaceplazza.html#a3df93b5bf8fa865c6f1251078950734c">plazza::PizzaType</a></div><div class="ttdeci">PizzaType</div><div class="ttdoc">Enumeration for available pizza type.</div><div class="ttdef"><b>Definition:</b> <a href="_pizza_8hpp_source.html#l00020">Pizza.hpp:20</a></div></div>
 <div class="ttc" id="astructplazza_1_1_pizza_html_a7d8a39a6e1d49e1c7f1a53124dc13c13"><div class="ttname"><a href="structplazza_1_1_pizza.html#a7d8a39a6e1d49e1c7f1a53124dc13c13">plazza::Pizza::type</a></div><div class="ttdeci">PizzaType type</div><div class="ttdoc">PizzaType Type of the pizza.</div><div class="ttdef"><b>Definition:</b> <a href="_pizza_8hpp_source.html#l00067">Pizza.hpp:67</a></div></div>
 <div class="ttc" id="aclassplazza_1_1_input_parser_html_a1b50e55e7fc97ab09eb119040517ac61"><div class="ttname"><a href="classplazza_1_1_input_parser.html#a1b50e55e7fc97ab09eb119040517ac61">plazza::InputParser::getPizza</a></div><div class="ttdeci">const std::vector&lt; Pizza &gt; &amp; getPizza() const</div><div class="ttdoc">Get a vector of valid pizza.</div><div class="ttdef"><b>Definition:</b> <a href="_input_parser_8cpp_source.html#l00294">InputParser.cpp:294</a></div></div>
-<div class="ttc" id="aclassplazza_1_1_reception_html_a29b2128afd9048572db31c47dcfafb05"><div class="ttname"><a href="classplazza_1_1_reception.html#a29b2128afd9048572db31c47dcfafb05">plazza::Reception::unpack</a></div><div class="ttdeci">Pizza unpack(const std::string &amp;)</div><div class="ttdoc">Unpack std::string in Pizza.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8cpp_source.html#l00150">Plazza.cpp:150</a></div></div>
+<div class="ttc" id="aclassplazza_1_1_reception_html_a29b2128afd9048572db31c47dcfafb05"><div class="ttname"><a href="classplazza_1_1_reception.html#a29b2128afd9048572db31c47dcfafb05">plazza::Reception::unpack</a></div><div class="ttdeci">Pizza unpack(const std::string &amp;)</div><div class="ttdoc">Unpack std::string in Pizza.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8cpp_source.html#l00205">Plazza.cpp:205</a></div></div>
 <div class="ttc" id="aclassplazza_1_1_input_parser_html_a65748f951e8b895aceca27ed2ba0c75d"><div class="ttname"><a href="classplazza_1_1_input_parser.html#a65748f951e8b895aceca27ed2ba0c75d">plazza::InputParser::processArguments</a></div><div class="ttdeci">void processArguments() override</div><div class="ttdoc">Process the argument to set them in a form usefull for the program.</div><div class="ttdef"><b>Definition:</b> <a href="_input_parser_8cpp_source.html#l00048">InputParser.cpp:48</a></div></div>
 <div class="ttc" id="a_plazza_8hpp_html"><div class="ttname"><a href="_plazza_8hpp.html">Plazza.hpp</a></div></div>
-<div class="ttc" id="aclass_plazza_exception_html"><div class="ttname"><a href="class_plazza_exception.html">PlazzaException</a></div><div class="ttdoc">Base exception class for all exceptions in the project.</div><div class="ttdef"><b>Definition:</b> <a href="_exception_8hpp_source.html#l00046">Exception.hpp:46</a></div></div>
-<div class="ttc" id="aclassplazza_1_1_kitchen_html_a4abffc67076cfa4cb9daf75e8e4024a8"><div class="ttname"><a href="classplazza_1_1_kitchen.html#a4abffc67076cfa4cb9daf75e8e4024a8">plazza::Kitchen::commandQueue</a></div><div class="ttdeci">std::shared_ptr&lt; MessageQueue &gt; commandQueue</div><div class="ttdoc">MessageQueue recepting the command from the reception.</div><div class="ttdef"><b>Definition:</b> <a href="_kitchen_8hpp_source.html#l00063">Kitchen.hpp:63</a></div></div>
-<div class="ttc" id="aclassplazza_1_1_reception_html_a08e81742e5d65f5f1d540f284f416624"><div class="ttname"><a href="classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624">plazza::Reception::_kitchenMap</a></div><div class="ttdeci">std::map&lt; pid_t, std::shared_ptr&lt; MessageQueue &gt; &gt; _kitchenMap</div><div class="ttdoc">Map of the different child process, with the linked queues.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8hpp_source.html#l00064">Plazza.hpp:64</a></div></div>
+<div class="ttc" id="aclassplazza_1_1_kitchen_html_a4abffc67076cfa4cb9daf75e8e4024a8"><div class="ttname"><a href="classplazza_1_1_kitchen.html#a4abffc67076cfa4cb9daf75e8e4024a8">plazza::Kitchen::commandQueue</a></div><div class="ttdeci">std::shared_ptr&lt; MessageQueue &gt; commandQueue</div><div class="ttdoc">MessageQueue recepting the command from the reception.</div><div class="ttdef"><b>Definition:</b> <a href="_kitchen_8hpp_source.html#l00067">Kitchen.hpp:67</a></div></div>
+<div class="ttc" id="aclassplazza_1_1_reception_html_a08e81742e5d65f5f1d540f284f416624"><div class="ttname"><a href="classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624">plazza::Reception::_kitchenMap</a></div><div class="ttdeci">std::map&lt; pid_t, std::shared_ptr&lt; MessageQueue &gt; &gt; _kitchenMap</div><div class="ttdoc">Map of the different child process, with the linked queues.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8hpp_source.html#l00095">Plazza.hpp:95</a></div></div>
 <div class="ttc" id="aclassplazza_1_1_input_parser_html"><div class="ttname"><a href="classplazza_1_1_input_parser.html">plazza::InputParser</a></div><div class="ttdoc">InputParser is a class used to parse command of pizza while the program is running.</div><div class="ttdef"><b>Definition:</b> <a href="_input_parser_8hpp_source.html#l00018">InputParser.hpp:18</a></div></div>
 <div class="ttc" id="a_exception_8hpp_html"><div class="ttname"><a href="_exception_8hpp.html">Exception.hpp</a></div></div>
-<div class="ttc" id="aclassplazza_1_1_reception_html_aaf9213d113caa6887a2ab6cf6cae84dd"><div class="ttname"><a href="classplazza_1_1_reception.html#aaf9213d113caa6887a2ab6cf6cae84dd">plazza::Reception::_sendCommand</a></div><div class="ttdeci">void _sendCommand(const InputParser &amp;command)</div><div class="ttdoc">Create a kitchen if necessary, and send the command to the child process.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8cpp_source.html#l00102">Plazza.cpp:102</a></div></div>
 <div class="ttc" id="astructplazza_1_1_pizza_html_a57de3884a638bc2e0c30afa80de4629d"><div class="ttname"><a href="structplazza_1_1_pizza.html#a57de3884a638bc2e0c30afa80de4629d">plazza::Pizza::number</a></div><div class="ttdeci">std::size_t number</div><div class="ttdoc">std::size_t Number of pizza.</div><div class="ttdef"><b>Definition:</b> <a href="_pizza_8hpp_source.html#l00071">Pizza.hpp:71</a></div></div>
-<div class="ttc" id="aclass_logger_html_a8db5fb65e82f81fb04eb4e21a931a1d6"><div class="ttname"><a href="class_logger.html#a8db5fb65e82f81fb04eb4e21a931a1d6">Logger::MEDIUM</a></div><div class="ttdeci">static Severity MEDIUM()</div><div class="ttdoc">pass this function to the macros and they will log the exception with a medium severity</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00088">Logger.cpp:88</a></div></div>
+<div class="ttc" id="aclassplazza_1_1_reception_html_a3ca1b4dc210f101ffa60bca2bc0cadff"><div class="ttname"><a href="classplazza_1_1_reception.html#a3ca1b4dc210f101ffa60bca2bc0cadff">plazza::Reception::_manageOrders</a></div><div class="ttdeci">void _manageOrders(const InputParser &amp;command)</div><div class="ttdoc">Create a kitchen if necessary, and send the command to the child process.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8cpp_source.html#l00118">Plazza.cpp:118</a></div></div>
 <div class="ttc" id="anamespaceplazza_html_a8b75d3915b8f7e5d1ff158526c08c374"><div class="ttname"><a href="namespaceplazza.html#a8b75d3915b8f7e5d1ff158526c08c374">plazza::PizzaSize</a></div><div class="ttdeci">PizzaSize</div><div class="ttdoc">Enumeration for available pizza size.</div><div class="ttdef"><b>Definition:</b> <a href="_pizza_8hpp_source.html#l00028">Pizza.hpp:28</a></div></div>
-<div class="ttc" id="aclassplazza_1_1_reception_html_ab7c952a340a547b8cb6fadea4f14669a"><div class="ttname"><a href="classplazza_1_1_reception.html#ab7c952a340a547b8cb6fadea4f14669a">plazza::Reception::_displayKitchensStatus</a></div><div class="ttdeci">void _displayKitchensStatus(void)</div><div class="ttdoc">Display all of the kitchens current status.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8cpp_source.html#l00047">Plazza.cpp:47</a></div></div>
+<div class="ttc" id="aclassplazza_1_1_reception_html_ab7c952a340a547b8cb6fadea4f14669a"><div class="ttname"><a href="classplazza_1_1_reception.html#ab7c952a340a547b8cb6fadea4f14669a">plazza::Reception::_displayKitchensStatus</a></div><div class="ttdeci">void _displayKitchensStatus(void)</div><div class="ttdoc">Display all of the kitchens current status.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8cpp_source.html#l00049">Plazza.cpp:49</a></div></div>
 <div class="ttc" id="aclassplazza_1_1_reception_html"><div class="ttname"><a href="classplazza_1_1_reception.html">plazza::Reception</a></div><div class="ttdoc">Reception Class containing the main loop of the program.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8hpp_source.html#l00022">Plazza.hpp:22</a></div></div>
-<div class="ttc" id="aclassplazza_1_1_reception_html_a24e75238836afbeacc5a7e62075c796f"><div class="ttname"><a href="classplazza_1_1_reception.html#a24e75238836afbeacc5a7e62075c796f">plazza::Reception::_kitchenExit</a></div><div class="ttdeci">static void _kitchenExit(Reception *)</div><div class="ttdoc">This function allow the reception to communicate by the messageQueue with a kitchen.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8cpp_source.html#l00175">Plazza.cpp:175</a></div></div>
+<div class="ttc" id="aclassplazza_1_1_reception_html_a24e75238836afbeacc5a7e62075c796f"><div class="ttname"><a href="classplazza_1_1_reception.html#a24e75238836afbeacc5a7e62075c796f">plazza::Reception::_kitchenExit</a></div><div class="ttdeci">static void _kitchenExit(Reception *)</div><div class="ttdoc">This function allow the reception to communicate by the messageQueue with a kitchen.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8cpp_source.html#l00230">Plazza.cpp:230</a></div></div>
+<div class="ttc" id="a_exception_8hpp_html_a8ef0a847cd4c54afe916ea3129b03b52"><div class="ttname"><a href="_exception_8hpp.html#a8ef0a847cd4c54afe916ea3129b03b52">PlazzaEX</a></div><div class="ttdeci">#define PlazzaEX(what, severity)</div><div class="ttdef"><b>Definition:</b> <a href="_exception_8hpp_source.html#l00025">Exception.hpp:25</a></div></div>
 <div class="ttc" id="aclassplazza_1_1_reception_html_ab30fd98e6a6f7ed242eec12cb829e494"><div class="ttname"><a href="classplazza_1_1_reception.html#ab30fd98e6a6f7ed242eec12cb829e494">plazza::Reception::Reception</a></div><div class="ttdeci">Reception()=default</div><div class="ttdoc">Default Constructor of the Reception class DO NOT USE or it will lead to undefined comportements.</div></div>
-<div class="ttc" id="aclassplazza_1_1_reception_html_a7f3293c467547f02d1cfb0d9de546f3f"><div class="ttname"><a href="classplazza_1_1_reception.html#a7f3293c467547f02d1cfb0d9de546f3f">plazza::Reception::_cleanKitchens</a></div><div class="ttdeci">void _cleanKitchens(void)</div><div class="ttdoc">Close the Kitchens Queues and send a kill signal.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8cpp_source.html#l00164">Plazza.cpp:164</a></div></div>
-<div class="ttc" id="aclassplazza_1_1_reception_html_ae1a056d3d58e4ecb3c10c0d35cc2a2c4"><div class="ttname"><a href="classplazza_1_1_reception.html#ae1a056d3d58e4ecb3c10c0d35cc2a2c4">plazza::Reception::_mutex</a></div><div class="ttdeci">std::mutex _mutex</div><div class="ttdoc">Mutex for the reception.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8hpp_source.html#l00046">Plazza.hpp:46</a></div></div>
-<div class="ttc" id="aclass_plazza_exception_html_af42078485825da6b030af687e5990044"><div class="ttname"><a href="class_plazza_exception.html#af42078485825da6b030af687e5990044">PlazzaException::what</a></div><div class="ttdeci">const char * what() const noexcept override</div><div class="ttdoc">returns the description of the exception</div><div class="ttdef"><b>Definition:</b> <a href="_exception_8cpp_source.html#l00027">Exception.cpp:27</a></div></div>
-<div class="ttc" id="aclassplazza_1_1_reception_html_a73430319934872441506482fba8cf642"><div class="ttname"><a href="classplazza_1_1_reception.html#a73430319934872441506482fba8cf642">plazza::Reception::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Main function of the program.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8cpp_source.html#l00201">Plazza.cpp:201</a></div></div>
-<div class="ttc" id="aclassplazza_1_1_reception_html_a10c4258175d9089a2e58177f2a76a8f0"><div class="ttname"><a href="classplazza_1_1_reception.html#a10c4258175d9089a2e58177f2a76a8f0">plazza::Reception::_cookingTime</a></div><div class="ttdeci">float _cookingTime</div><div class="ttdoc">Store the cookingTime.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8hpp_source.html#l00066">Plazza.hpp:66</a></div></div>
+<div class="ttc" id="aclassplazza_1_1_reception_html_a7f3293c467547f02d1cfb0d9de546f3f"><div class="ttname"><a href="classplazza_1_1_reception.html#a7f3293c467547f02d1cfb0d9de546f3f">plazza::Reception::_cleanKitchens</a></div><div class="ttdeci">void _cleanKitchens(void)</div><div class="ttdoc">Close the Kitchens Queues and send a kill signal.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8cpp_source.html#l00219">Plazza.cpp:219</a></div></div>
+<div class="ttc" id="aclassplazza_1_1_reception_html_ae1a056d3d58e4ecb3c10c0d35cc2a2c4"><div class="ttname"><a href="classplazza_1_1_reception.html#ae1a056d3d58e4ecb3c10c0d35cc2a2c4">plazza::Reception::_mutex</a></div><div class="ttdeci">std::mutex _mutex</div><div class="ttdoc">Mutex for the reception.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8hpp_source.html#l00051">Plazza.hpp:51</a></div></div>
+<div class="ttc" id="aclassplazza_1_1_reception_html_a73430319934872441506482fba8cf642"><div class="ttname"><a href="classplazza_1_1_reception.html#a73430319934872441506482fba8cf642">plazza::Reception::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Main function of the program.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8cpp_source.html#l00273">Plazza.cpp:273</a></div></div>
 <div class="ttc" id="astructplazza_1_1_pizza_html_adb22b76e4fa711a688b555e6e5a12208"><div class="ttname"><a href="structplazza_1_1_pizza.html#adb22b76e4fa711a688b555e6e5a12208">plazza::Pizza::size</a></div><div class="ttdeci">PizzaSize size</div><div class="ttdoc">PizzaSize Size of the pizza.</div><div class="ttdef"><b>Definition:</b> <a href="_pizza_8hpp_source.html#l00069">Pizza.hpp:69</a></div></div>
 <div class="ttc" id="aclass_logger_html_a0444040bdc1a82659a84ad918b42a61d"><div class="ttname"><a href="class_logger.html#a0444040bdc1a82659a84ad918b42a61d">Logger::INFO</a></div><div class="ttdeci">static Severity INFO()</div><div class="ttdoc">pass this function to the macros and they will log an info</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00103">Logger.cpp:103</a></div></div>
-<div class="ttc" id="aclassplazza_1_1_reception_html_a3f021dd7112c61bfced3477a892a8685"><div class="ttname"><a href="classplazza_1_1_reception.html#a3f021dd7112c61bfced3477a892a8685">plazza::Reception::pack</a></div><div class="ttdeci">std::string pack(const Pizza &amp;)</div><div class="ttdoc">Pack a Pizza in std::string.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8cpp_source.html#l00136">Plazza.cpp:136</a></div></div>
+<div class="ttc" id="aclassplazza_1_1_reception_html_a3f021dd7112c61bfced3477a892a8685"><div class="ttname"><a href="classplazza_1_1_reception.html#a3f021dd7112c61bfced3477a892a8685">plazza::Reception::pack</a></div><div class="ttdeci">std::string pack(const Pizza &amp;)</div><div class="ttdoc">Pack a Pizza in std::string.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8cpp_source.html#l00191">Plazza.cpp:191</a></div></div>
 <div class="ttc" id="a_exception_8hpp_html_a1c92790f33d41d0230cc5a141c425c21"><div class="ttname"><a href="_exception_8hpp.html#a1c92790f33d41d0230cc5a141c425c21">ParserEX</a></div><div class="ttdeci">#define ParserEX(what, severity)</div><div class="ttdef"><b>Definition:</b> <a href="_exception_8hpp_source.html#l00026">Exception.hpp:26</a></div></div>
+<div class="ttc" id="aclassplazza_1_1_a_parser_html_a2ebaa016b31902e66dcfb014a969e456"><div class="ttname"><a href="classplazza_1_1_a_parser.html#a2ebaa016b31902e66dcfb014a969e456">plazza::AParser::getArguments</a></div><div class="ttdeci">const std::vector&lt; std::string &gt; &amp; getArguments() const</div><div class="ttdoc">Get the a list of all arguments in the command.</div><div class="ttdef"><b>Definition:</b> <a href="_a_parser_8cpp_source.html#l00017">AParser.cpp:17</a></div></div>
 <div class="ttc" id="a_kitchen_8hpp_html"><div class="ttname"><a href="_kitchen_8hpp.html">Kitchen.hpp</a></div></div>
-<div class="ttc" id="aclassplazza_1_1_reception_html_a806f3e116779e70568d48931a765b6fd"><div class="ttname"><a href="classplazza_1_1_reception.html#a806f3e116779e70568d48931a765b6fd">plazza::Reception::_handleInput</a></div><div class="ttdeci">bool _handleInput(const std::string &amp;input)</div><div class="ttdoc">Handle the receive input.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8cpp_source.html#l00087">Plazza.cpp:87</a></div></div>
-<div class="ttc" id="aclassplazza_1_1_reception_html_a793ede760fac53f5d221be826499a1d2"><div class="ttname"><a href="classplazza_1_1_reception.html#a793ede760fac53f5d221be826499a1d2">plazza::Reception::_cookNumber</a></div><div class="ttdeci">size_t _cookNumber</div><div class="ttdoc">Store the cookNumber.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8hpp_source.html#l00068">Plazza.hpp:68</a></div></div>
+<div class="ttc" id="aclassplazza_1_1_reception_html_a806f3e116779e70568d48931a765b6fd"><div class="ttname"><a href="classplazza_1_1_reception.html#a806f3e116779e70568d48931a765b6fd">plazza::Reception::_handleInput</a></div><div class="ttdeci">bool _handleInput(const std::string &amp;input)</div><div class="ttdoc">Handle the receive input.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8cpp_source.html#l00106">Plazza.cpp:106</a></div></div>
 <div class="ttc" id="aclassplazza_1_1_kitchen_html"><div class="ttname"><a href="classplazza_1_1_kitchen.html">plazza::Kitchen</a></div><div class="ttdoc">The class used to manage all the cooks and the orders.</div><div class="ttdef"><b>Definition:</b> <a href="_kitchen_8hpp_source.html#l00037">Kitchen.hpp:37</a></div></div>
-<div class="ttc" id="aclassplazza_1_1_reception_html_a46ba35a369297fcde3bfad28c0e82dc8"><div class="ttname"><a href="classplazza_1_1_reception.html#a46ba35a369297fcde3bfad28c0e82dc8">plazza::Reception::_isAvailableSlots</a></div><div class="ttdeci">int _isAvailableSlots(std::string)</div><div class="ttdoc">Get the answer of avail_slots.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8cpp_source.html#l00030">Plazza.cpp:30</a></div></div>
+<div class="ttc" id="aclassplazza_1_1_reception_html_a46ba35a369297fcde3bfad28c0e82dc8"><div class="ttname"><a href="classplazza_1_1_reception.html#a46ba35a369297fcde3bfad28c0e82dc8">plazza::Reception::_isAvailableSlots</a></div><div class="ttdeci">int _isAvailableSlots(std::string)</div><div class="ttdoc">Get the answer of avail_slots.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8cpp_source.html#l00032">Plazza.cpp:32</a></div></div>
 <div class="ttc" id="anamespaceplazza_html"><div class="ttname"><a href="namespaceplazza.html">plazza</a></div><div class="ttdef"><b>Definition:</b> <a href="_cook_8hpp_source.html#l00017">Cook.hpp:17</a></div></div>
 <div class="ttc" id="aclassplazza_1_1_kitchen_html_ab6afa23613acf5e0680d8e5177f887f3"><div class="ttname"><a href="classplazza_1_1_kitchen.html#ab6afa23613acf5e0680d8e5177f887f3">plazza::Kitchen::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Starts the kitchen and init all the cooks.</div><div class="ttdef"><b>Definition:</b> <a href="_kitchen_8cpp_source.html#l00018">Kitchen.cpp:18</a></div></div>
 <div class="ttc" id="astructplazza_1_1_pizza_html"><div class="ttname"><a href="structplazza_1_1_pizza.html">plazza::Pizza</a></div><div class="ttdoc">Structure for pizza.</div><div class="ttdef"><b>Definition:</b> <a href="_pizza_8hpp_source.html#l00065">Pizza.hpp:65</a></div></div>
-<div class="ttc" id="aclassplazza_1_1_reception_html_ad633142b70dff3a2cc1f4cc21ae90447"><div class="ttname"><a href="classplazza_1_1_reception.html#ad633142b70dff3a2cc1f4cc21ae90447">plazza::Reception::_refillTime</a></div><div class="ttdeci">size_t _refillTime</div><div class="ttdoc">Store the refillTime.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8hpp_source.html#l00070">Plazza.hpp:70</a></div></div>
-<div class="ttc" id="aclassplazza_1_1_reception_html_a410e023bb6fcba6911b258bc150afa54"><div class="ttname"><a href="classplazza_1_1_reception.html#a410e023bb6fcba6911b258bc150afa54">plazza::Reception::_endRun</a></div><div class="ttdeci">bool _endRun</div><div class="ttdoc">Boolean to ask kitchen if the need to be killed.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8hpp_source.html#l00072">Plazza.hpp:72</a></div></div>
-<div class="ttc" id="a_exception_8hpp_html_ad538f9c3d6a39de5fe29dd89f7c1ef3a"><div class="ttname"><a href="_exception_8hpp.html#ad538f9c3d6a39de5fe29dd89f7c1ef3a">MessageQueueEx</a></div><div class="ttdeci">#define MessageQueueEx(what, severity)</div><div class="ttdef"><b>Definition:</b> <a href="_exception_8hpp_source.html#l00028">Exception.hpp:28</a></div></div>
+<div class="ttc" id="aclassplazza_1_1_reception_html_a410e023bb6fcba6911b258bc150afa54"><div class="ttname"><a href="classplazza_1_1_reception.html#a410e023bb6fcba6911b258bc150afa54">plazza::Reception::_endRun</a></div><div class="ttdeci">bool _endRun</div><div class="ttdoc">Boolean to ask kitchen if the need to be killed.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8hpp_source.html#l00110">Plazza.hpp:110</a></div></div>
+<div class="ttc" id="aclassplazza_1_1_kitchen_html_abd875fb3f41b2899b37f45440da45830"><div class="ttname"><a href="classplazza_1_1_kitchen.html#abd875fb3f41b2899b37f45440da45830">plazza::Kitchen::work</a></div><div class="ttdeci">void work()</div><div class="ttdoc">Call private function _receptCook.</div><div class="ttdef"><b>Definition:</b> <a href="_kitchen_8cpp_source.html#l00122">Kitchen.cpp:122</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

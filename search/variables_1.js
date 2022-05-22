@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['commandqueue_401',['commandQueue',['../classplazza_1_1_kitchen.html#a4abffc67076cfa4cb9daf75e8e4024a8',1,'plazza::Kitchen']]]
+  ['commandqueue_417',['commandQueue',['../classplazza_1_1_kitchen.html#a4abffc67076cfa4cb9daf75e8e4024a8',1,'plazza::Kitchen']]]
 ];
