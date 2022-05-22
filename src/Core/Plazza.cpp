@@ -69,7 +69,7 @@ void Reception::_displayKitchensStatus(void)
                 message = it.second.get()->receiveMessage();
             }
             cookAvailable = _isAvailableSlots(message);
-            std::cout << "Available cooks: " << cookAvailable << "/" << _cookNumber << std::endl;
+            std::cout << "Available slots: " << _cookNumber * 2 - cookAvailable << "/" << _cookNumber * 2 << std::endl;
             std::cout << "Fridge:" << std::endl;
             message = message.substr(message.find("fridge"));
             message = message.substr(message.find(":") + 1);
