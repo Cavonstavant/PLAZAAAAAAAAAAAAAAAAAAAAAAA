@@ -5,9 +5,9 @@
 ** Logger_test
 */
 
+#include "MessageQueue.hpp"
 #include <criterion/criterion.h>
 #include <criterion/redirect.h>
-#include "MessageQueue.hpp"
 
 #define private public
 

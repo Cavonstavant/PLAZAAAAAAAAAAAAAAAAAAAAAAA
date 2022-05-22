@@ -5,8 +5,8 @@
 ** Logger_test
 */
 
-#include "PizzaLogger.hpp"
 #include "Logger.hpp"
+#include "PizzaLogger.hpp"
 #include <criterion/criterion.h>
 #include <criterion/parameterized.h>
 #include <criterion/redirect.h>
