@@ -19,6 +19,7 @@ void Kitchen::start()
 {
     _oldTime = std::time(nullptr);
     _initFridge(this);
+    _brigade.emplace_back(std::thread(_refillFridge, this));
     _brigade.emplace_back(std::thread(_timerCook, this));
     for (std::size_t i = 0; i < _nbCooks; ++i)
         _brigade.emplace_back(std::thread(_Cook, this));
@@ -119,6 +120,21 @@ void Kitchen::_timerCook(Kitchen *obj)
     }
 }
 
+void Kitchen::_refillFridge(Kitchen *obj)
+{
+    time_t time = std::time(nullptr);
+
+    while (true) {
+        if (std::time(nullptr) - time > (time_t) obj->_refillTime) {
+            time = std::time(nullptr);
+            {
+                std::unique_lock<std::mutex> lock(obj->_fridgeMutex);
+                _fillFridge(1, obj);
+            }
+        }
+    }
+}
+
 void Kitchen::work()
 {
     _receptCook(this);
@@ -205,7 +221,6 @@ void Kitchen::_Cook(Kitchen *obj)
         {
             std::unique_lock<std::mutex> lock(obj->_fridgeMutex);
             while (!asEnoughIngredients) {
-                _waitToFillFridge(obj->_refillTime, obj);
                 try {
                     obj->_fridge -= order;
                 } catch (...) {
@@ -266,14 +281,6 @@ void Kitchen::_fillFridge(const std::size_t &timeToFill, Kitchen *obj)
 {
     for (auto &ingredient: obj->_fridge) {
         ingredient.number += timeToFill;
-    }
-}
-
-void Kitchen::_waitToFillFridge(const std::size_t &timeToWait, Kitchen *obj)
-{
-    if (std::time(nullptr) - obj->_oldTime > timeToWait) {
-        obj->_oldTime = std::time(nullptr);
-        _fillFridge(1, obj);
     }
 }
 
