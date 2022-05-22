@@ -164,13 +164,6 @@ void Kitchen::_receptCook(Kitchen *obj)
         }
         Pizza toCook = unpack(fullCommand);
         obj->enqueueJob(toCook);
-        // size_t quantity = toCook.number;
-        // toCook.number = 1;
-        // getIngredientsFromPizzaType(toCook, toCook.type);
-
-        // for (std::size_t x = 0; x < quantity; ++x) {
-        //     obj->enqueueJob(toCook);
-        // }
     }
 }
 
