@@ -163,6 +163,7 @@ void Kitchen::_receptCook(Kitchen *obj)
             continue;
         }
         Pizza toCook = unpack(fullCommand);
+        getIngredientsFromPizzaType(toCook, toCook.type);
         obj->enqueueJob(toCook);
     }
 }
