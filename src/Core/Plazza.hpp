@@ -21,7 +21,6 @@ namespace plazza {
     /// \brief Reception Class containing the main loop of the program
     class Reception {
         public:
-
             /// \brief Default Constructor of the Reception class DO NOT USE or it will lead to undefined comportements
             Reception() = default;
 
@@ -48,7 +47,6 @@ namespace plazza {
             void run();
 
         private:
-
             /// \brief Mutex for the reception
             std::mutex _mutex;
 
