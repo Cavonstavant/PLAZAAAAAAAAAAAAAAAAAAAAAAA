@@ -65,10 +65,15 @@ void Reception::_displayKitchensStatus(void)
             it.second.get()->sendMessage("avail_slots?");
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
             message = it.second.get()->receiveMessage();
+            time_t oldTime = std::time(nullptr);
             while (_isAvailableSlots(message) < 0) {
                 it.second.get()->sendMessage(message);
                 std::this_thread::sleep_for(std::chrono::milliseconds(100));
                 message = it.second.get()->receiveMessage();
+                if (std::time(nullptr) - oldTime > 3) {
+                    std::cout << "Fail to print status, maybe the kitchen have been killed. You can continue." << std::endl;
+                    return;
+                }
             }
             cookAvailable = _isAvailableSlots(message);
             std::cout << "Available slots: " << _cookNumber * 2 - cookAvailable << "/" << _cookNumber * 2 << std::endl;
@@ -91,114 +96,181 @@ bool Reception::_handleInput(const std::string &input)
     InputParser server;
 
     server.setCommand(input);
-    try {
-        server.processArguments();
-    } catch (const PlazzaException &e) {
-        std::cerr << e.what() << std::endl;
+    server.processArguments();
+    if (server.getArguments().empty())
         return false;
-    }
     _manageOrders(server);
     return true;
 }
 
-bool Reception::_isNewKitchenNeeded(unsigned int pizzaAmt)
+void Reception::_manageOrders(const InputParser &server)
 {
-    if (_availSlotsTotal < pizzaAmt)
-        return true;
-    return false;
-}
+    {
+        std::unique_lock<std::mutex> lock(_mutex);
+        std::vector<Pizza> orders = server.getPizza();
+        std::size_t nbKitchen = _kitchenMap.size();
+        std::size_t nbMaxKitchen = 9;
+        std::size_t totalAvail = 0;
+        std::string message;
+        std::vector<std::size_t> availSlots;
 
-void Reception::_updateBusyCooks(void)
-{
-    std::string kitchenResponse;
-    unsigned int tmp_avail = 0;
-
-    for (auto &kitchen : _kitchenMap) {
-        kitchen.second->sendMessage("avail_slots?");
-        kitchenResponse = kitchen.second->receiveMessage();
-        while (kitchenResponse.find("avail_slots:") == std::string::npos) {
-            kitchen.second->sendMessage(kitchenResponse);
-            std::this_thread::sleep_for(std::chrono::milliseconds(100));
-            kitchenResponse = kitchen.second->receiveMessage();
-        }
-        try {
-            tmp_avail = std::stoi(kitchenResponse.substr(kitchenResponse.find(":") + 1));
-        } catch (const std::exception &e) {
-            PlazzaEX(kitchenResponse + ": "s + e.what(), Logger::INFO);
-            continue;
-        }
-        _availSlots[kitchen.first] = _cookNumber - tmp_avail;
-        _availSlotsTotal += _cookNumber - tmp_avail;
-    }
-}
-
-std::vector<Pizza> Reception::_createNewKitchen(std::vector<Pizza> &pizzaToCook, unsigned int pizzaPerKitchen)
-{
-    Kitchen newKitchen(_cookNumber, _refillTime, _cookingTime);
-    std::shared_ptr<MessageQueue> newQueue = std::make_shared<MessageQueue>();
-    pid_t newKitchenPid;
-
-    newQueue.get()->openQueue(std::string("/plazzaQueueNumber" + std::to_string(_kitchenMap.size())));
-    newKitchenPid = fork();
-    if (newKitchenPid == 0) {
-        newKitchen.commandQueue = newQueue;
-        newKitchen.start();
-    } else {
-        _kitchenMap[newKitchenPid] = newQueue;
-        while (!pizzaToCook.empty()) {
-            for (auto &kitchen : _kitchenMap) {
-                if (_availSlots[kitchen.first] < (_cookNumber * 2) && !pizzaToCook.empty()){
-                    pizzaToCook = _sendPizza(pizzaToCook, pizzaPerKitchen, kitchen.first);
+        for (Pizza order = orders.back(); !orders.empty(); orders.pop_back()) {
+            for (auto it: _kitchenMap) {
+                it.second.get()->sendMessage("avail_slots?");
+                std::this_thread::sleep_for(std::chrono::milliseconds(10));
+                message = it.second.get()->receiveMessage();
+                while (_isAvailableSlots(message) < 0) {
+                    it.second.get()->sendMessage(message);
+                    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+                    message = it.second.get()->receiveMessage();
                 }
-                if (pizzaToCook.empty())
-                    break;
+                availSlots.push_back(_cookNumber * 2 - _isAvailableSlots(message));
+            }
+            for (std::size_t it: availSlots)
+                totalAvail += it;
+            if (order.number > totalAvail) {
+                if (nbKitchen < nbMaxKitchen) {
+                    std::size_t nbNewKitchen = (order.number % (_cookNumber * 2) == 0) ? order.number / (_cookNumber * 2) : order.number / (_cookNumber * 2) + 1;
+                    if (nbNewKitchen + nbKitchen > nbMaxKitchen) {
+                        nbNewKitchen = nbMaxKitchen - nbKitchen;
+                    }
+                    pid_t newKitchenPid;
+                    Kitchen newKitchen(_cookNumber, _refillTime, _cookingTime);
+                    std::shared_ptr<MessageQueue> newQueue = std::make_shared<MessageQueue>();
+                    for (; nbNewKitchen > 0; nbNewKitchen--) {
+                        newQueue.get()->openQueue(std::string("/plazzaQueueNumber" + std::to_string(_kitchenMap.size())));
+                        newKitchenPid = fork();
+                        if (newKitchenPid == 0) {
+                            newKitchen.commandQueue = newQueue;
+                            newKitchen.start();
+                            newKitchen.work();
+                            exit(0);
+                        } else {
+                            _kitchenMap[newKitchenPid] = newQueue;
+                            availSlots.push_back(_cookNumber * 2);
+                        }
+                    }
+                }
+            }
+            for (; order.number > 0; order.number--) {
+                std::size_t indexMin = 0;
+                std::size_t index = 0;
+                Pizza tmp = order;
+                tmp.number = 1;
+                for (std::size_t it: availSlots) {
+                    if (it < availSlots[indexMin])
+                        indexMin = index;
+                    index++;
+                }
+                index = 0;
+                for (auto it: _kitchenMap) {
+                    if (index == indexMin)
+                        it.second.get()->sendMessage(pack(tmp));
+                    index++;
+                }
             }
         }
     }
-    return pizzaToCook;
 }
 
-std::vector<Pizza> Reception::_sendPizza(std::vector<Pizza> &pizzaToCook, int amt, pid_t kitchenPid)
-{
-    Pizza tmpPizza = pizzaToCook.back();
-    for (int x = 0; x < amt && !pizzaToCook.empty(); ++x) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(10));
-        _kitchenMap[kitchenPid]->sendMessage(pack(tmpPizza));
-        pizzaToCook.pop_back();
-        tmpPizza = pizzaToCook.back();
-    }
-    return pizzaToCook;
-}
+// bool Reception::_isNewKitchenNeeded(unsigned int pizzaAmt)
+// {
+//     if (_availSlotsTotal < pizzaAmt)
+//         return true;
+//     return false;
+// }
 
-void Reception::_manageOrders(const InputParser &command)
-{
-    std::vector<Pizza> pizzaToCook = command.getPizza();
-    unsigned int pizzaPerKitchen = this->_cookNumber * 2;
+// void Reception::_updateBusyCooks(void)
+// {
+//     std::string kitchenResponse;
+//     unsigned int tmp_avail = 0;
 
-    if (pizzaToCook.size() == 0)
-        return;
-    if (!_kitchenMap.empty()){
-        _updateBusyCooks();
-        pizzaPerKitchen = _availSlotsTotal + pizzaToCook.size() / _kitchenMap.size();
-    }
-    if (_kitchenMap.empty() || _isNewKitchenNeeded(pizzaToCook.size())){
-        if (_kitchenMap.size() < 9 || !getuid()){
-            pizzaToCook = _createNewKitchen(pizzaToCook, pizzaPerKitchen);
-            _updateBusyCooks();
-        } else
-            std::cout << "Could not open more than 9 Kitchens without running the program as root:"
-                << "\n\tWaiting for previous orders to finish..." << std::endl;
-    }
-    while (!pizzaToCook.empty()) {
-        for (auto &kitchen : _kitchenMap) {
-            if (_availSlots[kitchen.first] < (_cookNumber * 2) && !pizzaToCook.empty()){
-                pizzaToCook = _sendPizza(pizzaToCook, pizzaPerKitchen, kitchen.first);
-            }
-            if (pizzaToCook.empty())
-                break;
-        }
-    }
-}
+//     for (auto &kitchen : _kitchenMap) {
+//         kitchen.second->sendMessage("avail_slots?");
+//         kitchenResponse = kitchen.second->receiveMessage();
+//         while (kitchenResponse.find("avail_slots:") == std::string::npos) {
+//             kitchen.second->sendMessage(kitchenResponse);
+//             std::this_thread::sleep_for(std::chrono::milliseconds(100));
+//             kitchenResponse = kitchen.second->receiveMessage();
+//         }
+//         try {
+//             tmp_avail = std::stoi(kitchenResponse.substr(kitchenResponse.find(":") + 1));
+//         } catch (const std::exception &e) {
+//             PlazzaEX(kitchenResponse + ": "s + e.what(), Logger::INFO);
+//             continue;
+//         }
+//         _availSlots[kitchen.first] = _cookNumber - tmp_avail;
+//         _availSlotsTotal += _cookNumber - tmp_avail;
+//     }
+// }
+
+// std::vector<Pizza> Reception::_createNewKitchen(std::vector<Pizza> &pizzaToCook, unsigned int pizzaPerKitchen)
+// {
+//     Kitchen newKitchen(_cookNumber, _refillTime, _cookingTime);
+//     std::shared_ptr<MessageQueue> newQueue = std::make_shared<MessageQueue>();
+//     pid_t newKitchenPid;
+
+//     newQueue.get()->openQueue(std::string("/plazzaQueueNumber" + std::to_string(_kitchenMap.size())));
+//     newKitchenPid = fork();
+//     if (newKitchenPid == 0) {
+//         newKitchen.commandQueue = newQueue;
+//         newKitchen.start();
+//     } else {
+//         _kitchenMap[newKitchenPid] = newQueue;
+//         while (!pizzaToCook.empty()) {
+//             for (auto &kitchen : _kitchenMap) {
+//                 if (_availSlots[kitchen.first] < (_cookNumber * 2) && !pizzaToCook.empty()){
+//                     pizzaToCook = _sendPizza(pizzaToCook, pizzaPerKitchen, kitchen.first);
+//                 }
+//                 if (pizzaToCook.empty())
+//                     break;
+//             }
+//         }
+//     }
+//     return pizzaToCook;
+// }
+
+// std::vector<Pizza> Reception::_sendPizza(std::vector<Pizza> &pizzaToCook, int amt, pid_t kitchenPid)
+// {
+//     Pizza tmpPizza = pizzaToCook.back();
+//     for (int x = 0; x < amt && !pizzaToCook.empty(); ++x) {
+//         std::this_thread::sleep_for(std::chrono::milliseconds(10));
+//         _kitchenMap[kitchenPid]->sendMessage(pack(tmpPizza));
+//         pizzaToCook.pop_back();
+//         tmpPizza = pizzaToCook.back();
+//     }
+//     return pizzaToCook;
+// }
+
+// void Reception::_manageOrders(const InputParser &command)
+// {
+//     std::vector<Pizza> pizzaToCook = command.getPizza();
+//     unsigned int pizzaPerKitchen = this->_cookNumber * 2;
+
+//     if (pizzaToCook.size() == 0)
+//         return;
+//     if (!_kitchenMap.empty()){
+//         _updateBusyCooks();
+//         pizzaPerKitchen = _availSlotsTotal + pizzaToCook.size() / _kitchenMap.size();
+//     }
+//     if (_kitchenMap.empty() || _isNewKitchenNeeded(pizzaToCook.size())){
+//         if (_kitchenMap.size() < 9 || !getuid()){
+//             pizzaToCook = _createNewKitchen(pizzaToCook, pizzaPerKitchen);
+//             _updateBusyCooks();
+//         } else
+//             std::cout << "Could not open more than 9 Kitchens without running the program as root:"
+//                 << "\n\tWaiting for previous orders to finish..." << std::endl;
+//     }
+//     while (!pizzaToCook.empty()) {
+//         for (auto &kitchen : _kitchenMap) {
+//             if (_availSlots[kitchen.first] < (_cookNumber * 2) && !pizzaToCook.empty()){
+//                 pizzaToCook = _sendPizza(pizzaToCook, pizzaPerKitchen, kitchen.first);
+//             }
+//             if (pizzaToCook.empty())
+//                 break;
+//         }
+//     }
+// }
 
 std::string Reception::pack(const Pizza &pizza)
 {
@@ -244,21 +316,29 @@ void Reception::_kitchenExit(Reception *obj)
     while (true) {
         {
             std::unique_lock<std::mutex> lock(obj->_mutex);
-            if (obj->_endRun)
+            if (obj->_endRun) {
                 break;
-            for (auto it: obj->_kitchenMap) {
+            }
+        }
+        for (auto it: obj->_kitchenMap) {
+            {
+                std::unique_lock<std::mutex> lock(obj->_mutex);
                 it.second.get()->sendMessage("exit?");
-                std::this_thread::sleep_for(std::chrono::milliseconds(10));
-                std::string message = it.second.get()->receiveMessage();
-                while (message.find("exit:") != 0) {
+            }
+            std::this_thread::sleep_for(std::chrono::milliseconds(10));
+            std::string message = it.second.get()->receiveMessage();
+            while (message.find("exit:") != 0) {
+                {
+                    std::unique_lock<std::mutex> lock(obj->_mutex);
                     it.second.get()->sendMessage(message);
                     message = it.second.get()->receiveMessage();
                 }
-                if (message == "exit:OK") {
-                    kill(it.first, SIGTERM);
-                    obj->_kitchenMap.erase(it.first);
-                    break;
-                }
+                std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            }
+            if (message == "exit:OK") {
+                kill(it.first, SIGTERM);
+                obj->_kitchenMap.erase(it.first);
+                break;
             }
         }
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
@@ -273,7 +353,6 @@ void Reception::run()
     while (true) {
         if (!std::getline(std::cin, input))
             return;
-
         if (input == "exit") {
             {
                 std::unique_lock<std::mutex> lock(_mutex);
