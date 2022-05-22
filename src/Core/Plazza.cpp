@@ -220,10 +220,10 @@ void Reception::_cleanKitchens(void)
 {
     {
         std::unique_lock<std::mutex> lock(_mutex);
-        for (auto x = _kitchenMap.begin(); x != _kitchenMap.end() && !_kitchenMap.empty(); ++x) {
-            kill(x->first, SIGTERM);
-            _kitchenMap.erase(x->first);
+        for (auto &x: _kitchenMap) {
+            kill(x.first, SIGTERM);
         }
+        _kitchenMap.clear();
     }
 }
 

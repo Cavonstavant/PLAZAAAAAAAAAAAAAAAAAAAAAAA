@@ -88,6 +88,7 @@ namespace plazza {
             void work();
 
         private:
+            static void _refillFridge(Kitchen *obj);
             /// \brief Check if the command ask for available cook ("avail_cooks ?")
             /// \param std::string & The command to be check
             /// \return bool True if it is the correct command, false otherwise
