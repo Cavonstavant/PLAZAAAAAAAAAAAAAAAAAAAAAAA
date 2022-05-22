@@ -54,7 +54,7 @@ Test(cook, cook_unpack)
     cr_assert_str_eq(test.c_str(), "margarita of size XXL");
 }
 
-Test(cook, cook_cook_pizza, .init=cr_redirect_stdout)
+Test(cook, cook_cook_pizza, .init = cr_redirect_stdout)
 {
     Pizza pizza;
 
