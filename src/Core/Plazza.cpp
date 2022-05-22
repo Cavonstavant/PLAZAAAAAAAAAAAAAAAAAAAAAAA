@@ -63,31 +63,43 @@ void Reception::_displayKitchensStatus(void)
             pid = it.first;
             std::cout << "Kitchen PID: " << (int) pid << std::endl;
             it.second.get()->sendMessage("avail_slots?");
-            std::this_thread::sleep_for(std::chrono::milliseconds(10));
-            message = it.second.get()->receiveMessage();
-            time_t oldTime = std::time(nullptr);
-            while (_isAvailableSlots(message) < 0) {
-                it.second.get()->sendMessage(message);
-                std::this_thread::sleep_for(std::chrono::milliseconds(100));
-                message = it.second.get()->receiveMessage();
-                if (std::time(nullptr) - oldTime > 3) {
-                    std::cout << "Fail to print status, maybe the kitchen have been killed. You can continue." << std::endl;
-                    return;
-                }
-            }
-            cookAvailable = _isAvailableSlots(message);
-            std::cout << "Available slots: " << _cookNumber * 2 - cookAvailable << "/" << _cookNumber * 2 << std::endl;
-            std::cout << "Fridge:" << std::endl;
-            message = message.substr(message.find("fridge"));
-            message = message.substr(message.find(":") + 1);
-            while (!message.empty()) {
-                std::cout << message.substr(0, message.find(","));
-                message = message.substr(message.find(",") + 1);
-                std::cout << ": " << message.substr(0, message.find(";")) << std::endl;
-                message = message.substr(message.find(";") + 1);
-            }
-            std::cout << "====================" << std::endl;
         }
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        {
+            std::unique_lock<std::mutex> lock(_mutex);
+            message = it.second.get()->receiveMessage();
+        }
+        time_t oldTime = std::time(nullptr);
+        while (_isAvailableSlots(message) < 0) {
+            {
+                std::unique_lock<std::mutex> lock(_mutex);
+                it.second.get()->sendMessage(message);
+            }
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            {
+                std::unique_lock<std::mutex> lock(_mutex);
+                message = it.second.get()->receiveMessage();
+            }
+            if (std::time(nullptr) - oldTime > 3) {
+                std::cout << "Fail to print status, maybe the kitchen have been killed. You can continue." << std::endl;
+                return;
+            }
+        }
+        cookAvailable = _isAvailableSlots(message);
+        {
+            std::unique_lock<std::mutex> lock(_mutex);
+            std::cout << "Available slots: " << _cookNumber * 2 - cookAvailable << "/" << _cookNumber * 2 << std::endl;
+        }
+        std::cout << "Fridge:" << std::endl;
+        message = message.substr(message.find("fridge"));
+        message = message.substr(message.find(":") + 1);
+        while (!message.empty()) {
+            std::cout << message.substr(0, message.find(","));
+            message = message.substr(message.find(",") + 1);
+            std::cout << ": " << message.substr(0, message.find(";")) << std::endl;
+            message = message.substr(message.find(";") + 1);
+        }
+        std::cout << "====================" << std::endl;
     }
 }
 
@@ -114,7 +126,10 @@ void Reception::_manageOrders(const InputParser &server)
         std::string message;
         std::vector<std::size_t> availSlots;
 
-        for (Pizza order = orders.back(); !orders.empty(); orders.pop_back()) {
+        for (Pizza order: orders) {
+            availSlots.clear();
+            totalAvail = 0;
+            nbKitchen = _kitchenMap.size();
             for (auto it: _kitchenMap) {
                 it.second.get()->sendMessage("avail_slots?");
                 std::this_thread::sleep_for(std::chrono::milliseconds(10));
@@ -135,9 +150,9 @@ void Reception::_manageOrders(const InputParser &server)
                         nbNewKitchen = nbMaxKitchen - nbKitchen;
                     }
                     pid_t newKitchenPid;
-                    Kitchen newKitchen(_cookNumber, _refillTime, _cookingTime);
-                    std::shared_ptr<MessageQueue> newQueue = std::make_shared<MessageQueue>();
                     for (; nbNewKitchen > 0; nbNewKitchen--) {
+                        Kitchen newKitchen(_cookNumber, _refillTime, _cookingTime);
+                        std::shared_ptr<MessageQueue> newQueue = std::make_shared<MessageQueue>();
                         newQueue.get()->openQueue(std::string("/plazzaQueueNumber" + std::to_string(_kitchenMap.size())));
                         newKitchenPid = fork();
                         if (newKitchenPid == 0) {
@@ -326,7 +341,11 @@ void Reception::_kitchenExit(Reception *obj)
                 it.second.get()->sendMessage("exit?");
             }
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
-            std::string message = it.second.get()->receiveMessage();
+            std::string message;
+            {
+                std::unique_lock<std::mutex> lock(obj->_mutex);
+                message = it.second.get()->receiveMessage();
+            }
             time_t oldTime = std::time(nullptr);
             while (message.find("exit:") != 0) {
                 {
@@ -335,12 +354,12 @@ void Reception::_kitchenExit(Reception *obj)
                     message = it.second.get()->receiveMessage();
                 }
                 if (std::time(nullptr) - oldTime > 3) {
-                    std::cout << "dont need tp exit" << std::endl;
                     break;
                 }
                 std::this_thread::sleep_for(std::chrono::milliseconds(100));
             }
             if (message == "exit:OK") {
+                std::cout << "KILL" << std::endl;
                 kill(it.first, SIGTERM);
                 obj->_kitchenMap.erase(it.first);
                 break;
