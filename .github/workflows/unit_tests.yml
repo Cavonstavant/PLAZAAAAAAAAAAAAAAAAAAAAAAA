@@ -30,7 +30,7 @@ jobs:
         run: |
           find build -iname "*.gcno" -exec cp {} . \;
           find build -iname "*.gcda" -exec cp {} . \;
-          gcovr . --exclude-unreachble-branches --exclude-throw-branches --xml --output ./coverage.xml --exclude tests/
+          gcovr . --exclude-unreachable-branches --exclude-throw-branches --xml --output ./coverage.xml --exclude tests/
 
       - uses: codecov/codecov-action@v2
         with:
