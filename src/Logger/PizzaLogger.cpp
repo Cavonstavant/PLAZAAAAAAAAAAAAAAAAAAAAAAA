@@ -18,14 +18,14 @@ using namespace plazza;
 static std::string getActionString(PizzaLogger::Action action)
 {
     switch (action) {
-    case PizzaLogger::ACTION_ORDER_RECIEVED:
-        return "ORDER RECIEVED";
-    case PizzaLogger::ACTION_COOKING_STARTED:
-        return "COOKING STARTED";
-    case PizzaLogger::ACTION_COOKING_FINISHED:
-        return "COOKING FINISHED";
-    default:
-        return "UNKNOWN";
+        case PizzaLogger::ACTION_ORDER_RECIEVED:
+            return "ORDER RECIEVED";
+        case PizzaLogger::ACTION_COOKING_STARTED:
+            return "COOKING STARTED";
+        case PizzaLogger::ACTION_COOKING_FINISHED:
+            return "COOKING FINISHED";
+        default:
+            return "UNKNOWN";
     }
 }
 
