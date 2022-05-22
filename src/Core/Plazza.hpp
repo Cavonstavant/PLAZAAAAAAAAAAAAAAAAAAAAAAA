@@ -42,6 +42,8 @@ namespace plazza {
             void run();
 
         private:
+            std::mutex _mutex;
+            static void _kitchenExit(Reception *);
             /// \brief Get the answer of avail_slots
             /// \param std::string The message get from the queue
             /// \return int The number of available cook
@@ -63,6 +65,7 @@ namespace plazza {
             size_t _cookNumber;
             /// \brief Store the refillTime
             size_t _refillTime;
+            bool _endRun;
     };
 }// namespace plazza
 

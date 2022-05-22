@@ -43,6 +43,7 @@ namespace plazza {
             explicit Kitchen(unsigned long nbCooks, unsigned long refillTime, unsigned long cookingTime) : _nbCooks(nbCooks), _availCooks(nbCooks), _refillTime(refillTime), _cookingTime(cookingTime), _stopKitchen(false)
             {
                 _fridge.resize(IngredientNumber);
+                _needToBeKilled = false;
             };
 
             /// \brief Destructor
@@ -88,6 +89,9 @@ namespace plazza {
 
             /// \brief Main function for the Blocking thread on the message queue, getting the command and give it in the job queue
             static void _receptCook(Kitchen *obj);
+
+            /// \brief Main function for the timer of kitchen
+            static void _timerCook(Kitchen *obj);
 
             /// \brief Main function instancied in each thread
             static void _Cook(Kitchen *obj);
@@ -137,6 +141,7 @@ namespace plazza {
 
             /// \brief The kitchen fridge, containing all of the ingredients
             std::vector<Ingredient> _fridge;
+            bool _needToBeKilled;
     };
 
 }// namespace plazza
