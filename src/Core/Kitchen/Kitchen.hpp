@@ -141,6 +141,8 @@ namespace plazza {
 
             /// \brief The kitchen fridge, containing all of the ingredients
             std::vector<Ingredient> _fridge;
+
+            /// \brief This variable is use to exit the kitchen properly
             bool _needToBeKilled;
     };
 
