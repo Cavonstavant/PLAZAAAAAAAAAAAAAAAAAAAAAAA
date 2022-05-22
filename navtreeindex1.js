@@ -1,6 +1,7 @@
 var NAVTREEINDEX1 =
 {
-"classplazza_1_1_kitchen.html#afaadbf3cf5d181b188be6f1d62a1556e":[1,0,0,6,28],
+"classplazza_1_1_kitchen.html#af45097ebe174324e19bd48251a00c7c6":[1,0,0,6,5],
+"classplazza_1_1_kitchen.html#afaadbf3cf5d181b188be6f1d62a1556e":[1,0,0,6,29],
 "classplazza_1_1_kitchen.html#afb4206c2c981ce9e344c65244bdc64dc":[1,0,0,6,7],
 "classplazza_1_1_reception.html":[1,0,0,9],
 "classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624":[1,0,0,9,21],
@@ -54,8 +55,8 @@ var NAVTREEINDEX1 =
 "namespacemembers.html":[0,1,0],
 "namespacemembers_enum.html":[0,1,1],
 "namespacemembers_eval.html":[0,1,2],
-"namespaceplazza.html":[1,0,0],
 "namespaceplazza.html":[0,0,0],
+"namespaceplazza.html":[1,0,0],
 "namespaces.html":[0,0],
 "pages.html":[],
 "structplazza_1_1_ingredient.html":[1,0,0,3],

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['aparser_231',['AParser',['../classplazza_1_1_a_parser.html',1,'plazza']]],
-  ['argumentsparser_232',['ArgumentsParser',['../classplazza_1_1_arguments_parser.html',1,'plazza']]]
+  ['aparser_232',['AParser',['../classplazza_1_1_a_parser.html',1,'plazza']]],
+  ['argumentsparser_233',['ArgumentsParser',['../classplazza_1_1_arguments_parser.html',1,'plazza']]]
 ];

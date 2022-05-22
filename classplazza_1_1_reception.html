@@ -326,10 +326,10 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;{</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    {</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        std::unique_lock&lt;std::mutex&gt; lock(<a class="code" href="classplazza_1_1_reception.html#ae1a056d3d58e4ecb3c10c0d35cc2a2c4">_mutex</a>);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> x = <a class="code" href="classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624">_kitchenMap</a>.begin(); x != <a class="code" href="classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624">_kitchenMap</a>.end() &amp;&amp; !<a class="code" href="classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624">_kitchenMap</a>.empty(); ++x) {</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            kill(x-&gt;first, SIGTERM);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <a class="code" href="classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624">_kitchenMap</a>.erase(x-&gt;first);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        }</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;x: <a class="code" href="classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624">_kitchenMap</a>) {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            kill(x.first, SIGTERM);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        }</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <a class="code" href="classplazza_1_1_reception.html#a08e81742e5d65f5f1d540f284f416624">_kitchenMap</a>.clear();</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    }</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;}</div>
 </div><!-- fragment -->

@@ -308,10 +308,10 @@ $(document).ready(function(){initNavTree('_plazza_8cpp_source.html',''); initRes
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;{</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    {</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        std::unique_lock&lt;std::mutex&gt; lock(_mutex);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> x = _kitchenMap.begin(); x != _kitchenMap.end() &amp;&amp; !_kitchenMap.empty(); ++x) {</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            kill(x-&gt;first, SIGTERM);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            _kitchenMap.erase(x-&gt;first);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        }</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;x: _kitchenMap) {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            kill(x.first, SIGTERM);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        }</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        _kitchenMap.clear();</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    }</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;}</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
@@ -422,7 +422,7 @@ $(document).ready(function(){initNavTree('_plazza_8cpp_source.html',''); initRes
 <div class="ttc" id="aclassplazza_1_1_kitchen_html_ab6afa23613acf5e0680d8e5177f887f3"><div class="ttname"><a href="classplazza_1_1_kitchen.html#ab6afa23613acf5e0680d8e5177f887f3">plazza::Kitchen::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Starts the kitchen and init all the cooks.</div><div class="ttdef"><b>Definition:</b> <a href="_kitchen_8cpp_source.html#l00018">Kitchen.cpp:18</a></div></div>
 <div class="ttc" id="astructplazza_1_1_pizza_html"><div class="ttname"><a href="structplazza_1_1_pizza.html">plazza::Pizza</a></div><div class="ttdoc">Structure for pizza.</div><div class="ttdef"><b>Definition:</b> <a href="_pizza_8hpp_source.html#l00065">Pizza.hpp:65</a></div></div>
 <div class="ttc" id="aclassplazza_1_1_reception_html_a410e023bb6fcba6911b258bc150afa54"><div class="ttname"><a href="classplazza_1_1_reception.html#a410e023bb6fcba6911b258bc150afa54">plazza::Reception::_endRun</a></div><div class="ttdeci">bool _endRun</div><div class="ttdoc">Boolean to ask kitchen if the need to be killed.</div><div class="ttdef"><b>Definition:</b> <a href="_plazza_8hpp_source.html#l00110">Plazza.hpp:110</a></div></div>
-<div class="ttc" id="aclassplazza_1_1_kitchen_html_abd875fb3f41b2899b37f45440da45830"><div class="ttname"><a href="classplazza_1_1_kitchen.html#abd875fb3f41b2899b37f45440da45830">plazza::Kitchen::work</a></div><div class="ttdeci">void work()</div><div class="ttdoc">Call private function _receptCook.</div><div class="ttdef"><b>Definition:</b> <a href="_kitchen_8cpp_source.html#l00122">Kitchen.cpp:122</a></div></div>
+<div class="ttc" id="aclassplazza_1_1_kitchen_html_abd875fb3f41b2899b37f45440da45830"><div class="ttname"><a href="classplazza_1_1_kitchen.html#abd875fb3f41b2899b37f45440da45830">plazza::Kitchen::work</a></div><div class="ttdeci">void work()</div><div class="ttdoc">Call private function _receptCook.</div><div class="ttdef"><b>Definition:</b> <a href="_kitchen_8cpp_source.html#l00138">Kitchen.cpp:138</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
