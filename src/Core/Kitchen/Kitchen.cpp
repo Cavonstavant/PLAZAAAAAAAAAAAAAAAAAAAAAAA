@@ -20,6 +20,7 @@ void Kitchen::start()
     _oldTime = std::time(nullptr);
     _initFridge(this);
     _brigade.emplace_back(std::thread(_receptCook, this));
+    _brigade.emplace_back(std::thread(_timerCook, this));
     for (std::size_t i = 0; i < _nbCooks; ++i)
         _brigade.emplace_back(std::thread(_Cook, this));
 }
@@ -95,6 +96,30 @@ bool Kitchen::_isAvailableCook(std::string &command)
     return (false);
 }
 
+void Kitchen::_timerCook(Kitchen *obj)
+{
+    bool isWorking = false;
+    time_t timer = std::time(nullptr);
+
+    while (true) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        {
+            std::unique_lock<std::mutex> lock(obj->_mutex);
+            if (!isWorking && (obj->_availCooks < obj->_nbCooks || !obj->_orders.empty())) {
+                isWorking = true;
+            }
+            if (isWorking && obj->_availCooks == obj->_nbCooks && obj->_orders.empty()) {
+                timer = std::time(nullptr);
+                isWorking = false;
+            }
+            if (isWorking == false && std::time(nullptr) - timer >= 5) {
+                obj->_needToBeKilled = true;
+                return;
+            }
+        }
+    }
+}
+
 void Kitchen::_receptCook(Kitchen *obj)
 {
     while (true) {
@@ -107,7 +132,7 @@ void Kitchen::_receptCook(Kitchen *obj)
         }
         if (_isAvailableCook(fullCommand)) {
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
-            std::string message = "avail_slots:" + std::to_string(obj->_availCooks) + ";fridge:";
+            std::string message = "avail_slots:" + std::to_string(obj->_orders.size() + (obj->_nbCooks - obj->_availCooks)) + ";fridge:";
             {
                 std::unique_lock<std::mutex> lock(obj->_fridgeMutex);
                 for (size_t x = 1; x < IngredientNumber; x++) {
@@ -116,6 +141,19 @@ void Kitchen::_receptCook(Kitchen *obj)
                 }
             }
             obj->commandQueue.get()->sendMessage(message);
+            continue;
+        }
+        if (fullCommand.find("exit") == 0) {
+            if (fullCommand.find("exit:") == 0) {
+                obj->commandQueue.get()->sendMessage(fullCommand);
+                std::this_thread::sleep_for(std::chrono::milliseconds(100));
+                continue;
+            }
+            if (obj->_needToBeKilled == true) {
+                obj->commandQueue.get()->sendMessage("exit:OK");
+            } else {
+                obj->commandQueue.get()->sendMessage("exit:KO");
+            }
             continue;
         }
         Pizza toCook = unpack(fullCommand);

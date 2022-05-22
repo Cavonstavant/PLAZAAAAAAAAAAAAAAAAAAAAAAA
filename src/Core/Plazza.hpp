@@ -49,6 +49,12 @@ namespace plazza {
 
         private:
 
+            /// \brief Mutex for the reception
+            std::mutex _mutex;
+
+            /// \brief This function allow the reception to communicate by the messageQueue with a kitchen
+            /// \param Reception The reception instance
+            static void _kitchenExit(Reception *);
             /// \brief Get the answer of avail_slots
             /// \param std::string The message get from the queue
             /// \return int The number of available cook
@@ -101,6 +107,9 @@ namespace plazza {
 
             /// \brief Represents the total amount of pizzas to cook
             unsigned int _availSlotsTotal;
+
+            /// \brief Boolean to ask kitchen if the need to be killed
+            bool _endRun;
     };
 }// namespace plazza
 
