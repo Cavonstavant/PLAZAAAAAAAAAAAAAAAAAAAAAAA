@@ -264,7 +264,7 @@ void Kitchen::stop()
     order_condition.notify_all();
     std::size_t index = 0;
     for (std::thread &active_thread: _brigade) {
-            active_thread.join();
+        active_thread.join();
         index++;
     }
     _brigade.clear();
