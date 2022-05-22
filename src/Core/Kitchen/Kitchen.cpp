@@ -19,7 +19,6 @@ void Kitchen::start()
 {
     _oldTime = std::time(nullptr);
     _initFridge(this);
-    _brigade.emplace_back(std::thread(_receptCook, this));
     _brigade.emplace_back(std::thread(_timerCook, this));
     for (std::size_t i = 0; i < _nbCooks; ++i)
         _brigade.emplace_back(std::thread(_Cook, this));
@@ -120,6 +119,11 @@ void Kitchen::_timerCook(Kitchen *obj)
     }
 }
 
+void Kitchen::work()
+{
+    _receptCook(this);
+}
+
 void Kitchen::_receptCook(Kitchen *obj)
 {
     while (true) {
@@ -151,19 +155,15 @@ void Kitchen::_receptCook(Kitchen *obj)
             }
             if (obj->_needToBeKilled == true) {
                 obj->commandQueue.get()->sendMessage("exit:OK");
+                obj->stop();
+                return;
             } else {
                 obj->commandQueue.get()->sendMessage("exit:KO");
             }
             continue;
         }
         Pizza toCook = unpack(fullCommand);
-        size_t quantity = toCook.number;
-        toCook.number = 1;
-        getIngredientsFromPizzaType(toCook, toCook.type);
-
-        for (std::size_t x = 0; x < quantity; ++x) {
-            obj->enqueueJob(toCook);
-        }
+        obj->enqueueJob(toCook);
     }
 }
 
@@ -223,11 +223,29 @@ void Kitchen::_Cook(Kitchen *obj)
 
 void Kitchen::enqueueJob(Pizza &pizza)
 {
+    bool notify = false;
     {
         std::unique_lock<std::mutex> lock(_mutex);
         _orders.emplace(pizza);
     }
+    while (!notify) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        {
+            std::unique_lock<std::mutex> lock(_mutex);
+            notify = (_availCooks) ? true : false;
+        }
+    }
     order_condition.notify_one();
+}
+
+bool Kitchen::isBusy()
+{
+    bool busy;
+    {
+        std::unique_lock<std::mutex> lock(_mutex);
+        busy = _orders.empty();
+    }
+    return busy;
 }
 
 void Kitchen::stop()

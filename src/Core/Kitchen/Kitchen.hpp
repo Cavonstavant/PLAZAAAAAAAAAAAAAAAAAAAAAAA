@@ -59,6 +59,10 @@ namespace plazza {
             /// \brief Adds an order to the kitchen
             void enqueueJob(Pizza &pizza);
 
+            /// \brief used to check if all the cooks have finished cooking
+            /// or still have order to process
+            bool isBusy();
+
             /// \brief MessageQueue recepting the command from the reception
             std::shared_ptr<MessageQueue> commandQueue;
 
@@ -80,6 +84,8 @@ namespace plazza {
             /// \param std::string to be unpack.
             /// \return Pizza unpacked.
             static Pizza unpack(const std::string &order);
+            /// \brief Call private function _receptCook
+            void work();
 
         private:
             /// \brief Check if the command ask for available cook ("avail_cooks ?")
