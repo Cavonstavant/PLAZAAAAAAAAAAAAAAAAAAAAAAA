@@ -71,14 +71,14 @@ namespace plazza {
             /// \param pizzaToCook the collection of pizzas to cook
             /// \param amt the number of pizzas to cook
             /// \param kitchenPid the pid of the kitchen to cook the pizzas
-            void _sendPizza(std::vector<Pizza> &pizzaToCook, int amt, pid_t kitchenPid);
+            std::vector<Pizza> _sendPizza(std::vector<Pizza> &pizzaToCook, int amt, pid_t kitchenPid);
 
             /// \brief Creates a new Kitchen and add it to the list of kitchens
-            void _createNewKitchen(void);
+            void _createNewKitchen(std::vector<Pizza> &pizzaToCook, unsigned int pizzaPerKitchen);
 
             /// \brief Check wether the creation of a new Kitchen is necessary
-            /// depending on the amount 
-            bool _isNewKitchenNeeded(int pizzaAmt);
+            /// depending on the amount
+            bool _isNewKitchenNeeded(unsigned int pizzaAmt);
 
             /// \brief Updates _availSlots by checking how many pizzas we can
             /// order to a kitchen

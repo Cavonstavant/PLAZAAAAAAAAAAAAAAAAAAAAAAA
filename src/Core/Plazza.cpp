@@ -93,7 +93,7 @@ bool Reception::_handleInput(const std::string &input)
     return true;
 }
 
-bool Reception::_isNewKitchenNeeded(int pizzaAmt)
+bool Reception::_isNewKitchenNeeded(unsigned int pizzaAmt)
 {
     if (_availSlotsTotal < pizzaAmt)
         return true;
@@ -127,7 +127,7 @@ void Reception::_updateBusyCooks(void)
     }
 }
 
-void Reception::_createNewKitchen(void)
+void Reception::_createNewKitchen(std::vector<Pizza> &pizzaToCook, unsigned int pizzaPerKitchen)
 {
     Kitchen newKitchen(_cookNumber, _refillTime, _cookingTime);
     std::shared_ptr<MessageQueue> newQueue = std::make_shared<MessageQueue>();
@@ -138,25 +138,36 @@ void Reception::_createNewKitchen(void)
     if (newKitchenPid == 0) {
         newKitchen.commandQueue = newQueue;
         newKitchen.start();
-    } else
+    } else {
         _kitchenMap[newKitchenPid] = newQueue;
+        while (!pizzaToCook.empty()) {
+            for (auto &kitchen : _kitchenMap) {
+                if (_availSlots[kitchen.first] < (_cookNumber * 2) && !pizzaToCook.empty()){
+                    pizzaToCook = _sendPizza(pizzaToCook, pizzaPerKitchen, kitchen.first);
+                }
+                if (pizzaToCook.empty())
+                    break;
+            }
+        }
+    }
 }
 
-void Reception::_sendPizza(std::vector<Pizza> &pizzaToCook, int amt, pid_t kitchenPid)
+std::vector<Pizza> Reception::_sendPizza(std::vector<Pizza> &pizzaToCook, int amt, pid_t kitchenPid)
 {
     Pizza tmpPizza = pizzaToCook.back();
-    for (int x = 0; x < amt; ++x) {
+    for (int x = 0; x < amt && !pizzaToCook.empty(); ++x) {
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
         _kitchenMap[kitchenPid]->sendMessage(pack(tmpPizza));
         pizzaToCook.pop_back();
         tmpPizza = pizzaToCook.back();
     }
+    return pizzaToCook;
 }
 
 void Reception::_manageOrders(const InputParser &command)
 {
     std::vector<Pizza> pizzaToCook = command.getPizza();
-    unsigned int pizzaPerKitchen = 0;
+    unsigned int pizzaPerKitchen = this->_cookNumber * 2;
 
     if (pizzaToCook.size() == 0)
         return;
@@ -165,19 +176,11 @@ void Reception::_manageOrders(const InputParser &command)
         pizzaPerKitchen = _availSlotsTotal + pizzaToCook.size() / _kitchenMap.size();
     if (_kitchenMap.empty() || _isNewKitchenNeeded(pizzaToCook.size())){
         if (_kitchenMap.size() < 9){
-            _createNewKitchen();
+            _createNewKitchen(pizzaToCook, pizzaPerKitchen);
             _updateBusyCooks();
         } else
             std::cout << "Could not open more than 9 Kitchens without running the program as root:"
                 << "\n\tWaiting for previous orders to finish..." << std::endl;
-    }
-    while (!pizzaToCook.empty()) {
-        for (auto &kitchen : _kitchenMap) {
-            if (_availSlots[kitchen.first] < (_cookNumber * 2))
-                _sendPizza(pizzaToCook, pizzaPerKitchen, kitchen.first);
-            if (pizzaToCook.empty())
-                break;
-        }
     }
 }
 
