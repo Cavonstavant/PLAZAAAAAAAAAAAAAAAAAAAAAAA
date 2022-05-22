@@ -84,6 +84,7 @@ namespace plazza {
             /// \param std::string to be unpack.
             /// \return Pizza unpacked.
             static Pizza unpack(const std::string &order);
+            /// \brief Call private function _receptCook
             void work();
 
         private:
