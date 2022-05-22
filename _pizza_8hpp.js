@@ -15,8 +15,8 @@ var _pizza_8hpp =
       [ "Americana", "_pizza_8hpp.html#a3df93b5bf8fa865c6f1251078950734ca6f5eff189eeb6d0ab3210c37331e0d2d", null ],
       [ "Fantasia", "_pizza_8hpp.html#a3df93b5bf8fa865c6f1251078950734ca9ad0cad5cc44aa8b718efad5232ce471", null ]
     ] ],
-    [ "operator-", "_pizza_8hpp.html#a520adad5088971e057c1eeb96a86f904", null ],
-    [ "operator-", "_pizza_8hpp.html#adfb26aad8c943cab2202ec3c1a4c932d", null ],
+    [ "operator-", "_pizza_8hpp.html#a2698eb6ff75a2033931bbfcbaa95e5bc", null ],
+    [ "operator-", "_pizza_8hpp.html#a7e02c10a2f15f9ef783f0ef4c02ae2ee", null ],
     [ "operator-=", "_pizza_8hpp.html#adc04e4603b4bfcb6389c2a4fa25bcb79", null ],
     [ "operator-=", "_pizza_8hpp.html#a9fa300ac2896bcfdaa94be9274f87634", null ]
 ];
