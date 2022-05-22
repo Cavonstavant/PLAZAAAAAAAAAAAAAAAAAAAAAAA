@@ -132,7 +132,7 @@ void Reception::_updateBusyCooks(void)
     }
 }
 
-void Reception::_createNewKitchen(std::vector<Pizza> &pizzaToCook, unsigned int pizzaPerKitchen)
+std::vector<Pizza> Reception::_createNewKitchen(std::vector<Pizza> &pizzaToCook, unsigned int pizzaPerKitchen)
 {
     Kitchen newKitchen(_cookNumber, _refillTime, _cookingTime);
     std::shared_ptr<MessageQueue> newQueue = std::make_shared<MessageQueue>();
@@ -155,6 +155,7 @@ void Reception::_createNewKitchen(std::vector<Pizza> &pizzaToCook, unsigned int 
             }
         }
     }
+    return pizzaToCook;
 }
 
 std::vector<Pizza> Reception::_sendPizza(std::vector<Pizza> &pizzaToCook, int amt, pid_t kitchenPid)
@@ -182,11 +183,20 @@ void Reception::_manageOrders(const InputParser &command)
     }
     if (_kitchenMap.empty() || _isNewKitchenNeeded(pizzaToCook.size())){
         if (_kitchenMap.size() < 9){
-            _createNewKitchen(pizzaToCook, pizzaPerKitchen);
+            pizzaToCook = _createNewKitchen(pizzaToCook, pizzaPerKitchen);
             _updateBusyCooks();
         } else
             std::cout << "Could not open more than 9 Kitchens without running the program as root:"
                 << "\n\tWaiting for previous orders to finish..." << std::endl;
+    }
+    while (!pizzaToCook.empty()) {
+        for (auto &kitchen : _kitchenMap) {
+            if (_availSlots[kitchen.first] < (_cookNumber * 2) && !pizzaToCook.empty()){
+                pizzaToCook = _sendPizza(pizzaToCook, pizzaPerKitchen, kitchen.first);
+            }
+            if (pizzaToCook.empty())
+                break;
+        }
     }
 }
 

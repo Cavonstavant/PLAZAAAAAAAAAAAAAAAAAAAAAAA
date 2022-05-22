@@ -80,7 +80,7 @@ namespace plazza {
             std::vector<Pizza> _sendPizza(std::vector<Pizza> &pizzaToCook, int amt, pid_t kitchenPid);
 
             /// \brief Creates a new Kitchen and add it to the list of kitchens
-            void _createNewKitchen(std::vector<Pizza> &pizzaToCook, unsigned int pizzaPerKitchen);
+            std::vector<Pizza> _createNewKitchen(std::vector<Pizza> &pizzaToCook, unsigned int pizzaPerKitchen);
 
             /// \brief Check wether the creation of a new Kitchen is necessary
             /// depending on the amount
