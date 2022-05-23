@@ -46,7 +46,6 @@ namespace plazza {
             /// \brief Main function of the program
             void run();
 
-        private:
             /// \brief Mutex for the reception
             std::mutex _mutex;
 

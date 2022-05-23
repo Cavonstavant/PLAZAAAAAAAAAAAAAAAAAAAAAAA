@@ -146,13 +146,26 @@ void Kitchen::_receptCook(Kitchen *obj)
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
         std::string fullCommand = obj->commandQueue.get()->receiveMessage();
 
-        if (fullCommand.find("avail_slots:") == 0) {
+        if (fullCommand.find("avail_slots:") == 0 || fullCommand.find("avail_slotsG:") == 0) {
             obj->commandQueue.get()->sendMessage(fullCommand);
             continue;
         }
         if (_isAvailableCook(fullCommand)) {
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
             std::string message = "avail_slots:" + std::to_string(obj->_orders.size() + (obj->_nbCooks - obj->_availCooks)) + ";fridge:";
+            {
+                std::unique_lock<std::mutex> lock(obj->_fridgeMutex);
+                for (size_t x = 1; x < IngredientNumber; x++) {
+                    message.append(obj->_fridge[x].name);
+                    message.append("," + std::to_string(obj->_fridge[x].number) + ";");
+                }
+            }
+            obj->commandQueue.get()->sendMessage(message);
+            continue;
+        }
+        if (fullCommand == "avail_slotsG?") {
+            std::this_thread::sleep_for(std::chrono::milliseconds(10));
+            std::string message = "avail_slotsG:" + std::to_string(obj->_orders.size() + (obj->_nbCooks - obj->_availCooks)) + ";fridge:";
             {
                 std::unique_lock<std::mutex> lock(obj->_fridgeMutex);
                 for (size_t x = 1; x < IngredientNumber; x++) {

@@ -169,7 +169,7 @@ void Reception::_manageOrders(const InputParser &server)
                 }
             }
             for (; order.number > 0; order.number--) {
-                std::size_t indexMin = 0;
+                std::size_t indexMin = -1;
                 std::size_t index = 0;
                 Pizza tmp = order;
                 tmp.number = 1;
@@ -180,8 +180,10 @@ void Reception::_manageOrders(const InputParser &server)
                 }
                 index = 0;
                 for (auto it: _kitchenMap) {
-                    if (index == indexMin)
+                    if (index == indexMin) {
                         it.second.get()->sendMessage(pack(tmp));
+                        availSlots.at(index) += 1;
+                    }
                     index++;
                 }
             }
@@ -297,6 +299,8 @@ void Reception::run()
             }
         }
     }
+    std::cout << "Please, close the window if it's not." << std::endl;
+    bonusThread.join();
     exitThread.join();
     _cleanKitchens();
 }

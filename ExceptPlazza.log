@@ -1,0 +1,253 @@
+[LOGGER:INFO] PlazzaException >> name:1;size:4;amount:1
+
+>> void plazza::Cook::cookPizza(plazza::Pizza) (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Cook/Cook.cpp:48)
+
+[LOGGER:INFO] PlazzaException >> name:1;size:4;amount:1
+
+>> void plazza::Cook::cookPizza(plazza::Pizza) (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Cook/Cook.cpp:48)
+
+[LOGGER:INFO] PlazzaException >> name:1;size:4;amount:1
+
+>> void plazza::Cook::cookPizza(plazza::Pizza) (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Cook/Cook.cpp:48)
+
+[LOGGER:INFO] PlazzaException >> name:1;size:4;amount:1
+
+>> void plazza::Cook::cookPizza(plazza::Pizza) (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Cook/Cook.cpp:48)
+
+[LOGGER:INFO] PlazzaException >> name:1;size:4;amount:1
+
+>> void plazza::Cook::cookPizza(plazza::Pizza) (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Cook/Cook.cpp:48)
+
+[LOGGER:INFO] PlazzaException >> name:1;size:4;amount:1
+
+>> void plazza::Cook::cookPizza(plazza::Pizza) (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Cook/Cook.cpp:48)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: statuzs
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:LOW] ParserException >> Invalid pizza size in the command: XLx1
+>> bool plazza::InputParser::_isValidPizzaSize(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:221)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: regnia
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: statusstatus
+>> bool plazza::InputParser::_isValidPizzaName(const std::string &) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: sttatus
+>> bool plazza::InputParser::_isValidPizzaName(const std::string &) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:LOW] PlazzaException >> The two ingredients are differents (doe, ).
+>> plazza::Ingredient &plazza::Ingredient::operator-=(plazza::Ingredient &) (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Pizza/Pizza.cpp:48)
+
+[LOGGER:LOW] PlazzaException >> There is not enought ingredient in the vector.
+>> std::vector<Ingredient> &operator-=(std::vector<Ingredient> &, std::vector<Ingredient> &) (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Pizza/Pizza.cpp:105)
+
+[LOGGER:LOW] PlazzaException >> There is not enought ingredient in the vector.
+>> std::vector<Ingredient> &operator-=(std::vector<Ingredient> &, plazza::Pizza &) (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Pizza/Pizza.cpp:132)
+
+[LOGGER:LOW] PlazzaException >> The two ingredients are differents (doe, ).
+>> plazza::Ingredient &plazza::Ingredient::operator-=(plazza::Ingredient &) (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Pizza/Pizza.cpp:48)
+
+[LOGGER:LOW] PlazzaException >> There is not enought ingredient in the vector.
+>> std::vector<Ingredient> &operator-=(std::vector<Ingredient> &, std::vector<Ingredient> &) (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Pizza/Pizza.cpp:105)
+
+[LOGGER:LOW] PlazzaException >> There is not enought ingredient in the vector.
+>> std::vector<Ingredient> &operator-=(std::vector<Ingredient> &, plazza::Pizza &) (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Pizza/Pizza.cpp:132)
+
+[LOGGER:LOW] PlazzaException >> The two ingredients are differents (doe, ).
+>> plazza::Ingredient &plazza::Ingredient::operator-=(plazza::Ingredient &) (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Pizza/Pizza.cpp:48)
+
+[LOGGER:LOW] PlazzaException >> There is not enought ingredient in the vector.
+>> std::vector<Ingredient> &operator-=(std::vector<Ingredient> &, std::vector<Ingredient> &) (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Pizza/Pizza.cpp:105)
+
+[LOGGER:LOW] PlazzaException >> There is not enought ingredient in the vector.
+>> std::vector<Ingredient> &operator-=(std::vector<Ingredient> &, plazza::Pizza &) (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Pizza/Pizza.cpp:135)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: remargarita
+>> bool plazza::InputParser::_isValidPizzaName(const std::string &) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: aze
+>> bool plazza::InputParser::_isValidPizzaName(const std::string &) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:LOW] ParserException >> Invalid pizza size in the command: ;
+>> bool plazza::InputParser::_isValidPizzaSize(const std::string &) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:221)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: americaamericana
+>> bool plazza::InputParser::_isValidPizzaName(const std::string &) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: ameramericanamericana
+>> bool plazza::InputParser::_isValidPizzaName(const std::string &) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: americaamericana
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:LOW] ParserException >> Invalid pizza size in the command: SL
+>> bool plazza::InputParser::_isValidPizzaSize(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:221)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: exi_t
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:LOW] ParserException >> Invalid pizza size in the command: ;
+>> bool plazza::InputParser::_isValidPizzaSize(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:221)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: a
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: aze
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: aze
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: aze
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: reaer
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: regaze
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:INFO] ParserException >> regaze has a invalid pizza command.
+>> void plazza::Reception::run() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Plazza.cpp:363)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: aze
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:INFO] ParserException >> aze has a invalid pizza command.
+>> void plazza::Reception::run() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Plazza.cpp:363)
+
+[LOGGER:INFO] ParserException >>  has a invalid pizza command.
+>> void plazza::Reception::run() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Plazza.cpp:363)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: azr
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:INFO] ParserException >> azr has a invalid pizza command.
+>> void plazza::Reception::run() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Plazza.cpp:356)
+
+[LOGGER:CRITICAL] InvalidNumberArgumentsException >> You need 3 arguments.
+
+>> virtual void plazza::ArgumentsParser::processArguments() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/ArgumentsParser/ArgumentsParser.cpp:28)
+
+[LOGGER:CRITICAL] MessageQueueException >> Failed to clear queue: No such file or directory
+>> void MessageQueue::clear() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/MessageQueue/MessageQueue.cpp:57)
+
+[LOGGER:CRITICAL] InvalidNumberArgumentsException >> You need 3 arguments.
+
+>> virtual void plazza::ArgumentsParser::processArguments() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/ArgumentsParser/ArgumentsParser.cpp:28)
+
+[LOGGER:CRITICAL] InvalidNumberArgumentsException >> You need 3 arguments.
+
+>> virtual void plazza::ArgumentsParser::processArguments() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/ArgumentsParser/ArgumentsParser.cpp:28)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: exit
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:INFO] ParserException >> exit has a invalid pizza command.
+>> void plazza::Reception::run() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Plazza.cpp:359)
+
+[LOGGER:CRITICAL] MessageQueueException >> Failed to clear queue: No such file or directory
+>> void MessageQueue::clear() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/MessageQueue/MessageQueue.cpp:57)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: g
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:INFO] ParserException >> g has a invalid pizza command.
+>> void plazza::Reception::run() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Plazza.cpp:359)
+
+[LOGGER:CRITICAL] MessageQueueException >> Failed to clear queue: No such file or directory
+>> void MessageQueue::clear() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/MessageQueue/MessageQueue.cpp:57)
+
+[LOGGER:CRITICAL] MessageQueueException >> Failed to clear queue: No such file or directory
+>> void MessageQueue::clear() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/MessageQueue/MessageQueue.cpp:57)
+
+[LOGGER:CRITICAL] MessageQueueException >> Failed to clear queue: No such file or directory
+>> void MessageQueue::clear() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/MessageQueue/MessageQueue.cpp:57)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: ssssssssssssssssssssssstatus
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:INFO] ParserException >> ssssssssssssssssssssssstatus has a invalid pizza command.
+>> void plazza::Reception::run() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Plazza.cpp:369)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: stat
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:INFO] ParserException >> stat has a invalid pizza command.
+>> void plazza::Reception::run() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Plazza.cpp:376)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: statsu
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:INFO] ParserException >> statsu has a invalid pizza command.
+>> void plazza::Reception::run() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Plazza.cpp:368)
+
+[LOGGER:INFO] ParserException >>  has a invalid pizza command.
+>> void plazza::Reception::run() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Plazza.cpp:373)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: reigna
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:INFO] ParserException >> reigna XL x8 has a invalid pizza command.
+>> void plazza::Reception::run() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Plazza.cpp:375)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: aaaaaaaaaregina
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:INFO] ParserException >> aaaaaaaaaregina XL x1 has a invalid pizza command.
+>> void plazza::Reception::run() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Plazza.cpp:380)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: aaaaaexit
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:INFO] ParserException >> aaaaaexit has a invalid pizza command.
+>> void plazza::Reception::run() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Plazza.cpp:380)
+
+[LOGGER:LOW] ParserException >> Invalid pizza separator in the command: regina
+>> bool plazza::InputParser::_isValidPizzaSeparator(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:245)
+
+[LOGGER:INFO] ParserException >> regina XL x1: regina S x1 has a invalid pizza command.
+>> void plazza::Reception::run() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Plazza.cpp:380)
+
+[LOGGER:CRITICAL] MessageQueueException >> Failed to clear queue: Invalid argument
+>> void MessageQueue::clear() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/MessageQueue/MessageQueue.cpp:57)
+
+[LOGGER:CRITICAL] MessageQueueException >> Failed to clear queue: Invalid argument
+>> void MessageQueue::clear() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/MessageQueue/MessageQueue.cpp:57)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: EXIT
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:INFO] ParserException >> EXIT has a invalid pizza command.
+>> void plazza::Reception::run() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Plazza.cpp:293)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: sstatus
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:INFO] ParserException >> sstatus has a invalid pizza command.
+>> void plazza::Reception::run() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Plazza.cpp:293)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: [A[Aexit
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:INFO] ParserException >> [A[Aexit has a invalid pizza command.
+>> void plazza::Reception::run() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Plazza.cpp:293)
+
+[LOGGER:CRITICAL] InvalidNumberArgumentsException >> You need 3 arguments.
+
+>> virtual void plazza::ArgumentsParser::processArguments() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/ArgumentsParser/ArgumentsParser.cpp:28)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: exit
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:INFO] ParserException >> exit has a invalid pizza command.
+>> void plazza::Reception::run() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Plazza.cpp:298)
+
+[LOGGER:LOW] ParserException >> Invalid pizza name in the command: EXIT
+>> bool plazza::InputParser::_isValidPizzaName(const string&) const (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Parser/InputParser/InputParser.cpp:202)
+
+[LOGGER:INFO] ParserException >> EXIT has a invalid pizza command.
+>> void plazza::Reception::run() (/home/thomas/Documents/Epitech/Tek2/CCP/plazza/src/Core/Plazza.cpp:298)
+
