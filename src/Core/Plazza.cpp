@@ -16,6 +16,7 @@
 #include <tuple>
 #include <unistd.h>
 #include <utility>
+#include "Bonus.hpp"
 
 using namespace plazza;
 using namespace std::string_literals;
@@ -274,6 +275,8 @@ void Reception::run()
 {
     std::string input;
     std::thread exitThread(_kitchenExit, this);
+    Bonus bonus(this);
+    std::thread bonusThread(bonus.run, &bonus);
 
     while (true) {
         if (!std::getline(std::cin, input))
